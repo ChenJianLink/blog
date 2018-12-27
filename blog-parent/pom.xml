@@ -28,7 +28,7 @@
         <commons-net.version>3.3</commons-net.version>
         <commons-io.version>2.5</commons-io.version>
         <jsqlparser.version>0.9.1</jsqlparser.version>
-        <commons-fileupload.version>1.3.4</commons-fileupload.version>
+        <commons-fileupload.version>1.3.3</commons-fileupload.version>
         <solrj.version>6.6.5</solrj.version>
         <shiro.version>1.2.4</shiro.version>
         <log4j.version>1.2.17</log4j.version>
