@@ -13,7 +13,7 @@
 </script>
 <div class="row">
     <div class="col-md-12" style="padding-top: 10px">
-        <nav class="navbar" style="background-color: rgba(230, 230, 250, 0.7);border-color: rgba(230, 230, 250)">
+        <nav class="navbar" style="background-color: rgba(230, 230, 250, 0.7);border-color: rgba(230, 230, 250, 1)">
             <div class="container-fluid">
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">

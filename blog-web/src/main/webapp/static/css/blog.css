@@ -1,9 +1,9 @@
 .data_list {
-    border: 1px solid #E5E5E5;
+    border: 1px solid rgba(230, 230, 250, 1);
     padding: 10px;
     margin-top: 0px;
     margin-bottom: 10px;
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(230, 230, 250, 0.7);
 }
 
 .data_list .data_list_title {
