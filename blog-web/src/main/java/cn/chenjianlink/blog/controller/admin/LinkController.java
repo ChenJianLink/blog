@@ -21,9 +21,8 @@ public class LinkController {
 
     @RequestMapping("/admin/link/list")
     @ResponseBody
-    public String getLinkList() throws Exception {
+    public List<Link> getLinkList() throws Exception {
         List<Link> linkList = linkService.getLinkList();
-        Link link = linkList.get(1);
-        return JsonUtils.objectToJson(link);
+        return linkList;
     }
 }
