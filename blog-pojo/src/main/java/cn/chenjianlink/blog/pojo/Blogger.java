@@ -1,9 +1,11 @@
 package cn.chenjianlink.blog.pojo;
 
+import java.io.Serializable;
+
 /**
  * 博主信息对象
  */
-public class Blogger {
+public class Blogger implements Serializable {
     private Integer id;
     private String userName;
     private String password;

@@ -1,11 +1,12 @@
 package cn.chenjianlink.blog.pojo;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
  * 博客内容对象
  */
-public class Blog {
+public class Blog implements Serializable {
     private Integer id;
     private String title;
     private String summary;

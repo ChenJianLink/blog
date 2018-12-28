@@ -1,9 +1,11 @@
 package cn.chenjianlink.blog.pojo;
 
+import java.io.Serializable;
+
 /**
  * 博客类型对象
  */
-public class BlogType {
+public class BlogType implements Serializable {
     private Integer id;
     private String typeName;
     private Integer orderNo;

@@ -1,9 +1,11 @@
 package cn.chenjianlink.blog.pojo;
 
+import java.io.Serializable;
+
 /**
  * 友情链接对象
  */
-public class Link {
+public class Link implements Serializable {
     private Integer id;
     private String linkName;
     private String linkUrl;

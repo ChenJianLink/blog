@@ -1,11 +1,12 @@
 package cn.chenjianlink.blog.pojo;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
  * 游客评论相关对象
  */
-public class Comment {
+public class Comment implements Serializable {
     private Integer id;
     private String userIp;
     private Integer blogId;
