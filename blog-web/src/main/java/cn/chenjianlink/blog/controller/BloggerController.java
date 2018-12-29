@@ -10,6 +10,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class BloggerController {
 
+    /**
+     * "关于博主"页面展示
+     * @param model
+     * @return
+     */
     @RequestMapping("/blogger/aboutMe")
     public String aboutMe(Model model){
         model.addAttribute("mainPage", "foreground/blogger/info.jsp");

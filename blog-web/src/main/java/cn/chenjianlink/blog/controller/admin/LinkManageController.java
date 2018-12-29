@@ -18,6 +18,11 @@ public class LinkManageController {
     @Resource
     private LinkService linkService;
 
+    /**
+     * 友情链接管理页面的友情链接列表展示
+     * @return
+     * @throws Exception
+     */
     @RequestMapping("/admin/link/list")
     @ResponseBody
     public List<Link> getLinkList() throws Exception {
