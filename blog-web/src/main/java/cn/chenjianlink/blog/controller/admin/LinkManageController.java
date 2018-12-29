@@ -13,7 +13,7 @@ import java.util.List;
  * 友情链接管理Controller
  */
 @Controller
-public class LinkController {
+public class LinkManageController {
 
     @Resource
     private LinkService linkService;
