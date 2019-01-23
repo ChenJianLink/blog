@@ -5,7 +5,7 @@
 <mapper namespace="cn.chenjianlink.blog.mapper.LinkMapper">
     <!--查询链接列表-->
     <select id="getLinkList" resultType="cn.chenjianlink.blog.pojo.Link">
-        SELECT * FROM t_link;
+        SELECT * FROM t_link ORDER BY orderNo;
     </select>
     <!--插入新的链接信息-->
     <insert id="insertLink" parameterType="cn.chenjianlink.blog.pojo.Link">
