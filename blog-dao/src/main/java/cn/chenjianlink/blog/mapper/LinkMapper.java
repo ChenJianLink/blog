@@ -8,6 +8,13 @@ import java.util.List;
  * 友情链接mapper
  */
 public interface LinkMapper {
-    List<Link> getLinkList() throws Exception;
-    int insertLink(Link link) throws Exception;
+    List<Link> selectAll() throws Exception;
+
+    int insert(Link link) throws Exception;
+
+    Link selectByPrimaryKey(int id) throws Exception;
+
+    int update(Link link) throws Exception;
+
+    int delete(int[] ids) throws Exception;
 }

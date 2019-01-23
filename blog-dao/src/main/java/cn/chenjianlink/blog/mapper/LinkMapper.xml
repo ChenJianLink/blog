@@ -3,13 +3,71 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cn.chenjianlink.blog.mapper.LinkMapper">
+    <sql id="Base_List">
+        id, linkName, linkUrl, orderNo
+    </sql>
+    <!--插入字段选择-->
+    <sql id="insert_update_item">
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="linkName != null">
+                linkName,
+            </if>
+            <if test="linkUrl != null">
+                linkUrl,
+            </if>
+            <if test="orderNo != null">
+                orderNo,
+            </if>
+        </trim>
+    </sql>
+    <!--插入的值-->
+    <sql id="insert_update_value">
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="linkName != null">
+                #{linkName,jdbcType=VARCHAR},
+            </if>
+            <if test="linkUrl != null">
+                #{linkUrl,jdbcType=VARCHAR},
+            </if>
+            <if test="orderNo != null">
+                #{orderNo,jdbcType=INTEGER}
+            </if>
+        </trim>
+    </sql>
     <!--查询链接列表-->
-    <select id="getLinkList" resultType="cn.chenjianlink.blog.pojo.Link">
-        SELECT * FROM t_link ORDER BY orderNo;
+    <select id="selectAll" resultType="cn.chenjianlink.blog.pojo.Link">
+        SELECT
+        <include refid="Base_List"/>
+        FROM t_link ORDER BY orderNo
     </select>
     <!--插入新的链接信息-->
-    <insert id="insertLink" parameterType="cn.chenjianlink.blog.pojo.Link">
-        INSERT INTO t_link(linkName,linkUrl,orderNo)
-        VALUES (#{linkName,jdbcType=VARCHAR},#{linkUrl,jdbcType=VARCHAR},#{orderNo,jdbcType=BIGINT})
+    <insert id="insert" parameterType="cn.chenjianlink.blog.pojo.Link">
+        INSERT INTO t_link
+        <include refid="insert_update_item"/>
+        VALUES
+        <include refid="insert_update_value"/>
     </insert>
+    <!--按id查询链接信息-->
+    <select id="selectByPrimaryKey" parameterType="int" resultType="cn.chenjianlink.blog.pojo.Link">
+        SELECT
+        <include refid="Base_List"/>
+        FROM t_link WHERE id = #{id,jdbcType=INTEGER}
+    </select>
+    <!--更新链接信息-->
+    <update id="update" parameterType="cn.chenjianlink.blog.pojo.Link">
+        UPDATE t_link
+        SET linkName = #{linkName,jdbcType=VARCHAR},
+            linkUrl = #{linkUrl,jdbcType=VARCHAR},
+            orderNo = #{orderNo,jdbcType=INTEGER}
+        WHERE id = #{id,jdbcType=INTEGER}
+    </update>
+    <delete id="delete" parameterType="int[]">
+        DELETE FROM t_link
+        WHERE id IN
+        <if test="array != null">
+            <foreach collection="array" item="id" open="(" separator="," close=")">
+                #{id,jdbcType=INTEGER}
+            </foreach>
+        </if>
+    </delete>
 </mapper>

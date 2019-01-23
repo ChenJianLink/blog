@@ -5,6 +5,7 @@ import cn.chenjianlink.blog.pojo.Link;
 import cn.chenjianlink.blog.service.LinkService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
@@ -21,6 +22,7 @@ public class LinkManageController {
 
     /**
      * 友情链接管理页面的友情链接列表展示
+     *
      * @return
      * @throws Exception
      */
@@ -33,13 +35,43 @@ public class LinkManageController {
 
     /**
      * 添加友情链接
+     *
      * @return
      * @throws Exception
      */
-    @RequestMapping("/admin/link/save")
+    @RequestMapping(value = "/admin/link/save", method = RequestMethod.POST)
     @ResponseBody
     public BlogResult saveLink(Link link) throws Exception {
         BlogResult result = linkService.saveLink(link);
         return result;
     }
+
+    /**
+     * 修改友情链接
+     *
+     * @param id
+     * @param link
+     * @return
+     * @throws Exception
+     */
+    @RequestMapping(value = "/admin/link/edit", method = RequestMethod.POST)
+    @ResponseBody
+    public BlogResult editLink(Integer id, Link link) throws Exception {
+        BlogResult result = linkService.editLink(id, link);
+        return result;
+    }
+
+    /**
+     * 删除友情链接
+     * @param ids
+     * @return
+     * @throws Exception
+     */
+    @RequestMapping(value = "/admin/link/delete", method = RequestMethod.POST)
+    @ResponseBody
+    public BlogResult deleteLink(Integer[] ids) throws Exception{
+        BlogResult result = linkService.deleteLink(ids);
+        return result;
+    }
+
 }
