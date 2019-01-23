@@ -1,9 +1,12 @@
 package cn.chenjianlink.blog.service.impl;
 
 import cn.chenjianlink.blog.common.utils.BlogResult;
+import cn.chenjianlink.blog.common.utils.EasyUIResult;
 import cn.chenjianlink.blog.mapper.LinkMapper;
 import cn.chenjianlink.blog.pojo.Link;
 import cn.chenjianlink.blog.service.LinkService;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -23,6 +26,20 @@ public class LinkServiceImpl implements LinkService {
     public List<Link> getLinkList() throws Exception {
         List<Link> linkList = linkMapper.selectAll();
         return linkList;
+    }
+
+    //分页查询友情链接
+    @Override
+    public EasyUIResult getLinkList(Integer page, Integer rows) throws Exception{
+        //设置分页信息
+        PageHelper.startPage(page, rows);
+        //查询
+        List<Link> linkList = linkMapper.selectAll();
+        //获得结果
+        PageInfo<Link> pageInfo = new PageInfo<>(linkList);
+        long total = pageInfo.getTotal();
+        EasyUIResult result = new EasyUIResult(total, linkList);
+        return result;
     }
 
     //保存新链接

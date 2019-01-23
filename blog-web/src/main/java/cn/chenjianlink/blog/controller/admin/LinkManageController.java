@@ -1,6 +1,7 @@
 package cn.chenjianlink.blog.controller.admin;
 
 import cn.chenjianlink.blog.common.utils.BlogResult;
+import cn.chenjianlink.blog.common.utils.EasyUIResult;
 import cn.chenjianlink.blog.pojo.Link;
 import cn.chenjianlink.blog.service.LinkService;
 import org.springframework.stereotype.Controller;
@@ -9,7 +10,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
-import java.util.List;
 
 /**
  * 友情链接管理Controller
@@ -28,8 +28,8 @@ public class LinkManageController {
      */
     @RequestMapping("/admin/link/list")
     @ResponseBody
-    public List<Link> getLinkList() throws Exception {
-        List<Link> linkList = linkService.getLinkList();
+    public EasyUIResult getLinkList(Integer page, Integer rows) throws Exception {
+        EasyUIResult linkList = linkService.getLinkList(page, rows);
         return linkList;
     }
 
