@@ -9,4 +9,5 @@ import java.util.List;
  */
 public interface LinkMapper {
     List<Link> getLinkList() throws Exception;
+    int insertLink(Link link) throws Exception;
 }

@@ -54,7 +54,7 @@
 		 var row=selectedRows[0];
 		 $("#dlg").dialog("open").dialog("setTitle","编辑友情链接信息");
 		 $("#fm").form("load",row);
-		 url="${pageContext.request.contextPath}/admin/link/save.do?id="+row.id;
+		 url="${pageContext.request.contextPath}/admin/link/update.do?id="+row.id;
 	 }
 	
 	function saveLink(){

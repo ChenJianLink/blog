@@ -1,5 +1,6 @@
 package cn.chenjianlink.blog.controller.admin;
 
+import cn.chenjianlink.blog.common.utils.BlogResult;
 import cn.chenjianlink.blog.pojo.Link;
 import cn.chenjianlink.blog.service.LinkService;
 import org.springframework.stereotype.Controller;
@@ -28,5 +29,17 @@ public class LinkManageController {
     public List<Link> getLinkList() throws Exception {
         List<Link> linkList = linkService.getLinkList();
         return linkList;
+    }
+
+    /**
+     * 添加友情链接
+     * @return
+     * @throws Exception
+     */
+    @RequestMapping("/admin/link/save")
+    @ResponseBody
+    public BlogResult saveLink(Link link) throws Exception {
+        BlogResult result = linkService.saveLink(link);
+        return result;
     }
 }

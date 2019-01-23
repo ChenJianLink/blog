@@ -3,7 +3,13 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cn.chenjianlink.blog.mapper.LinkMapper">
+    <!--查询链接列表-->
     <select id="getLinkList" resultType="cn.chenjianlink.blog.pojo.Link">
         SELECT * FROM t_link;
     </select>
+    <!--插入新的链接信息-->
+    <insert id="insertLink" parameterType="cn.chenjianlink.blog.pojo.Link">
+        INSERT INTO t_link(linkName,linkUrl,orderNo)
+        VALUES (#{linkName,jdbcType=VARCHAR},#{linkUrl,jdbcType=VARCHAR},#{orderNo,jdbcType=BIGINT})
+    </insert>
 </mapper>
