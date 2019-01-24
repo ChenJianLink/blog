@@ -23,7 +23,6 @@ public class JspFilter implements Filter {
         HttpSession session = httpServletRequest.getSession(true);
         String url = httpServletRequest.getRequestURI();
         session.setAttribute("L'Eteranger", "L'Eteranger");
-        System.out.println(url);
         if (url != null && url.endsWith(".jsp")) {
             httpServletResponse.sendRedirect("/index.html");
         }
