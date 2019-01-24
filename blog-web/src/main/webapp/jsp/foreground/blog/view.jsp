@@ -9,7 +9,8 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <script type="text/javascript">
 	function loadimage(){
-		document.getElementById("randImage").src="${pageContext.request.contextPath}/image.jsp?"+Math.random();
+	    //有待解决
+		document.getElementById("randImage").src="${pageContext.request.contextPath}/jsp/image.jsp?"+Math.random();
 	}
 	
 	function submitData(){

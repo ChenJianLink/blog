@@ -7,10 +7,9 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 /**
- * Jsp页面直接访问过滤器
+ * 地址栏直接jsp过滤器
  */
 public class JspFilter implements Filter {
-
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
 
