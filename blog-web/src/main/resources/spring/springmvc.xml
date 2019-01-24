@@ -14,6 +14,14 @@
     <!--加载配置文件-->
     <context:property-placeholder location="classpath:conf/resource.properties"/>
 
+    <!--登录拦截器-->
+    <!--<mvc:interceptors>-->
+        <!--<mvc:interceptor>-->
+            <!--<mvc:mapping path="/**"/>-->
+
+        <!--</mvc:interceptor>-->
+    <!--</mvc:interceptors>-->
+
     <context:component-scan base-package="cn.chenjianlink.blog.controller"/>
     <mvc:annotation-driven/>
     <bean

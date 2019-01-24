@@ -31,6 +31,16 @@
         <url-pattern>/*</url-pattern>
     </filter-mapping>
 
+    <!--对jsp页面直接访问的过滤-->
+    <filter>
+        <filter-name>JspFilter</filter-name>
+        <filter-class>cn.chenjianlink.blog.filter.JspFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>JspFilter</filter-name>
+        <url-pattern>*.jsp</url-pattern>
+    </filter-mapping>
+
     <!-- springmvc的前端控制器 -->
     <servlet>
         <servlet-name>blog</servlet-name>
@@ -52,12 +62,12 @@
     </servlet-mapping>
 
     <!--错误跳转页面-->
-    <!--<error-page>-->
-        <!--<error-code>404</error-code>-->
-        <!--<location>/jsp/foreground/error/error404.jsp</location>-->
-    <!--</error-page>-->
-    <!--<error-page>-->
-        <!--<error-code>500</error-code>-->
-        <!--<location>/jsp/foreground/error/error500.jsp</location>-->
-    <!--</error-page>-->
+    <error-page>
+        <error-code>404</error-code>
+        <location>/jsp/foreground/error/error404.jsp</location>
+    </error-page>
+    <error-page>
+        <error-code>500</error-code>
+        <location>/jsp/foreground/error/error500.jsp</location>
+    </error-page>
 </web-app>
