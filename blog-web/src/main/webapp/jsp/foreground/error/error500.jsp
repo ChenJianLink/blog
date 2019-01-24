@@ -12,7 +12,7 @@
 <!-- Head -->
 <head>
 
-    <title>局外人之个人空间</title>
+    <title>哦豁，出错了</title>
 
     <!-- Meta-Tags -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
