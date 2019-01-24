@@ -19,7 +19,8 @@
     }
 </script>
 <body style="overflow: auto;" onload="javascript:countDown(5);">
-<EMBED src="${pageContext.request.contextPath}/static/music/op.mp3" width=0 height=0 type="audio/mpeg"  autostart="true" hidden="true">
+<EMBED src="${pageContext.request.contextPath}/static/music/op.mp3" width=0 height=0 type="audio/mpeg" autostart="true"
+       hidden="true">
 <div class="scene">
     <svg
             version="1.1"
@@ -31,7 +32,7 @@
             viewBox="0 0 38 38"
             preserveAspectRatio="xMinYMin meet"
     >
-    <text x="14" y="21" font-family="Monaco" font-size="2px" style="letter-spacing:0.6" fill="white">LOADING
+    <text x="16" y="21" font-family="Monaco" font-size="2px" style="letter-spacing:normal" fill="white">LOADING
         <animate
                 attributeName="opacity"
                 values="0;1;0" dur="1.8s"
