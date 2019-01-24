@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
- * 后台jsp页面跳转显示
+ * 后台jsp页面跳转显示Controller
  */
 @Controller
 public class ForwordController {
