@@ -32,7 +32,7 @@
             viewBox="0 0 38 38"
             preserveAspectRatio="xMinYMin meet"
     >
-    <text x="16" y="21" font-family="Monaco" font-size="2px" style="letter-spacing:normal" fill="white">LOADING
+    <text x="15.6" y="21" font-family="Monaco" font-size="2px" style="letter-spacing:normal" fill="white">LOADING
         <animate
                 attributeName="opacity"
                 values="0;1;0" dur="1.8s"
