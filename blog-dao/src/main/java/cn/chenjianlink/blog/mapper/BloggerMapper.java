@@ -1,0 +1,8 @@
+package cn.chenjianlink.blog.mapper;
+
+import cn.chenjianlink.blog.pojo.Blogger;
+
+public interface BloggerMapper {
+    //前台博主信息查询
+    Blogger selectSome() throws Exception;
+}

@@ -6,6 +6,6 @@
 		关于博主
 	</div>
 	<div style="padding: 10px">
-	   ${blogger.proFile }
+	   ${blogger.profile }
 	</div>
 </div>
