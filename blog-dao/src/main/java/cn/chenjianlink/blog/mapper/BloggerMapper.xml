@@ -7,4 +7,8 @@
     <select id="selectSome" resultType="cn.chenjianlink.blog.pojo.Blogger">
         SELECT profile, nickname, sign, imageName FROM t_blogger WHERE id = 1
     </select>
+    <!--查询所有信息-->
+    <select id="selectAll" resultType="cn.chenjianlink.blog.pojo.Blogger">
+        SELECT * FROM t_blogger WHERE id = 1
+    </select>
 </mapper>

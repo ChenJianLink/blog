@@ -22,4 +22,10 @@ public class BloggerServiceImpl implements BloggerService {
         Blogger blogger = bloggerMapper.selectSome();
         return blogger;
     }
+
+    @Override
+    public Blogger showBloggerAll() throws Exception {
+        Blogger blogger = bloggerMapper.selectAll();
+        return blogger;
+    }
 }
