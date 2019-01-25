@@ -29,7 +29,6 @@
         body {
             color: #0E2D5F;
             font-family: 'Quicksand', sans-serif;
-            text-align: center;
         }
     </style>
 </head>

@@ -7,6 +7,7 @@
 }
 
 .data_list .data_list_title {
+    text-align: center;
     font-size: 15px;
     font-weight: bold;
     background-color: rgba(88, 88, 88, 0.5);
@@ -39,6 +40,7 @@
 }
 
 .data_list .diary_datas ul li {
+    text-align: center;
     margin-top: 15px;
 }
 
@@ -52,7 +54,7 @@
 }
 
 .data_list .datas ul li {
-    margin-top: 10px;
+    margin: 10px;
 }
 
 .data_list .data_list_title .datas {
@@ -200,9 +202,7 @@
     -webkit-transform: translate3d(-50%, -50%, 0);
     transform: translate3d(-50%, -50%, 0);
     z-index: 99;
-    text-align: center;
     font-weight: 300;
-    text-transform: uppercase;
     padding: 1em 2em;
     line-height: 1.5;
 }
