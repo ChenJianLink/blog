@@ -46,4 +46,7 @@
 
     <!--全局异常处理器-->
     <bean class="cn.chenjianlink.blog.Exception.BlogExceptionResolver"/>
+
+    <!--配置封装前台重复代码的类-->
+    <bean id="mainTempMethod" class="cn.chenjianlink.blog.method.MainTempMethod"/>
 </beans>
