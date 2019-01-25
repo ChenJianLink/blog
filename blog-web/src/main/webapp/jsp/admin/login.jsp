@@ -184,7 +184,7 @@
 <body>
 <DIV class="top_div">
 </DIV>
-<form action="${pageContext.request.contextPath}/blogger/login.do" method="post" onsubmit="return checkForm()">
+<form action="${pageContext.request.contextPath}/admin/blogger/login.do" method="post" onsubmit="return checkForm()">
     <DIV style="background: rgb(255, 255, 255); margin: -100px auto auto; border: 1px solid rgb(231, 231, 231); border-image: none; width: 400px; height: 200px; text-align: center;">
         <DIV style="width: 165px; height: 96px; position: absolute;">
             <DIV class="tou">

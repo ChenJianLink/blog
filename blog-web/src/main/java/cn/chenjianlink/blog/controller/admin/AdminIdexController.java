@@ -17,7 +17,7 @@ public class AdminIdexController {
     @Resource
     private BloggerService bloggerService;
 
-    @RequestMapping("/admin/admin-index")
+    @RequestMapping("/admin/blogger/admin-index")
     public String adminIndex(Model model) throws Exception {
         Blogger blogger = bloggerService.showBloggerAll();
         model.addAttribute("currentUser", blogger);
