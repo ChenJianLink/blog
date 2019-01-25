@@ -209,10 +209,8 @@
                 <SPAN style="float: left;"><a href="${pageContext.request.contextPath}/index.html">局外人之个人空间</a></SPAN>
                 <span><font color="red" id="error">${errorInfo }</font></span>
                 <SPAN style="float: right;">
-	              <input type="submit"
-                         style="background: rgb(0, 142, 173); padding: 7px 10px; border-radius: 4px; border: 1px solid rgb(26, 117, 152); border-image: none; color: rgb(255, 255, 255); font-weight: bold;"
-                         value="登录"/>
-	         </SPAN>
+	              <input type="submit" style="background: rgb(0, 142, 173); padding: 7px 10px; border-radius: 4px; border: 1px solid rgb(26, 117, 152); border-image: none; color: rgb(255, 255, 255); font-weight: bold;" value="登录"/>
+	            </SPAN>
             </P>
         </DIV>
     </DIV>
