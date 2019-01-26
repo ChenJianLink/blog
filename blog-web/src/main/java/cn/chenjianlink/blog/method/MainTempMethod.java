@@ -21,7 +21,7 @@ public class MainTempMethod {
     //显示友情链接，博主信息，日志分类的代码
     public void showMainTemp(Model model) throws Exception {
         //博主信息查询
-        Blogger blogger = bloggerService.showBlogger();
+        Blogger blogger = bloggerService.findBlogger();
         model.addAttribute("blogger", blogger);
         //友情链接查询
         List<Link> linkList = linkService.getLinkList();

@@ -27,19 +27,18 @@
     <script type="text/javascript">
 
         function submitData() {
-            debugger;
             var nickName = $("#nickName").val();
             var sign = $("#sign").val();
-            var proFile = UE.getEditor('proFile').getContent();
+            var profile = UE.getEditor('profile').getContent();
 
             if (nickName == null || nickName == '') {
                 alert("请输入昵称！");
             } else if (sign == null || sign == '') {
                 alert("请输入个性签名！");
-            } else if (proFile == null || proFile == '') {
+            } else if (profile == null || profile == '') {
                 alert("请输入个性简介！");
             } else {
-                $("#pF").val(proFile);
+                $("#pF").val(profile);
                 $('#form1').submit();
             }
         }
@@ -75,8 +74,8 @@
             <tr>
                 <td valign="top">个人简介：</td>
                 <td>
-                    <script id="proFile" type="text/plain" style="width:100%;height:500px;"></script>
-                    <input type="hidden" id="pF" name="proFile"/>
+                    <script id="profile" type="text/plain" style="width:100%;height:500px;"></script>
+                    <input type="hidden" id="pF" name="profile"/>
                 </td>
             </tr>
             <tr>
@@ -94,7 +93,7 @@
 
     //实例化编辑器
     //建议使用工厂方法getEditor创建和引用编辑器实例，如果在某个闭包下引用该编辑器，直接调用UE.getEditor('editor')就能拿到相关的实例
-    var ue = UE.getEditor('proFile');
+    var ue = UE.getEditor('profile');
 
     ue.addListener("ready", function () {
         //通过ajax请求数据
@@ -109,7 +108,7 @@
                     $("#nickName").val(result.nickName);
                     $("#sign").val(result.sign);
                     $("#nickName").val(result.nickName);
-                    UE.getEditor('proFile').setContent(result.profile);
+                    UE.getEditor('profile').setContent(result.profile);
                 }
             }
         );

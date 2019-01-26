@@ -19,8 +19,9 @@ public class AdminIdexController {
 
     @RequestMapping("/admin/blogger/admin-index")
     public String adminIndex(Model model) throws Exception {
-        Blogger blogger = bloggerService.showBloggerAll();
+        Blogger blogger = bloggerService.findBloggerAll();
         model.addAttribute("currentUser", blogger);
         return "admin/main";
     }
+
 }

@@ -1,16 +1,24 @@
 package cn.chenjianlink.blog.controller.admin;
 
+import cn.chenjianlink.blog.common.utils.BlogResult;
+import cn.chenjianlink.blog.common.utils.ResponseUtil;
 import cn.chenjianlink.blog.pojo.Blogger;
 import cn.chenjianlink.blog.service.BloggerService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.File;
+import java.util.UUID;
 
 /**
- * 博主信息管理Controller
+ * 后台博主信息管理Controller
  */
 @Controller
 public class BloggerManageController {
@@ -21,7 +29,33 @@ public class BloggerManageController {
     @RequestMapping(value = "/admin/blogger/find", method = RequestMethod.POST)
     @ResponseBody
     public Blogger findBloggerInfo() throws Exception {
-        Blogger blogger = bloggerService.showBloggerAll();
+        Blogger blogger = bloggerService.findBloggerAll();
         return blogger;
+    }
+
+    //修改个人信息
+    @RequestMapping(value = "/admin/blogger/save", method = RequestMethod.POST)
+    public void editBloggerInfo(Blogger blogger, @RequestParam("imageFile") MultipartFile imageFile, HttpServletRequest request, HttpServletResponse response) throws Exception {
+        //判断是否有图片上传
+        if (!imageFile.isEmpty()) {
+            String path = request.getServletContext().getRealPath("/") + "static/userImages/";
+            //原始文件名称
+            String pictureName = imageFile.getOriginalFilename();
+            //设置新文件名
+            String newPictureName = UUID.randomUUID().toString() + pictureName.substring(pictureName.lastIndexOf("."));
+            //上传图片
+            File uploadPic = new File(path + newPictureName);
+            if (uploadPic.exists()) {
+                uploadPic.mkdirs();
+            }
+            //向磁盘写文件
+            imageFile.transferTo(uploadPic);
+            //将图片名称写入pojo
+            blogger.setImageName(newPictureName);
+        }
+        BlogResult result = bloggerService.editBloggerInfo(blogger);
+        StringBuffer responseResult = new StringBuffer();
+        responseResult.append("<script language='javascript'>alert('" + result.getMsg() + "！');</script>");
+        ResponseUtil.write(response, responseResult);
     }
 }
