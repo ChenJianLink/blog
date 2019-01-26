@@ -27,8 +27,8 @@
 
 .data_list .user_image img {
     padding-top: 10px;
-    width: 200px;;
-    height: 250px;;
+    width: 200px;
+    height: auto;
 }
 
 .data_list .nickName, .data_list .userSign {
