@@ -34,10 +34,15 @@
             </if>
         </trim>
     </sql>
-    <!--查询链接列表-->
+    <!--查询链接全部信息-->
     <select id="selectAll" resultType="cn.chenjianlink.blog.pojo.Link">
         SELECT
         <include refid="Base_List"/>
+        FROM t_link ORDER BY orderNo
+    </select>
+    <!--查询所有链接-->
+    <select id="selectList" resultType="cn.chenjianlink.blog.pojo.Link">
+        SELECT linkName, linkUrl
         FROM t_link ORDER BY orderNo
     </select>
     <!--插入新的链接信息-->

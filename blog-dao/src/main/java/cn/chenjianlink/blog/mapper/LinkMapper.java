@@ -8,8 +8,11 @@ import java.util.List;
  * 友情链接mapper
  */
 public interface LinkMapper {
-    //查询所有链接
+    //查询链接全部信息
     List<Link> selectAll() throws Exception;
+
+    //查询全部链接
+    List<Link> selectList() throws Exception;
 
     //插入新链接
     int insert(Link link) throws Exception;
