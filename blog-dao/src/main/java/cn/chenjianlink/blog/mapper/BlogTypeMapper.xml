@@ -9,7 +9,12 @@
         <result property="blogCount" column="blogCount"/>
         <result property="orderNo" column="orderNo"/>
     </resultMap>
+    <!--关联blog查询所有blogtype-->
     <select id="selectAll" resultMap="BlogTypeResult">
-        SELECT blogtype.id, blogtype.typeName, count(blog.id) AS blogCount FROM t_blogtype blogtype LEFT JOIN t_blog blog ON blog.typeId = blogtype.id GROUP BY blogtype.typeName,blogtype.id ORDER BY blogtype.orderNo;
+        SELECT blogtype.id, blogtype.typeName, count(blog.id) AS blogCount FROM t_blogtype blogtype LEFT JOIN t_blog blog ON blog.typeId = blogtype.id GROUP BY blogtype.typeName,blogtype.id ORDER BY blogtype.orderNo
+    </select>
+    <!--查询所有blogtype-->
+    <select id="selectList" resultMap="BlogTypeResult">
+        SELECT * FROM t_blogtype ORDER BY orderNo
     </select>
 </mapper>
