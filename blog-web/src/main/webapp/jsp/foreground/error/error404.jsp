@@ -12,7 +12,7 @@
 <!-- Head -->
 <head>
 
-    <title>哎呀，找不到诶</title>
+    <title>哦豁，出错了</title>
 
     <!-- Meta-Tags -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -42,7 +42,7 @@
 <h1>局外人 <span>之</span> 个人空间</h1>
 <div class="w3layout-agileits">
     <h2>404 </h2>
-    <h3>您访问的页面不存在</h3>
+    <h3>您寻找的圣物不存在</h3>
     <p>Something went wrong</p>
     <p>Go back to your home page</p>
     <a href="${pageContext.request.contextPath}/index.html"><i class="fa fa-angle-double-left" aria-hidden="true"></i>Return

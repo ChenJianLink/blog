@@ -33,15 +33,10 @@ public class BloggerServiceImpl implements BloggerService {
 
     //编辑博主个人信息
     @Override
-    public BlogResult editBloggerInfo(Blogger blogger) {
-        try {
-            //清除密码
-            blogger.setPassword(null);
-            bloggerMapper.update(blogger);
-            return BlogResult.build(1, "修改成功");
-        } catch (Exception e) {
-            e.printStackTrace();
-            return BlogResult.build(0, "修改失败");
-        }
+    public BlogResult editBloggerInfo(Blogger blogger) throws Exception {
+        //清除密码
+        blogger.setPassword(null);
+        bloggerMapper.update(blogger);
+        return BlogResult.build(1, "修改成功");
     }
 }

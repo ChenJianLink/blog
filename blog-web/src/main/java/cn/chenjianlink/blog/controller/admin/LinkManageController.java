@@ -41,9 +41,16 @@ public class LinkManageController {
      */
     @RequestMapping(value = "/admin/link/save", method = RequestMethod.POST)
     @ResponseBody
-    public BlogResult saveLink(Link link) throws Exception {
-        BlogResult result = linkService.saveLink(link);
-        return result;
+    public BlogResult saveLink(Link link) {
+        BlogResult result = null;
+        try {
+            result = linkService.saveLink(link);
+            return result;
+        } catch (Exception e) {
+            e.printStackTrace();
+            result = new BlogResult(0, null, null);
+            return result;
+        }
     }
 
     /**
@@ -56,22 +63,38 @@ public class LinkManageController {
      */
     @RequestMapping(value = "/admin/link/edit", method = RequestMethod.POST)
     @ResponseBody
-    public BlogResult editLink(Integer id, Link link) throws Exception {
-        BlogResult result = linkService.editLink(id, link);
-        return result;
+    public BlogResult editLink(Integer id, Link link) {
+        BlogResult result = null;
+        try {
+            result = linkService.editLink(id, link);
+            return result;
+        } catch (Exception e) {
+            e.printStackTrace();
+            result = new BlogResult(0, null, null);
+            return result;
+        }
+
     }
 
     /**
      * 删除友情链接
+     *
      * @param ids
      * @return
      * @throws Exception
      */
     @RequestMapping(value = "/admin/link/delete", method = RequestMethod.POST)
     @ResponseBody
-    public BlogResult deleteLink(Integer[] ids) throws Exception{
-        BlogResult result = linkService.deleteLink(ids);
-        return result;
+    public BlogResult deleteLink(Integer[] ids) {
+        BlogResult result = null;
+        try {
+            result = linkService.deleteLink(ids);
+            return result;
+        } catch (Exception e) {
+            e.printStackTrace();
+            result = new BlogResult(0, null, null);
+            return result;
+        }
     }
 
 }

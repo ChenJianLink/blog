@@ -36,26 +36,33 @@ public class BloggerManageController {
     //修改个人信息
     @RequestMapping(value = "/admin/blogger/save", method = RequestMethod.POST)
     public void editBloggerInfo(Blogger blogger, @RequestParam("imageFile") MultipartFile imageFile, HttpServletRequest request, HttpServletResponse response) throws Exception {
-        //判断是否有图片上传
-        if (!imageFile.isEmpty()) {
-            String path = request.getServletContext().getRealPath("/") + "static/userImages/";
-            //原始文件名称
-            String pictureName = imageFile.getOriginalFilename();
-            //设置新文件名
-            String newPictureName = UUID.randomUUID().toString() + pictureName.substring(pictureName.lastIndexOf("."));
-            //上传图片
-            File uploadPic = new File(path + newPictureName);
-            if (uploadPic.exists()) {
-                uploadPic.mkdirs();
-            }
-            //向磁盘写文件
-            imageFile.transferTo(uploadPic);
-            //将图片名称写入pojo
-            blogger.setImageName(newPictureName);
-        }
-        BlogResult result = bloggerService.editBloggerInfo(blogger);
         StringBuffer responseResult = new StringBuffer();
-        responseResult.append("<script language='javascript'>alert('" + result.getMsg() + "！');</script>");
-        ResponseUtil.write(response, responseResult);
+        try {
+            //判断是否有图片上传
+            if (!imageFile.isEmpty()) {
+                String path = request.getServletContext().getRealPath("/") + "static/userImages/";
+                //原始文件名称
+                String pictureName = imageFile.getOriginalFilename();
+                //设置新文件名
+                String newPictureName = UUID.randomUUID().toString() + pictureName.substring(pictureName.lastIndexOf("."));
+                //上传图片
+                File uploadPic = new File(path + newPictureName);
+                if (uploadPic.exists()) {
+                    uploadPic.mkdirs();
+                }
+                //向磁盘写文件
+                imageFile.transferTo(uploadPic);
+                //将图片名称写入pojo
+                blogger.setImageName(newPictureName);
+            }
+            BlogResult result = bloggerService.editBloggerInfo(blogger);
+            responseResult.append("<script language='javascript'>alert('" + result.getMsg() + "！');</script>");
+            ResponseUtil.write(response, responseResult);
+        } catch (Exception e) {
+            e.printStackTrace();
+            responseResult.append("<script language='javascript'>alert('修改失败！');</script>");
+            ResponseUtil.write(response, responseResult);
+        }
+
     }
 }

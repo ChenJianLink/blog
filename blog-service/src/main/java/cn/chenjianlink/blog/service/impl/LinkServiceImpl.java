@@ -30,7 +30,7 @@ public class LinkServiceImpl implements LinkService {
 
     //分页查询友情链接
     @Override
-    public EasyUIResult getLinkList(Integer page, Integer rows) throws Exception{
+    public EasyUIResult getLinkList(Integer page, Integer rows) throws Exception {
         //设置分页信息
         PageHelper.startPage(page, rows);
         //查询
@@ -61,10 +61,11 @@ public class LinkServiceImpl implements LinkService {
         return BlogResult.ok();
     }
 
+    //删除链接
     @Override
     public BlogResult deleteLink(Integer[] ids) throws Exception {
         int[] id = new int[ids.length];
-        for (int i = 0; i < ids.length; i++){
+        for (int i = 0; i < ids.length; i++) {
             id[i] = ids[i];
         }
         linkMapper.delete(id);

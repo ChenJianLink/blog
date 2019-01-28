@@ -22,7 +22,7 @@ public class BlogExceptionResolver implements HandlerExceptionResolver {
         LOGGER.error("系统内部错误");
         //显示错误页面
         ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("/foreground/error/error500");
+        modelAndView.setViewName("/foreground/error/error404");
         return modelAndView;
     }
 }
