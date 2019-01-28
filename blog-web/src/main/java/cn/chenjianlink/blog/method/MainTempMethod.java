@@ -31,7 +31,7 @@ public class MainTempMethod {
         List<Link> linkList = linkService.getLinkList();
         model.addAttribute("linkList", linkList);
         //博客类型查询
-        List<BlogType> blogTypeList = blogTypeService.getBlogTypeList();
+        List<BlogType> blogTypeList = blogTypeService.getBlogTypeCountList();
         model.addAttribute("blogTypeCountList", blogTypeList);
     }
 }
