@@ -24,7 +24,7 @@ public class LinkServiceImpl implements LinkService {
     //查询所有链接
     @Override
     public List<Link> getLinkList() throws Exception {
-        List<Link> linkList = linkMapper.selectAll();
+        List<Link> linkList = linkMapper.selectList();
         return linkList;
     }
 
