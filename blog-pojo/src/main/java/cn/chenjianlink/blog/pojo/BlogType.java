@@ -9,6 +9,15 @@ public class BlogType implements Serializable {
     private Integer id;
     private String typeName;
     private Integer orderNo;
+    private Integer blogCount;
+
+    public Integer getBlogCount() {
+        return blogCount;
+    }
+
+    public void setBlogCount(Integer blogCount) {
+        this.blogCount = blogCount;
+    }
 
     public Integer getId() {
         return id;

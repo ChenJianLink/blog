@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.chenjianlink.blog.mapper.BlogTypeMapper">
+    <resultMap id="BlogTypeResult" type="cn.chenjianlink.blog.pojo.BlogType">
+        <result property="id" column="id"/>
+        <result property="typeName" column="typeName"/>
+        <result property="blogCount" column="blogCount"/>
+        <result property="orderNo" column="orderNo"/>
+    </resultMap>
+    <select id="selectAll" resultMap="BlogTypeResult">
+        SELECT blogtype.id, blogtype.typeName, count(blog.id) AS blogCount FROM t_blogtype blogtype LEFT JOIN t_blog blog ON blog.typeId = blogtype.id GROUP BY blogtype.typeName,blogtype.id ORDER BY blogtype.orderNo;
+    </select>
+</mapper>
