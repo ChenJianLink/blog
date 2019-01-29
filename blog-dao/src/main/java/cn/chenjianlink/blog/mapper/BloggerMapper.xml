@@ -23,7 +23,7 @@
                 password = #{password,jdbcType=VARCHAR},
             </if>
             <if test="profile != null and profile!=''">
-                profile = #{profile,jdbcType=TEXT},
+                profile = #{profile},
             </if>
             <if test="nickName != null and nickName!=''">
                 nickName = #{nickName,jdbcType=VARCHAR},
