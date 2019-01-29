@@ -43,7 +43,8 @@
     <!--查询所有链接-->
     <select id="selectList" resultType="cn.chenjianlink.blog.pojo.Link">
         SELECT linkName, linkUrl
-        FROM t_link ORDER BY orderNo
+        FROM t_link
+        ORDER BY orderNo
     </select>
     <!--插入新的链接信息-->
     <insert id="insert" parameterType="cn.chenjianlink.blog.pojo.Link">
@@ -61,9 +62,17 @@
     <!--更新链接信息-->
     <update id="update" parameterType="cn.chenjianlink.blog.pojo.Link">
         UPDATE t_link
-        SET linkName = #{linkName,jdbcType=VARCHAR},
-            linkUrl = #{linkUrl,jdbcType=VARCHAR},
-            orderNo = #{orderNo,jdbcType=INTEGER}
+        <set>
+            <if test="linkName != null and linkName!=''">
+                linkName = #{linkName,jdbcType=VARCHAR},
+            </if>
+            <if test="linkUrl != null and linkUrl!=''">
+                linkUrl = #{linkUrl,jdbcType=VARCHAR},
+            </if>
+            <if test="orderNo != null and orderNo!=''">
+                orderNo = #{orderNo,jdbcType=INTEGER}
+            </if>
+        </set>
         WHERE id = #{id,jdbcType=INTEGER}
     </update>
     <delete id="delete" parameterType="int[]">
