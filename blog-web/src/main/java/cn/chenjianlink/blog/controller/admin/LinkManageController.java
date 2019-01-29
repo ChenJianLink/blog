@@ -48,7 +48,7 @@ public class LinkManageController {
             return result;
         } catch (Exception e) {
             e.printStackTrace();
-            result = new BlogResult(0, null, null);
+            result = new BlogResult(0, null);
             return result;
         }
     }
@@ -70,7 +70,7 @@ public class LinkManageController {
             return result;
         } catch (Exception e) {
             e.printStackTrace();
-            result = new BlogResult(0, null, null);
+            result = new BlogResult(0, null);
             return result;
         }
 
@@ -92,7 +92,7 @@ public class LinkManageController {
             return result;
         } catch (Exception e) {
             e.printStackTrace();
-            result = new BlogResult(0, null, null);
+            result = new BlogResult(0, null);
             return result;
         }
     }

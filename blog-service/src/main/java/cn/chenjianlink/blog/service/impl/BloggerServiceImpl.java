@@ -37,6 +37,6 @@ public class BloggerServiceImpl implements BloggerService {
         //清除密码
         blogger.setPassword(null);
         bloggerMapper.update(blogger);
-        return BlogResult.build(1, "修改成功");
+        return BlogResult.ok();
     }
 }
