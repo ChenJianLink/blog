@@ -5,11 +5,15 @@
 <mapper namespace="cn.chenjianlink.blog.mapper.BloggerMapper">
     <!--查询部分信息-->
     <select id="selectSome" resultType="cn.chenjianlink.blog.pojo.Blogger">
-        SELECT profile, nickName, sign, imageName FROM t_blogger WHERE id = 1
+        SELECT profile, nickName, sign, imageName
+        FROM t_blogger
+        WHERE id = 1
     </select>
     <!--查询所有信息-->
     <select id="selectAll" resultType="cn.chenjianlink.blog.pojo.Blogger">
-        SELECT * FROM t_blogger WHERE id = 1
+        SELECT *
+        FROM t_blogger
+        WHERE id = 1
     </select>
     <!--修改个人信息-->
     <update id="update" parameterType="cn.chenjianlink.blog.pojo.Blogger">
@@ -19,7 +23,7 @@
                 password = #{password,jdbcType=VARCHAR},
             </if>
             <if test="profile != null and profile!=''">
-                profile = #{profile},
+                profile = #{profile,jdbcType=TEXT},
             </if>
             <if test="nickName != null and nickName!=''">
                 nickName = #{nickName,jdbcType=VARCHAR},
