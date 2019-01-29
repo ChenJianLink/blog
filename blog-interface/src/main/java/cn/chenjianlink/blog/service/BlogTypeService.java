@@ -1,5 +1,6 @@
 package cn.chenjianlink.blog.service;
 
+import cn.chenjianlink.blog.common.utils.BlogResult;
 import cn.chenjianlink.blog.common.utils.EasyUIResult;
 import cn.chenjianlink.blog.pojo.BlogType;
 
@@ -11,4 +12,13 @@ public interface BlogTypeService {
 
     //分页查询所有博客类别
     EasyUIResult getBlogTypeList(Integer page, Integer rows) throws Exception;
+
+    //添加博客类别
+    BlogResult addBlogType(BlogType blogType) throws Exception;
+
+    //修改博客类别
+    BlogResult editBlogType(Integer id, BlogType blogType) throws Exception;
+
+    //删除博客类别
+    BlogResult deleteBlogType(Integer[] ids) throws Exception;
 }

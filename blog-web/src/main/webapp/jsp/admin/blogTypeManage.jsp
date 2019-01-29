@@ -58,7 +58,7 @@
 		 var row=selectedRows[0];
 		 $("#dlg").dialog("open").dialog("setTitle","编辑博客类别信息");
 		 $("#fm").form("load",row);
-		 url="${pageContext.request.contextPath}/admin/blogType/save.do?id="+row.id;
+		 url="${pageContext.request.contextPath}/admin/blogType/edit.do?id="+row.id;
 	 }
 	
 	function saveBlogType(){

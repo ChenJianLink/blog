@@ -11,10 +11,62 @@
     </resultMap>
     <!--关联blog查询所有blogtype-->
     <select id="selectAll" resultMap="BlogTypeResult">
-        SELECT blogtype.id, blogtype.typeName, count(blog.id) AS blogCount FROM t_blogtype blogtype LEFT JOIN t_blog blog ON blog.typeId = blogtype.id GROUP BY blogtype.typeName,blogtype.id ORDER BY blogtype.orderNo
+        SELECT blogtype.id, blogtype.typeName, count(blog.id) AS blogCount
+        FROM t_blogtype blogtype
+                 LEFT JOIN t_blog blog ON blog.typeId = blogtype.id
+        GROUP BY blogtype.typeName, blogtype.id
+        ORDER BY blogtype.orderNo
     </select>
     <!--查询所有blogtype-->
     <select id="selectList" resultMap="BlogTypeResult">
-        SELECT * FROM t_blogtype ORDER BY orderNo
+        SELECT *
+        FROM t_blogtype
+        ORDER BY orderNo
+    </select>
+    <!--插入新的blogtype-->
+    <insert id="insert" parameterType="cn.chenjianlink.blog.pojo.BlogType">
+        INSERT INTO t_blogtype (typeName, orderNo)
+        VALUES (#{typeName, jdbcType = VARCHAR}, #{orderNo,jdbcType = INTEGER})
+    </insert>
+    <!--更新原有的blogtype-->
+    <update id="update" parameterType="cn.chenjianlink.blog.pojo.BlogType">
+        UPDATE t_blogtype
+        <set>
+            <if test="typeName != null and typeName!=''">
+                typeName = #{typeName,jdbcType = VARCHAR},
+            </if>
+            <if test="orderNo != null and orderNo!=''">
+                orderNo = #{orderNo,jdbcType = INTEGER}
+            </if>
+        </set>
+        WHERE id = #{id,jdbcType = INTEGER}
+    </update>
+    <!--根据id查询blogtype-->
+    <select id="selectByPrimaryKey" parameterType="int" resultMap="BlogTypeResult">
+        SELECT *
+        FROM t_blogtype
+        WHERE id = #{id,jdbcType = INTEGER}
+    </select>
+    <!--删除blogtype-->
+    <delete id="delete" parameterType="int[]">
+        DELETE FROM t_blogtype
+        WHERE id IN
+        <if test="array != null">
+            <foreach collection="array" item="id" open="(" separator="," close=")">
+                #{id,jdbcType=INTEGER}
+            </foreach>
+        </if>
+    </delete>
+    <!--根据id关联blog查询所有blogtype-->
+    <select id="selectTypeCount" parameterType="int[]" resultMap="BlogTypeResult">
+        SELECT blogtype.id, count(blog.id) AS blogCount
+        FROM t_blogtype blogtype
+        LEFT JOIN t_blog blog ON (blog.typeId = blogtype.id) WHERE blogtype.id IN
+        <if test="array != null">
+            <foreach collection="array" item="id" open="(" separator="," close=")">
+                #{id,jdbcType=INTEGER}
+            </foreach>
+        </if>
+        GROUP BY blogtype.id
     </select>
 </mapper>
