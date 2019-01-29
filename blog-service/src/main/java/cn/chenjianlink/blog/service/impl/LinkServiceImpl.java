@@ -53,10 +53,20 @@ public class LinkServiceImpl implements LinkService {
     @Override
     public BlogResult editLink(Integer id, Link link) throws Exception {
         Link oldlink = linkMapper.selectByPrimaryKey(id);
+        if (oldlink == null) {
+            return BlogResult.build(0, null);
+        }
         //数据更新
-        oldlink.setLinkName(link.getLinkName());
-        oldlink.setLinkUrl(link.getLinkUrl());
-        oldlink.setOrderNo(link.getOrderNo());
+        //非法输入判断
+        if (!link.getLinkName().isEmpty() && link.getLinkName().trim().length() <= 0) {
+            oldlink.setLinkName(link.getLinkName());
+        }
+        if (!link.getLinkUrl().isEmpty() && link.getLinkUrl().trim().length() <= 0) {
+            oldlink.setLinkUrl(link.getLinkUrl());
+        }
+        if (link.getOrderNo() != null) {
+            oldlink.setOrderNo(link.getOrderNo());
+        }
         linkMapper.update(oldlink);
         return BlogResult.ok();
     }
