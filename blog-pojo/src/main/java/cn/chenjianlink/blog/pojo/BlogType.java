@@ -7,8 +7,11 @@ import java.io.Serializable;
  */
 public class BlogType implements Serializable {
     private Integer id;
+    //类别名称
     private String typeName;
+    //排序序号
     private Integer orderNo;
+    //分类下博客数量
     private Integer blogCount;
 
     public Integer getBlogCount() {
