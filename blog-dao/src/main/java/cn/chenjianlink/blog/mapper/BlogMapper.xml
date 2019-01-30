@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.chenjianlink.blog.mapper.BlogMapper">
+    <resultMap id="BlogResult" type="cn.chenjianlink.blog.pojo.Blog">
+        <result property="id" column="id"/>
+        <result property="title" column="title"/>
+        <result property="summary" column="summary"/>
+        <result property="releaseDate" column="releaseDate"/>
+        <result property="clickHit" column="clickHit"/>
+        <result property="replyHit" column="replyHit"/>
+        <result property="content" column="content"/>
+        <result property="keyWord" column="keyWord"/>
+        <association property="blogType" column="typeId"
+                     select="cn.chenjianlink.blog.mapper.BlogTypeMapper.selectByPrimaryKey"></association>
+    </resultMap>
+    <select id="selectList" resultMap="BlogResult">
+        SELECT id, title, releaseDate, typeId
+        FROM t_blog
+    </select>
+</mapper>
