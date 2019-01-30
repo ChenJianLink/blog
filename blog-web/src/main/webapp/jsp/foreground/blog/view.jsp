@@ -128,7 +128,8 @@
     </div>
     <div class="publish_comment">
         <div>
-            <textarea style="width: 100%" rows="3" id="content" name="content" placeholder="来说两句吧..."></textarea>
+            <textarea style="width: 100%;resize: none;" rows="3" id="content" name="content"
+                      placeholder="来说两句吧..."></textarea>
         </div>
         <div class="verCode">
             验证码：<input type="text" value="${imageCode }" name="imageCode" id="imageCode" size="10"

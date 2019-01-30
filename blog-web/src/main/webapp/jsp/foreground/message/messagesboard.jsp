@@ -9,7 +9,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <script type="text/javascript">
 	function loadimage(){
-        //有待解决
 		document.getElementById("randImage").src="${pageContext.request.contextPath}/image.html?"+Math.random();
 	}
 	
@@ -43,7 +42,7 @@
 	</div>
 	<div class="publish_comment">
 			<div>
-				<textarea style="width: 100%" rows="3" id="content" name="content" placeholder="来说两句吧..."></textarea>
+				<textarea style="width: 100%;resize: none;" rows="3" id="content" name="content" placeholder="来说两句吧..."></textarea>
 			</div>
 			<div class="verCode">
 				验证码：<input type="text" value="${imageCode }" name="imageCode"  id="imageCode" size="10" onkeydown= "if(event.keyCode==13)form1.submit()"/>&nbsp;<img onclick="javascript:loadimage();" title="换一张试试" name="randImage" id="randImage" src="${pageContext.request.contextPath}/image.html" width="60" height="20" border="1" align="absmiddle">
