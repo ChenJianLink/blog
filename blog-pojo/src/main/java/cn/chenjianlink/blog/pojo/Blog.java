@@ -2,20 +2,37 @@ package cn.chenjianlink.blog.pojo;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.LinkedList;
+import java.util.List;
 
 /**
  * 博客内容对象
  */
 public class Blog implements Serializable {
+    //博客id
     private Integer id;
+
     private String title;
+    //博客摘要
     private String summary;
+    //发表日期
     private Date releaseDate;
+    //按发表日期分类的日期
+    private Date releaseDateStr;
+    //按发表日期分类的博客总数
+    private Integer blogCount;
+    //点击量
     private Integer clickHit;
+    //评论量
     private Integer replyHit;
+    //博客内容
     private String content;
+    //关键字
     private String keyWord;
-    private Integer typeId;
+    //博客类别
+    private BlogType blogType;
+    //博客中的图片
+    private List<String> imagesList = new LinkedList<>();
 
     public Integer getId() {
         return id;
@@ -81,11 +98,35 @@ public class Blog implements Serializable {
         this.keyWord = keyWord;
     }
 
-    public Integer getTypeId() {
-        return typeId;
+    public BlogType getBlogType() {
+        return blogType;
     }
 
-    public void setTypeId(Integer typeId) {
-        this.typeId = typeId;
+    public void setBlogType(BlogType blogType) {
+        this.blogType = blogType;
+    }
+
+    public List<String> getImagesList() {
+        return imagesList;
+    }
+
+    public void setImagesList(List<String> imagesList) {
+        this.imagesList = imagesList;
+    }
+
+    public Date getReleaseDateStr() {
+        return releaseDateStr;
+    }
+
+    public void setReleaseDateStr(Date releaseDateStr) {
+        this.releaseDateStr = releaseDateStr;
+    }
+
+    public Integer getBlogCount() {
+        return blogCount;
+    }
+
+    public void setBlogCount(Integer blogCount) {
+        this.blogCount = blogCount;
     }
 }
