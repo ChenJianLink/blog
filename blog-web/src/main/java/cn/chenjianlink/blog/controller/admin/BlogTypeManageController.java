@@ -21,7 +21,7 @@ public class BlogTypeManageController {
     private BlogTypeService blogTypeService;
 
     //展示博客类别列表
-    @RequestMapping("/admin/blogType/list")
+    @RequestMapping(value = "/admin/blogType/list", method = RequestMethod.POST)
     @ResponseBody
     public EasyUIResult getBlogTypeList(Integer page, Integer rows) throws Exception {
         EasyUIResult result = blogTypeService.getBlogTypeList(page, rows);
@@ -38,7 +38,7 @@ public class BlogTypeManageController {
             return result;
         } catch (Exception e) {
             e.printStackTrace();
-            result = new BlogResult(0,  null);
+            result = new BlogResult(0, null);
             return result;
         }
     }
@@ -68,7 +68,7 @@ public class BlogTypeManageController {
             return result;
         } catch (Exception e) {
             e.printStackTrace();
-            result = new BlogResult(0,  null);
+            result = new BlogResult(0, null);
             return result;
         }
     }

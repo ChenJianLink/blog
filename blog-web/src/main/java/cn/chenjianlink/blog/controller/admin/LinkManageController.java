@@ -26,7 +26,7 @@ public class LinkManageController {
      * @return
      * @throws Exception
      */
-    @RequestMapping("/admin/link/list")
+    @RequestMapping(value = "/admin/link/list", method = RequestMethod.POST)
     @ResponseBody
     public EasyUIResult getLinkList(Integer page, Integer rows) throws Exception {
         EasyUIResult linkList = linkService.getLinkList(page, rows);
