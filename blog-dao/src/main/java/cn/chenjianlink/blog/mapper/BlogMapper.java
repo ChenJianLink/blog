@@ -11,5 +11,6 @@ public interface BlogMapper {
     //后台博客管理列表展示
     List<Blog> selectList() throws Exception;
 
-
+    //根据id查询博客
+    Blog selectByPrimaryKey(int id) throws Exception;
 }

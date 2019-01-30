@@ -30,4 +30,11 @@ public class BlogServiceImpl implements BlogService {
         EasyUIResult result = new EasyUIResult(total, blogList);
         return result;
     }
+
+    //修改博客页面数据回显
+    @Override
+    public Blog findBlogById(Integer id) throws Exception {
+        Blog blog = blogMapper.selectByPrimaryKey(id);
+        return blog;
+    }
 }

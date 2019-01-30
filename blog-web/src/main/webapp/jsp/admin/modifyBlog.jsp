@@ -33,7 +33,7 @@
 		}else if(content==null || content==''){
 			alert("请输入内容！");
 		}else{
-			$.post("${pageContext.request.contextPath}/admin/blog/save.do",{'id':'${param.id}','title':title,'blogType.id':blogTypeId,'content':content,'contentNoTag':UE.getEditor('editor').getContentTxt(),'summary':UE.getEditor('editor').getContentTxt().substr(0,155),'keyWord':keyWord},function(result){
+			$.post("${pageContext.request.contextPath}/admin/blog/edit.do",{'id':'${param.id}','title':title,'blogType.id':blogTypeId,'content':content,'contentNoTag':UE.getEditor('editor').getContentTxt(),'summary':UE.getEditor('editor').getContentTxt().substr(0,155),'keyWord':keyWord},function(result){
 				if(result.success){
 					alert("博客修改成功！");
 				}else{
@@ -69,7 +69,7 @@
    		<tr>
    			<td valign="top">博客内容：</td>
    			<td>
-				   <script id="editor" type="text/plain" style="width:100%;height:500px;"></script>
+				<script id="editor" type="text/plain" style="width:100%;height:500px;"></script>
    			</td>
    		</tr>
    		<tr>
@@ -108,9 +108,7 @@
             }
         );
     });
-    
-   
-</script>
+ </script>
 </body>
 </html>
 

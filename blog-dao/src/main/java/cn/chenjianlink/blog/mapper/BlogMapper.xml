@@ -15,8 +15,15 @@
         <association property="blogType" column="typeId"
                      select="cn.chenjianlink.blog.mapper.BlogTypeMapper.selectByPrimaryKey"></association>
     </resultMap>
+    <!--查询所有博客的部分信息-->
     <select id="selectList" resultMap="BlogResult">
         SELECT id, title, releaseDate, typeId
         FROM t_blog
+    </select>
+    <!--根据id查询博客信息-->
+    <select id="selectByPrimaryKey" parameterType="int" resultMap="BlogResult">
+        SELECT *
+        FROM t_blog
+        WHERE id = #{id,jdbcType=INTEGER}
     </select>
 </mapper>
