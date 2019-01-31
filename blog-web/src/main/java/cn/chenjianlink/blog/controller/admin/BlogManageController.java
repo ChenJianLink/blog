@@ -40,9 +40,13 @@ public class BlogManageController {
     //删除博客
     @RequestMapping(value = "/admin/blog/delete", method = RequestMethod.POST)
     @ResponseBody
-    public BlogResult deleteBlog(@RequestParam(value = "ids", required = true) Integer[] ids) throws Exception {
-        BlogResult result = blogService.deleteBlog(ids);
-        return result;
+    public BlogResult deleteBlog(@RequestParam(value = "ids", required = true) Integer[] ids) {
+        try {
+            BlogResult result = blogService.deleteBlog(ids);
+            return result;
+        } catch (Exception e) {
+            return new BlogResult(0, null);
+        }
     }
 
     //更新博客内容
@@ -60,7 +64,7 @@ public class BlogManageController {
     //增加新博客
     @RequestMapping(value = "/admin/blog/save", method = RequestMethod.POST)
     @ResponseBody
-    public BlogResult addBlog(Blog blog) throws Exception {
+    public BlogResult addBlog(Blog blog) {
         try {
             BlogResult result = blogService.addBlog(blog);
             return result;

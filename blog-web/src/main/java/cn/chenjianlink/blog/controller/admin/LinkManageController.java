@@ -42,9 +42,13 @@ public class LinkManageController {
      */
     @RequestMapping(value = "/admin/link/save", method = RequestMethod.POST)
     @ResponseBody
-    public BlogResult addLink(Link link) throws Exception {
-        BlogResult result = linkService.addLink(link);
-        return result;
+    public BlogResult addLink(Link link) {
+        try {
+            BlogResult result = linkService.addLink(link);
+            return result;
+        } catch (Exception e) {
+            return new BlogResult(0, null);
+        }
     }
 
     /**
@@ -57,9 +61,13 @@ public class LinkManageController {
      */
     @RequestMapping(value = "/admin/link/edit", method = RequestMethod.POST)
     @ResponseBody
-    public BlogResult editLink(@RequestParam(value = "id", required = true) Integer id, Link link) throws Exception {
-        BlogResult result = linkService.editLink(id, link);
-        return result;
+    public BlogResult editLink(@RequestParam(value = "id", required = true) Integer id, Link link) {
+        try {
+            BlogResult result = linkService.editLink(id, link);
+            return result;
+        } catch (Exception e) {
+            return new BlogResult(0, null);
+        }
     }
 
     /**
@@ -71,9 +79,13 @@ public class LinkManageController {
      */
     @RequestMapping(value = "/admin/link/delete", method = RequestMethod.POST)
     @ResponseBody
-    public BlogResult deleteLink(@RequestParam(value = "ids", required = true) Integer[] ids) throws Exception {
-        BlogResult result = linkService.deleteLink(ids);
-        return result;
+    public BlogResult deleteLink(@RequestParam(value = "ids", required = true) Integer[] ids) {
+        try {
+            BlogResult result = linkService.deleteLink(ids);
+            return result;
+        } catch (Exception e) {
+            return new BlogResult(0, null);
+        }
     }
 
 }
