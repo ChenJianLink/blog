@@ -1,7 +1,7 @@
 package cn.chenjianlink.blog.controller.admin;
 
 import cn.chenjianlink.blog.common.utils.BlogResult;
-import cn.chenjianlink.blog.common.utils.EasyUIResult;
+import cn.chenjianlink.blog.common.pojo.EasyUIResult;
 import cn.chenjianlink.blog.pojo.Link;
 import cn.chenjianlink.blog.service.LinkService;
 import org.springframework.stereotype.Controller;
@@ -42,16 +42,9 @@ public class LinkManageController {
      */
     @RequestMapping(value = "/admin/link/save", method = RequestMethod.POST)
     @ResponseBody
-    public BlogResult saveLink(Link link) {
-        BlogResult result = null;
-        try {
-            result = linkService.saveLink(link);
-            return result;
-        } catch (Exception e) {
-            e.printStackTrace();
-            result = new BlogResult(0, null);
-            return result;
-        }
+    public BlogResult addLink(Link link) throws Exception {
+        BlogResult result = linkService.addLink(link);
+        return result;
     }
 
     /**
@@ -64,17 +57,9 @@ public class LinkManageController {
      */
     @RequestMapping(value = "/admin/link/edit", method = RequestMethod.POST)
     @ResponseBody
-    public BlogResult editLink(@RequestParam(value = "id", required = true) Integer id, Link link) {
-        BlogResult result = null;
-        try {
-            result = linkService.editLink(id, link);
-            return result;
-        } catch (Exception e) {
-            e.printStackTrace();
-            result = new BlogResult(0, null);
-            return result;
-        }
-
+    public BlogResult editLink(@RequestParam(value = "id", required = true) Integer id, Link link) throws Exception {
+        BlogResult result = linkService.editLink(id, link);
+        return result;
     }
 
     /**
@@ -86,16 +71,9 @@ public class LinkManageController {
      */
     @RequestMapping(value = "/admin/link/delete", method = RequestMethod.POST)
     @ResponseBody
-    public BlogResult deleteLink(@RequestParam(value = "ids", required = true) Integer[] ids) {
-        BlogResult result = null;
-        try {
-            result = linkService.deleteLink(ids);
-            return result;
-        } catch (Exception e) {
-            e.printStackTrace();
-            result = new BlogResult(0, null);
-            return result;
-        }
+    public BlogResult deleteLink(@RequestParam(value = "ids", required = true) Integer[] ids) throws Exception {
+        BlogResult result = linkService.deleteLink(ids);
+        return result;
     }
 
 }

@@ -1,7 +1,8 @@
 package cn.chenjianlink.blog.service.impl;
 
+import cn.chenjianlink.blog.common.exception.BlogException;
 import cn.chenjianlink.blog.common.utils.BlogResult;
-import cn.chenjianlink.blog.common.utils.EasyUIResult;
+import cn.chenjianlink.blog.common.pojo.EasyUIResult;
 import cn.chenjianlink.blog.mapper.LinkMapper;
 import cn.chenjianlink.blog.pojo.Link;
 import cn.chenjianlink.blog.service.LinkService;
@@ -44,7 +45,7 @@ public class LinkServiceImpl implements LinkService {
 
     //保存新链接
     @Override
-    public BlogResult saveLink(Link link) throws Exception {
+    public BlogResult addLink(Link link) throws Exception {
         linkMapper.insert(link);
         return BlogResult.ok();
     }

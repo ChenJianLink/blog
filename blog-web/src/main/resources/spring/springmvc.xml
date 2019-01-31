@@ -16,10 +16,10 @@
 
     <!--登录拦截器-->
     <!--<mvc:interceptors>-->
-        <!--<mvc:interceptor>-->
-            <!--<mvc:mapping path="/**"/>-->
+    <!--<mvc:interceptor>-->
+    <!--<mvc:mapping path="/**"/>-->
 
-        <!--</mvc:interceptor>-->
+    <!--</mvc:interceptor>-->
     <!--</mvc:interceptors>-->
 
     <context:component-scan base-package="cn.chenjianlink.blog.controller"/>

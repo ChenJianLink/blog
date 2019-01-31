@@ -1,7 +1,7 @@
 package cn.chenjianlink.blog.controller.admin;
 
 import cn.chenjianlink.blog.common.utils.BlogResult;
-import cn.chenjianlink.blog.common.utils.EasyUIResult;
+import cn.chenjianlink.blog.common.pojo.EasyUIResult;
 import cn.chenjianlink.blog.pojo.BlogType;
 import cn.chenjianlink.blog.service.BlogTypeService;
 import org.springframework.stereotype.Controller;
@@ -32,45 +32,25 @@ public class BlogTypeManageController {
     //添加博客类别
     @RequestMapping(value = "/admin/blogType/save", method = RequestMethod.POST)
     @ResponseBody
-    public BlogResult addBlogType(BlogType blogType) {
-        BlogResult result = null;
-        try {
-            result = blogTypeService.addBlogType(blogType);
-            return result;
-        } catch (Exception e) {
-            e.printStackTrace();
-            result = new BlogResult(0, null);
-            return result;
-        }
+    public BlogResult addBlogType(BlogType blogType) throws Exception {
+        BlogResult result = blogTypeService.addBlogType(blogType);
+        return result;
+
     }
 
     //修改博客类别
     @RequestMapping(value = "/admin/blogType/edit", method = RequestMethod.POST)
     @ResponseBody
-    public BlogResult editBlodType(@RequestParam(value = "id", required = true) Integer id, BlogType blogType) {
-        BlogResult result = null;
-        try {
-            result = blogTypeService.editBlogType(id, blogType);
-            return result;
-        } catch (Exception e) {
-            e.printStackTrace();
-            result = new BlogResult(0, null);
-            return result;
-        }
+    public BlogResult editBlodType(@RequestParam(value = "id", required = true) Integer id, BlogType blogType) throws Exception {
+        BlogResult result = blogTypeService.editBlogType(id, blogType);
+        return result;
     }
 
     //删除博客类别
     @RequestMapping(value = "/admin/blogType/delete", method = RequestMethod.POST)
     @ResponseBody
-    public BlogResult deleteBlogType(@RequestParam(value = "ids", required = true) Integer[] ids) {
-        BlogResult result = null;
-        try {
-            result = blogTypeService.deleteBlogType(ids);
-            return result;
-        } catch (Exception e) {
-            e.printStackTrace();
-            result = new BlogResult(0, null);
-            return result;
-        }
+    public BlogResult deleteBlogType(@RequestParam(value = "ids", required = true) Integer[] ids) throws Exception {
+        BlogResult result = blogTypeService.deleteBlogType(ids);
+        return result;
     }
 }

@@ -19,4 +19,7 @@ public interface BlogMapper {
 
     //修改博客内容
     int update(Blog blog) throws Exception;
+
+    //增加新博客
+    int insert(Blog blog) throws Exception;
 }

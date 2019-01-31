@@ -68,4 +68,16 @@
             </if>
         </set>
     </update>
+    <!--添加新博客-->
+    <insert id="insert" parameterType="cn.chenjianlink.blog.pojo.Blog">
+        INSERT INTO t_blog (title, summary, releaseDate, clickHit, replyHit, content, typeId, keyWord)
+        VALUES (#{title,jdbcType=VARCHAR},
+                #{summary,jdbcType=VARCHAR},
+                #{releaseDate,jdbcType=TIMESTAMP},
+                0,
+                0,
+                #{content},
+                #{blogType.id,jdbcType=INTEGER},
+                #{keyWord,jdbcType=VARCHAR})
+    </insert>
 </mapper>

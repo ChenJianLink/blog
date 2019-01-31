@@ -37,34 +37,29 @@ public class BloggerManageController {
     @RequestMapping(value = "/admin/blogger/save", method = RequestMethod.POST)
     public void editBloggerInfo(Blogger blogger, @RequestParam(value = "imageFile", required = false) MultipartFile imageFile, HttpServletRequest request, HttpServletResponse response) throws Exception {
         StringBuffer responseResult = new StringBuffer();
-        try {
-            //判断是否有图片上传
-            if (!imageFile.isEmpty()) {
-                String path = request.getServletContext().getRealPath("/") + "static/userImages/";
-                //原始文件名称
-                String pictureName = imageFile.getOriginalFilename();
-                //设置新文件名
-                String newPictureName = UUID.randomUUID().toString() + pictureName.substring(pictureName.lastIndexOf("."));
-                //上传图片
-                File uploadPic = new File(path + newPictureName);
-                if (uploadPic.exists()) {
-                    uploadPic.mkdirs();
-                }
-                //向磁盘写文件
-                imageFile.transferTo(uploadPic);
-                //将图片名称写入pojo
-                blogger.setImageName(newPictureName);
+        //判断是否有图片上传
+        if (!imageFile.isEmpty()) {
+            String path = request.getServletContext().getRealPath("/") + "static/userImages/";
+            //原始文件名称
+            String pictureName = imageFile.getOriginalFilename();
+            //设置新文件名
+            String newPictureName = UUID.randomUUID().toString() + pictureName.substring(pictureName.lastIndexOf("."));
+            //上传图片
+            File uploadPic = new File(path + newPictureName);
+            if (uploadPic.exists()) {
+                uploadPic.mkdirs();
             }
-            BlogResult result = bloggerService.editBloggerInfo(blogger);
-            if (result.getsuccess() == 1) {
-                responseResult.append("<script language='javascript'>alert('修改成功！');</script>");
-            }
-            ResponseUtil.write(response, responseResult);
-        } catch (Exception e) {
-            e.printStackTrace();
-            responseResult.append("<script language='javascript'>alert('修改失败！');</script>");
-            ResponseUtil.write(response, responseResult);
+            //向磁盘写文件
+            imageFile.transferTo(uploadPic);
+            //将图片名称写入pojo
+            blogger.setImageName(newPictureName);
         }
-
+        BlogResult result = bloggerService.editBloggerInfo(blogger);
+        if (result.getsuccess() == 1) {
+            responseResult.append("<script language='javascript'>alert('修改成功！');</script>");
+        } else {
+            responseResult.append("<script language='javascript'>alert('修改失败！');</script>");
+        }
+        ResponseUtil.write(response, responseResult);
     }
 }

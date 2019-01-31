@@ -1,7 +1,7 @@
 package cn.chenjianlink.blog.controller.admin;
 
 import cn.chenjianlink.blog.common.utils.BlogResult;
-import cn.chenjianlink.blog.common.utils.EasyUIResult;
+import cn.chenjianlink.blog.common.pojo.EasyUIResult;
 import cn.chenjianlink.blog.pojo.Blog;
 import cn.chenjianlink.blog.service.BlogService;
 import org.springframework.stereotype.Controller;
@@ -38,32 +38,34 @@ public class BlogManageController {
     }
 
     //删除博客
-    @RequestMapping()
+    @RequestMapping(value = "/admin/blog/delete", method = RequestMethod.POST)
     @ResponseBody
-    public BlogResult deleteBlog(@RequestParam(value = "ids", required = true) Integer[] ids) {
-        BlogResult result = null;
-        try {
-            result = blogService.deleteBlog(ids);
-            return result;
-        } catch (Exception e) {
-            e.printStackTrace();
-            result = new BlogResult(0, null);
-            return result;
-        }
+    public BlogResult deleteBlog(@RequestParam(value = "ids", required = true) Integer[] ids) throws Exception {
+        BlogResult result = blogService.deleteBlog(ids);
+        return result;
     }
 
     //更新博客内容
     @RequestMapping(value = "/admin/blog/edit", method = RequestMethod.POST)
     @ResponseBody
-    public BlogResult updateBlogInfo(Blog blog) {
-        BlogResult result = null;
+    public BlogResult editBlogInfo(Blog blog) {
         try {
-            result = blogService.updateBlog(blog);
+            BlogResult result = blogService.editBlog(blog);
             return result;
         } catch (Exception e) {
-            e.printStackTrace();
-            result = new BlogResult(0, null);
+            return new BlogResult(0, null);
+        }
+    }
+
+    //增加新博客
+    @RequestMapping(value = "/admin/blog/save", method = RequestMethod.POST)
+    @ResponseBody
+    public BlogResult addBlog(Blog blog) throws Exception {
+        try {
+            BlogResult result = blogService.addBlog(blog);
             return result;
+        } catch (Exception e) {
+            return new BlogResult(0, null);
         }
     }
 }

@@ -1,7 +1,7 @@
 package cn.chenjianlink.blog.service.impl;
 
 import cn.chenjianlink.blog.common.utils.BlogResult;
-import cn.chenjianlink.blog.common.utils.EasyUIResult;
+import cn.chenjianlink.blog.common.pojo.EasyUIResult;
 import cn.chenjianlink.blog.mapper.BlogMapper;
 import cn.chenjianlink.blog.pojo.Blog;
 import cn.chenjianlink.blog.service.BlogService;
@@ -10,6 +10,7 @@ import com.github.pagehelper.PageInfo;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -47,13 +48,23 @@ public class BlogServiceImpl implements BlogService {
             id[i] = ids[i];
         }
         blogMapper.delete(id);
+        int i = 1 / 0;
         return BlogResult.ok();
     }
 
     //更新博客
     @Override
-    public BlogResult updateBlog(Blog blog) throws Exception {
+    public BlogResult editBlog(Blog blog) throws Exception {
         blogMapper.update(blog);
+        return BlogResult.ok();
+    }
+
+    //添加新博客
+    @Override
+    public BlogResult addBlog(Blog blog) throws Exception {
+        //补全属性
+        blog.setReleaseDate(new Date());
+        blogMapper.insert(blog);
         return BlogResult.ok();
     }
 }

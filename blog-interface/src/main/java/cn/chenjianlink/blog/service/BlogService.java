@@ -1,7 +1,7 @@
 package cn.chenjianlink.blog.service;
 
 import cn.chenjianlink.blog.common.utils.BlogResult;
-import cn.chenjianlink.blog.common.utils.EasyUIResult;
+import cn.chenjianlink.blog.common.pojo.EasyUIResult;
 import cn.chenjianlink.blog.pojo.Blog;
 
 public interface BlogService {
@@ -15,5 +15,8 @@ public interface BlogService {
     BlogResult deleteBlog(Integer[] ids) throws Exception;
 
     //更新博客
-    BlogResult updateBlog(Blog blog) throws Exception;
+    BlogResult editBlog(Blog blog) throws Exception;
+
+    //添加新博客
+    BlogResult addBlog(Blog blog) throws Exception;
 }
