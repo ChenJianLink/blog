@@ -35,7 +35,7 @@ public class BloggerManageController {
 
     //修改个人信息
     @RequestMapping(value = "/admin/blogger/save", method = RequestMethod.POST)
-    public void editBloggerInfo(Blogger blogger, @RequestParam("imageFile") MultipartFile imageFile, HttpServletRequest request, HttpServletResponse response) throws Exception {
+    public void editBloggerInfo(Blogger blogger, @RequestParam(value = "imageFile", required = false) MultipartFile imageFile, HttpServletRequest request, HttpServletResponse response) throws Exception {
         StringBuffer responseResult = new StringBuffer();
         try {
             //判断是否有图片上传

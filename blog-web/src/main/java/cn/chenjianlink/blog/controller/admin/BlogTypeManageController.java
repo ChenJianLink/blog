@@ -7,6 +7,7 @@ import cn.chenjianlink.blog.service.BlogTypeService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
@@ -46,7 +47,7 @@ public class BlogTypeManageController {
     //修改博客类别
     @RequestMapping(value = "/admin/blogType/edit", method = RequestMethod.POST)
     @ResponseBody
-    public BlogResult editBlodType(Integer id, BlogType blogType) {
+    public BlogResult editBlodType(@RequestParam(value = "id", required = true) Integer id, BlogType blogType) {
         BlogResult result = null;
         try {
             result = blogTypeService.editBlogType(id, blogType);
@@ -61,7 +62,7 @@ public class BlogTypeManageController {
     //删除博客类别
     @RequestMapping(value = "/admin/blogType/delete", method = RequestMethod.POST)
     @ResponseBody
-    public BlogResult deleteBlogType(Integer[] ids) {
+    public BlogResult deleteBlogType(@RequestParam(value = "ids", required = true) Integer[] ids) {
         BlogResult result = null;
         try {
             result = blogTypeService.deleteBlogType(ids);

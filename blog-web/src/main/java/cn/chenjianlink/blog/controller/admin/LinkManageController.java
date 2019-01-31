@@ -7,6 +7,7 @@ import cn.chenjianlink.blog.service.LinkService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
@@ -63,7 +64,7 @@ public class LinkManageController {
      */
     @RequestMapping(value = "/admin/link/edit", method = RequestMethod.POST)
     @ResponseBody
-    public BlogResult editLink(Integer id, Link link) {
+    public BlogResult editLink(@RequestParam(value = "id", required = true) Integer id, Link link) {
         BlogResult result = null;
         try {
             result = linkService.editLink(id, link);
@@ -85,7 +86,7 @@ public class LinkManageController {
      */
     @RequestMapping(value = "/admin/link/delete", method = RequestMethod.POST)
     @ResponseBody
-    public BlogResult deleteLink(Integer[] ids) {
+    public BlogResult deleteLink(@RequestParam(value = "ids", required = true) Integer[] ids) {
         BlogResult result = null;
         try {
             result = linkService.deleteLink(ids);
