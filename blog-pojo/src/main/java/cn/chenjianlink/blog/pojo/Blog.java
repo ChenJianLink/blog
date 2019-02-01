@@ -18,7 +18,7 @@ public class Blog implements Serializable {
     //发表日期
     private Date releaseDate;
     //按发表日期分类的日期
-    private Date releaseDateStr;
+    private String releaseDateStr;
     //按发表日期分类的博客总数
     private Integer blogCount;
     //点击量
@@ -114,11 +114,11 @@ public class Blog implements Serializable {
         this.imagesList = imagesList;
     }
 
-    public Date getReleaseDateStr() {
+    public String getReleaseDateStr() {
         return releaseDateStr;
     }
 
-    public void setReleaseDateStr(Date releaseDateStr) {
+    public void setReleaseDateStr(String releaseDateStr) {
         this.releaseDateStr = releaseDateStr;
     }
 

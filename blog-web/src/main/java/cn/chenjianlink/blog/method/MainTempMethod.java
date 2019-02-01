@@ -1,8 +1,10 @@
 package cn.chenjianlink.blog.method;
 
+import cn.chenjianlink.blog.pojo.Blog;
 import cn.chenjianlink.blog.pojo.BlogType;
 import cn.chenjianlink.blog.pojo.Blogger;
 import cn.chenjianlink.blog.pojo.Link;
+import cn.chenjianlink.blog.service.BlogService;
 import cn.chenjianlink.blog.service.BlogTypeService;
 import cn.chenjianlink.blog.service.BloggerService;
 import cn.chenjianlink.blog.service.LinkService;
@@ -21,6 +23,8 @@ public class MainTempMethod {
     private BloggerService bloggerService;
     @Resource
     private BlogTypeService blogTypeService;
+    @Resource
+    private BlogService blogService;
 
     //显示友情链接，博主信息，日志分类的代码
     public void showMainTemp(Model model) throws Exception {
@@ -33,5 +37,8 @@ public class MainTempMethod {
         //博客类型查询
         List<BlogType> blogTypeList = blogTypeService.getBlogTypeCountList();
         model.addAttribute("blogTypeCountList", blogTypeList);
+        //根据发布日期查询
+        List<Blog> blogList = blogService.findBlogDateList();
+        model.addAttribute("blogCountList", blogList);
     }
 }

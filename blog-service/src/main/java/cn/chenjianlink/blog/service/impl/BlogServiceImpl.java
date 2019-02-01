@@ -48,7 +48,6 @@ public class BlogServiceImpl implements BlogService {
             id[i] = ids[i];
         }
         blogMapper.delete(id);
-        int i = 1 / 0;
         return BlogResult.ok();
     }
 
@@ -66,5 +65,12 @@ public class BlogServiceImpl implements BlogService {
         blog.setReleaseDate(new Date());
         blogMapper.insert(blog);
         return BlogResult.ok();
+    }
+
+    //根据日期分类查询博客数量
+    @Override
+    public List<Blog> findBlogDateList() throws Exception {
+        List<Blog> blogList = blogMapper.selectCountList();
+        return blogList;
     }
 }

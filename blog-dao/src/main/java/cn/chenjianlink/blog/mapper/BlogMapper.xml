@@ -80,4 +80,11 @@
                 #{blogType.id,jdbcType=INTEGER},
                 #{keyWord,jdbcType=VARCHAR})
     </insert>
+    <!--按发布日期查询博客总数-->
+    <select id="selectCountList" resultMap="BlogResult">
+        SELECT DATE_FORMAT(releaseDate, '%Y-%m ') AS releaseDateStr, COUNT(*) AS blogCount
+        FROM t_blog
+        GROUP BY DATE_FORMAT(releaseDate, '%Y-%m ')
+        ORDER BY DATE_FORMAT(releaseDate, '%Y-%m ') DESC;
+    </select>
 </mapper>

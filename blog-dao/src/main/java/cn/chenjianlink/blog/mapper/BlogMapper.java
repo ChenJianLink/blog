@@ -8,6 +8,9 @@ public interface BlogMapper {
     //首页博客展示
     List<Blog> selectListAll() throws Exception;
 
+    //按博客发布日期查询
+    List<Blog> selectCountList() throws Exception;
+
     //后台博客管理列表展示
     List<Blog> selectList(String title) throws Exception;
 

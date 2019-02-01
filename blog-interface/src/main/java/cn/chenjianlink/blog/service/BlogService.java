@@ -4,6 +4,8 @@ import cn.chenjianlink.blog.common.utils.BlogResult;
 import cn.chenjianlink.blog.common.pojo.EasyUIResult;
 import cn.chenjianlink.blog.pojo.Blog;
 
+import java.util.List;
+
 public interface BlogService {
     //查询博客列表
     EasyUIResult findBlogList(String title, Integer page, Integer rows) throws Exception;
@@ -19,4 +21,7 @@ public interface BlogService {
 
     //添加新博客
     BlogResult addBlog(Blog blog) throws Exception;
+
+    //根据发布日期查询博客
+    List<Blog> findBlogDateList() throws Exception;
 }
