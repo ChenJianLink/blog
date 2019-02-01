@@ -4,6 +4,7 @@
     margin-top: 0px;
     margin-bottom: 10px;
     background-color: rgba(230, 230, 250, 0.7);
+    border-radius: 0.25em;
 }
 
 .data_list .data_list_title {
@@ -66,7 +67,7 @@
     line-height: 1.5;
     font-family: Verdana, Arial, Helvetica, sans-serif;
     padding-bottom: 5px;
-    font-size: 14px;
+    font-size: 16px;
 }
 
 .datas .date a {
@@ -105,7 +106,7 @@
     font-family: Verdana, Arial, Helvetica, sans-serif;
     line-height: 18px;
     float: right;
-    font-size: 12px;
+    font-size: 14px;
 }
 
 .data_list .blog_title {

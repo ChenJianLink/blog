@@ -28,7 +28,7 @@ nav[role="navigation"] {
     user-select: none;
     /* use padding and font-size to change buttons size */
     padding: .6em .8em;
-    font-size: 1rem;
+    font-size: 1.3rem;
 }
 
 .cd-pagination a {
