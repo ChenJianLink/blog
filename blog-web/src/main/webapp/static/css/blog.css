@@ -206,7 +206,8 @@
     padding: 1em 2em;
     line-height: 1.5;
 }
-.child{
+
+.child {
     position: absolute;
     padding-top: 10px;
     padding-bottom: 40px;

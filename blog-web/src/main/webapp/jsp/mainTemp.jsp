@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/static/bootstrap3/css/bootstrap.min.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/static/bootstrap3/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/blog.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/pagestyle.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/background.css">
     <link href="${pageContext.request.contextPath}/static/images/favicon.ico" rel="SHORTCUT ICON">
     <script src="${pageContext.request.contextPath}/static/bootstrap3/js/jquery-1.11.2.min.js"></script>
