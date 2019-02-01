@@ -3,9 +3,6 @@ package cn.chenjianlink.blog.controller;
 import cn.chenjianlink.blog.method.MainTempMethod;
 import cn.chenjianlink.blog.pojo.Blog;
 import cn.chenjianlink.blog.service.BlogService;
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import org.jsoup.select.Elements;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -37,20 +34,6 @@ public class IdexController {
         blogMap.put("releaseDateStr", releaseDateStr);
         mainTempMethod.showMainTemp(model);
         List<Blog> blogList = blogService.findBlogList(blogMap);
-        //抓取博客中插入的图片，在博客列表中显示(利用jsoup抓取)
-        for (Blog blog : blogList) {
-            List<String> imagesList = blog.getImagesList();
-            String blogContent = blog.getContent();
-            Document doc = Jsoup.parse(blogContent);
-            Elements jpgs = doc.select("img");
-            for (int i = 0; i < jpgs.size(); i++) {
-                //将图片url取出并放入到imageList中
-                imagesList.add(jpgs.get(i).attr("src"));
-                if (i == 2) {
-                    break;
-                }
-            }
-        }
         model.addAttribute("blogList", blogList);
         model.addAttribute("pageTitle", "局外人之个人空间");
         model.addAttribute("mainPage", "foreground/blog/list.jsp");

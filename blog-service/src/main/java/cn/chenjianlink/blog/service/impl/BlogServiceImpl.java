@@ -7,6 +7,9 @@ import cn.chenjianlink.blog.pojo.Blog;
 import cn.chenjianlink.blog.service.BlogService;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.select.Elements;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -75,9 +78,24 @@ public class BlogServiceImpl implements BlogService {
         return blogList;
     }
 
+    //首页博客列表显示
     @Override
     public List<Blog> findBlogList(Map<String, Object> blogMap) throws Exception {
         List<Blog> blogList = blogMapper.selectListAll(blogMap);
+        //抓取博客中插入的图片，在博客列表中显示(利用jsoup抓取)
+        for (Blog blog : blogList) {
+            List<String> imagesList = blog.getImagesList();
+            String blogContent = blog.getContent();
+            Document doc = Jsoup.parse(blogContent);
+            Elements jpgs = doc.select("img");
+            for (int i = 0; i < jpgs.size(); i++) {
+                //将图片url取出并放入到imageList中
+                imagesList.add(jpgs.get(i).attr("src"));
+                if (i == 2) {
+                    break;
+                }
+            }
+        }
         return blogList;
     }
 }
