@@ -3,10 +3,11 @@ package cn.chenjianlink.blog.mapper;
 import cn.chenjianlink.blog.pojo.Blog;
 
 import java.util.List;
+import java.util.Map;
 
 public interface BlogMapper {
     //首页博客展示
-    List<Blog> selectListAll() throws Exception;
+    List<Blog> selectListAll(Map<String, Object> blogMap) throws Exception;
 
     //按博客发布日期查询
     List<Blog> selectCountList() throws Exception;

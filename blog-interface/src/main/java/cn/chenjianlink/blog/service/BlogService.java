@@ -5,6 +5,7 @@ import cn.chenjianlink.blog.common.pojo.EasyUIResult;
 import cn.chenjianlink.blog.pojo.Blog;
 
 import java.util.List;
+import java.util.Map;
 
 public interface BlogService {
     //查询博客列表
@@ -24,4 +25,7 @@ public interface BlogService {
 
     //根据发布日期查询博客
     List<Blog> findBlogDateList() throws Exception;
+
+    //前台博客列表展示
+    List<Blog> findBlogList(Map<String, Object> blogMap) throws Exception;
 }

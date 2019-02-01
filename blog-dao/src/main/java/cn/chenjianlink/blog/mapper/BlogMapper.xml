@@ -67,6 +67,7 @@
                 keyWord = #{keyWord,jdbcType=VARCHAR}
             </if>
         </set>
+        WHERE id = #{id,jdbcType=INTEGER}
     </update>
     <!--添加新博客-->
     <insert id="insert" parameterType="cn.chenjianlink.blog.pojo.Blog">
@@ -86,5 +87,19 @@
         FROM t_blog
         GROUP BY DATE_FORMAT(releaseDate, '%Y-%m ')
         ORDER BY DATE_FORMAT(releaseDate, '%Y-%m ') DESC;
+    </select>
+    <!--根据博客日期，博客类别查询博客列表,按博客发布日期排序-->
+    <select id="selectListAll" parameterType="Map" resultMap="BlogResult">
+        SELECT *
+        FROM t_blog
+        <where>
+            <if test="typeId != null and typeId !=''">
+                AND typeId = #{typeId,jdbcType=INTEGER}
+            </if>
+            <if test="releaseDateStr != null and releaseDateStr != ''">
+                AND DATE_FORMAT(releaseDate,'%Y-%m ') = #{releaseDateStr}
+            </if>
+        </where>
+        ORDER BY releaseDate DESC
     </select>
 </mapper>

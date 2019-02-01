@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 /**
  * 博客相关service
@@ -71,6 +72,12 @@ public class BlogServiceImpl implements BlogService {
     @Override
     public List<Blog> findBlogDateList() throws Exception {
         List<Blog> blogList = blogMapper.selectCountList();
+        return blogList;
+    }
+
+    @Override
+    public List<Blog> findBlogList(Map<String, Object> blogMap) throws Exception {
+        List<Blog> blogList = blogMapper.selectListAll(blogMap);
         return blogList;
     }
 }
