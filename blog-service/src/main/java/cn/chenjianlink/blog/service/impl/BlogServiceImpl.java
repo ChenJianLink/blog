@@ -1,5 +1,6 @@
 package cn.chenjianlink.blog.service.impl;
 
+import cn.chenjianlink.blog.common.pojo.PageResult;
 import cn.chenjianlink.blog.common.utils.BlogResult;
 import cn.chenjianlink.blog.common.pojo.EasyUIResult;
 import cn.chenjianlink.blog.mapper.BlogMapper;
@@ -10,6 +11,7 @@ import com.github.pagehelper.PageInfo;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -25,6 +27,8 @@ public class BlogServiceImpl implements BlogService {
 
     @Resource
     private BlogMapper blogMapper;
+    @Value("${ROWS}")
+    private Integer ROWS;
 
     //后台博客管理列表展示(分页查询)
     @Override
@@ -80,7 +84,10 @@ public class BlogServiceImpl implements BlogService {
 
     //首页博客列表显示
     @Override
-    public List<Blog> findBlogList(Map<String, Object> blogMap) throws Exception {
+    public PageResult findBlogList(Integer page, Map<String, Object> blogMap) throws Exception {
+        //设置分页信息
+        PageHelper.startPage(page, ROWS);
+        //查询博客
         List<Blog> blogList = blogMapper.selectListAll(blogMap);
         //抓取博客中插入的图片，在博客列表中显示(利用jsoup抓取)
         for (Blog blog : blogList) {
@@ -96,6 +103,10 @@ public class BlogServiceImpl implements BlogService {
                 }
             }
         }
-        return blogList;
+        //设置查询分页总记录数，并进行封装
+        PageInfo<Blog> pageInfo = new PageInfo<>(blogList);
+        long total = pageInfo.getTotal();
+        PageResult result = new PageResult(page, (int) total, ROWS, blogList);
+        return result;
     }
 }

@@ -1,5 +1,6 @@
 package cn.chenjianlink.blog.service;
 
+import cn.chenjianlink.blog.common.pojo.PageResult;
 import cn.chenjianlink.blog.common.utils.BlogResult;
 import cn.chenjianlink.blog.common.pojo.EasyUIResult;
 import cn.chenjianlink.blog.pojo.Blog;
@@ -27,5 +28,5 @@ public interface BlogService {
     List<Blog> findBlogDateList() throws Exception;
 
     //前台博客列表展示
-    List<Blog> findBlogList(Map<String, Object> blogMap) throws Exception;
+    PageResult findBlogList(Integer page, Map<String, Object> blogMap) throws Exception;
 }

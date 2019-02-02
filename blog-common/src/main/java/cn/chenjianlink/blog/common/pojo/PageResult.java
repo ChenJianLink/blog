@@ -1,11 +1,11 @@
-package cn.chenjianlink.blog.pojo;
+package cn.chenjianlink.blog.common.pojo;
 
 import java.util.List;
 
 /**
- * 分页pojo
+ * 分页显示工具类
  */
-public class Page {
+public class PageResult {
     // 当前页码
     private int currentPage;
     // 总记录数
@@ -13,9 +13,16 @@ public class Page {
     // 每页记录数
     private int rows;
     // 当前页的记录
-    private List<?> beanList;
+    private List<?> pageList;
     //分页跳转路径
     private String url;
+
+    public PageResult(int currentPage, int totalRows, int rows, List<?> pageList) {
+        this.currentPage = currentPage;
+        this.totalRows = totalRows;
+        this.rows = rows;
+        this.pageList = pageList;
+    }
 
     /**
      * 计算总页数
@@ -51,12 +58,12 @@ public class Page {
         this.rows = rows;
     }
 
-    public List<?> getBeanList() {
-        return beanList;
+    public List<?> getPageList() {
+        return pageList;
     }
 
-    public void setBeanList(List<?> beanList) {
-        this.beanList = beanList;
+    public void setPageList(List<?> pageList) {
+        this.pageList = pageList;
     }
 
     public String getUrl() {
