@@ -1,6 +1,5 @@
 package cn.chenjianlink.blog.service.impl;
 
-import cn.chenjianlink.blog.common.exception.BlogException;
 import cn.chenjianlink.blog.common.utils.BlogResult;
 import cn.chenjianlink.blog.common.pojo.EasyUIResult;
 import cn.chenjianlink.blog.mapper.LinkMapper;
