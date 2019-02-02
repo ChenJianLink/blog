@@ -24,6 +24,7 @@
                 AND title LIKE '%${_parameter}%'
             </if>
         </where>
+        ORDER BY releaseDate DESC
     </select>
     <!--根据id查询博客信息-->
     <select id="selectByPrimaryKey" parameterType="int" resultMap="BlogResult">
