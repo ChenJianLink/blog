@@ -103,5 +103,11 @@
             <groupId>org.apache.lucene</groupId>
             <artifactId>lucene-highlighter</artifactId>
         </dependency>
+
+        <!--ik分词器-->
+        <dependency>
+            <groupId>com.lucene</groupId>
+            <artifactId>ikAnalyzer</artifactId>
+        </dependency>
     </dependencies>
 </project>
