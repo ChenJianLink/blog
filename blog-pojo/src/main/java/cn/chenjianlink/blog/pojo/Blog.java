@@ -6,32 +6,32 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * 博客内容对象
+ * 日志内容对象
  */
 public class Blog implements Serializable {
-    //博客id
+    //日志id
     private Integer id;
 
     private String title;
-    //博客摘要
+    //日志摘要
     private String summary;
     //发表日期
     private Date releaseDate;
     //按发表日期分类的日期
     private String releaseDateStr;
-    //按发表日期分类的博客总数
+    //按发表日期分类的日志总数
     private Integer blogCount;
     //点击量
     private Integer clickHit;
     //评论量
     private Integer replyHit;
-    //博客内容
+    //日志内容
     private String content;
     //关键字
     private String keyWord;
-    //博客类别
+    //日志类别
     private BlogType blogType;
-    //博客中的图片
+    //日志中的图片
     private List<String> imagesList = new LinkedList<>();
 
     public Integer getId() {

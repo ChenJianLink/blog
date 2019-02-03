@@ -3,13 +3,13 @@ package cn.chenjianlink.blog.pojo;
 import java.io.Serializable;
 
 /**
- * 博主信息对象
+ * Master信息对象
  */
 public class Blogger implements Serializable {
     private Integer id;
     private String userName;
     private String password;
-    //博主个人简介
+    //Master个人简介
     private String profile;
     //昵称
     private String nickName;

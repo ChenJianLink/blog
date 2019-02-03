@@ -15,7 +15,7 @@
         <association property="blogType" column="typeId"
                      select="cn.chenjianlink.blog.mapper.BlogTypeMapper.selectByPrimaryKey"></association>
     </resultMap>
-    <!--查询所有博客的部分信息(可能根据标题查找)-->
+    <!--查询所有日志的部分信息(可能根据标题查找)-->
     <select id="selectList" parameterType="java.lang.String" resultMap="BlogResult">
         SELECT id, title, releaseDate, typeId
         FROM t_blog
@@ -26,7 +26,7 @@
         </where>
         ORDER BY releaseDate DESC
     </select>
-    <!--根据id查询博客信息-->
+    <!--根据id查询日志信息-->
     <select id="selectByPrimaryKey" parameterType="int" resultMap="BlogResult">
         SELECT *
         FROM t_blog
@@ -42,7 +42,7 @@
             </foreach>
         </if>
     </delete>
-    <!--更新博客-->
+    <!--更新日志-->
     <update id="update" parameterType="cn.chenjianlink.blog.pojo.Blog">
         UPDATE t_blog
         <set>
@@ -70,7 +70,7 @@
         </set>
         WHERE id = #{id,jdbcType=INTEGER}
     </update>
-    <!--添加新博客-->
+    <!--添加新日志-->
     <insert id="insert" parameterType="cn.chenjianlink.blog.pojo.Blog">
         INSERT INTO t_blog (title, summary, releaseDate, clickHit, replyHit, content, typeId, keyWord)
         VALUES (#{title,jdbcType=VARCHAR},
@@ -82,14 +82,14 @@
                 #{blogType.id,jdbcType=INTEGER},
                 #{keyWord,jdbcType=VARCHAR})
     </insert>
-    <!--按发布日期查询博客总数-->
+    <!--按发布日期查询日志总数-->
     <select id="selectCountList" resultMap="BlogResult">
         SELECT DATE_FORMAT(releaseDate, '%Y-%m ') AS releaseDateStr, COUNT(*) AS blogCount
         FROM t_blog
         GROUP BY DATE_FORMAT(releaseDate, '%Y-%m ')
         ORDER BY DATE_FORMAT(releaseDate, '%Y-%m ') DESC;
     </select>
-    <!--根据博客日期，博客类别查询博客列表,按博客发布日期排序-->
+    <!--根据日志日期，日志类别查询日志列表,按日志发布日期排序-->
     <select id="selectListAll" parameterType="Map" resultMap="BlogResult">
         SELECT *
         FROM t_blog

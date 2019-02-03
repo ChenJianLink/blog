@@ -20,7 +20,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * 博客相关service
+ * 日志相关service
  */
 @Service
 public class BlogServiceImpl implements BlogService {
@@ -30,7 +30,7 @@ public class BlogServiceImpl implements BlogService {
     @Value("${ROWS}")
     private Integer ROWS;
 
-    //后台博客管理列表展示(分页查询)
+    //后台日志管理列表展示(分页查询)
     @Override
     public EasyUIResult findBlogList(String title, Integer page, Integer rows) throws Exception {
         PageHelper.startPage(page, rows);
@@ -41,14 +41,14 @@ public class BlogServiceImpl implements BlogService {
         return result;
     }
 
-    //根据id查询博客
+    //根据id查询日志
     @Override
     public Blog findBlogById(Integer id) throws Exception {
         Blog blog = blogMapper.selectByPrimaryKey(id);
         return blog;
     }
 
-    //删除博客
+    //删除日志
     @Override
     public BlogResult deleteBlog(Integer[] ids) throws Exception {
         int[] id = new int[ids.length];
@@ -59,14 +59,14 @@ public class BlogServiceImpl implements BlogService {
         return BlogResult.ok();
     }
 
-    //更新博客
+    //更新日志
     @Override
     public BlogResult editBlog(Blog blog) throws Exception {
         blogMapper.update(blog);
         return BlogResult.ok();
     }
 
-    //添加新博客
+    //添加新日志
     @Override
     public BlogResult addBlog(Blog blog) throws Exception {
         //补全属性
@@ -75,21 +75,21 @@ public class BlogServiceImpl implements BlogService {
         return BlogResult.ok();
     }
 
-    //根据日期分类查询博客数量
+    //根据日期分类查询日志数量
     @Override
     public List<Blog> findBlogDateList() throws Exception {
         List<Blog> blogList = blogMapper.selectCountList();
         return blogList;
     }
 
-    //首页博客列表显示
+    //首页日志列表显示
     @Override
     public PageResult findBlogList(Integer page, Map<String, Object> blogMap) throws Exception {
         //设置分页信息
         PageHelper.startPage(page, ROWS);
-        //查询博客
+        //查询日志
         List<Blog> blogList = blogMapper.selectListAll(blogMap);
-        //抓取博客中插入的图片，在博客列表中显示(利用jsoup抓取)
+        //抓取日志中插入的图片，在日志列表中显示(利用jsoup抓取)
         for (Blog blog : blogList) {
             List<String> imagesList = blog.getImagesList();
             String blogContent = blog.getContent();

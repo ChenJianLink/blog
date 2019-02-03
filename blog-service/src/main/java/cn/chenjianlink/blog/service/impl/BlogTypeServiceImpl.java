@@ -13,7 +13,7 @@ import javax.annotation.Resource;
 import java.util.List;
 
 /**
- * 博客类别管理service
+ * 日志类别管理service
  */
 @Service
 public class BlogTypeServiceImpl implements BlogTypeService {
@@ -21,7 +21,7 @@ public class BlogTypeServiceImpl implements BlogTypeService {
     @Resource
     private BlogTypeMapper blogTypeMapper;
 
-    //查询所有类别以及博客数量
+    //查询所有类别以及日志数量
     @Override
     public List<BlogType> getBlogTypeCountList() throws Exception {
         List<BlogType> blogTypes = blogTypeMapper.selectAll();
@@ -39,14 +39,14 @@ public class BlogTypeServiceImpl implements BlogTypeService {
         return result;
     }
 
-    //添加博客类别
+    //添加日志类别
     @Override
     public BlogResult addBlogType(BlogType blogType) throws Exception {
         blogTypeMapper.insert(blogType);
         return BlogResult.ok();
     }
 
-    //修改博客类别
+    //修改日志类别
     @Override
     public BlogResult editBlogType(Integer id, BlogType blogType) throws Exception {
         BlogType oldType = blogTypeMapper.selectByPrimaryKey(id);
@@ -61,7 +61,7 @@ public class BlogTypeServiceImpl implements BlogTypeService {
         return BlogResult.ok();
     }
 
-    //删除博客类别
+    //删除日志类别
     @Override
     public BlogResult deleteBlogType(Integer[] ids) throws Exception {
         int[] id = new int[ids.length];
@@ -69,10 +69,10 @@ public class BlogTypeServiceImpl implements BlogTypeService {
             id[i] = ids[i];
         }
         List<BlogType> blogTypes = blogTypeMapper.selectTypeCount(id);
-        //判断要删除的博客类别下是否有博客
+        //判断要删除的日志类别下是否有日志
         for (BlogType blogType : blogTypes) {
             if (blogType.getBlogCount() > 0) {
-                return BlogResult.hasExist("编号为" + blogType.getId() + "的类别下存在博客,请先删除相关博客，再删除该分类");
+                return BlogResult.hasExist("编号为" + blogType.getId() + "的类别下存在日志,请先删除相关日志，再删除该分类");
             }
         }
         blogTypeMapper.delete(id);

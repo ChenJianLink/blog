@@ -7,7 +7,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
- * 博客自定义响应结构
+ * 日志自定义响应结构
  */
 public class BlogResult implements Serializable {
 

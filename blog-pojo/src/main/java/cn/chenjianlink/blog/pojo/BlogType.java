@@ -3,7 +3,7 @@ package cn.chenjianlink.blog.pojo;
 import java.io.Serializable;
 
 /**
- * 博客类型对象
+ * 日志类型对象
  */
 public class BlogType implements Serializable {
     private Integer id;
@@ -11,7 +11,7 @@ public class BlogType implements Serializable {
     private String typeName;
     //排序序号
     private Integer orderNo;
-    //分类下博客数量
+    //分类下日志数量
     private Integer blogCount;
 
     public Integer getBlogCount() {
