@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>博客类别管理页面</title>
+<title>日志类别管理页面</title>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/static/jquery-easyui-1.3.3/themes/default/easyui.css">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/static/jquery-easyui-1.3.3/themes/icon.css">
 <script type="text/javascript" src="${pageContext.request.contextPath}/static/jquery-easyui-1.3.3/jquery.min.js"></script>
@@ -45,7 +45,7 @@
 	}
 	
 	function openBlogTypeAddDialog(){
-		$("#dlg").dialog("open").dialog("setTitle","添加博客类别信息");
+		$("#dlg").dialog("open").dialog("setTitle","添加日志类别信息");
 		url="${pageContext.request.contextPath}/admin/blogType/save.do";
 	}
 	
@@ -56,7 +56,7 @@
 			 return;
 		 }
 		 var row=selectedRows[0];
-		 $("#dlg").dialog("open").dialog("setTitle","编辑博客类别信息");
+		 $("#dlg").dialog("open").dialog("setTitle","编辑日志类别信息");
 		 $("#fm").form("load",row);
 		 url="${pageContext.request.contextPath}/admin/blogType/edit.do?id="+row.id;
 	 }
@@ -94,14 +94,14 @@
 </script>
 </head>
 <body style="margin: 1px">
-<table id="dg" title="博客类别管理" class="easyui-datagrid"
+<table id="dg" title="日志类别管理" class="easyui-datagrid"
    fitColumns="true" pagination="true" rownumbers="true"
    url="${pageContext.request.contextPath}/admin/blogType/list.do" fit="true" toolbar="#tb">
    <thead>
    	<tr>
    		<th field="cb" checkbox="true" align="center"></th>
    		<th field="id" width="20" align="center">编号</th>
-   		<th field="typeName" width="100" align="center">博客类型名称</th>
+   		<th field="typeName" width="100" align="center">日志类型名称</th>
    		<th field="orderNo" width="100" align="center">排序序号</th>
    	</tr>
    </thead>
@@ -121,11 +121,11 @@
    <form id="fm" method="post">
    	<table cellspacing="8px">
    		<tr>
-   			<td>博客类别名称：</td>
+   			<td>日志类别名称：</td>
    			<td><input type="text" id="typeName" name="typeName" class="easyui-validatebox" required="true"/></td>
    		</tr>
    		<tr>
-   			<td>博客类别排序：</td>
+   			<td>日志类别排序：</td>
    			<td><input type="text" id="orderNo" name="orderNo" class="easyui-numberbox" required="true" style="width: 60px"/>&nbsp;(类别根据排序序号从小到大排序)</td>
    		</tr>
    	</table>

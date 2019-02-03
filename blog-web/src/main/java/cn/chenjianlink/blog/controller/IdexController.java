@@ -15,7 +15,7 @@ import java.util.Map;
 
 
 /**
- * 博客首页展示controller
+ * 日志首页展示controller
  */
 @Controller
 public class IdexController {
@@ -32,7 +32,7 @@ public class IdexController {
         if (page == null) {
             page = 1;
         }
-        //将传入的日期以及博客类别封装到map中
+        //将传入的日期以及日志类别封装到map中
         Map<String, Object> blogMap = new HashMap<>();
         blogMap.put("typeId", typeId);
         blogMap.put("releaseDateStr", releaseDateStr);

@@ -27,15 +27,15 @@ public class ControllerMethod {
     @Resource
     private BlogService blogService;
 
-    //显示主页的友情链接，博主信息，日志分类的代码
+    //显示主页的友情链接，Master信息，日志分类的代码
     public void showMainTemp(Model model) throws Exception {
-        //博主信息查询
+        //Master信息查询
         Blogger blogger = bloggerService.findBlogger();
         model.addAttribute("blogger", blogger);
         //友情链接查询
         List<Link> linkList = linkService.getLinkList();
         model.addAttribute("linkList", linkList);
-        //博客类型查询
+        //日志类型查询
         List<BlogType> blogTypeList = blogTypeService.getBlogTypeCountList();
         model.addAttribute("blogTypeCountList", blogTypeList);
         //根据发布日期查询

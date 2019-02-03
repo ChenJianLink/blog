@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import javax.annotation.Resource;
 
 /**
- * 博客类别管理Controller
+ * 日志类别管理Controller
  */
 @Controller
 public class BlogTypeManageController {
@@ -21,7 +21,7 @@ public class BlogTypeManageController {
     @Resource
     private BlogTypeService blogTypeService;
 
-    //展示博客类别列表
+    //展示日志类别列表
     @RequestMapping(value = "/admin/blogType/list", method = RequestMethod.POST)
     @ResponseBody
     public EasyUIResult getBlogTypeList(Integer page, Integer rows) throws Exception {
@@ -29,7 +29,7 @@ public class BlogTypeManageController {
         return result;
     }
 
-    //添加博客类别
+    //添加日志类别
     @RequestMapping(value = "/admin/blogType/save", method = RequestMethod.POST)
     @ResponseBody
     public BlogResult addBlogType(BlogType blogType) {
@@ -41,7 +41,7 @@ public class BlogTypeManageController {
         }
     }
 
-    //修改博客类别
+    //修改日志类别
     @RequestMapping(value = "/admin/blogType/edit", method = RequestMethod.POST)
     @ResponseBody
     public BlogResult editBlodType(@RequestParam(value = "id", required = true) Integer id, BlogType blogType) {
@@ -53,7 +53,7 @@ public class BlogTypeManageController {
         }
     }
 
-    //删除博客类别
+    //删除日志类别
     @RequestMapping(value = "/admin/blogType/delete", method = RequestMethod.POST)
     @ResponseBody
     public BlogResult deleteBlogType(@RequestParam(value = "ids", required = true) Integer[] ids) {

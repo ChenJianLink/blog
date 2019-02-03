@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import javax.annotation.Resource;
 
 /**
- * 查看博主信息Controller
+ * 查看Master信息Controller
  */
 @Controller
 public class BloggerController {
@@ -16,7 +16,7 @@ public class BloggerController {
     @Resource
     private ControllerMethod controllerMethod;
     /**
-     * "关于博主"页面展示
+     * "关于Master"页面展示
      *
      * @param model
      * @return
@@ -25,7 +25,7 @@ public class BloggerController {
     public String aboutMe(Model model) throws Exception {
         controllerMethod.showMainTemp(model);
         model.addAttribute("mainPage", "foreground/blogger/info.jsp");
-        model.addAttribute("pageTitle", "关于博主-局外人之个人空间");
+        model.addAttribute("pageTitle", "关于Master-局外人之个人空间");
         return "mainTemp";
     }
 

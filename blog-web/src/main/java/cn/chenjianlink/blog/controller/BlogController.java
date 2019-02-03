@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import javax.annotation.Resource;
 
 /**
- * 博客相关展示Controller
+ * 日志相关展示Controller
  */
 @Controller
 public class BlogController {
@@ -22,7 +22,7 @@ public class BlogController {
     @Resource
     private BlogService blogService;
 
-    //搜索博客
+    //搜索日志
     @RequestMapping("/blog/query")
     public String searchBlog(Model model, @RequestParam(value = "query", required = true) String query, @RequestParam(value = "page", required = false) Integer page) throws Exception {
         controllerMethod.showMainTemp(model);
@@ -31,7 +31,7 @@ public class BlogController {
         return "mainTemp";
     }
 
-    //显示博客内容
+    //显示日志内容
     @RequestMapping("/blog/articles/{blogId}")
     public String showBlogInfo(Model model, @PathVariable(value = "blogId", required = true) Integer blogId) throws Exception {
         Blog blog = blogService.findBlogById(blogId);

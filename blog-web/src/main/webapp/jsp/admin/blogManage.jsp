@@ -4,7 +4,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>博客管理页面</title>
+    <title>日志管理页面</title>
     <link rel="stylesheet" type="text/css"
           href="${pageContext.request.contextPath}/static/jquery-easyui-1.3.3/themes/default/easyui.css">
     <link rel="stylesheet" type="text/css"
@@ -62,17 +62,17 @@
         function openBlogModifyTab() {
             var selectedRows = $("#dg").datagrid("getSelections");
             if (selectedRows.length != 1) {
-                $.messager.alert("系统提示", "请选择一个要修改的博客！");
+                $.messager.alert("系统提示", "请选择一个要修改的日志！");
                 return;
             }
             var row = selectedRows[0];
-            window.parent.openTab('修改博客', 'modifyBlog.html?id=' + row.id, 'icon-writeblog');
+            window.parent.openTab('修改日志', 'modifyBlog.html?id=' + row.id, 'icon-writeblog');
         }
 
     </script>
 </head>
 <body style="margin: 1px">
-<table id="dg" title="博客管理" class="easyui-datagrid"
+<table id="dg" title="日志管理" class="easyui-datagrid"
        fitColumns="true" pagination="true" rownumbers="true"
        url="${pageContext.request.contextPath}/admin/blog/list.do" fit="true" toolbar="#tb">
     <thead>
@@ -81,7 +81,7 @@
         <th field="id" width="20" align="center">编号</th>
         <th field="title" width="200" align="center" formatter="formatTitle">标题</th>
         <th field="releaseDate" width="50" align="center" formatter="BLOG.formatDateTime">发布日期</th>
-        <th field="blogType" width="50" align="center" formatter="formatBlogType">博客类别</th>
+        <th field="blogType" width="50" align="center" formatter="formatBlogType">日志类别</th>
     </tr>
     </thead>
 </table>

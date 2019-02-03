@@ -18,7 +18,7 @@ import java.io.File;
 import java.util.UUID;
 
 /**
- * 后台博主信息管理Controller
+ * 后台Master信息管理Controller
  */
 @Controller
 public class BloggerManageController {

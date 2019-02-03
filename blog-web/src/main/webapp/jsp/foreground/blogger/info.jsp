@@ -3,7 +3,7 @@
 <div class="data_list">
     <div class="data_list_title">
         <img src="${pageContext.request.contextPath}/static/images/about_icon.png"/>
-        关于博主
+        关于Master
     </div>
     <div style="padding: 10px;font-size: 16px;color: #3b4249">
         ${blogger.profile }

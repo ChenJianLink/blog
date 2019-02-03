@@ -21,9 +21,9 @@ public class ForwordController {
 
     @RequestMapping("/admin/{page}")
     public String forwordPage(@PathVariable String page, Model model) throws Exception {
-        //判断是否为写博客的页面,是则向页面添加博客类别
+        //判断是否为写日志的页面,是则向页面添加日志类别
         if (page.equals("writeBlog") || page.equals("modifyBlog")) {
-            //向添加博客类别
+            //向添加日志类别
             List<BlogType> blogTypeCountList = blogTypeService.getBlogTypeCountList();
             model.addAttribute("blogTypeCountList", blogTypeCountList);
         }

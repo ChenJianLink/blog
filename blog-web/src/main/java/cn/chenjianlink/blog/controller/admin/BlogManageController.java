@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import javax.annotation.Resource;
 
 /**
- * 博客管理Controller
+ * 日志管理Controller
  */
 @Controller
 public class BlogManageController {
@@ -21,7 +21,7 @@ public class BlogManageController {
     @Resource
     private BlogService blogService;
 
-    //展示博客列表
+    //展示日志列表
     @RequestMapping(value = "/admin/blog/list", method = RequestMethod.POST)
     @ResponseBody
     public EasyUIResult getBlogList(@RequestParam(value = "title", required = false) String title, Integer page, Integer rows) throws Exception {
@@ -29,7 +29,7 @@ public class BlogManageController {
         return blogList;
     }
 
-    //修改博客页面的数据回显
+    //修改日志页面的数据回显
     @RequestMapping(value = "/admin/blog/findById", method = RequestMethod.POST)
     @ResponseBody
     public Blog findBlogInfo(Integer id) throws Exception {
@@ -37,7 +37,7 @@ public class BlogManageController {
         return blog;
     }
 
-    //删除博客
+    //删除日志
     @RequestMapping(value = "/admin/blog/delete", method = RequestMethod.POST)
     @ResponseBody
     public BlogResult deleteBlog(@RequestParam(value = "ids", required = true) Integer[] ids) {
@@ -49,7 +49,7 @@ public class BlogManageController {
         }
     }
 
-    //更新博客内容
+    //更新日志内容
     @RequestMapping(value = "/admin/blog/edit", method = RequestMethod.POST)
     @ResponseBody
     public BlogResult editBlogInfo(Blog blog) {
@@ -61,7 +61,7 @@ public class BlogManageController {
         }
     }
 
-    //增加新博客
+    //增加新日志
     @RequestMapping(value = "/admin/blog/save", method = RequestMethod.POST)
     @ResponseBody
     public BlogResult addBlog(Blog blog) {

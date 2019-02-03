@@ -33,7 +33,7 @@
                      style="background-color: rgba(255,255,255,0)">
                     <ul class="nav navbar-nav">
                         <li><a href="${pageContext.request.contextPath}/blogger/aboutMe.html"><font
-                                color="black" size="3"><strong>关于博主</strong></font></a></li>
+                                color="black" size="3"><strong>关于Master</strong></font></a></li>
                     </ul>
                     <ul class="nav navbar-nav">
                         <li><a href="${pageContext.request.contextPath}/message/leavemessages.html"><font

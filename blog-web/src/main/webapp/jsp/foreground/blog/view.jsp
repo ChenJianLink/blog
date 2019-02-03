@@ -44,7 +44,7 @@
 <div class="data_list">
     <div class="data_list_title">
         <img src="${pageContext.request.contextPath}/static/images/blog_show_icon.png"/>
-        博客信息
+        日志信息
     </div>
     <div>
         <div class="blog_title"><h3><strong>${blog.title }</strong></h3></div>
@@ -60,7 +60,7 @@
             <script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/bshareC0.js"></script>
         </div>
         <div class="blog_info">
-            发布时间：『 <fmt:formatDate value="${blog.releaseDate }" type="date" pattern="yyyy-MM-dd HH:mm"/>』&nbsp;&nbsp;博客类别：${blog.blogType.typeName}&nbsp;&nbsp;阅读(${blog.clickHit})
+            发布时间：『 <fmt:formatDate value="${blog.releaseDate }" type="date" pattern="yyyy-MM-dd HH:mm"/>』&nbsp;&nbsp;日志类别：${blog.blogType.typeName}&nbsp;&nbsp;阅读(${blog.clickHit})
             评论(${blog.replyHit})
         </div>
         <div class="blog_keyWord">
@@ -79,8 +79,14 @@
         <div class="blog_content">
             ${blog.content }
         </div>
-        <div class="blog_lastAndNextPage">
-            ${pageCode }
+        <div class="blog_lastAndNextPage" style="font-size: 0.8em">
+            <div>
+                上一篇:<c:choose>
+                <c:when test="">木有了</c:when>
+                <c:otherwise></c:otherwise>
+            </c:choose>
+            </div>
+            <div>下一篇:</div>
         </div>
     </div>
 </div>

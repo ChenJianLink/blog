@@ -439,7 +439,7 @@ UE.I18N['zh-cn'] = {
             'lang_template_select' : '选择模板'
         },
         'blank':"空白文档",
-        'blog':"博客文章",
+        'blog':"日志文章",
         'resume':"个人简历",
         'richText':"图文混排",
         'sciPapers':"科技论文"

@@ -41,7 +41,7 @@
 	
 	function formatBlogTitle(val,row){
 		if(val==null){
-			return "<font color='red'>该博客已被删除！</font>";
+			return "<font color='red'>该日志已被删除！</font>";
 		}else{
 			return "<a target='_blank' href='${pageContext.request.contextPath}/blog/articles/"+val.id+".html'>"+val.title+"</a>";			
 		}
@@ -57,7 +57,7 @@
    	<tr>
    		<th field="cb" checkbox="true" align="center"></th>
    		<th field="id" width="20" align="center">编号</th>
-   		<th field="blog" width="200" align="center" formatter="formatBlogTitle">博客标题</th>
+   		<th field="blog" width="200" align="center" formatter="formatBlogTitle">日志标题</th>
    		<th field="userIp" width="100" align="center">用户IP</th>
 		<th field="userName" width="50" align="center">用户名称</th>
 		<th field="content" width="200" align="center">评论内容</th>

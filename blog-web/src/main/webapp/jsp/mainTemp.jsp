@@ -47,7 +47,7 @@
                 <div class="data_list">
                     <div class="data_list_title">
                         <img src="${pageContext.request.contextPath}/static/images/user_icon.png"/>
-                        博主信息
+                        Master信息
                     </div>
                     <div class="user_image">
                         <img src="${pageContext.request.contextPath}/static/userImages/${blogger.imageName }"/>
