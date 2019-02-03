@@ -24,7 +24,7 @@ public class BlogController {
 
     //搜索博客
     @RequestMapping("/blog/query")
-    public String searchBlog(Model model, @RequestParam(value = "query", required = true) String query, Integer page) throws Exception {
+    public String searchBlog(Model model, @RequestParam(value = "query", required = true) String query, @RequestParam(value = "page", required = false) Integer page) throws Exception {
         controllerMethod.showMainTemp(model);
         model.addAttribute("pageTitle", "局外人之个人空间-搜索结果");
         model.addAttribute("mainPage", "foreground/blog/result.jsp");
