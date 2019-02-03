@@ -48,5 +48,5 @@
     <bean class="cn.chenjianlink.blog.Exception.BlogExceptionResolver"/>
 
     <!--配置封装前台重复代码的类-->
-    <bean id="mainTempMethod" class="cn.chenjianlink.blog.method.MainTempMethod"/>
+    <bean id="controllerMethod" class="cn.chenjianlink.blog.method.ControllerMethod"/>
 </beans>

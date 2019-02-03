@@ -1,6 +1,6 @@
 package cn.chenjianlink.blog.controller;
 
-import cn.chenjianlink.blog.method.MainTempMethod;
+import cn.chenjianlink.blog.method.ControllerMethod;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,14 +15,14 @@ import javax.annotation.Resource;
 public class MessageController {
 
     @Resource
-    private MainTempMethod mainTempMethod;
+    private ControllerMethod controllerMethod;
 
     //留言板展示
     @RequestMapping("/message/leavemessages")
     public String messageboard(Model model) throws Exception{
         model.addAttribute("mainPage", "foreground/message/messagesboard.jsp");
         model.addAttribute("pageTitle", "游客留言-局外人之个人空间");
-        mainTempMethod.showMainTemp(model);
+        controllerMethod.showMainTemp(model);
         return "mainTemp";
     }
 }

@@ -1,6 +1,6 @@
 package cn.chenjianlink.blog.controller;
 
-import cn.chenjianlink.blog.method.MainTempMethod;
+import cn.chenjianlink.blog.method.ControllerMethod;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,7 +14,7 @@ import javax.annotation.Resource;
 public class BloggerController {
 
     @Resource
-    private MainTempMethod mainTempMethod;
+    private ControllerMethod controllerMethod;
     /**
      * "关于博主"页面展示
      *
@@ -23,7 +23,7 @@ public class BloggerController {
      */
     @RequestMapping("/blogger/aboutMe")
     public String aboutMe(Model model) throws Exception {
-        mainTempMethod.showMainTemp(model);
+        controllerMethod.showMainTemp(model);
         model.addAttribute("mainPage", "foreground/blogger/info.jsp");
         model.addAttribute("pageTitle", "关于博主-局外人之个人空间");
         return "mainTemp";

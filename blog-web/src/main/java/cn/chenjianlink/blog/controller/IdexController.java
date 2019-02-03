@@ -1,7 +1,7 @@
 package cn.chenjianlink.blog.controller;
 
 import cn.chenjianlink.blog.common.pojo.PageResult;
-import cn.chenjianlink.blog.method.MainTempMethod;
+import cn.chenjianlink.blog.method.ControllerMethod;
 import cn.chenjianlink.blog.service.BlogService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,7 +21,7 @@ import java.util.Map;
 public class IdexController {
 
     @Resource
-    private MainTempMethod mainTempMethod;
+    private ControllerMethod controllerMethod;
     @Resource
     private BlogService blogService;
 
@@ -39,33 +39,14 @@ public class IdexController {
         //查询
         PageResult pageResult = blogService.findBlogList(page, blogMap);
         //获取请求的url，将URL截取并封装到结果中
-        String url = getUrl(request);
+        String url = controllerMethod.getUrl(request);
         pageResult.setUrl(url);
-        mainTempMethod.showMainTemp(model);
+        controllerMethod.showMainTemp(model);
         model.addAttribute("blogList", pageResult.getPageList());
         model.addAttribute("page", pageResult);
         model.addAttribute("pageTitle", "局外人之个人空间");
         model.addAttribute("mainPage", "foreground/blog/list.jsp");
         return "mainTemp";
-    }
-
-    //获取请求的url
-    private String getUrl(HttpServletRequest request) {
-        String contextPath = request.getContextPath();//获取项目名
-        String servletPath = request.getServletPath();//获取servlet
-        String queryString = request.getQueryString();//获取问号后的参数
-        //判断参数是否为空
-        if (queryString != null) {
-            //判断参数部分是否带page
-            if (queryString.contains("&page=")) {
-                int index = queryString.lastIndexOf("&page=");
-                queryString = queryString.substring(0, index);
-            }
-            //url拼接
-            return contextPath + servletPath + "?" + queryString;
-        }
-        return contextPath + servletPath + "?";
-
     }
 
 }

@@ -11,12 +11,13 @@ import cn.chenjianlink.blog.service.LinkService;
 import org.springframework.ui.Model;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 /**
- * 封装页面展示时的重复代码
+ * 封装Controller中多次使用的功能代码
  */
-public class MainTempMethod {
+public class ControllerMethod {
     @Resource
     private LinkService linkService;
     @Resource
@@ -26,7 +27,7 @@ public class MainTempMethod {
     @Resource
     private BlogService blogService;
 
-    //显示友情链接，博主信息，日志分类的代码
+    //显示主页的友情链接，博主信息，日志分类的代码
     public void showMainTemp(Model model) throws Exception {
         //博主信息查询
         Blogger blogger = bloggerService.findBlogger();
@@ -40,5 +41,25 @@ public class MainTempMethod {
         //根据发布日期查询
         List<Blog> blogList = blogService.findBlogDateList();
         model.addAttribute("blogCountList", blogList);
+    }
+
+    //获取请求的url,与分页信息相关
+    public String getUrl(HttpServletRequest request) {
+        String contextPath = request.getContextPath();//获取项目名
+        String servletPath = request.getServletPath();//获取servlet
+        String queryString = request.getQueryString();//获取问号后的参数
+        //判断参数是否为空
+        if (queryString != null) {
+            //判断参数部分是否带page
+            if (queryString.contains("&page=")) {
+                int index = queryString.lastIndexOf("&page=");
+                queryString = queryString.substring(0, index);
+            }
+        } else {
+            //设置为空串
+            queryString = "";
+        }
+        //url拼接
+        return contextPath + servletPath + "?" + queryString;
     }
 }
