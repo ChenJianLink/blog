@@ -19,7 +19,8 @@
                     <span class="summary">摘要: ${blog.summary }...</span>
                     <span class="img">
 				  		<c:forEach var="image" items="${blog.imagesList }">
-                            <a href="${pageContext.request.contextPath}/blog/articles/${blog.id}.html"><img src="${image}" style="height: 90px; width: auto"/></a>
+                            <a href="${pageContext.request.contextPath}/blog/articles/${blog.id}.html"><img
+                                    src="${image}" style="height: 90px; width: auto"/></a>
                             &nbsp;&nbsp;
                         </c:forEach>
 				  	</span>
@@ -31,7 +32,6 @@
         </ul>
     </div>
 </div>
-
 <div>
     <nav role="navigation">
         <ul class="cd-pagination">

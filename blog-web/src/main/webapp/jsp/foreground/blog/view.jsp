@@ -63,9 +63,6 @@
             发布时间：『 <fmt:formatDate value="${blog.releaseDate }" type="date" pattern="yyyy-MM-dd HH:mm"/>』&nbsp;&nbsp;博客类别：${blog.blogType.typeName}&nbsp;&nbsp;阅读(${blog.clickHit})
             评论(${blog.replyHit})
         </div>
-        <div class="blog_content">
-            ${blog.content }
-        </div>
         <div class="blog_keyWord">
             <font><strong>关键字：</strong></font>
             <c:choose>
@@ -74,14 +71,42 @@
                 </c:when>
                 <c:otherwise>
                     <c:forEach var="keyWord" items="${keyWords }">
-                        &nbsp;&nbsp;<a href="${pageContext.request.contextPath}/blog/q.html?q=${keyWord}" target="_blank">${keyWord }</a>&nbsp;&nbsp;
+                        &nbsp;&nbsp;<a href="${pageContext.request.contextPath}/blog/query.html?query=${keyWord}" target="_blank">${keyWord }</a>&nbsp;&nbsp;
                     </c:forEach>
                 </c:otherwise>
             </c:choose>
         </div>
+        <div class="blog_content">
+            ${blog.content }
+        </div>
         <div class="blog_lastAndNextPage">
             ${pageCode }
         </div>
+    </div>
+</div>
+<div class="data_list">
+    <div class="data_list_title">
+        <img src="${pageContext.request.contextPath}/static/images/publish_comment_icon.png"/>
+        发表评论
+    </div>
+    <div class="publish_comment">
+        <div>
+            <textarea style="width: 100%;resize: none;" rows="3" id="content" name="content"
+                      placeholder="来说两句吧..."></textarea>
+        </div>
+        <div class="verCode">
+            验证码：<input type="text" value="${imageCode }" name="imageCode" id="imageCode" size="10"
+                       onkeydown="if(event.keyCode==13)form1.submit()"/>&nbsp;<img onclick="javascript:loadimage();"
+                                                                                   title="换一张试试" name="randImage"
+                                                                                   id="randImage"
+                                                                                   src="${pageContext.request.contextPath}/image.html"
+                                                                                   width="60" height="20" border="1"
+                                                                                   align="absmiddle">
+        </div>
+        <div class="publishButton">
+            <button class="btn btn-primary" type="button" onclick="submitData()">发表评论</button>
+        </div>
+        </form>
     </div>
 </div>
 <div class="data_list">
@@ -118,31 +143,5 @@
                 </c:forEach>
             </c:otherwise>
         </c:choose>
-    </div>
-</div>
-
-<div class="data_list">
-    <div class="data_list_title">
-        <img src="${pageContext.request.contextPath}/static/images/publish_comment_icon.png"/>
-        发表评论
-    </div>
-    <div class="publish_comment">
-        <div>
-            <textarea style="width: 100%;resize: none;" rows="3" id="content" name="content"
-                      placeholder="来说两句吧..."></textarea>
-        </div>
-        <div class="verCode">
-            验证码：<input type="text" value="${imageCode }" name="imageCode" id="imageCode" size="10"
-                       onkeydown="if(event.keyCode==13)form1.submit()"/>&nbsp;<img onclick="javascript:loadimage();"
-                                                                                   title="换一张试试" name="randImage"
-                                                                                   id="randImage"
-                                                                                   src="${pageContext.request.contextPath}/image.html"
-                                                                                   width="60" height="20" border="1"
-                                                                                   align="absmiddle">
-        </div>
-        <div class="publishButton">
-            <button class="btn btn-primary" type="button" onclick="submitData()">发表评论</button>
-        </div>
-        </form>
     </div>
 </div>
