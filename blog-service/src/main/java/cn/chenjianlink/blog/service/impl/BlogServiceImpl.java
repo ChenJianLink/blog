@@ -41,7 +41,7 @@ public class BlogServiceImpl implements BlogService {
         return result;
     }
 
-    //修改博客页面数据回显
+    //根据id查询博客
     @Override
     public Blog findBlogById(Integer id) throws Exception {
         Blog blog = blogMapper.selectByPrimaryKey(id);
@@ -94,10 +94,10 @@ public class BlogServiceImpl implements BlogService {
             List<String> imagesList = blog.getImagesList();
             String blogContent = blog.getContent();
             Document doc = Jsoup.parse(blogContent);
-            Elements jpgs = doc.select("img");
-            for (int i = 0; i < jpgs.size(); i++) {
+            Elements images = doc.select("img");
+            for (int i = 0; i < images.size(); i++) {
                 //将图片url取出并放入到imageList中
-                imagesList.add(jpgs.get(i).attr("src"));
+                imagesList.add(images.get(i).attr("src"));
                 if (i == 2) {
                     break;
                 }
