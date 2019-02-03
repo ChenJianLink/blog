@@ -58,10 +58,10 @@ public class LinkServiceImpl implements LinkService {
         }
         //数据更新
         //非法输入判断
-        if (!link.getLinkName().isEmpty() && link.getLinkName().trim().length() <= 0) {
+        if (!link.getLinkName().isEmpty() && link.getLinkName().trim().length() > 0) {
             oldlink.setLinkName(link.getLinkName());
         }
-        if (!link.getLinkUrl().isEmpty() && link.getLinkUrl().trim().length() <= 0) {
+        if (!link.getLinkUrl().isEmpty() && link.getLinkUrl().trim().length() > 0) {
             oldlink.setLinkUrl(link.getLinkUrl());
         }
         if (link.getOrderNo() != null) {
