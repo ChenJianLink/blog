@@ -1,0 +1,2092 @@
+
+
+[INFO ] 2019-02-03 08:51:58,672 method:org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:270)
+Root WebApplicationContext: initialization started
+
+
+[INFO ] 2019-02-03 08:51:58,718 method:org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:589)
+Refreshing Root WebApplicationContext: startup date [Sun Feb 03 08:51:58 CST 2019]; root of context hierarchy
+
+
+[INFO ] 2019-02-03 08:51:58,758 method:org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:316)
+Loading XML bean definitions from file [/home/chenjian/GIT/Blog/blog-web/target/classes/spring/springconfig-dao.xml]
+
+
+[INFO ] 2019-02-03 08:51:59,267 method:org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:316)
+Loading XML bean definitions from file [/home/chenjian/GIT/Blog/blog-web/target/classes/spring/springconfig-service.xml]
+
+
+[INFO ] 2019-02-03 08:51:59,357 method:org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:316)
+Loading XML bean definitions from file [/home/chenjian/GIT/Blog/blog-web/target/classes/spring/springconfig-trans.xml]
+
+
+[INFO ] 2019-02-03 08:51:59,570 method:org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.<init>(AutowiredAnnotationBeanPostProcessor.java:154)
+JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+
+
+[INFO ] 2019-02-03 08:52:00,584 method:org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:310)
+Root WebApplicationContext: initialization completed in 1910 ms
+
+
+[INFO ] 2019-02-03 08:52:00,619 method:org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:494)
+FrameworkServlet 'blog': initialization started
+
+
+[INFO ] 2019-02-03 08:52:00,622 method:org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:589)
+Refreshing WebApplicationContext for namespace 'blog-servlet': startup date [Sun Feb 03 08:52:00 CST 2019]; parent: Root WebApplicationContext
+
+
+[INFO ] 2019-02-03 08:52:00,622 method:org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:316)
+Loading XML bean definitions from class path resource [spring/springmvc.xml]
+
+
+[INFO ] 2019-02-03 08:52:00,771 method:org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.<init>(AutowiredAnnotationBeanPostProcessor.java:154)
+JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+
+
+[INFO ] 2019-02-03 08:52:01,003 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/blogger/aboutMe]}" onto public java.lang.String cn.chenjianlink.blog.controller.BloggerController.aboutMe(org.springframework.ui.Model) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 08:52:01,005 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/index]}" onto public java.lang.String cn.chenjianlink.blog.controller.IdexController.index(org.springframework.ui.Model,java.lang.Integer,java.lang.String,java.lang.Integer,javax.servlet.http.HttpServletRequest) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 08:52:01,006 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/image]}" onto public java.lang.String cn.chenjianlink.blog.controller.ImageController.showImage()
+
+
+[INFO ] 2019-02-03 08:52:01,006 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/message/leavemessages]}" onto public java.lang.String cn.chenjianlink.blog.controller.MessageController.messageboard(org.springframework.ui.Model) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 08:52:01,007 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blogger/admin-index]}" onto public java.lang.String cn.chenjianlink.blog.controller.admin.AdminIdexController.adminIndex(org.springframework.ui.Model) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 08:52:01,009 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blog/delete],methods=[POST]}" onto public cn.chenjianlink.blog.common.utils.BlogResult cn.chenjianlink.blog.controller.admin.BlogManageController.deleteBlog(java.lang.Integer[])
+
+
+[INFO ] 2019-02-03 08:52:01,010 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blog/save],methods=[POST]}" onto public cn.chenjianlink.blog.common.utils.BlogResult cn.chenjianlink.blog.controller.admin.BlogManageController.addBlog(cn.chenjianlink.blog.pojo.Blog)
+
+
+[INFO ] 2019-02-03 08:52:01,010 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blog/list],methods=[POST]}" onto public cn.chenjianlink.blog.common.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.BlogManageController.getBlogList(java.lang.String,java.lang.Integer,java.lang.Integer) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 08:52:01,010 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blog/findById],methods=[POST]}" onto public cn.chenjianlink.blog.pojo.Blog cn.chenjianlink.blog.controller.admin.BlogManageController.findBlogInfo(java.lang.Integer) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 08:52:01,012 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blog/edit],methods=[POST]}" onto public cn.chenjianlink.blog.common.utils.BlogResult cn.chenjianlink.blog.controller.admin.BlogManageController.editBlogInfo(cn.chenjianlink.blog.pojo.Blog)
+
+
+[INFO ] 2019-02-03 08:52:01,013 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blogType/delete],methods=[POST]}" onto public cn.chenjianlink.blog.common.utils.BlogResult cn.chenjianlink.blog.controller.admin.BlogTypeManageController.deleteBlogType(java.lang.Integer[])
+
+
+[INFO ] 2019-02-03 08:52:01,014 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blogType/list],methods=[POST]}" onto public cn.chenjianlink.blog.common.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.BlogTypeManageController.getBlogTypeList(java.lang.Integer,java.lang.Integer) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 08:52:01,014 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blogType/save],methods=[POST]}" onto public cn.chenjianlink.blog.common.utils.BlogResult cn.chenjianlink.blog.controller.admin.BlogTypeManageController.addBlogType(cn.chenjianlink.blog.pojo.BlogType)
+
+
+[INFO ] 2019-02-03 08:52:01,015 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blogType/edit],methods=[POST]}" onto public cn.chenjianlink.blog.common.utils.BlogResult cn.chenjianlink.blog.controller.admin.BlogTypeManageController.editBlodType(java.lang.Integer,cn.chenjianlink.blog.pojo.BlogType)
+
+
+[INFO ] 2019-02-03 08:52:01,017 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blogger/save],methods=[POST]}" onto public void cn.chenjianlink.blog.controller.admin.BloggerManageController.editBloggerInfo(cn.chenjianlink.blog.pojo.Blogger,org.springframework.web.multipart.MultipartFile,javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 08:52:01,018 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blogger/find],methods=[POST]}" onto public cn.chenjianlink.blog.pojo.Blogger cn.chenjianlink.blog.controller.admin.BloggerManageController.findBloggerInfo() throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 08:52:01,019 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/{page}]}" onto public java.lang.String cn.chenjianlink.blog.controller.admin.ForwordController.forwordPage(java.lang.String,org.springframework.ui.Model) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 08:52:01,020 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/link/save],methods=[POST]}" onto public cn.chenjianlink.blog.common.utils.BlogResult cn.chenjianlink.blog.controller.admin.LinkManageController.addLink(cn.chenjianlink.blog.pojo.Link)
+
+
+[INFO ] 2019-02-03 08:52:01,020 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/link/edit],methods=[POST]}" onto public cn.chenjianlink.blog.common.utils.BlogResult cn.chenjianlink.blog.controller.admin.LinkManageController.editLink(java.lang.Integer,cn.chenjianlink.blog.pojo.Link)
+
+
+[INFO ] 2019-02-03 08:52:01,021 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/link/delete],methods=[POST]}" onto public cn.chenjianlink.blog.common.utils.BlogResult cn.chenjianlink.blog.controller.admin.LinkManageController.deleteLink(java.lang.Integer[])
+
+
+[INFO ] 2019-02-03 08:52:01,021 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/link/list],methods=[POST]}" onto public cn.chenjianlink.blog.common.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.LinkManageController.getLinkList(java.lang.Integer,java.lang.Integer) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 08:52:01,022 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blogger/login]}" onto public java.lang.String cn.chenjianlink.blog.controller.admin.LoginController.login()
+
+
+[INFO ] 2019-02-03 08:52:01,022 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/admin-login]}" onto public java.lang.String cn.chenjianlink.blog.controller.admin.LoginController.showLoginPage()
+
+
+[INFO ] 2019-02-03 08:52:01,331 method:org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.initControllerAdviceCache(RequestMappingHandlerAdapter.java:568)
+Looking for @ControllerAdvice: WebApplicationContext for namespace 'blog-servlet': startup date [Sun Feb 03 08:52:00 CST 2019]; parent: Root WebApplicationContext
+
+
+[INFO ] 2019-02-03 08:52:01,394 method:org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.initControllerAdviceCache(RequestMappingHandlerAdapter.java:568)
+Looking for @ControllerAdvice: WebApplicationContext for namespace 'blog-servlet': startup date [Sun Feb 03 08:52:00 CST 2019]; parent: Root WebApplicationContext
+
+
+[INFO ] 2019-02-03 08:52:01,487 method:org.springframework.web.servlet.handler.AbstractUrlHandlerMapping.registerHandler(AbstractUrlHandlerMapping.java:373)
+Mapped URL path [/static/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+
+
+[INFO ] 2019-02-03 08:52:01,604 method:org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:513)
+FrameworkServlet 'blog': initialization completed in 985 ms
+
+
+[INFO ] 2019-02-03 08:55:04,660 method:com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:655)
+{dataSource-1} inited
+
+
+[INFO ] 2019-02-03 08:58:44,838 method:org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:270)
+Root WebApplicationContext: initialization started
+
+
+[INFO ] 2019-02-03 08:58:44,893 method:org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:589)
+Refreshing Root WebApplicationContext: startup date [Sun Feb 03 08:58:44 CST 2019]; root of context hierarchy
+
+
+[INFO ] 2019-02-03 08:58:44,933 method:org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:316)
+Loading XML bean definitions from file [/home/chenjian/GIT/Blog/blog-web/target/classes/spring/springconfig-dao.xml]
+
+
+[INFO ] 2019-02-03 08:58:45,294 method:org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:316)
+Loading XML bean definitions from file [/home/chenjian/GIT/Blog/blog-web/target/classes/spring/springconfig-service.xml]
+
+
+[INFO ] 2019-02-03 08:58:45,379 method:org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:316)
+Loading XML bean definitions from file [/home/chenjian/GIT/Blog/blog-web/target/classes/spring/springconfig-trans.xml]
+
+
+[INFO ] 2019-02-03 08:58:45,592 method:org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.<init>(AutowiredAnnotationBeanPostProcessor.java:154)
+JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+
+
+[INFO ] 2019-02-03 08:58:46,329 method:org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:310)
+Root WebApplicationContext: initialization completed in 1488 ms
+
+
+[INFO ] 2019-02-03 08:58:46,372 method:org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:494)
+FrameworkServlet 'blog': initialization started
+
+
+[INFO ] 2019-02-03 08:58:46,374 method:org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:589)
+Refreshing WebApplicationContext for namespace 'blog-servlet': startup date [Sun Feb 03 08:58:46 CST 2019]; parent: Root WebApplicationContext
+
+
+[INFO ] 2019-02-03 08:58:46,375 method:org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:316)
+Loading XML bean definitions from class path resource [spring/springmvc.xml]
+
+
+[INFO ] 2019-02-03 08:58:46,532 method:org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.<init>(AutowiredAnnotationBeanPostProcessor.java:154)
+JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+
+
+[INFO ] 2019-02-03 08:58:46,794 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/blogger/aboutMe]}" onto public java.lang.String cn.chenjianlink.blog.controller.BloggerController.aboutMe(org.springframework.ui.Model) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 08:58:46,796 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/index]}" onto public java.lang.String cn.chenjianlink.blog.controller.IdexController.index(org.springframework.ui.Model,java.lang.Integer,java.lang.String,java.lang.Integer,javax.servlet.http.HttpServletRequest) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 08:58:46,797 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/image]}" onto public java.lang.String cn.chenjianlink.blog.controller.ImageController.showImage()
+
+
+[INFO ] 2019-02-03 08:58:46,798 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/message/leavemessages]}" onto public java.lang.String cn.chenjianlink.blog.controller.MessageController.messageboard(org.springframework.ui.Model) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 08:58:46,799 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blogger/admin-index]}" onto public java.lang.String cn.chenjianlink.blog.controller.admin.AdminIdexController.adminIndex(org.springframework.ui.Model) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 08:58:46,801 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blog/delete],methods=[POST]}" onto public cn.chenjianlink.blog.common.utils.BlogResult cn.chenjianlink.blog.controller.admin.BlogManageController.deleteBlog(java.lang.Integer[])
+
+
+[INFO ] 2019-02-03 08:58:46,802 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blog/save],methods=[POST]}" onto public cn.chenjianlink.blog.common.utils.BlogResult cn.chenjianlink.blog.controller.admin.BlogManageController.addBlog(cn.chenjianlink.blog.pojo.Blog)
+
+
+[INFO ] 2019-02-03 08:58:46,802 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blog/list],methods=[POST]}" onto public cn.chenjianlink.blog.common.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.BlogManageController.getBlogList(java.lang.String,java.lang.Integer,java.lang.Integer) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 08:58:46,803 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blog/findById],methods=[POST]}" onto public cn.chenjianlink.blog.pojo.Blog cn.chenjianlink.blog.controller.admin.BlogManageController.findBlogInfo(java.lang.Integer) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 08:58:46,803 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blog/edit],methods=[POST]}" onto public cn.chenjianlink.blog.common.utils.BlogResult cn.chenjianlink.blog.controller.admin.BlogManageController.editBlogInfo(cn.chenjianlink.blog.pojo.Blog)
+
+
+[INFO ] 2019-02-03 08:58:46,805 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blogType/delete],methods=[POST]}" onto public cn.chenjianlink.blog.common.utils.BlogResult cn.chenjianlink.blog.controller.admin.BlogTypeManageController.deleteBlogType(java.lang.Integer[])
+
+
+[INFO ] 2019-02-03 08:58:46,805 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blogType/list],methods=[POST]}" onto public cn.chenjianlink.blog.common.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.BlogTypeManageController.getBlogTypeList(java.lang.Integer,java.lang.Integer) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 08:58:46,806 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blogType/save],methods=[POST]}" onto public cn.chenjianlink.blog.common.utils.BlogResult cn.chenjianlink.blog.controller.admin.BlogTypeManageController.addBlogType(cn.chenjianlink.blog.pojo.BlogType)
+
+
+[INFO ] 2019-02-03 08:58:46,807 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blogType/edit],methods=[POST]}" onto public cn.chenjianlink.blog.common.utils.BlogResult cn.chenjianlink.blog.controller.admin.BlogTypeManageController.editBlodType(java.lang.Integer,cn.chenjianlink.blog.pojo.BlogType)
+
+
+[INFO ] 2019-02-03 08:58:46,809 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blogger/save],methods=[POST]}" onto public void cn.chenjianlink.blog.controller.admin.BloggerManageController.editBloggerInfo(cn.chenjianlink.blog.pojo.Blogger,org.springframework.web.multipart.MultipartFile,javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 08:58:46,810 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blogger/find],methods=[POST]}" onto public cn.chenjianlink.blog.pojo.Blogger cn.chenjianlink.blog.controller.admin.BloggerManageController.findBloggerInfo() throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 08:58:46,811 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/{page}]}" onto public java.lang.String cn.chenjianlink.blog.controller.admin.ForwordController.forwordPage(java.lang.String,org.springframework.ui.Model) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 08:58:46,812 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/link/save],methods=[POST]}" onto public cn.chenjianlink.blog.common.utils.BlogResult cn.chenjianlink.blog.controller.admin.LinkManageController.addLink(cn.chenjianlink.blog.pojo.Link)
+
+
+[INFO ] 2019-02-03 08:58:46,813 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/link/edit],methods=[POST]}" onto public cn.chenjianlink.blog.common.utils.BlogResult cn.chenjianlink.blog.controller.admin.LinkManageController.editLink(java.lang.Integer,cn.chenjianlink.blog.pojo.Link)
+
+
+[INFO ] 2019-02-03 08:58:46,813 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/link/delete],methods=[POST]}" onto public cn.chenjianlink.blog.common.utils.BlogResult cn.chenjianlink.blog.controller.admin.LinkManageController.deleteLink(java.lang.Integer[])
+
+
+[INFO ] 2019-02-03 08:58:46,814 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/link/list],methods=[POST]}" onto public cn.chenjianlink.blog.common.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.LinkManageController.getLinkList(java.lang.Integer,java.lang.Integer) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 08:58:46,815 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blogger/login]}" onto public java.lang.String cn.chenjianlink.blog.controller.admin.LoginController.login()
+
+
+[INFO ] 2019-02-03 08:58:46,815 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/admin-login]}" onto public java.lang.String cn.chenjianlink.blog.controller.admin.LoginController.showLoginPage()
+
+
+[INFO ] 2019-02-03 08:58:47,137 method:org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.initControllerAdviceCache(RequestMappingHandlerAdapter.java:568)
+Looking for @ControllerAdvice: WebApplicationContext for namespace 'blog-servlet': startup date [Sun Feb 03 08:58:46 CST 2019]; parent: Root WebApplicationContext
+
+
+[INFO ] 2019-02-03 08:58:47,196 method:org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.initControllerAdviceCache(RequestMappingHandlerAdapter.java:568)
+Looking for @ControllerAdvice: WebApplicationContext for namespace 'blog-servlet': startup date [Sun Feb 03 08:58:46 CST 2019]; parent: Root WebApplicationContext
+
+
+[INFO ] 2019-02-03 08:58:47,292 method:org.springframework.web.servlet.handler.AbstractUrlHandlerMapping.registerHandler(AbstractUrlHandlerMapping.java:373)
+Mapped URL path [/static/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+
+
+[INFO ] 2019-02-03 08:58:47,377 method:org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:513)
+FrameworkServlet 'blog': initialization completed in 1005 ms
+
+
+[INFO ] 2019-02-03 08:58:54,074 method:com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:655)
+{dataSource-1} inited
+
+
+[INFO ] 2019-02-03 09:00:56,554 method:org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:270)
+Root WebApplicationContext: initialization started
+
+
+[INFO ] 2019-02-03 09:00:56,596 method:org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:589)
+Refreshing Root WebApplicationContext: startup date [Sun Feb 03 09:00:56 CST 2019]; root of context hierarchy
+
+
+[INFO ] 2019-02-03 09:00:56,636 method:org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:316)
+Loading XML bean definitions from file [/home/chenjian/GIT/Blog/blog-web/target/classes/spring/springconfig-dao.xml]
+
+
+[INFO ] 2019-02-03 09:00:56,940 method:org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:316)
+Loading XML bean definitions from file [/home/chenjian/GIT/Blog/blog-web/target/classes/spring/springconfig-service.xml]
+
+
+[INFO ] 2019-02-03 09:00:57,031 method:org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:316)
+Loading XML bean definitions from file [/home/chenjian/GIT/Blog/blog-web/target/classes/spring/springconfig-trans.xml]
+
+
+[INFO ] 2019-02-03 09:00:57,275 method:org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.<init>(AutowiredAnnotationBeanPostProcessor.java:154)
+JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+
+
+[INFO ] 2019-02-03 09:00:58,130 method:org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:310)
+Root WebApplicationContext: initialization completed in 1574 ms
+
+
+[INFO ] 2019-02-03 09:00:58,179 method:org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:494)
+FrameworkServlet 'blog': initialization started
+
+
+[INFO ] 2019-02-03 09:00:58,182 method:org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:589)
+Refreshing WebApplicationContext for namespace 'blog-servlet': startup date [Sun Feb 03 09:00:58 CST 2019]; parent: Root WebApplicationContext
+
+
+[INFO ] 2019-02-03 09:00:58,182 method:org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:316)
+Loading XML bean definitions from class path resource [spring/springmvc.xml]
+
+
+[INFO ] 2019-02-03 09:00:58,346 method:org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.<init>(AutowiredAnnotationBeanPostProcessor.java:154)
+JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+
+
+[INFO ] 2019-02-03 09:00:58,596 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/blogger/aboutMe]}" onto public java.lang.String cn.chenjianlink.blog.controller.BloggerController.aboutMe(org.springframework.ui.Model) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 09:00:58,598 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/index]}" onto public java.lang.String cn.chenjianlink.blog.controller.IdexController.index(org.springframework.ui.Model,java.lang.Integer,java.lang.String,java.lang.Integer,javax.servlet.http.HttpServletRequest) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 09:00:58,599 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/image]}" onto public java.lang.String cn.chenjianlink.blog.controller.ImageController.showImage()
+
+
+[INFO ] 2019-02-03 09:00:58,600 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/message/leavemessages]}" onto public java.lang.String cn.chenjianlink.blog.controller.MessageController.messageboard(org.springframework.ui.Model) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 09:00:58,601 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blogger/admin-index]}" onto public java.lang.String cn.chenjianlink.blog.controller.admin.AdminIdexController.adminIndex(org.springframework.ui.Model) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 09:00:58,603 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blog/findById],methods=[POST]}" onto public cn.chenjianlink.blog.pojo.Blog cn.chenjianlink.blog.controller.admin.BlogManageController.findBlogInfo(java.lang.Integer) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 09:00:58,604 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blog/list],methods=[POST]}" onto public cn.chenjianlink.blog.common.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.BlogManageController.getBlogList(java.lang.String,java.lang.Integer,java.lang.Integer) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 09:00:58,604 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blog/edit],methods=[POST]}" onto public cn.chenjianlink.blog.common.utils.BlogResult cn.chenjianlink.blog.controller.admin.BlogManageController.editBlogInfo(cn.chenjianlink.blog.pojo.Blog)
+
+
+[INFO ] 2019-02-03 09:00:58,605 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blog/delete],methods=[POST]}" onto public cn.chenjianlink.blog.common.utils.BlogResult cn.chenjianlink.blog.controller.admin.BlogManageController.deleteBlog(java.lang.Integer[])
+
+
+[INFO ] 2019-02-03 09:00:58,605 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blog/save],methods=[POST]}" onto public cn.chenjianlink.blog.common.utils.BlogResult cn.chenjianlink.blog.controller.admin.BlogManageController.addBlog(cn.chenjianlink.blog.pojo.Blog)
+
+
+[INFO ] 2019-02-03 09:00:58,606 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blogType/edit],methods=[POST]}" onto public cn.chenjianlink.blog.common.utils.BlogResult cn.chenjianlink.blog.controller.admin.BlogTypeManageController.editBlodType(java.lang.Integer,cn.chenjianlink.blog.pojo.BlogType)
+
+
+[INFO ] 2019-02-03 09:00:58,607 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blogType/delete],methods=[POST]}" onto public cn.chenjianlink.blog.common.utils.BlogResult cn.chenjianlink.blog.controller.admin.BlogTypeManageController.deleteBlogType(java.lang.Integer[])
+
+
+[INFO ] 2019-02-03 09:00:58,607 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blogType/list],methods=[POST]}" onto public cn.chenjianlink.blog.common.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.BlogTypeManageController.getBlogTypeList(java.lang.Integer,java.lang.Integer) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 09:00:58,608 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blogType/save],methods=[POST]}" onto public cn.chenjianlink.blog.common.utils.BlogResult cn.chenjianlink.blog.controller.admin.BlogTypeManageController.addBlogType(cn.chenjianlink.blog.pojo.BlogType)
+
+
+[INFO ] 2019-02-03 09:00:58,610 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blogger/find],methods=[POST]}" onto public cn.chenjianlink.blog.pojo.Blogger cn.chenjianlink.blog.controller.admin.BloggerManageController.findBloggerInfo() throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 09:00:58,611 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blogger/save],methods=[POST]}" onto public void cn.chenjianlink.blog.controller.admin.BloggerManageController.editBloggerInfo(cn.chenjianlink.blog.pojo.Blogger,org.springframework.web.multipart.MultipartFile,javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 09:00:58,612 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/{page}]}" onto public java.lang.String cn.chenjianlink.blog.controller.admin.ForwordController.forwordPage(java.lang.String,org.springframework.ui.Model) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 09:00:58,613 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/link/save],methods=[POST]}" onto public cn.chenjianlink.blog.common.utils.BlogResult cn.chenjianlink.blog.controller.admin.LinkManageController.addLink(cn.chenjianlink.blog.pojo.Link)
+
+
+[INFO ] 2019-02-03 09:00:58,613 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/link/edit],methods=[POST]}" onto public cn.chenjianlink.blog.common.utils.BlogResult cn.chenjianlink.blog.controller.admin.LinkManageController.editLink(java.lang.Integer,cn.chenjianlink.blog.pojo.Link)
+
+
+[INFO ] 2019-02-03 09:00:58,614 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/link/delete],methods=[POST]}" onto public cn.chenjianlink.blog.common.utils.BlogResult cn.chenjianlink.blog.controller.admin.LinkManageController.deleteLink(java.lang.Integer[])
+
+
+[INFO ] 2019-02-03 09:00:58,614 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/link/list],methods=[POST]}" onto public cn.chenjianlink.blog.common.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.LinkManageController.getLinkList(java.lang.Integer,java.lang.Integer) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 09:00:58,615 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/admin-login]}" onto public java.lang.String cn.chenjianlink.blog.controller.admin.LoginController.showLoginPage()
+
+
+[INFO ] 2019-02-03 09:00:58,616 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blogger/login]}" onto public java.lang.String cn.chenjianlink.blog.controller.admin.LoginController.login()
+
+
+[INFO ] 2019-02-03 09:00:58,940 method:org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.initControllerAdviceCache(RequestMappingHandlerAdapter.java:568)
+Looking for @ControllerAdvice: WebApplicationContext for namespace 'blog-servlet': startup date [Sun Feb 03 09:00:58 CST 2019]; parent: Root WebApplicationContext
+
+
+[INFO ] 2019-02-03 09:00:59,001 method:org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.initControllerAdviceCache(RequestMappingHandlerAdapter.java:568)
+Looking for @ControllerAdvice: WebApplicationContext for namespace 'blog-servlet': startup date [Sun Feb 03 09:00:58 CST 2019]; parent: Root WebApplicationContext
+
+
+[INFO ] 2019-02-03 09:00:59,096 method:org.springframework.web.servlet.handler.AbstractUrlHandlerMapping.registerHandler(AbstractUrlHandlerMapping.java:373)
+Mapped URL path [/static/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+
+
+[INFO ] 2019-02-03 09:00:59,179 method:org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:513)
+FrameworkServlet 'blog': initialization completed in 1000 ms
+
+
+[INFO ] 2019-02-03 09:01:04,167 method:com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:655)
+{dataSource-1} inited
+
+
+[WARN ] 2019-02-03 09:51:47,566 method:org.springframework.web.servlet.DispatcherServlet.noHandlerFound(DispatcherServlet.java:1205)
+No mapping found for HTTP request with URI [/blog/q.html] in DispatcherServlet with name 'blog'
+
+
+[WARN ] 2019-02-03 09:51:58,182 method:org.springframework.web.servlet.DispatcherServlet.noHandlerFound(DispatcherServlet.java:1205)
+No mapping found for HTTP request with URI [/blog/q.html] in DispatcherServlet with name 'blog'
+
+
+[WARN ] 2019-02-03 09:54:41,672 method:org.springframework.web.servlet.DispatcherServlet.noHandlerFound(DispatcherServlet.java:1205)
+No mapping found for HTTP request with URI [/blog/query.html] in DispatcherServlet with name 'blog'
+
+
+[INFO ] 2019-02-03 10:09:16,568 method:org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:270)
+Root WebApplicationContext: initialization started
+
+
+[INFO ] 2019-02-03 10:09:16,615 method:org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:589)
+Refreshing Root WebApplicationContext: startup date [Sun Feb 03 10:09:16 CST 2019]; root of context hierarchy
+
+
+[INFO ] 2019-02-03 10:09:16,659 method:org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:316)
+Loading XML bean definitions from file [/home/chenjian/GIT/Blog/blog-web/target/classes/spring/springconfig-dao.xml]
+
+
+[INFO ] 2019-02-03 10:09:16,948 method:org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:316)
+Loading XML bean definitions from file [/home/chenjian/GIT/Blog/blog-web/target/classes/spring/springconfig-service.xml]
+
+
+[INFO ] 2019-02-03 10:09:17,022 method:org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:316)
+Loading XML bean definitions from file [/home/chenjian/GIT/Blog/blog-web/target/classes/spring/springconfig-trans.xml]
+
+
+[INFO ] 2019-02-03 10:09:17,233 method:org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.<init>(AutowiredAnnotationBeanPostProcessor.java:154)
+JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+
+
+[INFO ] 2019-02-03 10:09:17,903 method:org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:310)
+Root WebApplicationContext: initialization completed in 1333 ms
+
+
+[INFO ] 2019-02-03 10:09:17,940 method:org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:494)
+FrameworkServlet 'blog': initialization started
+
+
+[INFO ] 2019-02-03 10:09:17,943 method:org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:589)
+Refreshing WebApplicationContext for namespace 'blog-servlet': startup date [Sun Feb 03 10:09:17 CST 2019]; parent: Root WebApplicationContext
+
+
+[INFO ] 2019-02-03 10:09:17,943 method:org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:316)
+Loading XML bean definitions from class path resource [spring/springmvc.xml]
+
+
+[INFO ] 2019-02-03 10:09:18,091 method:org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.<init>(AutowiredAnnotationBeanPostProcessor.java:154)
+JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+
+
+[INFO ] 2019-02-03 10:09:18,312 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/blog/query]}" onto public java.lang.String cn.chenjianlink.blog.controller.BlogController.searchBlog() throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 10:09:18,313 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/blogger/aboutMe]}" onto public java.lang.String cn.chenjianlink.blog.controller.BloggerController.aboutMe(org.springframework.ui.Model) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 10:09:18,314 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/index]}" onto public java.lang.String cn.chenjianlink.blog.controller.IdexController.index(org.springframework.ui.Model,java.lang.Integer,java.lang.String,java.lang.Integer,javax.servlet.http.HttpServletRequest) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 10:09:18,315 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/image]}" onto public java.lang.String cn.chenjianlink.blog.controller.ImageController.showImage()
+
+
+[INFO ] 2019-02-03 10:09:18,315 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/message/leavemessages]}" onto public java.lang.String cn.chenjianlink.blog.controller.MessageController.messageboard(org.springframework.ui.Model) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 10:09:18,317 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blogger/admin-index]}" onto public java.lang.String cn.chenjianlink.blog.controller.admin.AdminIdexController.adminIndex(org.springframework.ui.Model) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 10:09:18,318 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blog/delete],methods=[POST]}" onto public cn.chenjianlink.blog.common.utils.BlogResult cn.chenjianlink.blog.controller.admin.BlogManageController.deleteBlog(java.lang.Integer[])
+
+
+[INFO ] 2019-02-03 10:09:18,318 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blog/save],methods=[POST]}" onto public cn.chenjianlink.blog.common.utils.BlogResult cn.chenjianlink.blog.controller.admin.BlogManageController.addBlog(cn.chenjianlink.blog.pojo.Blog)
+
+
+[INFO ] 2019-02-03 10:09:18,319 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blog/findById],methods=[POST]}" onto public cn.chenjianlink.blog.pojo.Blog cn.chenjianlink.blog.controller.admin.BlogManageController.findBlogInfo(java.lang.Integer) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 10:09:18,319 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blog/edit],methods=[POST]}" onto public cn.chenjianlink.blog.common.utils.BlogResult cn.chenjianlink.blog.controller.admin.BlogManageController.editBlogInfo(cn.chenjianlink.blog.pojo.Blog)
+
+
+[INFO ] 2019-02-03 10:09:18,320 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blog/list],methods=[POST]}" onto public cn.chenjianlink.blog.common.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.BlogManageController.getBlogList(java.lang.String,java.lang.Integer,java.lang.Integer) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 10:09:18,321 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blogType/delete],methods=[POST]}" onto public cn.chenjianlink.blog.common.utils.BlogResult cn.chenjianlink.blog.controller.admin.BlogTypeManageController.deleteBlogType(java.lang.Integer[])
+
+
+[INFO ] 2019-02-03 10:09:18,322 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blogType/list],methods=[POST]}" onto public cn.chenjianlink.blog.common.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.BlogTypeManageController.getBlogTypeList(java.lang.Integer,java.lang.Integer) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 10:09:18,322 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blogType/save],methods=[POST]}" onto public cn.chenjianlink.blog.common.utils.BlogResult cn.chenjianlink.blog.controller.admin.BlogTypeManageController.addBlogType(cn.chenjianlink.blog.pojo.BlogType)
+
+
+[INFO ] 2019-02-03 10:09:18,323 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blogType/edit],methods=[POST]}" onto public cn.chenjianlink.blog.common.utils.BlogResult cn.chenjianlink.blog.controller.admin.BlogTypeManageController.editBlodType(java.lang.Integer,cn.chenjianlink.blog.pojo.BlogType)
+
+
+[INFO ] 2019-02-03 10:09:18,325 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blogger/save],methods=[POST]}" onto public void cn.chenjianlink.blog.controller.admin.BloggerManageController.editBloggerInfo(cn.chenjianlink.blog.pojo.Blogger,org.springframework.web.multipart.MultipartFile,javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 10:09:18,325 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blogger/find],methods=[POST]}" onto public cn.chenjianlink.blog.pojo.Blogger cn.chenjianlink.blog.controller.admin.BloggerManageController.findBloggerInfo() throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 10:09:18,326 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/{page}]}" onto public java.lang.String cn.chenjianlink.blog.controller.admin.ForwordController.forwordPage(java.lang.String,org.springframework.ui.Model) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 10:09:18,327 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/link/save],methods=[POST]}" onto public cn.chenjianlink.blog.common.utils.BlogResult cn.chenjianlink.blog.controller.admin.LinkManageController.addLink(cn.chenjianlink.blog.pojo.Link)
+
+
+[INFO ] 2019-02-03 10:09:18,327 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/link/edit],methods=[POST]}" onto public cn.chenjianlink.blog.common.utils.BlogResult cn.chenjianlink.blog.controller.admin.LinkManageController.editLink(java.lang.Integer,cn.chenjianlink.blog.pojo.Link)
+
+
+[INFO ] 2019-02-03 10:09:18,328 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/link/delete],methods=[POST]}" onto public cn.chenjianlink.blog.common.utils.BlogResult cn.chenjianlink.blog.controller.admin.LinkManageController.deleteLink(java.lang.Integer[])
+
+
+[INFO ] 2019-02-03 10:09:18,328 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/link/list],methods=[POST]}" onto public cn.chenjianlink.blog.common.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.LinkManageController.getLinkList(java.lang.Integer,java.lang.Integer) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 10:09:18,329 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/admin-login]}" onto public java.lang.String cn.chenjianlink.blog.controller.admin.LoginController.showLoginPage()
+
+
+[INFO ] 2019-02-03 10:09:18,330 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blogger/login]}" onto public java.lang.String cn.chenjianlink.blog.controller.admin.LoginController.login()
+
+
+[INFO ] 2019-02-03 10:09:18,569 method:org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.initControllerAdviceCache(RequestMappingHandlerAdapter.java:568)
+Looking for @ControllerAdvice: WebApplicationContext for namespace 'blog-servlet': startup date [Sun Feb 03 10:09:17 CST 2019]; parent: Root WebApplicationContext
+
+
+[INFO ] 2019-02-03 10:09:18,630 method:org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.initControllerAdviceCache(RequestMappingHandlerAdapter.java:568)
+Looking for @ControllerAdvice: WebApplicationContext for namespace 'blog-servlet': startup date [Sun Feb 03 10:09:17 CST 2019]; parent: Root WebApplicationContext
+
+
+[INFO ] 2019-02-03 10:09:18,759 method:org.springframework.web.servlet.handler.AbstractUrlHandlerMapping.registerHandler(AbstractUrlHandlerMapping.java:373)
+Mapped URL path [/static/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+
+
+[INFO ] 2019-02-03 10:09:18,879 method:org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:513)
+FrameworkServlet 'blog': initialization completed in 938 ms
+
+
+[INFO ] 2019-02-03 10:11:45,668 method:org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:270)
+Root WebApplicationContext: initialization started
+
+
+[INFO ] 2019-02-03 10:11:45,710 method:org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:589)
+Refreshing Root WebApplicationContext: startup date [Sun Feb 03 10:11:45 CST 2019]; root of context hierarchy
+
+
+[INFO ] 2019-02-03 10:11:45,741 method:org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:316)
+Loading XML bean definitions from file [/home/chenjian/GIT/Blog/blog-web/target/classes/spring/springconfig-dao.xml]
+
+
+[INFO ] 2019-02-03 10:11:46,031 method:org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:316)
+Loading XML bean definitions from file [/home/chenjian/GIT/Blog/blog-web/target/classes/spring/springconfig-service.xml]
+
+
+[INFO ] 2019-02-03 10:11:46,105 method:org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:316)
+Loading XML bean definitions from file [/home/chenjian/GIT/Blog/blog-web/target/classes/spring/springconfig-trans.xml]
+
+
+[INFO ] 2019-02-03 10:11:46,305 method:org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.<init>(AutowiredAnnotationBeanPostProcessor.java:154)
+JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+
+
+[INFO ] 2019-02-03 10:11:47,008 method:org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:310)
+Root WebApplicationContext: initialization completed in 1338 ms
+
+
+[INFO ] 2019-02-03 10:11:47,046 method:org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:494)
+FrameworkServlet 'blog': initialization started
+
+
+[INFO ] 2019-02-03 10:11:47,049 method:org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:589)
+Refreshing WebApplicationContext for namespace 'blog-servlet': startup date [Sun Feb 03 10:11:47 CST 2019]; parent: Root WebApplicationContext
+
+
+[INFO ] 2019-02-03 10:11:47,049 method:org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:316)
+Loading XML bean definitions from class path resource [spring/springmvc.xml]
+
+
+[INFO ] 2019-02-03 10:11:47,176 method:org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.<init>(AutowiredAnnotationBeanPostProcessor.java:154)
+JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+
+
+[INFO ] 2019-02-03 10:11:47,380 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/blog/query]}" onto public java.lang.String cn.chenjianlink.blog.controller.BlogController.searchBlog(org.springframework.ui.Model) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 10:11:47,382 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/blogger/aboutMe]}" onto public java.lang.String cn.chenjianlink.blog.controller.BloggerController.aboutMe(org.springframework.ui.Model) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 10:11:47,383 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/index]}" onto public java.lang.String cn.chenjianlink.blog.controller.IdexController.index(org.springframework.ui.Model,java.lang.Integer,java.lang.String,java.lang.Integer,javax.servlet.http.HttpServletRequest) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 10:11:47,383 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/image]}" onto public java.lang.String cn.chenjianlink.blog.controller.ImageController.showImage()
+
+
+[INFO ] 2019-02-03 10:11:47,384 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/message/leavemessages]}" onto public java.lang.String cn.chenjianlink.blog.controller.MessageController.messageboard(org.springframework.ui.Model) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 10:11:47,386 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blogger/admin-index]}" onto public java.lang.String cn.chenjianlink.blog.controller.admin.AdminIdexController.adminIndex(org.springframework.ui.Model) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 10:11:47,387 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blog/delete],methods=[POST]}" onto public cn.chenjianlink.blog.common.utils.BlogResult cn.chenjianlink.blog.controller.admin.BlogManageController.deleteBlog(java.lang.Integer[])
+
+
+[INFO ] 2019-02-03 10:11:47,388 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blog/save],methods=[POST]}" onto public cn.chenjianlink.blog.common.utils.BlogResult cn.chenjianlink.blog.controller.admin.BlogManageController.addBlog(cn.chenjianlink.blog.pojo.Blog)
+
+
+[INFO ] 2019-02-03 10:11:47,388 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blog/edit],methods=[POST]}" onto public cn.chenjianlink.blog.common.utils.BlogResult cn.chenjianlink.blog.controller.admin.BlogManageController.editBlogInfo(cn.chenjianlink.blog.pojo.Blog)
+
+
+[INFO ] 2019-02-03 10:11:47,389 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blog/findById],methods=[POST]}" onto public cn.chenjianlink.blog.pojo.Blog cn.chenjianlink.blog.controller.admin.BlogManageController.findBlogInfo(java.lang.Integer) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 10:11:47,389 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blog/list],methods=[POST]}" onto public cn.chenjianlink.blog.common.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.BlogManageController.getBlogList(java.lang.String,java.lang.Integer,java.lang.Integer) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 10:11:47,391 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blogType/delete],methods=[POST]}" onto public cn.chenjianlink.blog.common.utils.BlogResult cn.chenjianlink.blog.controller.admin.BlogTypeManageController.deleteBlogType(java.lang.Integer[])
+
+
+[INFO ] 2019-02-03 10:11:47,391 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blogType/list],methods=[POST]}" onto public cn.chenjianlink.blog.common.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.BlogTypeManageController.getBlogTypeList(java.lang.Integer,java.lang.Integer) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 10:11:47,392 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blogType/save],methods=[POST]}" onto public cn.chenjianlink.blog.common.utils.BlogResult cn.chenjianlink.blog.controller.admin.BlogTypeManageController.addBlogType(cn.chenjianlink.blog.pojo.BlogType)
+
+
+[INFO ] 2019-02-03 10:11:47,392 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blogType/edit],methods=[POST]}" onto public cn.chenjianlink.blog.common.utils.BlogResult cn.chenjianlink.blog.controller.admin.BlogTypeManageController.editBlodType(java.lang.Integer,cn.chenjianlink.blog.pojo.BlogType)
+
+
+[INFO ] 2019-02-03 10:11:47,395 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blogger/save],methods=[POST]}" onto public void cn.chenjianlink.blog.controller.admin.BloggerManageController.editBloggerInfo(cn.chenjianlink.blog.pojo.Blogger,org.springframework.web.multipart.MultipartFile,javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 10:11:47,396 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blogger/find],methods=[POST]}" onto public cn.chenjianlink.blog.pojo.Blogger cn.chenjianlink.blog.controller.admin.BloggerManageController.findBloggerInfo() throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 10:11:47,397 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/{page}]}" onto public java.lang.String cn.chenjianlink.blog.controller.admin.ForwordController.forwordPage(java.lang.String,org.springframework.ui.Model) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 10:11:47,398 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/link/save],methods=[POST]}" onto public cn.chenjianlink.blog.common.utils.BlogResult cn.chenjianlink.blog.controller.admin.LinkManageController.addLink(cn.chenjianlink.blog.pojo.Link)
+
+
+[INFO ] 2019-02-03 10:11:47,398 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/link/edit],methods=[POST]}" onto public cn.chenjianlink.blog.common.utils.BlogResult cn.chenjianlink.blog.controller.admin.LinkManageController.editLink(java.lang.Integer,cn.chenjianlink.blog.pojo.Link)
+
+
+[INFO ] 2019-02-03 10:11:47,399 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/link/delete],methods=[POST]}" onto public cn.chenjianlink.blog.common.utils.BlogResult cn.chenjianlink.blog.controller.admin.LinkManageController.deleteLink(java.lang.Integer[])
+
+
+[INFO ] 2019-02-03 10:11:47,399 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/link/list],methods=[POST]}" onto public cn.chenjianlink.blog.common.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.LinkManageController.getLinkList(java.lang.Integer,java.lang.Integer) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 10:11:47,400 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blogger/login]}" onto public java.lang.String cn.chenjianlink.blog.controller.admin.LoginController.login()
+
+
+[INFO ] 2019-02-03 10:11:47,401 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/admin-login]}" onto public java.lang.String cn.chenjianlink.blog.controller.admin.LoginController.showLoginPage()
+
+
+[INFO ] 2019-02-03 10:11:47,690 method:org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.initControllerAdviceCache(RequestMappingHandlerAdapter.java:568)
+Looking for @ControllerAdvice: WebApplicationContext for namespace 'blog-servlet': startup date [Sun Feb 03 10:11:47 CST 2019]; parent: Root WebApplicationContext
+
+
+[INFO ] 2019-02-03 10:11:47,745 method:org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.initControllerAdviceCache(RequestMappingHandlerAdapter.java:568)
+Looking for @ControllerAdvice: WebApplicationContext for namespace 'blog-servlet': startup date [Sun Feb 03 10:11:47 CST 2019]; parent: Root WebApplicationContext
+
+
+[INFO ] 2019-02-03 10:11:47,824 method:org.springframework.web.servlet.handler.AbstractUrlHandlerMapping.registerHandler(AbstractUrlHandlerMapping.java:373)
+Mapped URL path [/static/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+
+
+[INFO ] 2019-02-03 10:11:47,885 method:org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:513)
+FrameworkServlet 'blog': initialization completed in 839 ms
+
+
+[INFO ] 2019-02-03 10:11:52,436 method:com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:655)
+{dataSource-1} inited
+
+
+[INFO ] 2019-02-03 10:20:33,761 method:org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:270)
+Root WebApplicationContext: initialization started
+
+
+[INFO ] 2019-02-03 10:20:33,808 method:org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:589)
+Refreshing Root WebApplicationContext: startup date [Sun Feb 03 10:20:33 CST 2019]; root of context hierarchy
+
+
+[INFO ] 2019-02-03 10:20:33,852 method:org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:316)
+Loading XML bean definitions from file [/home/chenjian/GIT/Blog/blog-web/target/classes/spring/springconfig-dao.xml]
+
+
+[INFO ] 2019-02-03 10:20:34,152 method:org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:316)
+Loading XML bean definitions from file [/home/chenjian/GIT/Blog/blog-web/target/classes/spring/springconfig-service.xml]
+
+
+[INFO ] 2019-02-03 10:20:34,233 method:org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:316)
+Loading XML bean definitions from file [/home/chenjian/GIT/Blog/blog-web/target/classes/spring/springconfig-trans.xml]
+
+
+[INFO ] 2019-02-03 10:20:34,452 method:org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.<init>(AutowiredAnnotationBeanPostProcessor.java:154)
+JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+
+
+[INFO ] 2019-02-03 10:20:35,175 method:org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:310)
+Root WebApplicationContext: initialization completed in 1412 ms
+
+
+[INFO ] 2019-02-03 10:20:35,213 method:org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:494)
+FrameworkServlet 'blog': initialization started
+
+
+[INFO ] 2019-02-03 10:20:35,216 method:org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:589)
+Refreshing WebApplicationContext for namespace 'blog-servlet': startup date [Sun Feb 03 10:20:35 CST 2019]; parent: Root WebApplicationContext
+
+
+[INFO ] 2019-02-03 10:20:35,216 method:org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:316)
+Loading XML bean definitions from class path resource [spring/springmvc.xml]
+
+
+[INFO ] 2019-02-03 10:20:35,353 method:org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.<init>(AutowiredAnnotationBeanPostProcessor.java:154)
+JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+
+
+[INFO ] 2019-02-03 10:20:35,590 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/blog/query],methods=[POST]}" onto public java.lang.String cn.chenjianlink.blog.controller.BlogController.searchBlog(org.springframework.ui.Model) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 10:20:35,592 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/blogger/aboutMe]}" onto public java.lang.String cn.chenjianlink.blog.controller.BloggerController.aboutMe(org.springframework.ui.Model) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 10:20:35,593 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/index]}" onto public java.lang.String cn.chenjianlink.blog.controller.IdexController.index(org.springframework.ui.Model,java.lang.Integer,java.lang.String,java.lang.Integer,javax.servlet.http.HttpServletRequest) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 10:20:35,594 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/image]}" onto public java.lang.String cn.chenjianlink.blog.controller.ImageController.showImage()
+
+
+[INFO ] 2019-02-03 10:20:35,594 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/message/leavemessages]}" onto public java.lang.String cn.chenjianlink.blog.controller.MessageController.messageboard(org.springframework.ui.Model) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 10:20:35,596 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blogger/admin-index]}" onto public java.lang.String cn.chenjianlink.blog.controller.admin.AdminIdexController.adminIndex(org.springframework.ui.Model) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 10:20:35,597 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blog/delete],methods=[POST]}" onto public cn.chenjianlink.blog.common.utils.BlogResult cn.chenjianlink.blog.controller.admin.BlogManageController.deleteBlog(java.lang.Integer[])
+
+
+[INFO ] 2019-02-03 10:20:35,601 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blog/save],methods=[POST]}" onto public cn.chenjianlink.blog.common.utils.BlogResult cn.chenjianlink.blog.controller.admin.BlogManageController.addBlog(cn.chenjianlink.blog.pojo.Blog)
+
+
+[INFO ] 2019-02-03 10:20:35,603 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blog/list],methods=[POST]}" onto public cn.chenjianlink.blog.common.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.BlogManageController.getBlogList(java.lang.String,java.lang.Integer,java.lang.Integer) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 10:20:35,605 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blog/edit],methods=[POST]}" onto public cn.chenjianlink.blog.common.utils.BlogResult cn.chenjianlink.blog.controller.admin.BlogManageController.editBlogInfo(cn.chenjianlink.blog.pojo.Blog)
+
+
+[INFO ] 2019-02-03 10:20:35,610 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blog/findById],methods=[POST]}" onto public cn.chenjianlink.blog.pojo.Blog cn.chenjianlink.blog.controller.admin.BlogManageController.findBlogInfo(java.lang.Integer) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 10:20:35,613 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blogType/delete],methods=[POST]}" onto public cn.chenjianlink.blog.common.utils.BlogResult cn.chenjianlink.blog.controller.admin.BlogTypeManageController.deleteBlogType(java.lang.Integer[])
+
+
+[INFO ] 2019-02-03 10:20:35,614 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blogType/list],methods=[POST]}" onto public cn.chenjianlink.blog.common.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.BlogTypeManageController.getBlogTypeList(java.lang.Integer,java.lang.Integer) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 10:20:35,615 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blogType/save],methods=[POST]}" onto public cn.chenjianlink.blog.common.utils.BlogResult cn.chenjianlink.blog.controller.admin.BlogTypeManageController.addBlogType(cn.chenjianlink.blog.pojo.BlogType)
+
+
+[INFO ] 2019-02-03 10:20:35,615 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blogType/edit],methods=[POST]}" onto public cn.chenjianlink.blog.common.utils.BlogResult cn.chenjianlink.blog.controller.admin.BlogTypeManageController.editBlodType(java.lang.Integer,cn.chenjianlink.blog.pojo.BlogType)
+
+
+[INFO ] 2019-02-03 10:20:35,618 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blogger/save],methods=[POST]}" onto public void cn.chenjianlink.blog.controller.admin.BloggerManageController.editBloggerInfo(cn.chenjianlink.blog.pojo.Blogger,org.springframework.web.multipart.MultipartFile,javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 10:20:35,618 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blogger/find],methods=[POST]}" onto public cn.chenjianlink.blog.pojo.Blogger cn.chenjianlink.blog.controller.admin.BloggerManageController.findBloggerInfo() throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 10:20:35,619 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/{page}]}" onto public java.lang.String cn.chenjianlink.blog.controller.admin.ForwordController.forwordPage(java.lang.String,org.springframework.ui.Model) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 10:20:35,620 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/link/save],methods=[POST]}" onto public cn.chenjianlink.blog.common.utils.BlogResult cn.chenjianlink.blog.controller.admin.LinkManageController.addLink(cn.chenjianlink.blog.pojo.Link)
+
+
+[INFO ] 2019-02-03 10:20:35,621 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/link/edit],methods=[POST]}" onto public cn.chenjianlink.blog.common.utils.BlogResult cn.chenjianlink.blog.controller.admin.LinkManageController.editLink(java.lang.Integer,cn.chenjianlink.blog.pojo.Link)
+
+
+[INFO ] 2019-02-03 10:20:35,621 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/link/delete],methods=[POST]}" onto public cn.chenjianlink.blog.common.utils.BlogResult cn.chenjianlink.blog.controller.admin.LinkManageController.deleteLink(java.lang.Integer[])
+
+
+[INFO ] 2019-02-03 10:20:35,622 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/link/list],methods=[POST]}" onto public cn.chenjianlink.blog.common.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.LinkManageController.getLinkList(java.lang.Integer,java.lang.Integer) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 10:20:35,623 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/admin-login]}" onto public java.lang.String cn.chenjianlink.blog.controller.admin.LoginController.showLoginPage()
+
+
+[INFO ] 2019-02-03 10:20:35,623 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blogger/login]}" onto public java.lang.String cn.chenjianlink.blog.controller.admin.LoginController.login()
+
+
+[INFO ] 2019-02-03 10:20:35,894 method:org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.initControllerAdviceCache(RequestMappingHandlerAdapter.java:568)
+Looking for @ControllerAdvice: WebApplicationContext for namespace 'blog-servlet': startup date [Sun Feb 03 10:20:35 CST 2019]; parent: Root WebApplicationContext
+
+
+[INFO ] 2019-02-03 10:20:35,963 method:org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.initControllerAdviceCache(RequestMappingHandlerAdapter.java:568)
+Looking for @ControllerAdvice: WebApplicationContext for namespace 'blog-servlet': startup date [Sun Feb 03 10:20:35 CST 2019]; parent: Root WebApplicationContext
+
+
+[INFO ] 2019-02-03 10:20:36,057 method:org.springframework.web.servlet.handler.AbstractUrlHandlerMapping.registerHandler(AbstractUrlHandlerMapping.java:373)
+Mapped URL path [/static/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+
+
+[INFO ] 2019-02-03 10:20:36,135 method:org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:513)
+FrameworkServlet 'blog': initialization completed in 921 ms
+
+
+[INFO ] 2019-02-03 10:20:44,655 method:com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:655)
+{dataSource-1} inited
+
+
+[INFO ] 2019-02-03 10:26:45,455 method:org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:270)
+Root WebApplicationContext: initialization started
+
+
+[INFO ] 2019-02-03 10:26:45,498 method:org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:589)
+Refreshing Root WebApplicationContext: startup date [Sun Feb 03 10:26:45 CST 2019]; root of context hierarchy
+
+
+[INFO ] 2019-02-03 10:26:45,530 method:org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:316)
+Loading XML bean definitions from file [/home/chenjian/GIT/Blog/blog-web/target/classes/spring/springconfig-dao.xml]
+
+
+[INFO ] 2019-02-03 10:26:45,811 method:org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:316)
+Loading XML bean definitions from file [/home/chenjian/GIT/Blog/blog-web/target/classes/spring/springconfig-service.xml]
+
+
+[INFO ] 2019-02-03 10:26:45,889 method:org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:316)
+Loading XML bean definitions from file [/home/chenjian/GIT/Blog/blog-web/target/classes/spring/springconfig-trans.xml]
+
+
+[INFO ] 2019-02-03 10:26:46,092 method:org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.<init>(AutowiredAnnotationBeanPostProcessor.java:154)
+JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+
+
+[INFO ] 2019-02-03 10:26:46,790 method:org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:310)
+Root WebApplicationContext: initialization completed in 1333 ms
+
+
+[INFO ] 2019-02-03 10:26:46,835 method:org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:494)
+FrameworkServlet 'blog': initialization started
+
+
+[INFO ] 2019-02-03 10:26:46,838 method:org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:589)
+Refreshing WebApplicationContext for namespace 'blog-servlet': startup date [Sun Feb 03 10:26:46 CST 2019]; parent: Root WebApplicationContext
+
+
+[INFO ] 2019-02-03 10:26:46,838 method:org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:316)
+Loading XML bean definitions from class path resource [spring/springmvc.xml]
+
+
+[INFO ] 2019-02-03 10:26:46,978 method:org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.<init>(AutowiredAnnotationBeanPostProcessor.java:154)
+JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+
+
+[INFO ] 2019-02-03 10:26:47,209 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/blog/query],methods=[POST]}" onto public java.lang.String cn.chenjianlink.blog.controller.BlogController.searchBlog(org.springframework.ui.Model) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 10:26:47,211 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/blogger/aboutMe]}" onto public java.lang.String cn.chenjianlink.blog.controller.BloggerController.aboutMe(org.springframework.ui.Model) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 10:26:47,212 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/index]}" onto public java.lang.String cn.chenjianlink.blog.controller.IdexController.index(org.springframework.ui.Model,java.lang.Integer,java.lang.String,java.lang.Integer,javax.servlet.http.HttpServletRequest) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 10:26:47,213 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/image]}" onto public java.lang.String cn.chenjianlink.blog.controller.ImageController.showImage()
+
+
+[INFO ] 2019-02-03 10:26:47,214 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/message/leavemessages]}" onto public java.lang.String cn.chenjianlink.blog.controller.MessageController.messageboard(org.springframework.ui.Model) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 10:26:47,215 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blogger/admin-index]}" onto public java.lang.String cn.chenjianlink.blog.controller.admin.AdminIdexController.adminIndex(org.springframework.ui.Model) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 10:26:47,216 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blog/delete],methods=[POST]}" onto public cn.chenjianlink.blog.common.utils.BlogResult cn.chenjianlink.blog.controller.admin.BlogManageController.deleteBlog(java.lang.Integer[])
+
+
+[INFO ] 2019-02-03 10:26:47,217 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blog/save],methods=[POST]}" onto public cn.chenjianlink.blog.common.utils.BlogResult cn.chenjianlink.blog.controller.admin.BlogManageController.addBlog(cn.chenjianlink.blog.pojo.Blog)
+
+
+[INFO ] 2019-02-03 10:26:47,217 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blog/findById],methods=[POST]}" onto public cn.chenjianlink.blog.pojo.Blog cn.chenjianlink.blog.controller.admin.BlogManageController.findBlogInfo(java.lang.Integer) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 10:26:47,218 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blog/list],methods=[POST]}" onto public cn.chenjianlink.blog.common.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.BlogManageController.getBlogList(java.lang.String,java.lang.Integer,java.lang.Integer) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 10:26:47,218 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blog/edit],methods=[POST]}" onto public cn.chenjianlink.blog.common.utils.BlogResult cn.chenjianlink.blog.controller.admin.BlogManageController.editBlogInfo(cn.chenjianlink.blog.pojo.Blog)
+
+
+[INFO ] 2019-02-03 10:26:47,219 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blogType/delete],methods=[POST]}" onto public cn.chenjianlink.blog.common.utils.BlogResult cn.chenjianlink.blog.controller.admin.BlogTypeManageController.deleteBlogType(java.lang.Integer[])
+
+
+[INFO ] 2019-02-03 10:26:47,220 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blogType/list],methods=[POST]}" onto public cn.chenjianlink.blog.common.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.BlogTypeManageController.getBlogTypeList(java.lang.Integer,java.lang.Integer) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 10:26:47,220 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blogType/save],methods=[POST]}" onto public cn.chenjianlink.blog.common.utils.BlogResult cn.chenjianlink.blog.controller.admin.BlogTypeManageController.addBlogType(cn.chenjianlink.blog.pojo.BlogType)
+
+
+[INFO ] 2019-02-03 10:26:47,221 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blogType/edit],methods=[POST]}" onto public cn.chenjianlink.blog.common.utils.BlogResult cn.chenjianlink.blog.controller.admin.BlogTypeManageController.editBlodType(java.lang.Integer,cn.chenjianlink.blog.pojo.BlogType)
+
+
+[INFO ] 2019-02-03 10:26:47,223 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blogger/save],methods=[POST]}" onto public void cn.chenjianlink.blog.controller.admin.BloggerManageController.editBloggerInfo(cn.chenjianlink.blog.pojo.Blogger,org.springframework.web.multipart.MultipartFile,javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 10:26:47,224 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blogger/find],methods=[POST]}" onto public cn.chenjianlink.blog.pojo.Blogger cn.chenjianlink.blog.controller.admin.BloggerManageController.findBloggerInfo() throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 10:26:47,224 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/{page}]}" onto public java.lang.String cn.chenjianlink.blog.controller.admin.ForwordController.forwordPage(java.lang.String,org.springframework.ui.Model) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 10:26:47,225 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/link/save],methods=[POST]}" onto public cn.chenjianlink.blog.common.utils.BlogResult cn.chenjianlink.blog.controller.admin.LinkManageController.addLink(cn.chenjianlink.blog.pojo.Link)
+
+
+[INFO ] 2019-02-03 10:26:47,226 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/link/edit],methods=[POST]}" onto public cn.chenjianlink.blog.common.utils.BlogResult cn.chenjianlink.blog.controller.admin.LinkManageController.editLink(java.lang.Integer,cn.chenjianlink.blog.pojo.Link)
+
+
+[INFO ] 2019-02-03 10:26:47,226 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/link/delete],methods=[POST]}" onto public cn.chenjianlink.blog.common.utils.BlogResult cn.chenjianlink.blog.controller.admin.LinkManageController.deleteLink(java.lang.Integer[])
+
+
+[INFO ] 2019-02-03 10:26:47,226 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/link/list],methods=[POST]}" onto public cn.chenjianlink.blog.common.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.LinkManageController.getLinkList(java.lang.Integer,java.lang.Integer) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 10:26:47,227 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/admin-login]}" onto public java.lang.String cn.chenjianlink.blog.controller.admin.LoginController.showLoginPage()
+
+
+[INFO ] 2019-02-03 10:26:47,228 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blogger/login]}" onto public java.lang.String cn.chenjianlink.blog.controller.admin.LoginController.login()
+
+
+[INFO ] 2019-02-03 10:26:47,515 method:org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.initControllerAdviceCache(RequestMappingHandlerAdapter.java:568)
+Looking for @ControllerAdvice: WebApplicationContext for namespace 'blog-servlet': startup date [Sun Feb 03 10:26:46 CST 2019]; parent: Root WebApplicationContext
+
+
+[INFO ] 2019-02-03 10:26:47,575 method:org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.initControllerAdviceCache(RequestMappingHandlerAdapter.java:568)
+Looking for @ControllerAdvice: WebApplicationContext for namespace 'blog-servlet': startup date [Sun Feb 03 10:26:46 CST 2019]; parent: Root WebApplicationContext
+
+
+[INFO ] 2019-02-03 10:26:47,670 method:org.springframework.web.servlet.handler.AbstractUrlHandlerMapping.registerHandler(AbstractUrlHandlerMapping.java:373)
+Mapped URL path [/static/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+
+
+[INFO ] 2019-02-03 10:26:47,746 method:org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:513)
+FrameworkServlet 'blog': initialization completed in 911 ms
+
+
+[INFO ] 2019-02-03 10:27:03,464 method:com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:655)
+{dataSource-1} inited
+
+
+[INFO ] 2019-02-03 10:33:25,626 method:org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:270)
+Root WebApplicationContext: initialization started
+
+
+[INFO ] 2019-02-03 10:33:25,670 method:org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:589)
+Refreshing Root WebApplicationContext: startup date [Sun Feb 03 10:33:25 CST 2019]; root of context hierarchy
+
+
+[INFO ] 2019-02-03 10:33:25,705 method:org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:316)
+Loading XML bean definitions from file [/home/chenjian/GIT/Blog/blog-web/target/classes/spring/springconfig-dao.xml]
+
+
+[INFO ] 2019-02-03 10:33:25,996 method:org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:316)
+Loading XML bean definitions from file [/home/chenjian/GIT/Blog/blog-web/target/classes/spring/springconfig-service.xml]
+
+
+[INFO ] 2019-02-03 10:33:26,090 method:org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:316)
+Loading XML bean definitions from file [/home/chenjian/GIT/Blog/blog-web/target/classes/spring/springconfig-trans.xml]
+
+
+[INFO ] 2019-02-03 10:33:26,321 method:org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.<init>(AutowiredAnnotationBeanPostProcessor.java:154)
+JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+
+
+[INFO ] 2019-02-03 10:33:27,060 method:org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:310)
+Root WebApplicationContext: initialization completed in 1432 ms
+
+
+[INFO ] 2019-02-03 10:33:27,100 method:org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:494)
+FrameworkServlet 'blog': initialization started
+
+
+[INFO ] 2019-02-03 10:33:27,103 method:org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:589)
+Refreshing WebApplicationContext for namespace 'blog-servlet': startup date [Sun Feb 03 10:33:27 CST 2019]; parent: Root WebApplicationContext
+
+
+[INFO ] 2019-02-03 10:33:27,104 method:org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:316)
+Loading XML bean definitions from class path resource [spring/springmvc.xml]
+
+
+[INFO ] 2019-02-03 10:33:27,239 method:org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.<init>(AutowiredAnnotationBeanPostProcessor.java:154)
+JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+
+
+[INFO ] 2019-02-03 10:33:27,463 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/blog/query],methods=[POST]}" onto public java.lang.String cn.chenjianlink.blog.controller.BlogController.searchBlog(org.springframework.ui.Model) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 10:33:27,465 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/blogger/aboutMe]}" onto public java.lang.String cn.chenjianlink.blog.controller.BloggerController.aboutMe(org.springframework.ui.Model) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 10:33:27,466 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/index]}" onto public java.lang.String cn.chenjianlink.blog.controller.IdexController.index(org.springframework.ui.Model,java.lang.Integer,java.lang.String,java.lang.Integer,javax.servlet.http.HttpServletRequest) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 10:33:27,467 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/image]}" onto public java.lang.String cn.chenjianlink.blog.controller.ImageController.showImage()
+
+
+[INFO ] 2019-02-03 10:33:27,467 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/message/leavemessages]}" onto public java.lang.String cn.chenjianlink.blog.controller.MessageController.messageboard(org.springframework.ui.Model) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 10:33:27,469 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blogger/admin-index]}" onto public java.lang.String cn.chenjianlink.blog.controller.admin.AdminIdexController.adminIndex(org.springframework.ui.Model) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 10:33:27,470 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blog/delete],methods=[POST]}" onto public cn.chenjianlink.blog.common.utils.BlogResult cn.chenjianlink.blog.controller.admin.BlogManageController.deleteBlog(java.lang.Integer[])
+
+
+[INFO ] 2019-02-03 10:33:27,471 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blog/save],methods=[POST]}" onto public cn.chenjianlink.blog.common.utils.BlogResult cn.chenjianlink.blog.controller.admin.BlogManageController.addBlog(cn.chenjianlink.blog.pojo.Blog)
+
+
+[INFO ] 2019-02-03 10:33:27,471 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blog/findById],methods=[POST]}" onto public cn.chenjianlink.blog.pojo.Blog cn.chenjianlink.blog.controller.admin.BlogManageController.findBlogInfo(java.lang.Integer) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 10:33:27,472 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blog/list],methods=[POST]}" onto public cn.chenjianlink.blog.common.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.BlogManageController.getBlogList(java.lang.String,java.lang.Integer,java.lang.Integer) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 10:33:27,472 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blog/edit],methods=[POST]}" onto public cn.chenjianlink.blog.common.utils.BlogResult cn.chenjianlink.blog.controller.admin.BlogManageController.editBlogInfo(cn.chenjianlink.blog.pojo.Blog)
+
+
+[INFO ] 2019-02-03 10:33:27,473 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blogType/delete],methods=[POST]}" onto public cn.chenjianlink.blog.common.utils.BlogResult cn.chenjianlink.blog.controller.admin.BlogTypeManageController.deleteBlogType(java.lang.Integer[])
+
+
+[INFO ] 2019-02-03 10:33:27,474 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blogType/list],methods=[POST]}" onto public cn.chenjianlink.blog.common.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.BlogTypeManageController.getBlogTypeList(java.lang.Integer,java.lang.Integer) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 10:33:27,474 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blogType/save],methods=[POST]}" onto public cn.chenjianlink.blog.common.utils.BlogResult cn.chenjianlink.blog.controller.admin.BlogTypeManageController.addBlogType(cn.chenjianlink.blog.pojo.BlogType)
+
+
+[INFO ] 2019-02-03 10:33:27,475 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blogType/edit],methods=[POST]}" onto public cn.chenjianlink.blog.common.utils.BlogResult cn.chenjianlink.blog.controller.admin.BlogTypeManageController.editBlodType(java.lang.Integer,cn.chenjianlink.blog.pojo.BlogType)
+
+
+[INFO ] 2019-02-03 10:33:27,478 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blogger/save],methods=[POST]}" onto public void cn.chenjianlink.blog.controller.admin.BloggerManageController.editBloggerInfo(cn.chenjianlink.blog.pojo.Blogger,org.springframework.web.multipart.MultipartFile,javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 10:33:27,478 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blogger/find],methods=[POST]}" onto public cn.chenjianlink.blog.pojo.Blogger cn.chenjianlink.blog.controller.admin.BloggerManageController.findBloggerInfo() throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 10:33:27,479 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/{page}]}" onto public java.lang.String cn.chenjianlink.blog.controller.admin.ForwordController.forwordPage(java.lang.String,org.springframework.ui.Model) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 10:33:27,480 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/link/save],methods=[POST]}" onto public cn.chenjianlink.blog.common.utils.BlogResult cn.chenjianlink.blog.controller.admin.LinkManageController.addLink(cn.chenjianlink.blog.pojo.Link)
+
+
+[INFO ] 2019-02-03 10:33:27,481 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/link/edit],methods=[POST]}" onto public cn.chenjianlink.blog.common.utils.BlogResult cn.chenjianlink.blog.controller.admin.LinkManageController.editLink(java.lang.Integer,cn.chenjianlink.blog.pojo.Link)
+
+
+[INFO ] 2019-02-03 10:33:27,481 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/link/delete],methods=[POST]}" onto public cn.chenjianlink.blog.common.utils.BlogResult cn.chenjianlink.blog.controller.admin.LinkManageController.deleteLink(java.lang.Integer[])
+
+
+[INFO ] 2019-02-03 10:33:27,482 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/link/list],methods=[POST]}" onto public cn.chenjianlink.blog.common.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.LinkManageController.getLinkList(java.lang.Integer,java.lang.Integer) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 10:33:27,483 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blogger/login]}" onto public java.lang.String cn.chenjianlink.blog.controller.admin.LoginController.login()
+
+
+[INFO ] 2019-02-03 10:33:27,483 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/admin-login]}" onto public java.lang.String cn.chenjianlink.blog.controller.admin.LoginController.showLoginPage()
+
+
+[INFO ] 2019-02-03 10:33:27,786 method:org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.initControllerAdviceCache(RequestMappingHandlerAdapter.java:568)
+Looking for @ControllerAdvice: WebApplicationContext for namespace 'blog-servlet': startup date [Sun Feb 03 10:33:27 CST 2019]; parent: Root WebApplicationContext
+
+
+[INFO ] 2019-02-03 10:33:27,843 method:org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.initControllerAdviceCache(RequestMappingHandlerAdapter.java:568)
+Looking for @ControllerAdvice: WebApplicationContext for namespace 'blog-servlet': startup date [Sun Feb 03 10:33:27 CST 2019]; parent: Root WebApplicationContext
+
+
+[INFO ] 2019-02-03 10:33:27,920 method:org.springframework.web.servlet.handler.AbstractUrlHandlerMapping.registerHandler(AbstractUrlHandlerMapping.java:373)
+Mapped URL path [/static/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+
+
+[INFO ] 2019-02-03 10:33:27,979 method:org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:513)
+FrameworkServlet 'blog': initialization completed in 878 ms
+
+
+[INFO ] 2019-02-03 10:33:35,154 method:com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:655)
+{dataSource-1} inited
+
+
+[INFO ] 2019-02-03 10:35:16,174 method:org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:270)
+Root WebApplicationContext: initialization started
+
+
+[INFO ] 2019-02-03 10:35:16,221 method:org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:589)
+Refreshing Root WebApplicationContext: startup date [Sun Feb 03 10:35:16 CST 2019]; root of context hierarchy
+
+
+[INFO ] 2019-02-03 10:35:16,262 method:org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:316)
+Loading XML bean definitions from file [/home/chenjian/GIT/Blog/blog-web/target/classes/spring/springconfig-dao.xml]
+
+
+[INFO ] 2019-02-03 10:35:16,720 method:org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:316)
+Loading XML bean definitions from file [/home/chenjian/GIT/Blog/blog-web/target/classes/spring/springconfig-service.xml]
+
+
+[INFO ] 2019-02-03 10:35:16,802 method:org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:316)
+Loading XML bean definitions from file [/home/chenjian/GIT/Blog/blog-web/target/classes/spring/springconfig-trans.xml]
+
+
+[INFO ] 2019-02-03 10:35:17,026 method:org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.<init>(AutowiredAnnotationBeanPostProcessor.java:154)
+JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+
+
+[INFO ] 2019-02-03 10:35:17,722 method:org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:310)
+Root WebApplicationContext: initialization completed in 1546 ms
+
+
+[INFO ] 2019-02-03 10:35:17,758 method:org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:494)
+FrameworkServlet 'blog': initialization started
+
+
+[INFO ] 2019-02-03 10:35:17,761 method:org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:589)
+Refreshing WebApplicationContext for namespace 'blog-servlet': startup date [Sun Feb 03 10:35:17 CST 2019]; parent: Root WebApplicationContext
+
+
+[INFO ] 2019-02-03 10:35:17,761 method:org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:316)
+Loading XML bean definitions from class path resource [spring/springmvc.xml]
+
+
+[INFO ] 2019-02-03 10:35:17,909 method:org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.<init>(AutowiredAnnotationBeanPostProcessor.java:154)
+JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+
+
+[INFO ] 2019-02-03 10:35:18,126 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/blog/query],methods=[POST]}" onto public java.lang.String cn.chenjianlink.blog.controller.BlogController.searchBlog(org.springframework.ui.Model) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 10:35:18,127 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/blogger/aboutMe]}" onto public java.lang.String cn.chenjianlink.blog.controller.BloggerController.aboutMe(org.springframework.ui.Model) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 10:35:18,128 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/index]}" onto public java.lang.String cn.chenjianlink.blog.controller.IdexController.index(org.springframework.ui.Model,java.lang.Integer,java.lang.String,java.lang.Integer,javax.servlet.http.HttpServletRequest) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 10:35:18,129 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/image]}" onto public java.lang.String cn.chenjianlink.blog.controller.ImageController.showImage()
+
+
+[INFO ] 2019-02-03 10:35:18,130 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/message/leavemessages]}" onto public java.lang.String cn.chenjianlink.blog.controller.MessageController.messageboard(org.springframework.ui.Model) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 10:35:18,131 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blogger/admin-index]}" onto public java.lang.String cn.chenjianlink.blog.controller.admin.AdminIdexController.adminIndex(org.springframework.ui.Model) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 10:35:18,133 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blog/findById],methods=[POST]}" onto public cn.chenjianlink.blog.pojo.Blog cn.chenjianlink.blog.controller.admin.BlogManageController.findBlogInfo(java.lang.Integer) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 10:35:18,133 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blog/list],methods=[POST]}" onto public cn.chenjianlink.blog.common.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.BlogManageController.getBlogList(java.lang.String,java.lang.Integer,java.lang.Integer) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 10:35:18,133 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blog/edit],methods=[POST]}" onto public cn.chenjianlink.blog.common.utils.BlogResult cn.chenjianlink.blog.controller.admin.BlogManageController.editBlogInfo(cn.chenjianlink.blog.pojo.Blog)
+
+
+[INFO ] 2019-02-03 10:35:18,134 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blog/delete],methods=[POST]}" onto public cn.chenjianlink.blog.common.utils.BlogResult cn.chenjianlink.blog.controller.admin.BlogManageController.deleteBlog(java.lang.Integer[])
+
+
+[INFO ] 2019-02-03 10:35:18,134 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blog/save],methods=[POST]}" onto public cn.chenjianlink.blog.common.utils.BlogResult cn.chenjianlink.blog.controller.admin.BlogManageController.addBlog(cn.chenjianlink.blog.pojo.Blog)
+
+
+[INFO ] 2019-02-03 10:35:18,135 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blogType/edit],methods=[POST]}" onto public cn.chenjianlink.blog.common.utils.BlogResult cn.chenjianlink.blog.controller.admin.BlogTypeManageController.editBlodType(java.lang.Integer,cn.chenjianlink.blog.pojo.BlogType)
+
+
+[INFO ] 2019-02-03 10:35:18,136 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blogType/delete],methods=[POST]}" onto public cn.chenjianlink.blog.common.utils.BlogResult cn.chenjianlink.blog.controller.admin.BlogTypeManageController.deleteBlogType(java.lang.Integer[])
+
+
+[INFO ] 2019-02-03 10:35:18,136 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blogType/list],methods=[POST]}" onto public cn.chenjianlink.blog.common.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.BlogTypeManageController.getBlogTypeList(java.lang.Integer,java.lang.Integer) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 10:35:18,137 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blogType/save],methods=[POST]}" onto public cn.chenjianlink.blog.common.utils.BlogResult cn.chenjianlink.blog.controller.admin.BlogTypeManageController.addBlogType(cn.chenjianlink.blog.pojo.BlogType)
+
+
+[INFO ] 2019-02-03 10:35:18,140 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blogger/find],methods=[POST]}" onto public cn.chenjianlink.blog.pojo.Blogger cn.chenjianlink.blog.controller.admin.BloggerManageController.findBloggerInfo() throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 10:35:18,140 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blogger/save],methods=[POST]}" onto public void cn.chenjianlink.blog.controller.admin.BloggerManageController.editBloggerInfo(cn.chenjianlink.blog.pojo.Blogger,org.springframework.web.multipart.MultipartFile,javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 10:35:18,141 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/{page}]}" onto public java.lang.String cn.chenjianlink.blog.controller.admin.ForwordController.forwordPage(java.lang.String,org.springframework.ui.Model) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 10:35:18,142 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/link/save],methods=[POST]}" onto public cn.chenjianlink.blog.common.utils.BlogResult cn.chenjianlink.blog.controller.admin.LinkManageController.addLink(cn.chenjianlink.blog.pojo.Link)
+
+
+[INFO ] 2019-02-03 10:35:18,143 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/link/edit],methods=[POST]}" onto public cn.chenjianlink.blog.common.utils.BlogResult cn.chenjianlink.blog.controller.admin.LinkManageController.editLink(java.lang.Integer,cn.chenjianlink.blog.pojo.Link)
+
+
+[INFO ] 2019-02-03 10:35:18,143 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/link/delete],methods=[POST]}" onto public cn.chenjianlink.blog.common.utils.BlogResult cn.chenjianlink.blog.controller.admin.LinkManageController.deleteLink(java.lang.Integer[])
+
+
+[INFO ] 2019-02-03 10:35:18,144 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/link/list],methods=[POST]}" onto public cn.chenjianlink.blog.common.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.LinkManageController.getLinkList(java.lang.Integer,java.lang.Integer) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 10:35:18,144 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/admin-login]}" onto public java.lang.String cn.chenjianlink.blog.controller.admin.LoginController.showLoginPage()
+
+
+[INFO ] 2019-02-03 10:35:18,145 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blogger/login]}" onto public java.lang.String cn.chenjianlink.blog.controller.admin.LoginController.login()
+
+
+[INFO ] 2019-02-03 10:35:18,428 method:org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.initControllerAdviceCache(RequestMappingHandlerAdapter.java:568)
+Looking for @ControllerAdvice: WebApplicationContext for namespace 'blog-servlet': startup date [Sun Feb 03 10:35:17 CST 2019]; parent: Root WebApplicationContext
+
+
+[INFO ] 2019-02-03 10:35:18,490 method:org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.initControllerAdviceCache(RequestMappingHandlerAdapter.java:568)
+Looking for @ControllerAdvice: WebApplicationContext for namespace 'blog-servlet': startup date [Sun Feb 03 10:35:17 CST 2019]; parent: Root WebApplicationContext
+
+
+[INFO ] 2019-02-03 10:35:18,588 method:org.springframework.web.servlet.handler.AbstractUrlHandlerMapping.registerHandler(AbstractUrlHandlerMapping.java:373)
+Mapped URL path [/static/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+
+
+[INFO ] 2019-02-03 10:35:18,662 method:org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:513)
+FrameworkServlet 'blog': initialization completed in 904 ms
+
+
+[INFO ] 2019-02-03 10:35:24,839 method:com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:655)
+{dataSource-1} inited
+
+
+[INFO ] 2019-02-03 10:45:26,732 method:org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:270)
+Root WebApplicationContext: initialization started
+
+
+[INFO ] 2019-02-03 10:45:26,781 method:org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:589)
+Refreshing Root WebApplicationContext: startup date [Sun Feb 03 10:45:26 CST 2019]; root of context hierarchy
+
+
+[INFO ] 2019-02-03 10:45:26,827 method:org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:316)
+Loading XML bean definitions from file [/home/chenjian/GIT/Blog/blog-web/target/classes/spring/springconfig-dao.xml]
+
+
+[INFO ] 2019-02-03 10:45:27,191 method:org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:316)
+Loading XML bean definitions from file [/home/chenjian/GIT/Blog/blog-web/target/classes/spring/springconfig-service.xml]
+
+
+[INFO ] 2019-02-03 10:45:27,267 method:org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:316)
+Loading XML bean definitions from file [/home/chenjian/GIT/Blog/blog-web/target/classes/spring/springconfig-trans.xml]
+
+
+[INFO ] 2019-02-03 10:45:27,466 method:org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.<init>(AutowiredAnnotationBeanPostProcessor.java:154)
+JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+
+
+[INFO ] 2019-02-03 10:45:28,161 method:org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:310)
+Root WebApplicationContext: initialization completed in 1427 ms
+
+
+[INFO ] 2019-02-03 10:45:28,198 method:org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:494)
+FrameworkServlet 'blog': initialization started
+
+
+[INFO ] 2019-02-03 10:45:28,201 method:org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:589)
+Refreshing WebApplicationContext for namespace 'blog-servlet': startup date [Sun Feb 03 10:45:28 CST 2019]; parent: Root WebApplicationContext
+
+
+[INFO ] 2019-02-03 10:45:28,201 method:org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:316)
+Loading XML bean definitions from class path resource [spring/springmvc.xml]
+
+
+[INFO ] 2019-02-03 10:45:28,329 method:org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.<init>(AutowiredAnnotationBeanPostProcessor.java:154)
+JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+
+
+[INFO ] 2019-02-03 10:45:28,529 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/blog/articles/{blogId}],methods=[POST]}" onto public java.lang.String cn.chenjianlink.blog.controller.BlogController.showBlogInfo(org.springframework.ui.Model,java.lang.Integer) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 10:45:28,530 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/blog/query],methods=[POST]}" onto public java.lang.String cn.chenjianlink.blog.controller.BlogController.searchBlog(org.springframework.ui.Model) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 10:45:28,531 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/blogger/aboutMe]}" onto public java.lang.String cn.chenjianlink.blog.controller.BloggerController.aboutMe(org.springframework.ui.Model) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 10:45:28,532 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/index]}" onto public java.lang.String cn.chenjianlink.blog.controller.IdexController.index(org.springframework.ui.Model,java.lang.Integer,java.lang.String,java.lang.Integer,javax.servlet.http.HttpServletRequest) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 10:45:28,532 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/image]}" onto public java.lang.String cn.chenjianlink.blog.controller.ImageController.showImage()
+
+
+[INFO ] 2019-02-03 10:45:28,534 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/message/leavemessages]}" onto public java.lang.String cn.chenjianlink.blog.controller.MessageController.messageboard(org.springframework.ui.Model) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 10:45:28,534 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blogger/admin-index]}" onto public java.lang.String cn.chenjianlink.blog.controller.admin.AdminIdexController.adminIndex(org.springframework.ui.Model) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 10:45:28,535 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blog/findById],methods=[POST]}" onto public cn.chenjianlink.blog.pojo.Blog cn.chenjianlink.blog.controller.admin.BlogManageController.findBlogInfo(java.lang.Integer) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 10:45:28,536 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blog/list],methods=[POST]}" onto public cn.chenjianlink.blog.common.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.BlogManageController.getBlogList(java.lang.String,java.lang.Integer,java.lang.Integer) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 10:45:28,536 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blog/edit],methods=[POST]}" onto public cn.chenjianlink.blog.common.utils.BlogResult cn.chenjianlink.blog.controller.admin.BlogManageController.editBlogInfo(cn.chenjianlink.blog.pojo.Blog)
+
+
+[INFO ] 2019-02-03 10:45:28,537 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blog/delete],methods=[POST]}" onto public cn.chenjianlink.blog.common.utils.BlogResult cn.chenjianlink.blog.controller.admin.BlogManageController.deleteBlog(java.lang.Integer[])
+
+
+[INFO ] 2019-02-03 10:45:28,537 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blog/save],methods=[POST]}" onto public cn.chenjianlink.blog.common.utils.BlogResult cn.chenjianlink.blog.controller.admin.BlogManageController.addBlog(cn.chenjianlink.blog.pojo.Blog)
+
+
+[INFO ] 2019-02-03 10:45:28,540 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blogType/edit],methods=[POST]}" onto public cn.chenjianlink.blog.common.utils.BlogResult cn.chenjianlink.blog.controller.admin.BlogTypeManageController.editBlodType(java.lang.Integer,cn.chenjianlink.blog.pojo.BlogType)
+
+
+[INFO ] 2019-02-03 10:45:28,541 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blogType/delete],methods=[POST]}" onto public cn.chenjianlink.blog.common.utils.BlogResult cn.chenjianlink.blog.controller.admin.BlogTypeManageController.deleteBlogType(java.lang.Integer[])
+
+
+[INFO ] 2019-02-03 10:45:28,541 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blogType/list],methods=[POST]}" onto public cn.chenjianlink.blog.common.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.BlogTypeManageController.getBlogTypeList(java.lang.Integer,java.lang.Integer) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 10:45:28,542 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blogType/save],methods=[POST]}" onto public cn.chenjianlink.blog.common.utils.BlogResult cn.chenjianlink.blog.controller.admin.BlogTypeManageController.addBlogType(cn.chenjianlink.blog.pojo.BlogType)
+
+
+[INFO ] 2019-02-03 10:45:28,543 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blogger/find],methods=[POST]}" onto public cn.chenjianlink.blog.pojo.Blogger cn.chenjianlink.blog.controller.admin.BloggerManageController.findBloggerInfo() throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 10:45:28,543 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blogger/save],methods=[POST]}" onto public void cn.chenjianlink.blog.controller.admin.BloggerManageController.editBloggerInfo(cn.chenjianlink.blog.pojo.Blogger,org.springframework.web.multipart.MultipartFile,javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 10:45:28,544 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/{page}]}" onto public java.lang.String cn.chenjianlink.blog.controller.admin.ForwordController.forwordPage(java.lang.String,org.springframework.ui.Model) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 10:45:28,545 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/link/save],methods=[POST]}" onto public cn.chenjianlink.blog.common.utils.BlogResult cn.chenjianlink.blog.controller.admin.LinkManageController.addLink(cn.chenjianlink.blog.pojo.Link)
+
+
+[INFO ] 2019-02-03 10:45:28,546 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/link/edit],methods=[POST]}" onto public cn.chenjianlink.blog.common.utils.BlogResult cn.chenjianlink.blog.controller.admin.LinkManageController.editLink(java.lang.Integer,cn.chenjianlink.blog.pojo.Link)
+
+
+[INFO ] 2019-02-03 10:45:28,546 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/link/delete],methods=[POST]}" onto public cn.chenjianlink.blog.common.utils.BlogResult cn.chenjianlink.blog.controller.admin.LinkManageController.deleteLink(java.lang.Integer[])
+
+
+[INFO ] 2019-02-03 10:45:28,546 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/link/list],methods=[POST]}" onto public cn.chenjianlink.blog.common.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.LinkManageController.getLinkList(java.lang.Integer,java.lang.Integer) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 10:45:28,547 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blogger/login]}" onto public java.lang.String cn.chenjianlink.blog.controller.admin.LoginController.login()
+
+
+[INFO ] 2019-02-03 10:45:28,548 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/admin-login]}" onto public java.lang.String cn.chenjianlink.blog.controller.admin.LoginController.showLoginPage()
+
+
+[INFO ] 2019-02-03 10:45:28,807 method:org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.initControllerAdviceCache(RequestMappingHandlerAdapter.java:568)
+Looking for @ControllerAdvice: WebApplicationContext for namespace 'blog-servlet': startup date [Sun Feb 03 10:45:28 CST 2019]; parent: Root WebApplicationContext
+
+
+[INFO ] 2019-02-03 10:45:28,866 method:org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.initControllerAdviceCache(RequestMappingHandlerAdapter.java:568)
+Looking for @ControllerAdvice: WebApplicationContext for namespace 'blog-servlet': startup date [Sun Feb 03 10:45:28 CST 2019]; parent: Root WebApplicationContext
+
+
+[INFO ] 2019-02-03 10:45:28,947 method:org.springframework.web.servlet.handler.AbstractUrlHandlerMapping.registerHandler(AbstractUrlHandlerMapping.java:373)
+Mapped URL path [/static/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+
+
+[INFO ] 2019-02-03 10:45:29,014 method:org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:513)
+FrameworkServlet 'blog': initialization completed in 816 ms
+
+
+[WARN ] 2019-02-03 10:45:56,175 method:org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver.handleHttpRequestMethodNotSupported(DefaultHandlerExceptionResolver.java:188)
+Request method 'GET' not supported
+
+
+[INFO ] 2019-02-03 10:46:24,067 method:org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:270)
+Root WebApplicationContext: initialization started
+
+
+[INFO ] 2019-02-03 10:46:24,114 method:org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:589)
+Refreshing Root WebApplicationContext: startup date [Sun Feb 03 10:46:24 CST 2019]; root of context hierarchy
+
+
+[INFO ] 2019-02-03 10:46:24,158 method:org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:316)
+Loading XML bean definitions from file [/home/chenjian/GIT/Blog/blog-web/target/classes/spring/springconfig-dao.xml]
+
+
+[INFO ] 2019-02-03 10:46:24,437 method:org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:316)
+Loading XML bean definitions from file [/home/chenjian/GIT/Blog/blog-web/target/classes/spring/springconfig-service.xml]
+
+
+[INFO ] 2019-02-03 10:46:24,517 method:org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:316)
+Loading XML bean definitions from file [/home/chenjian/GIT/Blog/blog-web/target/classes/spring/springconfig-trans.xml]
+
+
+[INFO ] 2019-02-03 10:46:24,730 method:org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.<init>(AutowiredAnnotationBeanPostProcessor.java:154)
+JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+
+
+[INFO ] 2019-02-03 10:46:25,414 method:org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:310)
+Root WebApplicationContext: initialization completed in 1345 ms
+
+
+[INFO ] 2019-02-03 10:46:25,453 method:org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:494)
+FrameworkServlet 'blog': initialization started
+
+
+[INFO ] 2019-02-03 10:46:25,456 method:org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:589)
+Refreshing WebApplicationContext for namespace 'blog-servlet': startup date [Sun Feb 03 10:46:25 CST 2019]; parent: Root WebApplicationContext
+
+
+[INFO ] 2019-02-03 10:46:25,457 method:org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:316)
+Loading XML bean definitions from class path resource [spring/springmvc.xml]
+
+
+[INFO ] 2019-02-03 10:46:25,605 method:org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.<init>(AutowiredAnnotationBeanPostProcessor.java:154)
+JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+
+
+[INFO ] 2019-02-03 10:46:25,839 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/blog/query],methods=[POST]}" onto public java.lang.String cn.chenjianlink.blog.controller.BlogController.searchBlog(org.springframework.ui.Model) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 10:46:25,840 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/blog/articles/{blogId}]}" onto public java.lang.String cn.chenjianlink.blog.controller.BlogController.showBlogInfo(org.springframework.ui.Model,java.lang.Integer) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 10:46:25,841 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/blogger/aboutMe]}" onto public java.lang.String cn.chenjianlink.blog.controller.BloggerController.aboutMe(org.springframework.ui.Model) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 10:46:25,842 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/index]}" onto public java.lang.String cn.chenjianlink.blog.controller.IdexController.index(org.springframework.ui.Model,java.lang.Integer,java.lang.String,java.lang.Integer,javax.servlet.http.HttpServletRequest) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 10:46:25,843 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/image]}" onto public java.lang.String cn.chenjianlink.blog.controller.ImageController.showImage()
+
+
+[INFO ] 2019-02-03 10:46:25,845 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/message/leavemessages]}" onto public java.lang.String cn.chenjianlink.blog.controller.MessageController.messageboard(org.springframework.ui.Model) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 10:46:25,846 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blogger/admin-index]}" onto public java.lang.String cn.chenjianlink.blog.controller.admin.AdminIdexController.adminIndex(org.springframework.ui.Model) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 10:46:25,847 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blog/edit],methods=[POST]}" onto public cn.chenjianlink.blog.common.utils.BlogResult cn.chenjianlink.blog.controller.admin.BlogManageController.editBlogInfo(cn.chenjianlink.blog.pojo.Blog)
+
+
+[INFO ] 2019-02-03 10:46:25,848 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blog/findById],methods=[POST]}" onto public cn.chenjianlink.blog.pojo.Blog cn.chenjianlink.blog.controller.admin.BlogManageController.findBlogInfo(java.lang.Integer) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 10:46:25,848 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blog/list],methods=[POST]}" onto public cn.chenjianlink.blog.common.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.BlogManageController.getBlogList(java.lang.String,java.lang.Integer,java.lang.Integer) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 10:46:25,848 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blog/delete],methods=[POST]}" onto public cn.chenjianlink.blog.common.utils.BlogResult cn.chenjianlink.blog.controller.admin.BlogManageController.deleteBlog(java.lang.Integer[])
+
+
+[INFO ] 2019-02-03 10:46:25,849 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blog/save],methods=[POST]}" onto public cn.chenjianlink.blog.common.utils.BlogResult cn.chenjianlink.blog.controller.admin.BlogManageController.addBlog(cn.chenjianlink.blog.pojo.Blog)
+
+
+[INFO ] 2019-02-03 10:46:25,852 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blogType/edit],methods=[POST]}" onto public cn.chenjianlink.blog.common.utils.BlogResult cn.chenjianlink.blog.controller.admin.BlogTypeManageController.editBlodType(java.lang.Integer,cn.chenjianlink.blog.pojo.BlogType)
+
+
+[INFO ] 2019-02-03 10:46:25,853 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blogType/delete],methods=[POST]}" onto public cn.chenjianlink.blog.common.utils.BlogResult cn.chenjianlink.blog.controller.admin.BlogTypeManageController.deleteBlogType(java.lang.Integer[])
+
+
+[INFO ] 2019-02-03 10:46:25,853 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blogType/list],methods=[POST]}" onto public cn.chenjianlink.blog.common.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.BlogTypeManageController.getBlogTypeList(java.lang.Integer,java.lang.Integer) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 10:46:25,853 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blogType/save],methods=[POST]}" onto public cn.chenjianlink.blog.common.utils.BlogResult cn.chenjianlink.blog.controller.admin.BlogTypeManageController.addBlogType(cn.chenjianlink.blog.pojo.BlogType)
+
+
+[INFO ] 2019-02-03 10:46:25,854 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blogger/find],methods=[POST]}" onto public cn.chenjianlink.blog.pojo.Blogger cn.chenjianlink.blog.controller.admin.BloggerManageController.findBloggerInfo() throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 10:46:25,855 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blogger/save],methods=[POST]}" onto public void cn.chenjianlink.blog.controller.admin.BloggerManageController.editBloggerInfo(cn.chenjianlink.blog.pojo.Blogger,org.springframework.web.multipart.MultipartFile,javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 10:46:25,856 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/{page}]}" onto public java.lang.String cn.chenjianlink.blog.controller.admin.ForwordController.forwordPage(java.lang.String,org.springframework.ui.Model) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 10:46:25,857 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/link/save],methods=[POST]}" onto public cn.chenjianlink.blog.common.utils.BlogResult cn.chenjianlink.blog.controller.admin.LinkManageController.addLink(cn.chenjianlink.blog.pojo.Link)
+
+
+[INFO ] 2019-02-03 10:46:25,858 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/link/edit],methods=[POST]}" onto public cn.chenjianlink.blog.common.utils.BlogResult cn.chenjianlink.blog.controller.admin.LinkManageController.editLink(java.lang.Integer,cn.chenjianlink.blog.pojo.Link)
+
+
+[INFO ] 2019-02-03 10:46:25,858 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/link/delete],methods=[POST]}" onto public cn.chenjianlink.blog.common.utils.BlogResult cn.chenjianlink.blog.controller.admin.LinkManageController.deleteLink(java.lang.Integer[])
+
+
+[INFO ] 2019-02-03 10:46:25,858 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/link/list],methods=[POST]}" onto public cn.chenjianlink.blog.common.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.LinkManageController.getLinkList(java.lang.Integer,java.lang.Integer) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 10:46:25,859 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/admin-login]}" onto public java.lang.String cn.chenjianlink.blog.controller.admin.LoginController.showLoginPage()
+
+
+[INFO ] 2019-02-03 10:46:25,860 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blogger/login]}" onto public java.lang.String cn.chenjianlink.blog.controller.admin.LoginController.login()
+
+
+[INFO ] 2019-02-03 10:46:26,145 method:org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.initControllerAdviceCache(RequestMappingHandlerAdapter.java:568)
+Looking for @ControllerAdvice: WebApplicationContext for namespace 'blog-servlet': startup date [Sun Feb 03 10:46:25 CST 2019]; parent: Root WebApplicationContext
+
+
+[INFO ] 2019-02-03 10:46:26,219 method:org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.initControllerAdviceCache(RequestMappingHandlerAdapter.java:568)
+Looking for @ControllerAdvice: WebApplicationContext for namespace 'blog-servlet': startup date [Sun Feb 03 10:46:25 CST 2019]; parent: Root WebApplicationContext
+
+
+[INFO ] 2019-02-03 10:46:26,321 method:org.springframework.web.servlet.handler.AbstractUrlHandlerMapping.registerHandler(AbstractUrlHandlerMapping.java:373)
+Mapped URL path [/static/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+
+
+[INFO ] 2019-02-03 10:46:26,408 method:org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:513)
+FrameworkServlet 'blog': initialization completed in 954 ms
+
+
+[INFO ] 2019-02-03 10:46:33,422 method:com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:655)
+{dataSource-1} inited
+
+
+[INFO ] 2019-02-03 11:07:32,496 method:org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:270)
+Root WebApplicationContext: initialization started
+
+
+[INFO ] 2019-02-03 11:07:32,538 method:org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:589)
+Refreshing Root WebApplicationContext: startup date [Sun Feb 03 11:07:32 CST 2019]; root of context hierarchy
+
+
+[INFO ] 2019-02-03 11:07:32,570 method:org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:316)
+Loading XML bean definitions from file [/home/chenjian/GIT/Blog/blog-web/target/classes/spring/springconfig-dao.xml]
+
+
+[INFO ] 2019-02-03 11:07:32,844 method:org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:316)
+Loading XML bean definitions from file [/home/chenjian/GIT/Blog/blog-web/target/classes/spring/springconfig-service.xml]
+
+
+[INFO ] 2019-02-03 11:07:32,918 method:org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:316)
+Loading XML bean definitions from file [/home/chenjian/GIT/Blog/blog-web/target/classes/spring/springconfig-trans.xml]
+
+
+[INFO ] 2019-02-03 11:07:33,119 method:org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.<init>(AutowiredAnnotationBeanPostProcessor.java:154)
+JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+
+
+[INFO ] 2019-02-03 11:07:33,790 method:org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:310)
+Root WebApplicationContext: initialization completed in 1292 ms
+
+
+[INFO ] 2019-02-03 11:07:33,827 method:org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:494)
+FrameworkServlet 'blog': initialization started
+
+
+[INFO ] 2019-02-03 11:07:33,829 method:org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:589)
+Refreshing WebApplicationContext for namespace 'blog-servlet': startup date [Sun Feb 03 11:07:33 CST 2019]; parent: Root WebApplicationContext
+
+
+[INFO ] 2019-02-03 11:07:33,830 method:org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:316)
+Loading XML bean definitions from class path resource [spring/springmvc.xml]
+
+
+[INFO ] 2019-02-03 11:07:33,955 method:org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.<init>(AutowiredAnnotationBeanPostProcessor.java:154)
+JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+
+
+[INFO ] 2019-02-03 11:07:34,150 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/blog/query],methods=[POST]}" onto public java.lang.String cn.chenjianlink.blog.controller.BlogController.searchBlog(org.springframework.ui.Model) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 11:07:34,151 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/blog/articles/{blogId}]}" onto public java.lang.String cn.chenjianlink.blog.controller.BlogController.showBlogInfo(org.springframework.ui.Model,java.lang.Integer) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 11:07:34,152 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/blogger/aboutMe]}" onto public java.lang.String cn.chenjianlink.blog.controller.BloggerController.aboutMe(org.springframework.ui.Model) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 11:07:34,153 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/index]}" onto public java.lang.String cn.chenjianlink.blog.controller.IdexController.index(org.springframework.ui.Model,java.lang.Integer,java.lang.String,java.lang.Integer,javax.servlet.http.HttpServletRequest) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 11:07:34,153 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/image]}" onto public java.lang.String cn.chenjianlink.blog.controller.ImageController.showImage()
+
+
+[INFO ] 2019-02-03 11:07:34,155 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/message/leavemessages]}" onto public java.lang.String cn.chenjianlink.blog.controller.MessageController.messageboard(org.springframework.ui.Model) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 11:07:34,155 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blogger/admin-index]}" onto public java.lang.String cn.chenjianlink.blog.controller.admin.AdminIdexController.adminIndex(org.springframework.ui.Model) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 11:07:34,157 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blog/delete],methods=[POST]}" onto public cn.chenjianlink.blog.common.utils.BlogResult cn.chenjianlink.blog.controller.admin.BlogManageController.deleteBlog(java.lang.Integer[])
+
+
+[INFO ] 2019-02-03 11:07:34,157 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blog/save],methods=[POST]}" onto public cn.chenjianlink.blog.common.utils.BlogResult cn.chenjianlink.blog.controller.admin.BlogManageController.addBlog(cn.chenjianlink.blog.pojo.Blog)
+
+
+[INFO ] 2019-02-03 11:07:34,158 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blog/findById],methods=[POST]}" onto public cn.chenjianlink.blog.pojo.Blog cn.chenjianlink.blog.controller.admin.BlogManageController.findBlogInfo(java.lang.Integer) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 11:07:34,158 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blog/edit],methods=[POST]}" onto public cn.chenjianlink.blog.common.utils.BlogResult cn.chenjianlink.blog.controller.admin.BlogManageController.editBlogInfo(cn.chenjianlink.blog.pojo.Blog)
+
+
+[INFO ] 2019-02-03 11:07:34,159 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blog/list],methods=[POST]}" onto public cn.chenjianlink.blog.common.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.BlogManageController.getBlogList(java.lang.String,java.lang.Integer,java.lang.Integer) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 11:07:34,162 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blogType/delete],methods=[POST]}" onto public cn.chenjianlink.blog.common.utils.BlogResult cn.chenjianlink.blog.controller.admin.BlogTypeManageController.deleteBlogType(java.lang.Integer[])
+
+
+[INFO ] 2019-02-03 11:07:34,162 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blogType/list],methods=[POST]}" onto public cn.chenjianlink.blog.common.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.BlogTypeManageController.getBlogTypeList(java.lang.Integer,java.lang.Integer) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 11:07:34,163 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blogType/save],methods=[POST]}" onto public cn.chenjianlink.blog.common.utils.BlogResult cn.chenjianlink.blog.controller.admin.BlogTypeManageController.addBlogType(cn.chenjianlink.blog.pojo.BlogType)
+
+
+[INFO ] 2019-02-03 11:07:34,163 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blogType/edit],methods=[POST]}" onto public cn.chenjianlink.blog.common.utils.BlogResult cn.chenjianlink.blog.controller.admin.BlogTypeManageController.editBlodType(java.lang.Integer,cn.chenjianlink.blog.pojo.BlogType)
+
+
+[INFO ] 2019-02-03 11:07:34,164 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blogger/save],methods=[POST]}" onto public void cn.chenjianlink.blog.controller.admin.BloggerManageController.editBloggerInfo(cn.chenjianlink.blog.pojo.Blogger,org.springframework.web.multipart.MultipartFile,javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 11:07:34,165 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blogger/find],methods=[POST]}" onto public cn.chenjianlink.blog.pojo.Blogger cn.chenjianlink.blog.controller.admin.BloggerManageController.findBloggerInfo() throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 11:07:34,165 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/{page}]}" onto public java.lang.String cn.chenjianlink.blog.controller.admin.ForwordController.forwordPage(java.lang.String,org.springframework.ui.Model) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 11:07:34,167 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/link/save],methods=[POST]}" onto public cn.chenjianlink.blog.common.utils.BlogResult cn.chenjianlink.blog.controller.admin.LinkManageController.addLink(cn.chenjianlink.blog.pojo.Link)
+
+
+[INFO ] 2019-02-03 11:07:34,167 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/link/edit],methods=[POST]}" onto public cn.chenjianlink.blog.common.utils.BlogResult cn.chenjianlink.blog.controller.admin.LinkManageController.editLink(java.lang.Integer,cn.chenjianlink.blog.pojo.Link)
+
+
+[INFO ] 2019-02-03 11:07:34,167 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/link/delete],methods=[POST]}" onto public cn.chenjianlink.blog.common.utils.BlogResult cn.chenjianlink.blog.controller.admin.LinkManageController.deleteLink(java.lang.Integer[])
+
+
+[INFO ] 2019-02-03 11:07:34,168 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/link/list],methods=[POST]}" onto public cn.chenjianlink.blog.common.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.LinkManageController.getLinkList(java.lang.Integer,java.lang.Integer) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 11:07:34,169 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/admin-login]}" onto public java.lang.String cn.chenjianlink.blog.controller.admin.LoginController.showLoginPage()
+
+
+[INFO ] 2019-02-03 11:07:34,169 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blogger/login]}" onto public java.lang.String cn.chenjianlink.blog.controller.admin.LoginController.login()
+
+
+[INFO ] 2019-02-03 11:07:34,410 method:org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.initControllerAdviceCache(RequestMappingHandlerAdapter.java:568)
+Looking for @ControllerAdvice: WebApplicationContext for namespace 'blog-servlet': startup date [Sun Feb 03 11:07:33 CST 2019]; parent: Root WebApplicationContext
+
+
+[INFO ] 2019-02-03 11:07:34,472 method:org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.initControllerAdviceCache(RequestMappingHandlerAdapter.java:568)
+Looking for @ControllerAdvice: WebApplicationContext for namespace 'blog-servlet': startup date [Sun Feb 03 11:07:33 CST 2019]; parent: Root WebApplicationContext
+
+
+[INFO ] 2019-02-03 11:07:34,550 method:org.springframework.web.servlet.handler.AbstractUrlHandlerMapping.registerHandler(AbstractUrlHandlerMapping.java:373)
+Mapped URL path [/static/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+
+
+[INFO ] 2019-02-03 11:07:34,659 method:org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:513)
+FrameworkServlet 'blog': initialization completed in 832 ms
+
+
+[INFO ] 2019-02-03 11:07:39,198 method:com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:655)
+{dataSource-1} inited
+
+
+[INFO ] 2019-02-03 12:23:41,124 method:org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:270)
+Root WebApplicationContext: initialization started
+
+
+[INFO ] 2019-02-03 12:23:41,172 method:org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:589)
+Refreshing Root WebApplicationContext: startup date [Sun Feb 03 12:23:41 CST 2019]; root of context hierarchy
+
+
+[INFO ] 2019-02-03 12:23:41,209 method:org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:316)
+Loading XML bean definitions from file [/home/chenjian/GIT/Blog/blog-web/target/classes/spring/springconfig-dao.xml]
+
+
+[INFO ] 2019-02-03 12:23:41,471 method:org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:316)
+Loading XML bean definitions from file [/home/chenjian/GIT/Blog/blog-web/target/classes/spring/springconfig-service.xml]
+
+
+[INFO ] 2019-02-03 12:23:41,553 method:org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:316)
+Loading XML bean definitions from file [/home/chenjian/GIT/Blog/blog-web/target/classes/spring/springconfig-trans.xml]
+
+
+[INFO ] 2019-02-03 12:23:41,759 method:org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.<init>(AutowiredAnnotationBeanPostProcessor.java:154)
+JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+
+
+[INFO ] 2019-02-03 12:23:42,458 method:org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:310)
+Root WebApplicationContext: initialization completed in 1332 ms
+
+
+[INFO ] 2019-02-03 12:23:42,494 method:org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:494)
+FrameworkServlet 'blog': initialization started
+
+
+[INFO ] 2019-02-03 12:23:42,497 method:org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:589)
+Refreshing WebApplicationContext for namespace 'blog-servlet': startup date [Sun Feb 03 12:23:42 CST 2019]; parent: Root WebApplicationContext
+
+
+[INFO ] 2019-02-03 12:23:42,497 method:org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:316)
+Loading XML bean definitions from class path resource [spring/springmvc.xml]
+
+
+[INFO ] 2019-02-03 12:23:42,633 method:org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.<init>(AutowiredAnnotationBeanPostProcessor.java:154)
+JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+
+
+[INFO ] 2019-02-03 12:23:42,842 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/blog/query],methods=[POST]}" onto public java.lang.String cn.chenjianlink.blog.controller.BlogController.searchBlog(org.springframework.ui.Model) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 12:23:42,843 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/blog/articles/{blogId}]}" onto public java.lang.String cn.chenjianlink.blog.controller.BlogController.showBlogInfo(org.springframework.ui.Model,java.lang.Integer) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 12:23:42,844 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/blogger/aboutMe]}" onto public java.lang.String cn.chenjianlink.blog.controller.BloggerController.aboutMe(org.springframework.ui.Model) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 12:23:42,845 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/index]}" onto public java.lang.String cn.chenjianlink.blog.controller.IdexController.index(org.springframework.ui.Model,java.lang.Integer,java.lang.String,java.lang.Integer,javax.servlet.http.HttpServletRequest) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 12:23:42,846 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/image]}" onto public java.lang.String cn.chenjianlink.blog.controller.ImageController.showImage()
+
+
+[INFO ] 2019-02-03 12:23:42,847 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/message/leavemessages]}" onto public java.lang.String cn.chenjianlink.blog.controller.MessageController.messageboard(org.springframework.ui.Model) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 12:23:42,848 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blogger/admin-index]}" onto public java.lang.String cn.chenjianlink.blog.controller.admin.AdminIdexController.adminIndex(org.springframework.ui.Model) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 12:23:42,850 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blog/findById],methods=[POST]}" onto public cn.chenjianlink.blog.pojo.Blog cn.chenjianlink.blog.controller.admin.BlogManageController.findBlogInfo(java.lang.Integer) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 12:23:42,850 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blog/edit],methods=[POST]}" onto public cn.chenjianlink.blog.common.utils.BlogResult cn.chenjianlink.blog.controller.admin.BlogManageController.editBlogInfo(cn.chenjianlink.blog.pojo.Blog)
+
+
+[INFO ] 2019-02-03 12:23:42,851 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blog/delete],methods=[POST]}" onto public cn.chenjianlink.blog.common.utils.BlogResult cn.chenjianlink.blog.controller.admin.BlogManageController.deleteBlog(java.lang.Integer[])
+
+
+[INFO ] 2019-02-03 12:23:42,851 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blog/save],methods=[POST]}" onto public cn.chenjianlink.blog.common.utils.BlogResult cn.chenjianlink.blog.controller.admin.BlogManageController.addBlog(cn.chenjianlink.blog.pojo.Blog)
+
+
+[INFO ] 2019-02-03 12:23:42,852 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blog/list],methods=[POST]}" onto public cn.chenjianlink.blog.common.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.BlogManageController.getBlogList(java.lang.String,java.lang.Integer,java.lang.Integer) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 12:23:42,854 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blogType/edit],methods=[POST]}" onto public cn.chenjianlink.blog.common.utils.BlogResult cn.chenjianlink.blog.controller.admin.BlogTypeManageController.editBlodType(java.lang.Integer,cn.chenjianlink.blog.pojo.BlogType)
+
+
+[INFO ] 2019-02-03 12:23:42,855 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blogType/delete],methods=[POST]}" onto public cn.chenjianlink.blog.common.utils.BlogResult cn.chenjianlink.blog.controller.admin.BlogTypeManageController.deleteBlogType(java.lang.Integer[])
+
+
+[INFO ] 2019-02-03 12:23:42,855 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blogType/list],methods=[POST]}" onto public cn.chenjianlink.blog.common.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.BlogTypeManageController.getBlogTypeList(java.lang.Integer,java.lang.Integer) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 12:23:42,856 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blogType/save],methods=[POST]}" onto public cn.chenjianlink.blog.common.utils.BlogResult cn.chenjianlink.blog.controller.admin.BlogTypeManageController.addBlogType(cn.chenjianlink.blog.pojo.BlogType)
+
+
+[INFO ] 2019-02-03 12:23:42,857 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blogger/find],methods=[POST]}" onto public cn.chenjianlink.blog.pojo.Blogger cn.chenjianlink.blog.controller.admin.BloggerManageController.findBloggerInfo() throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 12:23:42,857 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blogger/save],methods=[POST]}" onto public void cn.chenjianlink.blog.controller.admin.BloggerManageController.editBloggerInfo(cn.chenjianlink.blog.pojo.Blogger,org.springframework.web.multipart.MultipartFile,javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 12:23:42,858 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/{page}]}" onto public java.lang.String cn.chenjianlink.blog.controller.admin.ForwordController.forwordPage(java.lang.String,org.springframework.ui.Model) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 12:23:42,859 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/link/save],methods=[POST]}" onto public cn.chenjianlink.blog.common.utils.BlogResult cn.chenjianlink.blog.controller.admin.LinkManageController.addLink(cn.chenjianlink.blog.pojo.Link)
+
+
+[INFO ] 2019-02-03 12:23:42,860 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/link/edit],methods=[POST]}" onto public cn.chenjianlink.blog.common.utils.BlogResult cn.chenjianlink.blog.controller.admin.LinkManageController.editLink(java.lang.Integer,cn.chenjianlink.blog.pojo.Link)
+
+
+[INFO ] 2019-02-03 12:23:42,861 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/link/delete],methods=[POST]}" onto public cn.chenjianlink.blog.common.utils.BlogResult cn.chenjianlink.blog.controller.admin.LinkManageController.deleteLink(java.lang.Integer[])
+
+
+[INFO ] 2019-02-03 12:23:42,861 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/link/list],methods=[POST]}" onto public cn.chenjianlink.blog.common.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.LinkManageController.getLinkList(java.lang.Integer,java.lang.Integer) throws java.lang.Exception
+
+
+[INFO ] 2019-02-03 12:23:42,862 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/admin-login]}" onto public java.lang.String cn.chenjianlink.blog.controller.admin.LoginController.showLoginPage()
+
+
+[INFO ] 2019-02-03 12:23:42,862 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
+Mapped "{[/admin/blogger/login]}" onto public java.lang.String cn.chenjianlink.blog.controller.admin.LoginController.login()
+
+
+[INFO ] 2019-02-03 12:23:43,125 method:org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.initControllerAdviceCache(RequestMappingHandlerAdapter.java:568)
+Looking for @ControllerAdvice: WebApplicationContext for namespace 'blog-servlet': startup date [Sun Feb 03 12:23:42 CST 2019]; parent: Root WebApplicationContext
+
+
+[INFO ] 2019-02-03 12:23:43,186 method:org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.initControllerAdviceCache(RequestMappingHandlerAdapter.java:568)
+Looking for @ControllerAdvice: WebApplicationContext for namespace 'blog-servlet': startup date [Sun Feb 03 12:23:42 CST 2019]; parent: Root WebApplicationContext
+
+
+[INFO ] 2019-02-03 12:23:43,280 method:org.springframework.web.servlet.handler.AbstractUrlHandlerMapping.registerHandler(AbstractUrlHandlerMapping.java:373)
+Mapped URL path [/static/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+
+
+[INFO ] 2019-02-03 12:23:43,356 method:org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:513)
+FrameworkServlet 'blog': initialization completed in 862 ms
+
+
+[INFO ] 2019-02-03 12:23:48,377 method:com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:655)
+{dataSource-1} inited
