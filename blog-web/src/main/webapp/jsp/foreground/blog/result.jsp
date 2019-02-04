@@ -4,7 +4,7 @@
 <div class="data_list">
     <div class="data_list_title">
         <img src="${pageContext.request.contextPath}/static/images/search_icon.png"/>
-        搜索&nbsp;<font color="red">${query }</font>&nbsp;的结果 &nbsp;(总共搜索到&nbsp;${resultTotal}&nbsp;条记录)
+        搜索&nbsp;<font color="red">${query }</font>&nbsp;的结果 &nbsp;(总共搜索到&nbsp;${blogList.size()}&nbsp;条记录)
     </div>
     <div class="datas search">
         <ul>

@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * 日志相关展示Controller
@@ -25,7 +26,10 @@ public class BlogController {
     //搜索日志
     @RequestMapping("/blog/query")
     public String searchBlog(Model model, @RequestParam(value = "query", required = true) String query, @RequestParam(value = "page", required = false) Integer page) throws Exception {
+        List<Blog> blogList = blogService.searchBlogByQuery(query);
         controllerMethod.showMainTemp(model);
+        model.addAttribute("query", query);
+        model.addAttribute("blogList", blogList);
         model.addAttribute("pageTitle", "局外人之个人空间-搜索结果");
         model.addAttribute("mainPage", "foreground/blog/result.jsp");
         return "mainTemp";

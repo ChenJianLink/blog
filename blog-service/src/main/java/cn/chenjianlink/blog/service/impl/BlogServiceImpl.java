@@ -1,5 +1,6 @@
 package cn.chenjianlink.blog.service.impl;
 
+import cn.chenjianlink.blog.common.lucene.BlogSearch;
 import cn.chenjianlink.blog.pojo.PageResult;
 import cn.chenjianlink.blog.common.utils.BlogResult;
 import cn.chenjianlink.blog.pojo.EasyUIResult;
@@ -18,6 +19,7 @@ import javax.annotation.Resource;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 
 /**
  * 日志相关service
@@ -29,6 +31,8 @@ public class BlogServiceImpl implements BlogService {
     private BlogMapper blogMapper;
     @Value("${ROWS}")
     private Integer ROWS;
+    @Resource
+    private BlogSearch blogSearch;
 
     //后台日志管理列表展示(分页查询)
     @Override
@@ -56,13 +60,20 @@ public class BlogServiceImpl implements BlogService {
             id[i] = ids[i];
         }
         blogMapper.delete(id);
+        //删除索引
+        for (int j = 0; j < ids.length; j++) {
+            blogSearch.deleteBlogIndex(ids[j]);
+        }
         return BlogResult.ok();
     }
 
     //更新日志
     @Override
     public BlogResult editBlog(Blog blog) throws Exception {
+        blog.setReleaseDate(new Date());
         blogMapper.update(blog);
+        //更新索引
+        blogSearch.updateBlogIndex(blog);
         return BlogResult.ok();
     }
 
@@ -71,7 +82,12 @@ public class BlogServiceImpl implements BlogService {
     public BlogResult addBlog(Blog blog) throws Exception {
         //补全属性
         blog.setReleaseDate(new Date());
+        //生成id
+        Integer id = Integer.valueOf(String.valueOf(new Date().getTime()).substring(0, 10));
+        blog.setId(id);
         blogMapper.insert(blog);
+        //添加索引
+        blogSearch.addBlogIndex(blog);
         return BlogResult.ok();
     }
 
@@ -109,4 +125,13 @@ public class BlogServiceImpl implements BlogService {
         PageResult result = new PageResult(page, (int) total, ROWS, blogList);
         return result;
     }
+
+    //根据条件查询博客
+    @Override
+    public List<Blog> searchBlogByQuery(String query) throws Exception {
+        List<Blog> blogList = blogSearch.searchBlogIndex(query);
+//        System.out.println(blogList.get(0).getId());
+        return blogList;
+    }
+
 }

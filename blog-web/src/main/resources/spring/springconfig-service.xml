@@ -18,4 +18,6 @@
 
     <!--配置包扫描器-->
     <context:component-scan base-package="cn.chenjianlink.blog.service"/>
+    <!--配置博客搜索器-->
+    <bean id="blogSearch" class="cn.chenjianlink.blog.common.lucene.BlogSearch"/>
 </beans>
