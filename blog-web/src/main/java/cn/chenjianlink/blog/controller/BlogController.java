@@ -26,7 +26,7 @@ public class BlogController {
     //搜索日志
     @RequestMapping("/blog/query")
     public String searchBlog(Model model, @RequestParam(value = "query", required = true) String query, @RequestParam(value = "page", required = false) Integer page) throws Exception {
-        List<Blog> blogList = blogService.searchBlogByQuery(query);
+        List<Blog> blogList = blogService.searchBlogByQuery(query.trim());
         controllerMethod.showMainTemp(model);
         model.addAttribute("query", query);
         model.addAttribute("blogList", blogList);
