@@ -33,6 +33,8 @@ public class Blog implements Serializable {
     private BlogType blogType;
     //日志中的图片
     private List<String> imagesList = new LinkedList<>();
+    //用于查询的日志内容
+    private String searchContent;
 
     public Integer getId() {
         return id;
@@ -128,5 +130,13 @@ public class Blog implements Serializable {
 
     public void setBlogCount(Integer blogCount) {
         this.blogCount = blogCount;
+    }
+
+    public String getSearchContent() {
+        return searchContent;
+    }
+
+    public void setSearchContent(String searchContent) {
+        this.searchContent = searchContent;
     }
 }
