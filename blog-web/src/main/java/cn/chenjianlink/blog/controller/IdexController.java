@@ -1,6 +1,6 @@
 package cn.chenjianlink.blog.controller;
 
-import cn.chenjianlink.blog.common.pojo.PageResult;
+import cn.chenjianlink.blog.pojo.PageResult;
 import cn.chenjianlink.blog.method.ControllerMethod;
 import cn.chenjianlink.blog.service.BlogService;
 import org.springframework.stereotype.Controller;

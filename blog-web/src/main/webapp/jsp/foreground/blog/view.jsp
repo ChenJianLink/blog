@@ -86,7 +86,12 @@
                 <c:otherwise></c:otherwise>
             </c:choose>
             </div>
-            <div>下一篇:</div>
+            <div>
+                下一篇:<c:choose>
+                <c:when test="">木有了</c:when>
+                <c:otherwise></c:otherwise>
+            </c:choose>
+            </div>
         </div>
     </div>
 </div>

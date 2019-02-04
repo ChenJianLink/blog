@@ -1,4 +1,4 @@
-package cn.chenjianlink.blog.common.pojo;
+package cn.chenjianlink.blog.pojo;
 
 import java.util.List;
 

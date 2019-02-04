@@ -73,7 +73,7 @@ Mapped "{[/admin/blog/save],methods=[POST]}" onto public cn.chenjianlink.blog.co
 
 
 [INFO ] 2019-02-03 08:52:01,010 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
-Mapped "{[/admin/blog/list],methods=[POST]}" onto public cn.chenjianlink.blog.common.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.BlogManageController.getBlogList(java.lang.String,java.lang.Integer,java.lang.Integer) throws java.lang.Exception
+Mapped "{[/admin/blog/list],methods=[POST]}" onto public cn.chenjianlink.blog.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.BlogManageController.getBlogList(java.lang.String,java.lang.Integer,java.lang.Integer) throws java.lang.Exception
 
 
 [INFO ] 2019-02-03 08:52:01,010 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
@@ -89,7 +89,7 @@ Mapped "{[/admin/blogType/delete],methods=[POST]}" onto public cn.chenjianlink.b
 
 
 [INFO ] 2019-02-03 08:52:01,014 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
-Mapped "{[/admin/blogType/list],methods=[POST]}" onto public cn.chenjianlink.blog.common.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.BlogTypeManageController.getBlogTypeList(java.lang.Integer,java.lang.Integer) throws java.lang.Exception
+Mapped "{[/admin/blogType/list],methods=[POST]}" onto public cn.chenjianlink.blog.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.BlogTypeManageController.getBlogTypeList(java.lang.Integer,java.lang.Integer) throws java.lang.Exception
 
 
 [INFO ] 2019-02-03 08:52:01,014 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
@@ -125,7 +125,7 @@ Mapped "{[/admin/link/delete],methods=[POST]}" onto public cn.chenjianlink.blog.
 
 
 [INFO ] 2019-02-03 08:52:01,021 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
-Mapped "{[/admin/link/list],methods=[POST]}" onto public cn.chenjianlink.blog.common.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.LinkManageController.getLinkList(java.lang.Integer,java.lang.Integer) throws java.lang.Exception
+Mapped "{[/admin/link/list],methods=[POST]}" onto public cn.chenjianlink.blog.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.LinkManageController.getLinkList(java.lang.Integer,java.lang.Integer) throws java.lang.Exception
 
 
 [INFO ] 2019-02-03 08:52:01,022 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
@@ -229,7 +229,7 @@ Mapped "{[/admin/blog/save],methods=[POST]}" onto public cn.chenjianlink.blog.co
 
 
 [INFO ] 2019-02-03 08:58:46,802 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
-Mapped "{[/admin/blog/list],methods=[POST]}" onto public cn.chenjianlink.blog.common.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.BlogManageController.getBlogList(java.lang.String,java.lang.Integer,java.lang.Integer) throws java.lang.Exception
+Mapped "{[/admin/blog/list],methods=[POST]}" onto public cn.chenjianlink.blog.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.BlogManageController.getBlogList(java.lang.String,java.lang.Integer,java.lang.Integer) throws java.lang.Exception
 
 
 [INFO ] 2019-02-03 08:58:46,803 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
@@ -245,7 +245,7 @@ Mapped "{[/admin/blogType/delete],methods=[POST]}" onto public cn.chenjianlink.b
 
 
 [INFO ] 2019-02-03 08:58:46,805 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
-Mapped "{[/admin/blogType/list],methods=[POST]}" onto public cn.chenjianlink.blog.common.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.BlogTypeManageController.getBlogTypeList(java.lang.Integer,java.lang.Integer) throws java.lang.Exception
+Mapped "{[/admin/blogType/list],methods=[POST]}" onto public cn.chenjianlink.blog.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.BlogTypeManageController.getBlogTypeList(java.lang.Integer,java.lang.Integer) throws java.lang.Exception
 
 
 [INFO ] 2019-02-03 08:58:46,806 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
@@ -281,7 +281,7 @@ Mapped "{[/admin/link/delete],methods=[POST]}" onto public cn.chenjianlink.blog.
 
 
 [INFO ] 2019-02-03 08:58:46,814 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
-Mapped "{[/admin/link/list],methods=[POST]}" onto public cn.chenjianlink.blog.common.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.LinkManageController.getLinkList(java.lang.Integer,java.lang.Integer) throws java.lang.Exception
+Mapped "{[/admin/link/list],methods=[POST]}" onto public cn.chenjianlink.blog.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.LinkManageController.getLinkList(java.lang.Integer,java.lang.Integer) throws java.lang.Exception
 
 
 [INFO ] 2019-02-03 08:58:46,815 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
@@ -381,7 +381,7 @@ Mapped "{[/admin/blog/findById],methods=[POST]}" onto public cn.chenjianlink.blo
 
 
 [INFO ] 2019-02-03 09:00:58,604 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
-Mapped "{[/admin/blog/list],methods=[POST]}" onto public cn.chenjianlink.blog.common.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.BlogManageController.getBlogList(java.lang.String,java.lang.Integer,java.lang.Integer) throws java.lang.Exception
+Mapped "{[/admin/blog/list],methods=[POST]}" onto public cn.chenjianlink.blog.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.BlogManageController.getBlogList(java.lang.String,java.lang.Integer,java.lang.Integer) throws java.lang.Exception
 
 
 [INFO ] 2019-02-03 09:00:58,604 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
@@ -405,7 +405,7 @@ Mapped "{[/admin/blogType/delete],methods=[POST]}" onto public cn.chenjianlink.b
 
 
 [INFO ] 2019-02-03 09:00:58,607 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
-Mapped "{[/admin/blogType/list],methods=[POST]}" onto public cn.chenjianlink.blog.common.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.BlogTypeManageController.getBlogTypeList(java.lang.Integer,java.lang.Integer) throws java.lang.Exception
+Mapped "{[/admin/blogType/list],methods=[POST]}" onto public cn.chenjianlink.blog.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.BlogTypeManageController.getBlogTypeList(java.lang.Integer,java.lang.Integer) throws java.lang.Exception
 
 
 [INFO ] 2019-02-03 09:00:58,608 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
@@ -437,7 +437,7 @@ Mapped "{[/admin/link/delete],methods=[POST]}" onto public cn.chenjianlink.blog.
 
 
 [INFO ] 2019-02-03 09:00:58,614 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
-Mapped "{[/admin/link/list],methods=[POST]}" onto public cn.chenjianlink.blog.common.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.LinkManageController.getLinkList(java.lang.Integer,java.lang.Integer) throws java.lang.Exception
+Mapped "{[/admin/link/list],methods=[POST]}" onto public cn.chenjianlink.blog.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.LinkManageController.getLinkList(java.lang.Integer,java.lang.Integer) throws java.lang.Exception
 
 
 [INFO ] 2019-02-03 09:00:58,615 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
@@ -565,7 +565,7 @@ Mapped "{[/admin/blog/edit],methods=[POST]}" onto public cn.chenjianlink.blog.co
 
 
 [INFO ] 2019-02-03 10:09:18,320 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
-Mapped "{[/admin/blog/list],methods=[POST]}" onto public cn.chenjianlink.blog.common.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.BlogManageController.getBlogList(java.lang.String,java.lang.Integer,java.lang.Integer) throws java.lang.Exception
+Mapped "{[/admin/blog/list],methods=[POST]}" onto public cn.chenjianlink.blog.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.BlogManageController.getBlogList(java.lang.String,java.lang.Integer,java.lang.Integer) throws java.lang.Exception
 
 
 [INFO ] 2019-02-03 10:09:18,321 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
@@ -573,7 +573,7 @@ Mapped "{[/admin/blogType/delete],methods=[POST]}" onto public cn.chenjianlink.b
 
 
 [INFO ] 2019-02-03 10:09:18,322 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
-Mapped "{[/admin/blogType/list],methods=[POST]}" onto public cn.chenjianlink.blog.common.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.BlogTypeManageController.getBlogTypeList(java.lang.Integer,java.lang.Integer) throws java.lang.Exception
+Mapped "{[/admin/blogType/list],methods=[POST]}" onto public cn.chenjianlink.blog.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.BlogTypeManageController.getBlogTypeList(java.lang.Integer,java.lang.Integer) throws java.lang.Exception
 
 
 [INFO ] 2019-02-03 10:09:18,322 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
@@ -609,7 +609,7 @@ Mapped "{[/admin/link/delete],methods=[POST]}" onto public cn.chenjianlink.blog.
 
 
 [INFO ] 2019-02-03 10:09:18,328 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
-Mapped "{[/admin/link/list],methods=[POST]}" onto public cn.chenjianlink.blog.common.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.LinkManageController.getLinkList(java.lang.Integer,java.lang.Integer) throws java.lang.Exception
+Mapped "{[/admin/link/list],methods=[POST]}" onto public cn.chenjianlink.blog.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.LinkManageController.getLinkList(java.lang.Integer,java.lang.Integer) throws java.lang.Exception
 
 
 [INFO ] 2019-02-03 10:09:18,329 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
@@ -721,7 +721,7 @@ Mapped "{[/admin/blog/findById],methods=[POST]}" onto public cn.chenjianlink.blo
 
 
 [INFO ] 2019-02-03 10:11:47,389 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
-Mapped "{[/admin/blog/list],methods=[POST]}" onto public cn.chenjianlink.blog.common.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.BlogManageController.getBlogList(java.lang.String,java.lang.Integer,java.lang.Integer) throws java.lang.Exception
+Mapped "{[/admin/blog/list],methods=[POST]}" onto public cn.chenjianlink.blog.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.BlogManageController.getBlogList(java.lang.String,java.lang.Integer,java.lang.Integer) throws java.lang.Exception
 
 
 [INFO ] 2019-02-03 10:11:47,391 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
@@ -729,7 +729,7 @@ Mapped "{[/admin/blogType/delete],methods=[POST]}" onto public cn.chenjianlink.b
 
 
 [INFO ] 2019-02-03 10:11:47,391 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
-Mapped "{[/admin/blogType/list],methods=[POST]}" onto public cn.chenjianlink.blog.common.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.BlogTypeManageController.getBlogTypeList(java.lang.Integer,java.lang.Integer) throws java.lang.Exception
+Mapped "{[/admin/blogType/list],methods=[POST]}" onto public cn.chenjianlink.blog.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.BlogTypeManageController.getBlogTypeList(java.lang.Integer,java.lang.Integer) throws java.lang.Exception
 
 
 [INFO ] 2019-02-03 10:11:47,392 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
@@ -765,7 +765,7 @@ Mapped "{[/admin/link/delete],methods=[POST]}" onto public cn.chenjianlink.blog.
 
 
 [INFO ] 2019-02-03 10:11:47,399 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
-Mapped "{[/admin/link/list],methods=[POST]}" onto public cn.chenjianlink.blog.common.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.LinkManageController.getLinkList(java.lang.Integer,java.lang.Integer) throws java.lang.Exception
+Mapped "{[/admin/link/list],methods=[POST]}" onto public cn.chenjianlink.blog.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.LinkManageController.getLinkList(java.lang.Integer,java.lang.Integer) throws java.lang.Exception
 
 
 [INFO ] 2019-02-03 10:11:47,400 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
@@ -873,7 +873,7 @@ Mapped "{[/admin/blog/save],methods=[POST]}" onto public cn.chenjianlink.blog.co
 
 
 [INFO ] 2019-02-03 10:20:35,603 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
-Mapped "{[/admin/blog/list],methods=[POST]}" onto public cn.chenjianlink.blog.common.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.BlogManageController.getBlogList(java.lang.String,java.lang.Integer,java.lang.Integer) throws java.lang.Exception
+Mapped "{[/admin/blog/list],methods=[POST]}" onto public cn.chenjianlink.blog.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.BlogManageController.getBlogList(java.lang.String,java.lang.Integer,java.lang.Integer) throws java.lang.Exception
 
 
 [INFO ] 2019-02-03 10:20:35,605 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
@@ -889,7 +889,7 @@ Mapped "{[/admin/blogType/delete],methods=[POST]}" onto public cn.chenjianlink.b
 
 
 [INFO ] 2019-02-03 10:20:35,614 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
-Mapped "{[/admin/blogType/list],methods=[POST]}" onto public cn.chenjianlink.blog.common.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.BlogTypeManageController.getBlogTypeList(java.lang.Integer,java.lang.Integer) throws java.lang.Exception
+Mapped "{[/admin/blogType/list],methods=[POST]}" onto public cn.chenjianlink.blog.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.BlogTypeManageController.getBlogTypeList(java.lang.Integer,java.lang.Integer) throws java.lang.Exception
 
 
 [INFO ] 2019-02-03 10:20:35,615 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
@@ -925,7 +925,7 @@ Mapped "{[/admin/link/delete],methods=[POST]}" onto public cn.chenjianlink.blog.
 
 
 [INFO ] 2019-02-03 10:20:35,622 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
-Mapped "{[/admin/link/list],methods=[POST]}" onto public cn.chenjianlink.blog.common.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.LinkManageController.getLinkList(java.lang.Integer,java.lang.Integer) throws java.lang.Exception
+Mapped "{[/admin/link/list],methods=[POST]}" onto public cn.chenjianlink.blog.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.LinkManageController.getLinkList(java.lang.Integer,java.lang.Integer) throws java.lang.Exception
 
 
 [INFO ] 2019-02-03 10:20:35,623 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
@@ -1037,7 +1037,7 @@ Mapped "{[/admin/blog/findById],methods=[POST]}" onto public cn.chenjianlink.blo
 
 
 [INFO ] 2019-02-03 10:26:47,218 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
-Mapped "{[/admin/blog/list],methods=[POST]}" onto public cn.chenjianlink.blog.common.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.BlogManageController.getBlogList(java.lang.String,java.lang.Integer,java.lang.Integer) throws java.lang.Exception
+Mapped "{[/admin/blog/list],methods=[POST]}" onto public cn.chenjianlink.blog.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.BlogManageController.getBlogList(java.lang.String,java.lang.Integer,java.lang.Integer) throws java.lang.Exception
 
 
 [INFO ] 2019-02-03 10:26:47,218 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
@@ -1049,7 +1049,7 @@ Mapped "{[/admin/blogType/delete],methods=[POST]}" onto public cn.chenjianlink.b
 
 
 [INFO ] 2019-02-03 10:26:47,220 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
-Mapped "{[/admin/blogType/list],methods=[POST]}" onto public cn.chenjianlink.blog.common.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.BlogTypeManageController.getBlogTypeList(java.lang.Integer,java.lang.Integer) throws java.lang.Exception
+Mapped "{[/admin/blogType/list],methods=[POST]}" onto public cn.chenjianlink.blog.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.BlogTypeManageController.getBlogTypeList(java.lang.Integer,java.lang.Integer) throws java.lang.Exception
 
 
 [INFO ] 2019-02-03 10:26:47,220 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
@@ -1085,7 +1085,7 @@ Mapped "{[/admin/link/delete],methods=[POST]}" onto public cn.chenjianlink.blog.
 
 
 [INFO ] 2019-02-03 10:26:47,226 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
-Mapped "{[/admin/link/list],methods=[POST]}" onto public cn.chenjianlink.blog.common.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.LinkManageController.getLinkList(java.lang.Integer,java.lang.Integer) throws java.lang.Exception
+Mapped "{[/admin/link/list],methods=[POST]}" onto public cn.chenjianlink.blog.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.LinkManageController.getLinkList(java.lang.Integer,java.lang.Integer) throws java.lang.Exception
 
 
 [INFO ] 2019-02-03 10:26:47,227 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
@@ -1197,7 +1197,7 @@ Mapped "{[/admin/blog/findById],methods=[POST]}" onto public cn.chenjianlink.blo
 
 
 [INFO ] 2019-02-03 10:33:27,472 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
-Mapped "{[/admin/blog/list],methods=[POST]}" onto public cn.chenjianlink.blog.common.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.BlogManageController.getBlogList(java.lang.String,java.lang.Integer,java.lang.Integer) throws java.lang.Exception
+Mapped "{[/admin/blog/list],methods=[POST]}" onto public cn.chenjianlink.blog.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.BlogManageController.getBlogList(java.lang.String,java.lang.Integer,java.lang.Integer) throws java.lang.Exception
 
 
 [INFO ] 2019-02-03 10:33:27,472 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
@@ -1209,7 +1209,7 @@ Mapped "{[/admin/blogType/delete],methods=[POST]}" onto public cn.chenjianlink.b
 
 
 [INFO ] 2019-02-03 10:33:27,474 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
-Mapped "{[/admin/blogType/list],methods=[POST]}" onto public cn.chenjianlink.blog.common.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.BlogTypeManageController.getBlogTypeList(java.lang.Integer,java.lang.Integer) throws java.lang.Exception
+Mapped "{[/admin/blogType/list],methods=[POST]}" onto public cn.chenjianlink.blog.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.BlogTypeManageController.getBlogTypeList(java.lang.Integer,java.lang.Integer) throws java.lang.Exception
 
 
 [INFO ] 2019-02-03 10:33:27,474 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
@@ -1245,7 +1245,7 @@ Mapped "{[/admin/link/delete],methods=[POST]}" onto public cn.chenjianlink.blog.
 
 
 [INFO ] 2019-02-03 10:33:27,482 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
-Mapped "{[/admin/link/list],methods=[POST]}" onto public cn.chenjianlink.blog.common.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.LinkManageController.getLinkList(java.lang.Integer,java.lang.Integer) throws java.lang.Exception
+Mapped "{[/admin/link/list],methods=[POST]}" onto public cn.chenjianlink.blog.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.LinkManageController.getLinkList(java.lang.Integer,java.lang.Integer) throws java.lang.Exception
 
 
 [INFO ] 2019-02-03 10:33:27,483 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
@@ -1349,7 +1349,7 @@ Mapped "{[/admin/blog/findById],methods=[POST]}" onto public cn.chenjianlink.blo
 
 
 [INFO ] 2019-02-03 10:35:18,133 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
-Mapped "{[/admin/blog/list],methods=[POST]}" onto public cn.chenjianlink.blog.common.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.BlogManageController.getBlogList(java.lang.String,java.lang.Integer,java.lang.Integer) throws java.lang.Exception
+Mapped "{[/admin/blog/list],methods=[POST]}" onto public cn.chenjianlink.blog.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.BlogManageController.getBlogList(java.lang.String,java.lang.Integer,java.lang.Integer) throws java.lang.Exception
 
 
 [INFO ] 2019-02-03 10:35:18,133 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
@@ -1373,7 +1373,7 @@ Mapped "{[/admin/blogType/delete],methods=[POST]}" onto public cn.chenjianlink.b
 
 
 [INFO ] 2019-02-03 10:35:18,136 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
-Mapped "{[/admin/blogType/list],methods=[POST]}" onto public cn.chenjianlink.blog.common.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.BlogTypeManageController.getBlogTypeList(java.lang.Integer,java.lang.Integer) throws java.lang.Exception
+Mapped "{[/admin/blogType/list],methods=[POST]}" onto public cn.chenjianlink.blog.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.BlogTypeManageController.getBlogTypeList(java.lang.Integer,java.lang.Integer) throws java.lang.Exception
 
 
 [INFO ] 2019-02-03 10:35:18,137 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
@@ -1405,7 +1405,7 @@ Mapped "{[/admin/link/delete],methods=[POST]}" onto public cn.chenjianlink.blog.
 
 
 [INFO ] 2019-02-03 10:35:18,144 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
-Mapped "{[/admin/link/list],methods=[POST]}" onto public cn.chenjianlink.blog.common.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.LinkManageController.getLinkList(java.lang.Integer,java.lang.Integer) throws java.lang.Exception
+Mapped "{[/admin/link/list],methods=[POST]}" onto public cn.chenjianlink.blog.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.LinkManageController.getLinkList(java.lang.Integer,java.lang.Integer) throws java.lang.Exception
 
 
 [INFO ] 2019-02-03 10:35:18,144 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
@@ -1513,7 +1513,7 @@ Mapped "{[/admin/blog/findById],methods=[POST]}" onto public cn.chenjianlink.blo
 
 
 [INFO ] 2019-02-03 10:45:28,536 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
-Mapped "{[/admin/blog/list],methods=[POST]}" onto public cn.chenjianlink.blog.common.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.BlogManageController.getBlogList(java.lang.String,java.lang.Integer,java.lang.Integer) throws java.lang.Exception
+Mapped "{[/admin/blog/list],methods=[POST]}" onto public cn.chenjianlink.blog.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.BlogManageController.getBlogList(java.lang.String,java.lang.Integer,java.lang.Integer) throws java.lang.Exception
 
 
 [INFO ] 2019-02-03 10:45:28,536 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
@@ -1537,7 +1537,7 @@ Mapped "{[/admin/blogType/delete],methods=[POST]}" onto public cn.chenjianlink.b
 
 
 [INFO ] 2019-02-03 10:45:28,541 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
-Mapped "{[/admin/blogType/list],methods=[POST]}" onto public cn.chenjianlink.blog.common.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.BlogTypeManageController.getBlogTypeList(java.lang.Integer,java.lang.Integer) throws java.lang.Exception
+Mapped "{[/admin/blogType/list],methods=[POST]}" onto public cn.chenjianlink.blog.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.BlogTypeManageController.getBlogTypeList(java.lang.Integer,java.lang.Integer) throws java.lang.Exception
 
 
 [INFO ] 2019-02-03 10:45:28,542 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
@@ -1569,7 +1569,7 @@ Mapped "{[/admin/link/delete],methods=[POST]}" onto public cn.chenjianlink.blog.
 
 
 [INFO ] 2019-02-03 10:45:28,546 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
-Mapped "{[/admin/link/list],methods=[POST]}" onto public cn.chenjianlink.blog.common.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.LinkManageController.getLinkList(java.lang.Integer,java.lang.Integer) throws java.lang.Exception
+Mapped "{[/admin/link/list],methods=[POST]}" onto public cn.chenjianlink.blog.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.LinkManageController.getLinkList(java.lang.Integer,java.lang.Integer) throws java.lang.Exception
 
 
 [INFO ] 2019-02-03 10:45:28,547 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
@@ -1681,7 +1681,7 @@ Mapped "{[/admin/blog/findById],methods=[POST]}" onto public cn.chenjianlink.blo
 
 
 [INFO ] 2019-02-03 10:46:25,848 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
-Mapped "{[/admin/blog/list],methods=[POST]}" onto public cn.chenjianlink.blog.common.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.BlogManageController.getBlogList(java.lang.String,java.lang.Integer,java.lang.Integer) throws java.lang.Exception
+Mapped "{[/admin/blog/list],methods=[POST]}" onto public cn.chenjianlink.blog.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.BlogManageController.getBlogList(java.lang.String,java.lang.Integer,java.lang.Integer) throws java.lang.Exception
 
 
 [INFO ] 2019-02-03 10:46:25,848 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
@@ -1701,7 +1701,7 @@ Mapped "{[/admin/blogType/delete],methods=[POST]}" onto public cn.chenjianlink.b
 
 
 [INFO ] 2019-02-03 10:46:25,853 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
-Mapped "{[/admin/blogType/list],methods=[POST]}" onto public cn.chenjianlink.blog.common.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.BlogTypeManageController.getBlogTypeList(java.lang.Integer,java.lang.Integer) throws java.lang.Exception
+Mapped "{[/admin/blogType/list],methods=[POST]}" onto public cn.chenjianlink.blog.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.BlogTypeManageController.getBlogTypeList(java.lang.Integer,java.lang.Integer) throws java.lang.Exception
 
 
 [INFO ] 2019-02-03 10:46:25,853 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
@@ -1733,7 +1733,7 @@ Mapped "{[/admin/link/delete],methods=[POST]}" onto public cn.chenjianlink.blog.
 
 
 [INFO ] 2019-02-03 10:46:25,858 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
-Mapped "{[/admin/link/list],methods=[POST]}" onto public cn.chenjianlink.blog.common.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.LinkManageController.getLinkList(java.lang.Integer,java.lang.Integer) throws java.lang.Exception
+Mapped "{[/admin/link/list],methods=[POST]}" onto public cn.chenjianlink.blog.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.LinkManageController.getLinkList(java.lang.Integer,java.lang.Integer) throws java.lang.Exception
 
 
 [INFO ] 2019-02-03 10:46:25,859 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
@@ -1853,7 +1853,7 @@ Mapped "{[/admin/blog/edit],methods=[POST]}" onto public cn.chenjianlink.blog.co
 
 
 [INFO ] 2019-02-03 11:07:34,159 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
-Mapped "{[/admin/blog/list],methods=[POST]}" onto public cn.chenjianlink.blog.common.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.BlogManageController.getBlogList(java.lang.String,java.lang.Integer,java.lang.Integer) throws java.lang.Exception
+Mapped "{[/admin/blog/list],methods=[POST]}" onto public cn.chenjianlink.blog.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.BlogManageController.getBlogList(java.lang.String,java.lang.Integer,java.lang.Integer) throws java.lang.Exception
 
 
 [INFO ] 2019-02-03 11:07:34,162 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
@@ -1861,7 +1861,7 @@ Mapped "{[/admin/blogType/delete],methods=[POST]}" onto public cn.chenjianlink.b
 
 
 [INFO ] 2019-02-03 11:07:34,162 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
-Mapped "{[/admin/blogType/list],methods=[POST]}" onto public cn.chenjianlink.blog.common.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.BlogTypeManageController.getBlogTypeList(java.lang.Integer,java.lang.Integer) throws java.lang.Exception
+Mapped "{[/admin/blogType/list],methods=[POST]}" onto public cn.chenjianlink.blog.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.BlogTypeManageController.getBlogTypeList(java.lang.Integer,java.lang.Integer) throws java.lang.Exception
 
 
 [INFO ] 2019-02-03 11:07:34,163 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
@@ -1897,7 +1897,7 @@ Mapped "{[/admin/link/delete],methods=[POST]}" onto public cn.chenjianlink.blog.
 
 
 [INFO ] 2019-02-03 11:07:34,168 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
-Mapped "{[/admin/link/list],methods=[POST]}" onto public cn.chenjianlink.blog.common.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.LinkManageController.getLinkList(java.lang.Integer,java.lang.Integer) throws java.lang.Exception
+Mapped "{[/admin/link/list],methods=[POST]}" onto public cn.chenjianlink.blog.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.LinkManageController.getLinkList(java.lang.Integer,java.lang.Integer) throws java.lang.Exception
 
 
 [INFO ] 2019-02-03 11:07:34,169 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
@@ -2017,7 +2017,7 @@ Mapped "{[/admin/blog/save],methods=[POST]}" onto public cn.chenjianlink.blog.co
 
 
 [INFO ] 2019-02-03 12:23:42,852 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
-Mapped "{[/admin/blog/list],methods=[POST]}" onto public cn.chenjianlink.blog.common.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.BlogManageController.getBlogList(java.lang.String,java.lang.Integer,java.lang.Integer) throws java.lang.Exception
+Mapped "{[/admin/blog/list],methods=[POST]}" onto public cn.chenjianlink.blog.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.BlogManageController.getBlogList(java.lang.String,java.lang.Integer,java.lang.Integer) throws java.lang.Exception
 
 
 [INFO ] 2019-02-03 12:23:42,854 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
@@ -2029,7 +2029,7 @@ Mapped "{[/admin/blogType/delete],methods=[POST]}" onto public cn.chenjianlink.b
 
 
 [INFO ] 2019-02-03 12:23:42,855 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
-Mapped "{[/admin/blogType/list],methods=[POST]}" onto public cn.chenjianlink.blog.common.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.BlogTypeManageController.getBlogTypeList(java.lang.Integer,java.lang.Integer) throws java.lang.Exception
+Mapped "{[/admin/blogType/list],methods=[POST]}" onto public cn.chenjianlink.blog.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.BlogTypeManageController.getBlogTypeList(java.lang.Integer,java.lang.Integer) throws java.lang.Exception
 
 
 [INFO ] 2019-02-03 12:23:42,856 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
@@ -2061,7 +2061,7 @@ Mapped "{[/admin/link/delete],methods=[POST]}" onto public cn.chenjianlink.blog.
 
 
 [INFO ] 2019-02-03 12:23:42,861 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
-Mapped "{[/admin/link/list],methods=[POST]}" onto public cn.chenjianlink.blog.common.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.LinkManageController.getLinkList(java.lang.Integer,java.lang.Integer) throws java.lang.Exception
+Mapped "{[/admin/link/list],methods=[POST]}" onto public cn.chenjianlink.blog.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.LinkManageController.getLinkList(java.lang.Integer,java.lang.Integer) throws java.lang.Exception
 
 
 [INFO ] 2019-02-03 12:23:42,862 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
@@ -2181,7 +2181,7 @@ Mapped "{[/admin/blog/findById],methods=[POST]}" onto public cn.chenjianlink.blo
 
 
 [INFO ] 2019-02-03 19:03:43,013 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
-Mapped "{[/admin/blog/list],methods=[POST]}" onto public cn.chenjianlink.blog.common.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.BlogManageController.getBlogList(java.lang.String,java.lang.Integer,java.lang.Integer) throws java.lang.Exception
+Mapped "{[/admin/blog/list],methods=[POST]}" onto public cn.chenjianlink.blog.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.BlogManageController.getBlogList(java.lang.String,java.lang.Integer,java.lang.Integer) throws java.lang.Exception
 
 
 [INFO ] 2019-02-03 19:03:43,016 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
@@ -2189,7 +2189,7 @@ Mapped "{[/admin/blogType/delete],methods=[POST]}" onto public cn.chenjianlink.b
 
 
 [INFO ] 2019-02-03 19:03:43,017 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
-Mapped "{[/admin/blogType/list],methods=[POST]}" onto public cn.chenjianlink.blog.common.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.BlogTypeManageController.getBlogTypeList(java.lang.Integer,java.lang.Integer) throws java.lang.Exception
+Mapped "{[/admin/blogType/list],methods=[POST]}" onto public cn.chenjianlink.blog.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.BlogTypeManageController.getBlogTypeList(java.lang.Integer,java.lang.Integer) throws java.lang.Exception
 
 
 [INFO ] 2019-02-03 19:03:43,018 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
@@ -2225,7 +2225,7 @@ Mapped "{[/admin/link/delete],methods=[POST]}" onto public cn.chenjianlink.blog.
 
 
 [INFO ] 2019-02-03 19:03:43,023 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
-Mapped "{[/admin/link/list],methods=[POST]}" onto public cn.chenjianlink.blog.common.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.LinkManageController.getLinkList(java.lang.Integer,java.lang.Integer) throws java.lang.Exception
+Mapped "{[/admin/link/list],methods=[POST]}" onto public cn.chenjianlink.blog.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.LinkManageController.getLinkList(java.lang.Integer,java.lang.Integer) throws java.lang.Exception
 
 
 [INFO ] 2019-02-03 19:03:43,024 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
@@ -2345,7 +2345,7 @@ Mapped "{[/admin/blog/findById],methods=[POST]}" onto public cn.chenjianlink.blo
 
 
 [INFO ] 2019-02-03 19:07:42,079 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
-Mapped "{[/admin/blog/list],methods=[POST]}" onto public cn.chenjianlink.blog.common.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.BlogManageController.getBlogList(java.lang.String,java.lang.Integer,java.lang.Integer) throws java.lang.Exception
+Mapped "{[/admin/blog/list],methods=[POST]}" onto public cn.chenjianlink.blog.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.BlogManageController.getBlogList(java.lang.String,java.lang.Integer,java.lang.Integer) throws java.lang.Exception
 
 
 [INFO ] 2019-02-03 19:07:42,082 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
@@ -2353,7 +2353,7 @@ Mapped "{[/admin/blogType/delete],methods=[POST]}" onto public cn.chenjianlink.b
 
 
 [INFO ] 2019-02-03 19:07:42,082 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
-Mapped "{[/admin/blogType/list],methods=[POST]}" onto public cn.chenjianlink.blog.common.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.BlogTypeManageController.getBlogTypeList(java.lang.Integer,java.lang.Integer) throws java.lang.Exception
+Mapped "{[/admin/blogType/list],methods=[POST]}" onto public cn.chenjianlink.blog.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.BlogTypeManageController.getBlogTypeList(java.lang.Integer,java.lang.Integer) throws java.lang.Exception
 
 
 [INFO ] 2019-02-03 19:07:42,083 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
@@ -2389,7 +2389,7 @@ Mapped "{[/admin/link/delete],methods=[POST]}" onto public cn.chenjianlink.blog.
 
 
 [INFO ] 2019-02-03 19:07:42,089 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
-Mapped "{[/admin/link/list],methods=[POST]}" onto public cn.chenjianlink.blog.common.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.LinkManageController.getLinkList(java.lang.Integer,java.lang.Integer) throws java.lang.Exception
+Mapped "{[/admin/link/list],methods=[POST]}" onto public cn.chenjianlink.blog.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.LinkManageController.getLinkList(java.lang.Integer,java.lang.Integer) throws java.lang.Exception
 
 
 [INFO ] 2019-02-03 19:07:42,090 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
@@ -2497,7 +2497,7 @@ Mapped "{[/admin/blog/findById],methods=[POST]}" onto public cn.chenjianlink.blo
 
 
 [INFO ] 2019-02-03 19:15:57,500 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
-Mapped "{[/admin/blog/list],methods=[POST]}" onto public cn.chenjianlink.blog.common.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.BlogManageController.getBlogList(java.lang.String,java.lang.Integer,java.lang.Integer) throws java.lang.Exception
+Mapped "{[/admin/blog/list],methods=[POST]}" onto public cn.chenjianlink.blog.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.BlogManageController.getBlogList(java.lang.String,java.lang.Integer,java.lang.Integer) throws java.lang.Exception
 
 
 [INFO ] 2019-02-03 19:15:57,500 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
@@ -2521,7 +2521,7 @@ Mapped "{[/admin/blogType/save],methods=[POST]}" onto public cn.chenjianlink.blo
 
 
 [INFO ] 2019-02-03 19:15:57,505 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
-Mapped "{[/admin/blogType/list],methods=[POST]}" onto public cn.chenjianlink.blog.common.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.BlogTypeManageController.getBlogTypeList(java.lang.Integer,java.lang.Integer) throws java.lang.Exception
+Mapped "{[/admin/blogType/list],methods=[POST]}" onto public cn.chenjianlink.blog.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.BlogTypeManageController.getBlogTypeList(java.lang.Integer,java.lang.Integer) throws java.lang.Exception
 
 
 [INFO ] 2019-02-03 19:15:57,505 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
@@ -2549,7 +2549,7 @@ Mapped "{[/admin/link/edit],methods=[POST]}" onto public cn.chenjianlink.blog.co
 
 
 [INFO ] 2019-02-03 19:15:57,510 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)
-Mapped "{[/admin/link/list],methods=[POST]}" onto public cn.chenjianlink.blog.common.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.LinkManageController.getLinkList(java.lang.Integer,java.lang.Integer) throws java.lang.Exception
+Mapped "{[/admin/link/list],methods=[POST]}" onto public cn.chenjianlink.blog.pojo.EasyUIResult cn.chenjianlink.blog.controller.admin.LinkManageController.getLinkList(java.lang.Integer,java.lang.Integer) throws java.lang.Exception
 
 
 [INFO ] 2019-02-03 19:15:57,510 method:org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:549)

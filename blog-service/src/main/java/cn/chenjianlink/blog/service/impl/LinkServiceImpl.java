@@ -1,7 +1,7 @@
 package cn.chenjianlink.blog.service.impl;
 
 import cn.chenjianlink.blog.common.utils.BlogResult;
-import cn.chenjianlink.blog.common.pojo.EasyUIResult;
+import cn.chenjianlink.blog.pojo.EasyUIResult;
 import cn.chenjianlink.blog.mapper.LinkMapper;
 import cn.chenjianlink.blog.pojo.Link;
 import cn.chenjianlink.blog.service.LinkService;
