@@ -67,13 +67,17 @@
             <if test="keyWord != null and keyWord != ''">
                 keyWord = #{keyWord,jdbcType=VARCHAR}
             </if>
+            <if test="keyWord != null and keyWord != ''">
+                releaseDate = #{releaseDate,jdbcType=TIMESTAMP}
+            </if>
         </set>
         WHERE id = #{id,jdbcType=INTEGER}
     </update>
     <!--添加新日志-->
     <insert id="insert" parameterType="cn.chenjianlink.blog.pojo.Blog">
-        INSERT INTO t_blog (title, summary, releaseDate, clickHit, replyHit, content, typeId, keyWord)
-        VALUES (#{title,jdbcType=VARCHAR},
+        INSERT INTO t_blog (id, title, summary, releaseDate, clickHit, replyHit, content, typeId, keyWord)
+        VALUES (#{id,jdbcType=INTEGER},
+                #{title,jdbcType=VARCHAR},
                 #{summary,jdbcType=VARCHAR},
                 #{releaseDate,jdbcType=TIMESTAMP},
                 0,
