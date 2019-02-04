@@ -31,7 +31,7 @@
 		}else if(content==null || content==''){
 			alert("请输入内容！");
 		}else{
-			$.post("${pageContext.request.contextPath}/admin/blog/save.do",{'title':title,'blogType.id':blogTypeId,'content':content,'searchContent':UE.getEditor('editor').getContentTxt(),'summary':UE.getEditor('editor').getContentTxt().substr(0,155),'keyWord':keyWord},function(result){
+			$.post("${pageContext.request.contextPath}/admin/blog/save.do",{'title':title,'blogType.id':blogTypeId,'content':content,'searchContent':UE.getEditor('editor').getContentTxt(),'summary':UE.getEditor('editor').getContentTxt().substr(0,150),'keyWord':keyWord},function(result){
 				if(result.success){
 					alert("日志发布成功！");
 					resetValue();

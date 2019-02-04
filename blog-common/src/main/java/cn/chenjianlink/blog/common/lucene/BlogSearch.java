@@ -137,16 +137,16 @@ public class BlogSearch {
                 TokenStream tokenStream = analyzer.tokenStream("content", new StringReader(content));
                 String hContent = highlighter.getBestFragment(tokenStream, content);
                 if (StringUtils.isBlank(hContent)) {
-                    if (content.length() <= 100) {
+                    if (content.length() <= 150) {
                         blog.setContent(content);
                     } else {
-                        blog.setContent(content.substring(0, 100));
+                        blog.setContent(content.substring(0, 150));
                     }
                 } else {
-                    if (hContent.length() <= 100) {
+                    if (hContent.length() <= 150) {
                         blog.setContent(hContent);
                     } else {
-                        blog.setContent(hContent.substring(0, 100));
+                        blog.setContent(hContent.substring(0, 150));
                     }
                 }
             }

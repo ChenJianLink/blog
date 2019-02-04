@@ -130,7 +130,6 @@ public class BlogServiceImpl implements BlogService {
     @Override
     public List<Blog> searchBlogByQuery(String query) throws Exception {
         List<Blog> blogList = blogSearch.searchBlogIndex(query);
-//        System.out.println(blogList.get(0).getId());
         return blogList;
     }
 
