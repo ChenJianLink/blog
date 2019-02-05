@@ -26,4 +26,7 @@ public interface BlogMapper {
 
     //增加新日志
     int insert(Blog blog) throws Exception;
+
+    //查询日志总数
+    int selectCount() throws Exception;
 }

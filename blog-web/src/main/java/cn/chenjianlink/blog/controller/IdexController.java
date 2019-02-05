@@ -29,7 +29,7 @@ public class IdexController {
     @RequestMapping("/index")
     public String index(Model model, @RequestParam(value = "typeId", required = false) Integer typeId, @RequestParam(value = "releaseDateStr", required = false) String releaseDateStr, @RequestParam(value = "page", required = false) Integer page, HttpServletRequest request) throws Exception {
         //判断page是否为空,为空则设置为1
-        if (page == null) {
+        if (page == null || page <= 0) {
             page = 1;
         }
         //将传入的日期以及日志类别封装到map中

@@ -35,6 +35,10 @@ public class BlogController {
             page = 1;
             //处理post请求url没带参数导致分页跳转异常
             url = controllerMethod.getUrl(request) + "query=" + query;
+        } else if (page <= 0) {
+            //处理非法页面输入
+            page = 1;
+            url = controllerMethod.getUrl(request);
         } else {
             url = controllerMethod.getUrl(request);
         }

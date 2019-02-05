@@ -107,4 +107,9 @@
         </where>
         ORDER BY releaseDate DESC
     </select>
+    <!--查询blog总记录数-->
+    <select id="selectCount" resultType="int">
+        SELECT COUNT(id)
+        FROM t_blog
+    </select>
 </mapper>

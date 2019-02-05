@@ -100,6 +100,12 @@ public class BlogServiceImpl implements BlogService {
     //首页日志列表显示
     @Override
     public PageResult findBlogList(Integer page, Map<String, Object> blogMap) throws Exception {
+        //对过大的page处理
+        int totalRows = blogMapper.selectCount();
+        int totalPage = totalRows / ROWS;
+        totalPage = totalRows % ROWS == 0 ? totalPage : totalPage + 1;
+        page = page <= totalPage ? page : totalPage;
+
         //设置分页信息
         PageHelper.startPage(page, ROWS);
         //查询日志
@@ -119,10 +125,8 @@ public class BlogServiceImpl implements BlogService {
                 }
             }
         }
-        //设置查询分页总记录数，并进行封装
-        PageInfo<Blog> pageInfo = new PageInfo<>(blogList);
-        long total = pageInfo.getTotal();
-        PageResult result = new PageResult(page, (int) total, ROWS, blogList);
+        //封装结果
+        PageResult result = new PageResult(page, totalRows, ROWS, blogList);
         return result;
     }
 
@@ -131,6 +135,10 @@ public class BlogServiceImpl implements BlogService {
     public PageResult searchBlogByQuery(Integer page, String query) throws Exception {
         List<Blog> blogList = blogSearch.searchBlogIndex(query);
         int totalRows = blogList.size();
+        //对输入过大的page进行处理
+        int totalPage = totalRows / ROWS;
+        totalPage = totalRows % ROWS == 0 ? totalPage : totalPage + 1;
+        page = page <= totalPage ? page : totalPage;
         //对结果进行分页处理
         List<Blog> list = blogList.subList(ROWS * (page - 1), ((ROWS * page) > totalRows ? totalRows : (ROWS * page)));
         PageResult result = new PageResult(page, totalRows, ROWS, list);
