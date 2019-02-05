@@ -1,10 +1,6 @@
 package cn.chenjianlink.blog.common.utils;
 
 import java.io.Serializable;
-import java.util.List;
-
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
  * 日志自定义响应结构
