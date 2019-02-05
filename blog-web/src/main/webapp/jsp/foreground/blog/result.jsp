@@ -20,7 +20,8 @@
                                     target="_blank">${blog.title }</a></span>
                             <span class="summary"><b>摘要</b>: ${blog.content }...</span>
                             <span class="link"><a
-                                    href="${pageContext.request.contextPath}/blog/articles/${blog.id}.html">https://www.chenjianlink.cn/blog/articles/${blog.id}.html</a>&nbsp;&nbsp;&nbsp;&nbsp;发布日期：${blog.releaseDateStr }</span>
+                                    href="${pageContext.request.contextPath}/blog/articles/${blog.id}.html"
+                                    target="_blank">https://www.chenjianlink.cn/blog/articles/${blog.id}.html</a>&nbsp;&nbsp;&nbsp;&nbsp;发布日期：${blog.releaseDateStr }</span>
                         </li>
                     </c:forEach>
                 </c:otherwise>
