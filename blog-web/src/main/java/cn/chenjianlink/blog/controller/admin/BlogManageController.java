@@ -52,20 +52,24 @@ public class BlogManageController {
     //更新日志内容
     @RequestMapping(value = "/admin/blog/edit", method = RequestMethod.POST)
     @ResponseBody
-    public BlogResult editBlogInfo(Blog blog) throws Exception {
-
-        BlogResult result = blogService.editBlog(blog);
-        return result;
-
+    public BlogResult editBlogInfo(Blog blog) {
+        try {
+            BlogResult result = blogService.editBlog(blog);
+            return result;
+        } catch (Exception e) {
+            return new BlogResult(0, null);
+        }
     }
 
     //增加新日志
     @RequestMapping(value = "/admin/blog/save", method = RequestMethod.POST)
     @ResponseBody
-    public BlogResult addBlog(Blog blog) throws Exception {
-
-        BlogResult result = blogService.addBlog(blog);
-        return result;
-
+    public BlogResult addBlog(Blog blog) {
+        try {
+            BlogResult result = blogService.addBlog(blog);
+            return result;
+        } catch (Exception e) {
+            return new BlogResult(0, null);
+        }
     }
 }
