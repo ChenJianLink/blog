@@ -1,11 +1,12 @@
 package cn.chenjianlink.blog.pojo;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
  * 分页显示工具类
  */
-public class PageResult {
+public class PageResult implements Serializable {
     // 当前页码
     private int currentPage;
     // 总记录数
