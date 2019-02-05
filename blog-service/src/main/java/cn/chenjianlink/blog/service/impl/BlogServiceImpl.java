@@ -114,6 +114,7 @@ public class BlogServiceImpl implements BlogService {
             for (int i = 0; i < images.size(); i++) {
                 //将图片url取出并放入到imageList中
                 imagesList.add(images.get(i).attr("src"));
+                //显示三张图片
                 if (i == 2) {
                     break;
                 }
@@ -128,9 +129,13 @@ public class BlogServiceImpl implements BlogService {
 
     //根据条件查询博客
     @Override
-    public List<Blog> searchBlogByQuery(String query) throws Exception {
+    public PageResult searchBlogByQuery(Integer page, String query) throws Exception {
         List<Blog> blogList = blogSearch.searchBlogIndex(query);
-        return blogList;
+        int totalRows = blogList.size();
+        //对结果进行分页处理
+        List<Blog> list = blogList.subList(ROWS * (page - 1), ((ROWS * page) > totalRows ? totalRows : (ROWS * page)));
+        PageResult result = new PageResult(page, totalRows, ROWS, list);
+        return result;
     }
 
 }

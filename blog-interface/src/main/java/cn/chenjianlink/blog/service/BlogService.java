@@ -31,5 +31,5 @@ public interface BlogService {
     PageResult findBlogList(Integer page, Map<String, Object> blogMap) throws Exception;
 
     //根据条件查询博客
-    List<Blog> searchBlogByQuery(String query) throws Exception;
+    PageResult searchBlogByQuery(Integer page, String query) throws Exception;
 }
