@@ -4,7 +4,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>局外人之个人空间后台管理页面</title>
+    <title>局外人秘境之后台管理页面</title>
     <link href="${pageContext.request.contextPath}/static/images/favicon.ico" rel="SHORTCUT ICON">
     <link rel="stylesheet" type="text/css"
           href="${pageContext.request.contextPath}/static/jquery-easyui-1.3.3/themes/default/easyui.css">

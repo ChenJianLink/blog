@@ -4,7 +4,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>局外人之个人空间后台登录</title>
+    <title>局外人秘境之后台登录</title>
     <link href="${pageContext.request.contextPath}/static/images/favicon.ico" rel="SHORTCUT ICON">
     <script src="${pageContext.request.contextPath}/static/bootstrap3/js/jquery-1.11.2.min.js"></script>
     <STYLE>
@@ -209,7 +209,9 @@
                 <SPAN style="float: left;"><a href="${pageContext.request.contextPath}/index.html">局外人之个人空间</a></SPAN>
                 <span><font color="red" id="error">${errorInfo }</font></span>
                 <SPAN style="float: right;">
-	              <input type="submit" style="background: rgb(0, 142, 173); padding: 7px 10px; border-radius: 4px; border: 1px solid rgb(26, 117, 152); border-image: none; color: rgb(255, 255, 255); font-weight: bold;" value="登录"/>
+	              <input type="submit"
+                         style="background: rgb(0, 142, 173); padding: 7px 10px; border-radius: 4px; border: 1px solid rgb(26, 117, 152); border-image: none; color: rgb(255, 255, 255); font-weight: bold;"
+                         value="登录"/>
 	            </SPAN>
             </P>
         </DIV>

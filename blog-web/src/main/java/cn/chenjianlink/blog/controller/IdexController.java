@@ -44,7 +44,7 @@ public class IdexController {
         controllerMethod.showMainTemp(model);
         model.addAttribute("blogList", pageResult.getPageList());
         model.addAttribute("page", pageResult);
-        model.addAttribute("pageTitle", "局外人之个人空间");
+        model.addAttribute("pageTitle", "局外人之秘境");
         model.addAttribute("mainPage", "foreground/blog/list.jsp");
         return "mainTemp";
     }

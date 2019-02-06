@@ -25,7 +25,7 @@ public class BloggerController {
     public String aboutMe(Model model) throws Exception {
         controllerMethod.showMainTemp(model);
         model.addAttribute("mainPage", "foreground/blogger/info.jsp");
-        model.addAttribute("pageTitle", "关于Master-局外人之个人空间");
+        model.addAttribute("pageTitle", "关于Master-局外人之秘境");
         return "mainTemp";
     }
 

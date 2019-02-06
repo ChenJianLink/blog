@@ -19,9 +19,9 @@ public class MessageController {
 
     //留言板展示
     @RequestMapping("/message/leavemessages")
-    public String messageboard(Model model) throws Exception{
+    public String messageboard(Model model) throws Exception {
         model.addAttribute("mainPage", "foreground/message/messagesboard.jsp");
-        model.addAttribute("pageTitle", "游客留言-局外人之个人空间");
+        model.addAttribute("pageTitle", "游客留言-局外人之秘境");
         controllerMethod.showMainTemp(model);
         return "mainTemp";
     }

@@ -45,7 +45,7 @@ public class BlogController {
         model.addAttribute("page", pageResult);
         model.addAttribute("query", query);
         model.addAttribute("blogList", pageResult.getPageList());
-        model.addAttribute("pageTitle", "局外人之个人空间-搜索结果");
+        model.addAttribute("pageTitle", query + "-局外人搜索");
         model.addAttribute("mainPage", "foreground/blog/result.jsp");
         return "mainTemp";
     }
@@ -71,7 +71,7 @@ public class BlogController {
         controllerMethod.showMainTemp(model);
         model.addAttribute("blog", blog);
         model.addAttribute("keyWords", keyWords);
-        model.addAttribute("pageTitle", blog.getTitle() + "-局外人");
+        model.addAttribute("pageTitle", blog.getTitle() + "-局外人之秘境");
         model.addAttribute("mainPage", "foreground/blog/view.jsp");
         return "mainTemp";
     }
