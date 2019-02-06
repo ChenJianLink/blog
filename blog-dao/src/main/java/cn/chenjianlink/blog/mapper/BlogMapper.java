@@ -28,5 +28,5 @@ public interface BlogMapper {
     int insert(Blog blog) throws Exception;
 
     //查询日志总数
-    int selectCount() throws Exception;
+    int selectCount(Map<String, Object> blogMap) throws Exception;
 }

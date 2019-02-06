@@ -65,7 +65,7 @@
                 typeId = #{blogType.id,jdbcType=INTEGER},
             </if>
             <if test="keyWord != null and keyWord != ''">
-                keyWord = #{keyWord,jdbcType=VARCHAR}
+                keyWord = #{keyWord,jdbcType=VARCHAR},
             </if>
             <if test="releaseDate != null and releaseDate != ''">
                 releaseDate = #{releaseDate,jdbcType=TIMESTAMP}
@@ -108,8 +108,16 @@
         ORDER BY releaseDate DESC
     </select>
     <!--查询blog总记录数-->
-    <select id="selectCount" resultType="int">
+    <select id="selectCount" parameterType="Map" resultType="int">
         SELECT COUNT(id)
         FROM t_blog
+        <where>
+            <if test="typeId != null and typeId !=''">
+                AND typeId = #{typeId,jdbcType=INTEGER}
+            </if>
+            <if test="releaseDateStr != null and releaseDateStr != ''">
+                AND DATE_FORMAT(releaseDate,'%Y-%m ') = #{releaseDateStr}
+            </if>
+        </where>
     </select>
 </mapper>

@@ -101,7 +101,7 @@ public class BlogServiceImpl implements BlogService {
     @Override
     public PageResult findBlogList(Integer page, Map<String, Object> blogMap) throws Exception {
         //对过大的page处理
-        int totalRows = blogMapper.selectCount();
+        int totalRows = blogMapper.selectCount(blogMap);
         int totalPage = totalRows / ROWS;
         totalPage = totalRows % ROWS == 0 ? totalPage : totalPage + 1;
         page = page <= totalPage ? page : totalPage;
@@ -135,6 +135,10 @@ public class BlogServiceImpl implements BlogService {
     public PageResult searchBlogByQuery(Integer page, String query) throws Exception {
         List<Blog> blogList = blogSearch.searchBlogIndex(query);
         int totalRows = blogList.size();
+        if (totalRows < 1) {
+            //若查询没有结果,则直接返回原来的结果
+            return new PageResult(page, totalRows, ROWS, blogList);
+        }
         //对输入过大的page进行处理
         int totalPage = totalRows / ROWS;
         totalPage = totalRows % ROWS == 0 ? totalPage : totalPage + 1;

@@ -27,20 +27,16 @@ public class BlogController {
     //搜索日志
     @RequestMapping("/blog/query")
     public String searchBlog(Model model, @RequestParam(value = "query", required = true) String query, @RequestParam(value = "page", required = false) Integer page, HttpServletRequest request) throws Exception {
-        String url = "";
+        String url = controllerMethod.getUrl(request);
         /**
          * 若page为空，则设置page为1，同时处理分页跳转参数问题
          */
-        if (page == null) {
+        if (page == null || page <= 0) {
             page = 1;
             //处理post请求url没带参数导致分页跳转异常
-            url = controllerMethod.getUrl(request) + "query=" + query;
-        } else if (page <= 0) {
-            //处理非法页面输入
-            page = 1;
-            url = controllerMethod.getUrl(request);
-        } else {
-            url = controllerMethod.getUrl(request);
+            if (request.getQueryString() == null || request.getQueryString().isEmpty()) {
+                url = url + "query=" + query;
+            }
         }
         PageResult pageResult = blogService.searchBlogByQuery(page, query.trim());
         pageResult.setUrl(url);
@@ -57,8 +53,10 @@ public class BlogController {
     @RequestMapping("/blog/articles/{blogId}")
     public String showBlogInfo(Model model, @PathVariable(value = "blogId", required = true) Integer blogId) throws Exception {
         Blog blog = blogService.findBlogById(blogId);
+        String[] keyWords = blog.getKeyWord().split(" ");
         controllerMethod.showMainTemp(model);
         model.addAttribute("blog", blog);
+        model.addAttribute("keyWords", keyWords);
         model.addAttribute("pageTitle", blog.getTitle() + "-局外人");
         model.addAttribute("mainPage", "foreground/blog/view.jsp");
         return "mainTemp";
