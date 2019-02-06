@@ -149,4 +149,10 @@ public class BlogServiceImpl implements BlogService {
         return result;
     }
 
+    //更新日志阅读量以及评论量
+    @Override
+    public void updateClickAndReply(Blog blog) throws Exception {
+        blogMapper.update(blog);
+    }
+
 }

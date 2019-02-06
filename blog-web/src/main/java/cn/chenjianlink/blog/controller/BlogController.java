@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 /**
  * 日志相关展示Controller
@@ -51,8 +52,21 @@ public class BlogController {
 
     //显示日志内容
     @RequestMapping("/blog/articles/{blogId}")
-    public String showBlogInfo(Model model, @PathVariable(value = "blogId", required = true) Integer blogId) throws Exception {
+    public String showBlogInfo(Model model, @PathVariable(value = "blogId", required = true) Integer blogId, HttpServletRequest request) throws Exception {
         Blog blog = blogService.findBlogById(blogId);
+        /**
+         * 将访客标识写入session，设置session的过期时间为20分钟，在过期时间内再次访问该日志不会增加阅读量
+         * 能防止刷新导致阅读量暴增
+         */
+        String ip = request.getRemoteAddr();
+        HttpSession session = request.getSession();
+        String ipSign = (String) session.getAttribute(blogId.toString());
+        if (ipSign == null || ipSign.isEmpty()) {
+            session.setAttribute(blogId.toString(), blogId.toString() + ip);
+            session.setMaxInactiveInterval(20 * 60);
+            blog.setClickHit(blog.getClickHit() + 1);
+            blogService.updateClickAndReply(blog);
+        }
         String[] keyWords = blog.getKeyWord().split(" ");
         controllerMethod.showMainTemp(model);
         model.addAttribute("blog", blog);

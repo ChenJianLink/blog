@@ -21,7 +21,7 @@ public interface BlogMapper {
     //由id删除日志
     int delete(int[] id) throws Exception;
 
-    //修改日志内容
+    //更新日志
     int update(Blog blog) throws Exception;
 
     //增加新日志

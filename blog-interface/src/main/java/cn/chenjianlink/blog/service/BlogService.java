@@ -18,7 +18,7 @@ public interface BlogService {
     //根据id删除日志
     BlogResult deleteBlog(Integer[] ids) throws Exception;
 
-    //更新日志
+    //修改日志内容
     BlogResult editBlog(Blog blog) throws Exception;
 
     //添加新日志
@@ -30,6 +30,9 @@ public interface BlogService {
     //前台日志列表展示
     PageResult findBlogList(Integer page, Map<String, Object> blogMap) throws Exception;
 
-    //根据条件查询博客
+    //根据条件查询日志
     PageResult searchBlogByQuery(Integer page, String query) throws Exception;
+
+    //更新日志阅读量以及评论量
+    void updateClickAndReply(Blog blog) throws Exception;
 }
