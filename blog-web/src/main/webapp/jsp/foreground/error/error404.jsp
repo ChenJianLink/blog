@@ -39,7 +39,7 @@
 <!-- Body -->
 <body>
 
-<h1>局外人 <span>之</span> 个人空间</h1>
+<h1>局外人 <span>之</span> 秘境</h1>
 <div class="w3layout-agileits">
     <h2>404 </h2>
     <h3>您寻找的圣物不存在</h3>
@@ -50,7 +50,7 @@
 </div>
 
 <div class="w3footeragile">
-    <p> &copy; 2018 局外人之个人空间</p>
+    <p> &copy; 2018 局外人之秘境</p>
 </div>
 
 </body>

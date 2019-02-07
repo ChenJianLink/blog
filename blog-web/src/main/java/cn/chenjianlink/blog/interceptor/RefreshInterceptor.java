@@ -47,7 +47,7 @@ public class RefreshInterceptor implements HandlerInterceptor {
             //如果ip不为空则禁止访问(恶意刷新后把ip存到session中)
             if (ipo.getIp() != null) {
                 System.out.println("session消失前永远被拦截了");
-                request.getRequestDispatcher("/jsp/pi.jsp").forward(request, response);
+                request.getRequestDispatcher("/jsp/foreground/error/errorforbid.jsp").forward(request, response);
                 return false;
             } else {
                 //如果session不为空
@@ -58,7 +58,7 @@ public class RefreshInterceptor implements HandlerInterceptor {
                     ipo.setIp(ip);
                     session.setAttribute(ip, ipoo);
                     System.out.println("刷新过快");
-                    request.getRequestDispatcher("/jsp/pi.jsp").forward(request, response);
+                    request.getRequestDispatcher("/jsp/foreground/error/errorforbid.jsp").forward(request, response);
                 } else {
                     //当前时间减去session中的时间大于两秒的
                     if (((System.currentTimeMillis() - Time) / 1000) > 2) {
@@ -88,7 +88,7 @@ public class RefreshInterceptor implements HandlerInterceptor {
                             jdip.setLocation(loacl);
                             jdip.setIp(ip);
                             //userService.insertIp(jdip);
-                            request.getRequestDispatcher("/jsp/pi.jsp").forward(request, response);
+                            request.getRequestDispatcher("/jsp/foreground/error/errorforbid.jsp").forward(request, response);
                             return false;
                         } else {
                             //小于2秒，但请求数小于12次，给对象添加
