@@ -14,13 +14,14 @@
     <!--加载配置文件-->
     <context:property-placeholder location="classpath:conf/resource.properties"/>
 
-    <!--登录拦截器-->
-    <!--<mvc:interceptors>-->
-    <!--<mvc:interceptor>-->
-    <!--<mvc:mapping path="/**"/>-->
-
-    <!--</mvc:interceptor>-->
-    <!--</mvc:interceptors>-->
+    <!--拦截器-->
+    <mvc:interceptors>
+        <!-- 进行ip检测的防止恶意刷新拦截器 -->
+        <mvc:interceptor>
+            <mvc:mapping path="/**"/>
+            <bean class="cn.chenjianlink.blog.interceptor.RefreshInterceptor"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
 
     <context:component-scan base-package="cn.chenjianlink.blog.controller"/>
     <mvc:annotation-driven/>
@@ -45,7 +46,7 @@
     </bean>
 
     <!--全局异常处理器-->
-    <!--<bean class="cn.chenjianlink.blog.Exception.BlogExceptionResolver"/>-->
+    <bean class="cn.chenjianlink.blog.Exception.BlogExceptionResolver"/>
 
     <!--配置封装前台重复代码的类-->
     <bean id="controllerMethod" class="cn.chenjianlink.blog.method.ControllerMethod"/>
