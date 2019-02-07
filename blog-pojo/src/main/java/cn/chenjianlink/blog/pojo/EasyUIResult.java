@@ -3,6 +3,9 @@ package cn.chenjianlink.blog.pojo;
 import java.io.Serializable;
 import java.util.List;
 
+/**
+ * EasyUI页面显示pojo
+ */
 public class EasyUIResult implements Serializable {
 
     private Integer total;

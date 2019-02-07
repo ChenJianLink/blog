@@ -13,6 +13,10 @@ public class Ip {
     private String ip;
     //请求次数
     private Integer recount;
+    //恶意刷新ip创建时间
+    private Date creatTime;
+    //访问地址
+    private String location;
 
     public Long getTime() {
         return time;
@@ -54,8 +58,5 @@ public class Ip {
         this.location = location;
     }
 
-    //恶意刷新ip创建时间
-    private Date creatTime;
-    //访问地址
-    private String location;
+
 }
