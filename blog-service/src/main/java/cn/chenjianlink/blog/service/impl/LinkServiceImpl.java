@@ -7,6 +7,8 @@ import cn.chenjianlink.blog.pojo.Link;
 import cn.chenjianlink.blog.service.LinkService;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -23,6 +25,7 @@ public class LinkServiceImpl implements LinkService {
 
     //查询所有链接
     @Override
+    @Cacheable(value = "linkCache")
     public List<Link> getLinkList() throws Exception {
         List<Link> linkList = linkMapper.selectList();
         return linkList;
@@ -30,6 +33,7 @@ public class LinkServiceImpl implements LinkService {
 
     //分页查询友情链接
     @Override
+    @Cacheable(value = "linkCache")
     public EasyUIResult getLinkList(Integer page, Integer rows) throws Exception {
         //设置分页信息
         PageHelper.startPage(page, rows);
@@ -44,6 +48,7 @@ public class LinkServiceImpl implements LinkService {
 
     //保存新链接
     @Override
+    @CacheEvict(value = "linkCache", allEntries = true)
     public BlogResult addLink(Link link) throws Exception {
         linkMapper.insert(link);
         return BlogResult.ok();
@@ -51,6 +56,7 @@ public class LinkServiceImpl implements LinkService {
 
     //修改链接
     @Override
+    @CacheEvict(value = "linkCache", allEntries = true)
     public BlogResult editLink(Integer id, Link link) throws Exception {
         Link oldlink = linkMapper.selectByPrimaryKey(id);
         if (oldlink == null) {
@@ -73,6 +79,7 @@ public class LinkServiceImpl implements LinkService {
 
     //删除链接
     @Override
+    @CacheEvict(value = "linkCache", allEntries = true)
     public BlogResult deleteLink(Integer[] ids) throws Exception {
         int[] id = new int[ids.length];
         for (int i = 0; i < ids.length; i++) {

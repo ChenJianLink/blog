@@ -7,6 +7,8 @@ import cn.chenjianlink.blog.pojo.BlogType;
 import cn.chenjianlink.blog.service.BlogTypeService;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -23,6 +25,7 @@ public class BlogTypeServiceImpl implements BlogTypeService {
 
     //查询所有类别以及日志数量
     @Override
+    @Cacheable(value = "blogTypeCache")
     public List<BlogType> getBlogTypeCountList() throws Exception {
         List<BlogType> blogTypes = blogTypeMapper.selectAll();
         return blogTypes;
@@ -30,6 +33,7 @@ public class BlogTypeServiceImpl implements BlogTypeService {
 
     //分页查询所有类别
     @Override
+    @Cacheable(value = "blogTypeCache")
     public EasyUIResult getBlogTypeList(Integer page, Integer rows) throws Exception {
         PageHelper.startPage(page, rows);
         List<BlogType> typeList = blogTypeMapper.selectList();
@@ -41,6 +45,7 @@ public class BlogTypeServiceImpl implements BlogTypeService {
 
     //添加日志类别
     @Override
+    @CacheEvict(value = "blogTypeCache", allEntries = true)
     public BlogResult addBlogType(BlogType blogType) throws Exception {
         blogTypeMapper.insert(blogType);
         return BlogResult.ok();
@@ -48,6 +53,7 @@ public class BlogTypeServiceImpl implements BlogTypeService {
 
     //修改日志类别
     @Override
+    @CacheEvict(value = "blogTypeCache", allEntries = true)
     public BlogResult editBlogType(Integer id, BlogType blogType) throws Exception {
         BlogType oldType = blogTypeMapper.selectByPrimaryKey(id);
         //非法输入判断
@@ -63,6 +69,7 @@ public class BlogTypeServiceImpl implements BlogTypeService {
 
     //删除日志类别
     @Override
+    @CacheEvict(value = "blogTypeCache", allEntries = true)
     public BlogResult deleteBlogType(Integer[] ids) throws Exception {
         int[] id = new int[ids.length];
         for (int i = 0; i < ids.length; i++) {

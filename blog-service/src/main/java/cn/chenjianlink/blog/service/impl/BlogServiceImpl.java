@@ -13,6 +13,8 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -35,6 +37,7 @@ public class BlogServiceImpl implements BlogService {
 
     //后台日志管理列表展示(分页查询)
     @Override
+    @Cacheable(value = "blogCache")
     public EasyUIResult findBlogList(String title, Integer page, Integer rows) throws Exception {
         PageHelper.startPage(page, rows);
         List<Blog> blogList = blogMapper.selectList(title);
@@ -46,6 +49,7 @@ public class BlogServiceImpl implements BlogService {
 
     //根据id查询日志
     @Override
+    @Cacheable(value = "blogCache")
     public Blog findBlogById(Integer id) throws Exception {
         Blog blog = blogMapper.selectByPrimaryKey(id);
         return blog;
@@ -53,6 +57,7 @@ public class BlogServiceImpl implements BlogService {
 
     //删除日志
     @Override
+    @CacheEvict(value = "blogCache", allEntries = true)
     public BlogResult deleteBlog(Integer[] ids) throws Exception {
         int[] id = new int[ids.length];
         for (int i = 0; i < ids.length; i++) {
@@ -68,6 +73,7 @@ public class BlogServiceImpl implements BlogService {
 
     //更新日志
     @Override
+    @CacheEvict(value = "blogCache", allEntries = true)
     public BlogResult editBlog(Blog blog) throws Exception {
         blog.setReleaseDate(new Date());
         blogMapper.update(blog);
@@ -78,6 +84,7 @@ public class BlogServiceImpl implements BlogService {
 
     //添加新日志
     @Override
+    @CacheEvict(value = "blogCache", allEntries = true)
     public BlogResult addBlog(Blog blog) throws Exception {
         //补全属性
         blog.setReleaseDate(new Date());
@@ -92,6 +99,7 @@ public class BlogServiceImpl implements BlogService {
 
     //根据日期分类查询日志数量
     @Override
+    @Cacheable(value = "blogCache")
     public List<Blog> findBlogDateList() throws Exception {
         List<Blog> blogList = blogMapper.selectCountList();
         return blogList;
@@ -99,6 +107,7 @@ public class BlogServiceImpl implements BlogService {
 
     //首页日志列表显示
     @Override
+    @Cacheable(value = "blogCache")
     public PageResult findBlogList(Integer page, Map<String, Object> blogMap) throws Exception {
         //对过大的page处理
         int totalRows = blogMapper.selectCount(blogMap);
@@ -151,6 +160,7 @@ public class BlogServiceImpl implements BlogService {
 
     //更新日志阅读量以及评论量
     @Override
+    @CacheEvict(value = "blogCache", allEntries = true)
     public void updateClickAndReply(Blog blog) throws Exception {
         blogMapper.update(blog);
     }

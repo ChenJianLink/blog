@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="http://ehcache.org/ehcache.xsd"
+         updateCheck="false">
+    <!-- 指定一个文件目录，当EhCache把数据写到硬盘上时，将把数据写到这个文件目录下 -->
+    <diskStore path="/home/chenjian/cache"/>
+
+    <!-- 设定缓存的默认数据过期策略 -->
+    <defaultCache
+            maxElementsInMemory="10000"
+            eternal="false"
+            overflowToDisk="true"
+            timeToIdleSeconds="10"
+            timeToLiveSeconds="20"
+            diskPersistent="false"
+            diskExpiryThreadIntervalSeconds="120"/>
+    <!--日志缓存-->
+    <cache name="blogCache"
+           maxElementsInMemory="100000"
+           maxElementsOnDisk="100000"
+           eternal="false"
+           overflowToDisk="true"
+           timeToIdleSeconds="1800"
+           timeToLiveSeconds="1800"
+           diskExpiryThreadIntervalSeconds="300"
+           memoryStoreEvictionPolicy="LRU"/>
+    <!--master缓存-->
+    <cache name="bloggerCache"
+           maxElementsInMemory="10000"
+           maxElementsOnDisk="10000"
+           eternal="false"
+           overflowToDisk="true"
+           timeToIdleSeconds="3600"
+           timeToLiveSeconds="3600"
+           diskExpiryThreadIntervalSeconds="600"
+           memoryStoreEvictionPolicy="LRU"/>
+    <!--日志类别缓存-->
+    <cache name="blogTypeCache"
+           maxElementsInMemory="10000"
+           maxElementsOnDisk="10000"
+           eternal="false"
+           overflowToDisk="true"
+           timeToIdleSeconds="1800"
+           timeToLiveSeconds="1800"
+           diskExpiryThreadIntervalSeconds="300"
+           memoryStoreEvictionPolicy="LRU"/>
+    <!--友情链接缓存-->
+    <cache name="linkCache"
+           maxElementsInMemory="10000"
+           maxElementsOnDisk="10000"
+           eternal="false"
+           overflowToDisk="true"
+           timeToIdleSeconds="1800"
+           timeToLiveSeconds="1800"
+           diskExpiryThreadIntervalSeconds="300"
+           memoryStoreEvictionPolicy="LRU"/>
+</ehcache>
