@@ -2,6 +2,7 @@ package cn.chenjianlink.blog.mapper;
 
 import cn.chenjianlink.blog.pojo.Blog;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -29,4 +30,10 @@ public interface BlogMapper {
 
     //查询日志总数
     int selectCount(Map<String, Object> blogMap) throws Exception;
+
+    //查询上一篇日志
+    Blog selectPre(Date date) throws Exception;
+
+    //查询下一篇日志
+    Blog selectNext(Date date) throws Exception;
 }

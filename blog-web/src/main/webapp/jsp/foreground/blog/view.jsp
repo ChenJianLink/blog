@@ -82,14 +82,18 @@
         <div class="blog_lastAndNextPage" style="font-size: 0.8em">
             <div>
                 上一篇:<c:choose>
-                <c:when test="">木有了</c:when>
-                <c:otherwise></c:otherwise>
+                <c:when test="${empty pre}">木有了</c:when>
+                <c:otherwise><a
+                        href="${pageContext.request.contextPath}/blog/articles/${pre.id}.html"
+                        target="_blank">${pre.title}</a></c:otherwise>
             </c:choose>
             </div>
             <div>
                 下一篇:<c:choose>
-                <c:when test="">木有了</c:when>
-                <c:otherwise></c:otherwise>
+                <c:when test="${empty next}">木有了</c:when>
+                <c:otherwise><a
+                        href="${pageContext.request.contextPath}/blog/articles/${next.id}.html"
+                        target="_blank">${next.title}</a></c:otherwise>
             </c:choose>
             </div>
         </div>

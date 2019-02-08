@@ -5,6 +5,7 @@ import cn.chenjianlink.blog.common.utils.BlogResult;
 import cn.chenjianlink.blog.pojo.EasyUIResult;
 import cn.chenjianlink.blog.pojo.Blog;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -35,4 +36,10 @@ public interface BlogService {
 
     //更新日志阅读量以及评论量
     void updateClickAndReply(Blog blog) throws Exception;
+
+    //获得上一篇博客
+    Blog findPreBlog(Blog blog) throws Exception;
+
+    //获得下一篇博客
+    Blog findNextBlog(Blog blog) throws Exception;
 }

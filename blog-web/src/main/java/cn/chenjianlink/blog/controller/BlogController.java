@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.util.List;
 
 /**
  * 日志相关展示Controller
@@ -54,6 +55,8 @@ public class BlogController {
     @RequestMapping("/blog/articles/{blogId}")
     public String showBlogInfo(Model model, @PathVariable(value = "blogId", required = true) Integer blogId, HttpServletRequest request) throws Exception {
         Blog blog = blogService.findBlogById(blogId);
+        Blog preBlog = blogService.findPreBlog(blog);
+        Blog nextBlog = blogService.findNextBlog(blog);
         /**
          * 将访客标识写入session，设置session的过期时间为20分钟，在过期时间内再次访问该日志不会增加阅读量
          * 能防止刷新导致阅读量暴增
@@ -69,6 +72,8 @@ public class BlogController {
         }
         String[] keyWords = blog.getKeyWord().split(" ");
         controllerMethod.showMainTemp(model);
+        model.addAttribute("pre", preBlog);
+        model.addAttribute("next", nextBlog);
         model.addAttribute("blog", blog);
         model.addAttribute("keyWords", keyWords);
         model.addAttribute("pageTitle", blog.getTitle() + "-局外人之秘境");

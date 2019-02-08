@@ -165,4 +165,18 @@ public class BlogServiceImpl implements BlogService {
         blogMapper.update(blog);
     }
 
+    //获得上一篇博客
+    @Override
+    public Blog findPreBlog(Blog blog) throws Exception {
+        Blog pre = blogMapper.selectPre(blog.getReleaseDate());
+        return pre;
+    }
+
+    //获得下一篇博客
+    @Override
+    public Blog findNextBlog(Blog blog) throws Exception {
+        Blog next = blogMapper.selectNext(blog.getReleaseDate());
+        return next;
+    }
+
 }

@@ -120,4 +120,19 @@
             </if>
         </where>
     </select>
+    <!--查询上一篇日志-->
+    <select id="selectPre" parameterType="java.util.Date" resultType="cn.chenjianlink.blog.pojo.Blog">
+        SELECT id, title
+        FROM t_blog
+        WHERE releaseDate <![CDATA[ > ]]> #{date,jdbcType=TIMESTAMP}
+        LIMIT 1;
+    </select>
+    <!--查询下一篇日志-->
+    <select id="selectNext" parameterType="java.util.Date" resultType="cn.chenjianlink.blog.pojo.Blog">
+        SELECT id, title
+        FROM t_blog
+        WHERE releaseDate <![CDATA[ < ]]> #{date,jdbcType=TIMESTAMP}
+        ORDER BY releaseDate DESC
+        LIMIT 1;
+    </select>
 </mapper>
