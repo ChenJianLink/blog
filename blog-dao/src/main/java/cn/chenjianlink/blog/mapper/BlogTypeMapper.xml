@@ -35,7 +35,7 @@
             <if test="typeName != null and typeName!=''">
                 typeName = #{typeName,jdbcType = VARCHAR},
             </if>
-            <if test="orderNo != null and orderNo !=''">
+            <if test="orderNo != null">
                 orderNo = #{orderNo,jdbcType = INTEGER}
             </if>
         </set>

@@ -52,16 +52,16 @@
             <if test="summary != null and summary != ''">
                 summary = #{summary,jdbcType=VARCHAR},
             </if>
-            <if test="clickHit != null and clickHit != ''">
+            <if test="clickHit != null">
                 clickHit = #{clickHit,jdbcType=INTEGER},
             </if>
-            <if test="replyHit != null and replyHit != ''">
+            <if test="replyHit != null">
                 replyHit = #{replyHit,jdbcType=INTEGER},
             </if>
             <if test="content != null and content != ''">
                 content = #{content},
             </if>
-            <if test="blogType.id != null and blogType.id != ''">
+            <if test="blogType.id != null">
                 typeId = #{blogType.id,jdbcType=INTEGER},
             </if>
             <if test="keyWord != null and keyWord != ''">
@@ -98,7 +98,7 @@
         SELECT *
         FROM t_blog
         <where>
-            <if test="typeId != null and typeId !=''">
+            <if test="typeId != null">
                 AND typeId = #{typeId,jdbcType=INTEGER}
             </if>
             <if test="releaseDateStr != null and releaseDateStr != ''">
@@ -112,7 +112,7 @@
         SELECT COUNT(id)
         FROM t_blog
         <where>
-            <if test="typeId != null and typeId !=''">
+            <if test="typeId != null">
                 AND typeId = #{typeId,jdbcType=INTEGER}
             </if>
             <if test="releaseDateStr != null and releaseDateStr != ''">

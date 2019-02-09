@@ -69,7 +69,7 @@
             <if test="linkUrl != null and linkUrl!=''">
                 linkUrl = #{linkUrl,jdbcType=VARCHAR},
             </if>
-            <if test="orderNo != null and orderNo!=''">
+            <if test="orderNo != null">
                 orderNo = #{orderNo,jdbcType=INTEGER}
             </if>
         </set>
