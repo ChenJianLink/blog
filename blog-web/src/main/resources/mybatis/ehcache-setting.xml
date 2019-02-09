@@ -54,4 +54,14 @@
            timeToLiveSeconds="1800"
            diskExpiryThreadIntervalSeconds="300"
            memoryStoreEvictionPolicy="LRU"/>
+    <!--评论缓存-->
+    <cache name="commentCache"
+           maxElementsInMemory="100000"
+           maxElementsOnDisk="100000"
+           eternal="false"
+           overflowToDisk="true"
+           timeToIdleSeconds="1800"
+           timeToLiveSeconds="1800"
+           diskExpiryThreadIntervalSeconds="300"
+           memoryStoreEvictionPolicy="LRU"/>
 </ehcache>

@@ -9,10 +9,11 @@ import java.util.Date;
 public class Comment implements Serializable {
     private Integer id;
     private String userIp;
-    private Integer blogId;
+    private String userName;
+    private Blog blog;
     private String content;
     private Date commentDate;
-    private Integer state;
+    private Integer state;/*0:待审核，1：审核通过，2：审核不通过*/
 
     public Integer getId() {
         return id;
@@ -30,12 +31,20 @@ public class Comment implements Serializable {
         this.userIp = userIp;
     }
 
-    public Integer getBlogId() {
-        return blogId;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setBlogId(Integer blogId) {
-        this.blogId = blogId;
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public Blog getBlog() {
+        return blog;
+    }
+
+    public void setBlog(Blog blog) {
+        this.blog = blog;
     }
 
     public String getContent() {
