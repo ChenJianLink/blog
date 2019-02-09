@@ -1,5 +1,6 @@
 package cn.chenjianlink.blog.controller.admin;
 
+import cn.chenjianlink.blog.common.utils.BlogResult;
 import cn.chenjianlink.blog.pojo.EasyUIResult;
 import cn.chenjianlink.blog.service.CommentService;
 import org.springframework.stereotype.Controller;
@@ -28,8 +29,19 @@ public class CommentManageController {
         Map<String, Object> commentMap = new HashMap<>();
         commentMap.put("state", state);
         commentMap.put("blogId", null);
-        System.out.println(state);
         EasyUIResult commentList = commentService.findCommentList(page, rows, commentMap);
         return commentList;
+    }
+
+    //删除评论
+    @RequestMapping(value = "/admin/comment/delete", method = RequestMethod.POST)
+    @ResponseBody
+    public BlogResult deleteCommentById(@RequestParam(value = "ids", required = true) Integer[] ids) {
+        try {
+            BlogResult result = commentService.deleteCommentById(ids);
+            return result;
+        } catch (Exception e) {
+            return new BlogResult(0, null);
+        }
     }
 }

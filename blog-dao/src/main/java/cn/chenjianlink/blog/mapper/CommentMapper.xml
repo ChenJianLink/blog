@@ -13,6 +13,7 @@
         <association property="blog" column="blogId"
                      select="cn.chenjianlink.blog.mapper.BlogMapper.selectByPrimaryKey"></association>
     </resultMap>
+    <!--评论列表显示-->
     <select id="selectList" parameterType="Map" resultMap="CommentResult">
         SELECT *
         FROM t_comment
@@ -26,4 +27,13 @@
         </where>
         ORDER BY commentDate DESC
     </select>
+    <delete id="delete" parameterType="int[]">
+        DELETE FROM t_comment
+        WHERE id IN
+        <if test="array != null">
+            <foreach collection="array" item="id" open="(" separator="," close=")">
+                #{id,jdbcType=INTEGER}
+            </foreach>
+        </if>
+    </delete>
 </mapper>

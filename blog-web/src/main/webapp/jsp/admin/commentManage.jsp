@@ -23,7 +23,7 @@
         function deleteComment() {
             var selectedRows = $("#dg").datagrid("getSelections");
             if (selectedRows.length == 0) {
-                $.messager.alert("系统提示", "请选择要删除的数据！");
+                $.messager.alert("系统提示", "请选择要删除的评论！");
                 return;
             }
             var strIds = [];
@@ -31,14 +31,14 @@
                 strIds.push(selectedRows[i].id);
             }
             var ids = strIds.join(",");
-            $.messager.confirm("系统提示", "您确定要删除这<font color=red>" + selectedRows.length + "</font>条数据吗？", function (r) {
+            $.messager.confirm("系统提示", "您确定要删除这<font color=red>" + selectedRows.length + "</font>条评论吗？", function (r) {
                 if (r) {
                     $.post("${pageContext.request.contextPath}/admin/comment/delete.do", {ids: ids}, function (result) {
                         if (result.success) {
-                            $.messager.alert("系统提示", "数据已成功删除！");
+                            $.messager.alert("系统提示", "评论已成功删除！");
                             $("#dg").datagrid("reload");
                         } else {
-                            $.messager.alert("系统提示", "数据删除失败！");
+                            $.messager.alert("系统提示", "评论删除失败！");
                         }
                     }, "json");
                 }
@@ -75,7 +75,7 @@
         <th field="id" width="20" align="center">编号</th>
         <th field="blog" width="100" align="center" formatter="formatBlogTitle">日志标题</th>
         <th field="userIp" width="100" align="center">用户IP</th>
-        <th field="userName" width="50" align="center">用户名称</th>
+        <th field="userName" width="50" align="center">评论者名称</th>
         <th field="content" width="220" align="center">评论内容</th>
         <th field="commentDate" width="80" align="center" formatter="BLOG.formatDateTime">评论日期</th>
         <th field="state" width="50" align="center" formatter="formatState">评论状态</th>

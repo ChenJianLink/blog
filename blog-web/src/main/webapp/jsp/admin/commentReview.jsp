@@ -22,7 +22,7 @@
         function commentReview(state) {
             var selectedRows = $("#dg").datagrid("getSelections");
             if (selectedRows.length == 0) {
-                $.messager.alert("系统提示", "请选择要删除的数据！");
+                $.messager.alert("系统提示", "请选择要审核的评论！");
                 return;
             }
             var strIds = [];
@@ -56,6 +56,21 @@
             }
         }
 
+        function closeCommentDialog() {
+            $("#dlg").dialog("close");
+        }
+
+        function openCommentViewDialog() {
+            var selectedRows = $("#dg").datagrid("getSelections");
+            if (selectedRows.length != 1) {
+                $.messager.alert("系统提示", "请选择一条要查看的评论！");
+                return;
+            }
+            var row = selectedRows[0];
+            $("#dlg").dialog("open").dialog("setTitle", "查看评论");
+            $("#fm").form("load", row);
+        }
+
     </script>
 </head>
 <body style="margin: 1px">
@@ -68,7 +83,7 @@
         <th field="id" width="20" align="center">编号</th>
         <th field="blog" width="100" align="center" formatter="formatBlogTitle">日志标题</th>
         <th field="userIp" width="100" align="center">用户IP</th>
-        <th field="userName" width="50" align="center">用户名称</th>
+        <th field="userName" width="50" align="center">评论者名称</th>
         <th field="content" width="220" align="center">评论内容</th>
         <th field="commentDate" width="80" align="center" formatter="BLOG.formatDateTime">评论日期</th>
     </tr>
@@ -76,11 +91,36 @@
 </table>
 <div id="tb">
     <div>
+        <a href="javascript:openCommentViewDialog()" class="easyui-linkbutton" iconCls="icon-search"
+           plain="true">查看评论</a>
         <a href="javascript:commentReview(1)" class="easyui-linkbutton" iconCls="icon-ok" plain="true">审核通过</a>
         <a href="javascript:commentReview(2)" class="easyui-linkbutton" iconCls="icon-no" plain="true">审核不通过</a>
     </div>
 </div>
 
+<div id="dlg" class="easyui-dialog" style="width:450px;height:260px;padding: 10px 20px"
+     closed="true" buttons="#dlg-buttons">
+
+    <form id="fm">
+        <table cellspacing="8px">
+            <tr>
+                <td>评论者名称：</td>
+                <td><input type="text" id="userName" name="userName" class="easyui-validatebox"
+                           readonly="readonly"/></td>
+            </tr>
+            <tr>
+                <td>评论内容：</td>
+                <td><textarea style="width: 100%;resize: none;" rows="5" id="content" name="content"
+                              class="easyui-validatebox"
+                              readonly="readonly"></textarea></td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+<div id="dlg-buttons">
+    <a href="javascript:closeCommentDialog()" class="easyui-linkbutton" iconCls="icon-cancel">关闭</a>
+</div>
 
 </body>
 </html>
