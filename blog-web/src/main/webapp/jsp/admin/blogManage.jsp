@@ -36,7 +36,7 @@
         function deleteBlog() {
             var selectedRows = $("#dg").datagrid("getSelections");
             if (selectedRows.length == 0) {
-                $.messager.alert("系统提示", "请选择要删除的数据！");
+                $.messager.alert("系统提示", "请选择要删除的日志！");
                 return;
             }
             var strIds = [];
@@ -44,14 +44,14 @@
                 strIds.push(selectedRows[i].id);
             }
             var ids = strIds.join(",");
-            $.messager.confirm("系统提示", "您确定要删除这<font color=red>" + selectedRows.length + "</font>条数据吗？", function (r) {
+            $.messager.confirm("系统提示", "您确定要删除这<font color=red>" + selectedRows.length + "</font>篇日志吗？", function (r) {
                 if (r) {
                     $.post("${pageContext.request.contextPath}/admin/blog/delete.do", {ids: ids}, function (result) {
                         if (result.success) {
-                            $.messager.alert("系统提示", "数据已成功删除！");
+                            $.messager.alert("系统提示", "日志已成功删除！");
                             $("#dg").datagrid("reload");
                         } else {
-                            $.messager.alert("系统提示", "数据删除失败！");
+                            $.messager.alert("系统提示", "日志删除失败！");
                         }
                     }, "json");
                 }
