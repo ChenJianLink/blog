@@ -18,7 +18,6 @@ CREATE TABLE `t_blog` (
   `summary`     varchar(400) DEFAULT NULL,
   `releaseDate` datetime     DEFAULT NULL,
   `clickHit`    int(11)      DEFAULT NULL,
-  `replyHit`    int(11)      DEFAULT NULL,
   `content`     text,
   `typeId`      int(11)      DEFAULT NULL,
   `keyWord`     varchar(200) DEFAULT NULL,

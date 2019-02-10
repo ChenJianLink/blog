@@ -9,11 +9,12 @@
         <result property="summary" column="summary"/>
         <result property="releaseDate" column="releaseDate"/>
         <result property="clickHit" column="clickHit"/>
-        <result property="replyHit" column="replyHit"/>
         <result property="content" column="content"/>
         <result property="keyWord" column="keyWord"/>
         <association property="blogType" column="typeId"
                      select="cn.chenjianlink.blog.mapper.BlogTypeMapper.selectByPrimaryKey"></association>
+        <association property="replyHit" column="id"
+                     select="cn.chenjianlink.blog.mapper.CommentMapper.selectCommentCount"></association>
     </resultMap>
     <!--查询所有日志的部分信息(可能根据标题查找)-->
     <select id="selectList" parameterType="java.lang.String" resultMap="BlogResult">
@@ -55,9 +56,6 @@
             <if test="clickHit != null">
                 clickHit = #{clickHit,jdbcType=INTEGER},
             </if>
-            <if test="replyHit != null">
-                replyHit = #{replyHit,jdbcType=INTEGER},
-            </if>
             <if test="content != null and content != ''">
                 content = #{content},
             </if>
@@ -75,12 +73,11 @@
     </update>
     <!--添加新日志-->
     <insert id="insert" parameterType="cn.chenjianlink.blog.pojo.Blog">
-        INSERT INTO t_blog (id, title, summary, releaseDate, clickHit, replyHit, content, typeId, keyWord)
+        INSERT INTO t_blog (id, title, summary, releaseDate, clickHit, content, typeId, keyWord)
         VALUES (#{id,jdbcType=INTEGER},
                 #{title,jdbcType=VARCHAR},
                 #{summary,jdbcType=VARCHAR},
                 #{releaseDate,jdbcType=TIMESTAMP},
-                0,
                 0,
                 #{content},
                 #{blogType.id,jdbcType=INTEGER},
