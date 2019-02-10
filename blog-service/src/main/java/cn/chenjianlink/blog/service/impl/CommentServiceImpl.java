@@ -47,4 +47,24 @@ public class CommentServiceImpl implements CommentService {
         commentMapper.delete(id);
         return BlogResult.ok();
     }
+
+    //审核评论
+    @Override
+    @CacheEvict(value = {"commentCache", "blogCache"}, allEntries = true)
+    public BlogResult updateCommentState(String[] ids, Integer state) throws Exception {
+        //数组类型转换
+        int[] id = new int[ids.length];
+        for (int i = 0; i < ids.length; i++) {
+            id[i] = Integer.parseInt(ids[i]);
+        }
+        //判断state
+        if (state == 1) {
+            commentMapper.updateStateAsAdopt(id);
+        } else if (state == 2) {
+            commentMapper.updateStateAsFail(id);
+        } else {
+            return new BlogResult(0, null);
+        }
+        return BlogResult.ok();
+    }
 }

@@ -14,4 +14,10 @@ public interface CommentMapper {
 
     //根据博客id查询该博客的评论总数
     int selectCommentCount(int blogId) throws Exception;
+
+    //修改评论状态为审核通过
+    int updateStateAsAdopt(int[] ids) throws Exception;
+
+    //修改评论状态为审核不通过
+    int updateStateAsFail(int[] ids) throws Exception;
 }

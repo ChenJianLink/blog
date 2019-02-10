@@ -44,4 +44,17 @@ public class CommentManageController {
             return new BlogResult(0, null);
         }
     }
+
+    //审核评论
+    @RequestMapping(value = "/admin/comment/review", method = RequestMethod.POST)
+    @ResponseBody
+    public BlogResult reviewComment(@RequestParam(value = "ids", required = true) String ids, @RequestParam(value = "state", required = true) Integer state) {
+        try {
+            String[] id = ids.split(",");
+            BlogResult result = commentService.updateCommentState(id, state);
+            return result;
+        } catch (Exception e) {
+            return new BlogResult(0, null);
+        }
+    }
 }

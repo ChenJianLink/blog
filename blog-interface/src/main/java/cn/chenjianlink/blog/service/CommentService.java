@@ -11,4 +11,7 @@ public interface CommentService {
 
     //删除评论
     BlogResult deleteCommentById(Integer[] ids) throws Exception;
+
+    //审核评论
+    BlogResult updateCommentState(String[] ids, Integer state) throws Exception;
 }
