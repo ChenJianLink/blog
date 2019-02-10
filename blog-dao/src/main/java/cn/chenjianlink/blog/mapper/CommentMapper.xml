@@ -25,7 +25,14 @@
                 AND blogId = #{blogId,jdbcType=INTEGER}
             </if>
         </where>
-        ORDER BY commentDate DESC
+        <choose>
+            <when test="state != null and state == 1">
+                ORDER BY commentDate
+            </when>
+            <otherwise>
+                ORDER BY commentDate DESC
+            </otherwise>
+        </choose>
     </select>
     <!--删除评论-->
     <delete id="delete" parameterType="int[]">
@@ -66,4 +73,14 @@
             </foreach>
         </if>
     </update>
+    <!--插入新评论-->
+    <insert id="insert" parameterType="cn.chenjianlink.blog.pojo.Comment">
+        INSERT INTO t_comment (userIp, userName, blogId, content, commentDate, state)
+        VALUES (#{userIp,jdbcType=VARCHAR},
+                #{userName,jdbcType=VARCHAR},
+                #{blog.id,jdbcType=INTEGER},
+                #{content,jdbcType=VARCHAR},
+                #{commentDate,jdbcType=TIMESTAMP},
+                0)
+    </insert>
 </mapper>

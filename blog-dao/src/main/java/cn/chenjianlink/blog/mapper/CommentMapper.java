@@ -20,4 +20,7 @@ public interface CommentMapper {
 
     //修改评论状态为审核不通过
     void updateStateAsFail(int[] ids) throws Exception;
+
+    //插入新的评论（未审核）
+    int insert(Comment comment) throws Exception;
 }

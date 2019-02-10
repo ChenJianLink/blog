@@ -36,6 +36,7 @@
                     alert("评论已提交成功，审核通过后显示！");
                 } else {
                     alert(result.errorInfo);
+                    loadimage();
                 }
             }, "json");
         }

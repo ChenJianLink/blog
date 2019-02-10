@@ -12,6 +12,7 @@ import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -78,5 +79,14 @@ public class CommentServiceImpl implements CommentService {
         commentMap.put("blogId", blogId);
         List<Comment> commentList = commentMapper.selectList(commentMap);
         return commentList;
+    }
+
+    //增加新评论
+    @Override
+    @CacheEvict(value = "commentCache", allEntries = true)
+    public BlogResult addComment(Comment comment) throws Exception {
+        comment.setCommentDate(new Date());
+        commentMapper.insert(comment);
+        return BlogResult.ok();
     }
 }
