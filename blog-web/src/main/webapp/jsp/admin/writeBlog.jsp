@@ -22,7 +22,7 @@
 		var title=$("#title").val();
 		var blogTypeId=$("#blogTypeId").combobox("getValue");
 		var content=UE.getEditor('editor').getContent();
-		var keyWord=$("#keyWord").val();
+		var keyWord=$("#keyWord").val().replace(/\s*/g,"");
 		
 		if(title==null || title==''){
 			alert("请输入标题！");
@@ -78,7 +78,7 @@
    		</tr>
    		<tr>
    			<td>关键字：</td>
-   			<td><input type="text" id="keyWord" name="keyWord" style="width: 400px;"/>&nbsp;(多个关键字中间用空格隔开)</td>
+   			<td><input type="text" id="keyWord" name="keyWord" style="width: 400px;"/>&nbsp;(多个关键字中间用","隔开)</td>
    		</tr>
    		<tr>
    			<td></td>

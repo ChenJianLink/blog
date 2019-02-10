@@ -62,9 +62,7 @@
             <if test="blogType.id != null">
                 typeId = #{blogType.id,jdbcType=INTEGER},
             </if>
-            <if test="keyWord != null and keyWord != ''">
                 keyWord = #{keyWord,jdbcType=VARCHAR},
-            </if>
             <if test="releaseDate != null and releaseDate != ''">
                 releaseDate = #{releaseDate,jdbcType=TIMESTAMP}
             </if>
