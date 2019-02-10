@@ -11,4 +11,7 @@ public interface CommentMapper {
 
     //删除评论
     int delete(int[] ids) throws Exception;
+
+    //根据博客id查询该博客的评论总数
+    int selectCommentCount(int blogId) throws Exception;
 }

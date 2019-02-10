@@ -38,7 +38,7 @@ public class CommentServiceImpl implements CommentService {
 
     //删除评论
     @Override
-    @CacheEvict(value = "commentCache", allEntries = true)
+    @CacheEvict(value = {"commentCache", "blogCache"}, allEntries = true)
     public BlogResult deleteCommentById(Integer[] ids) throws Exception {
         int[] id = new int[ids.length];
         for (int i = 0; i < ids.length; i++) {

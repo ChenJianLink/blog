@@ -27,6 +27,7 @@
         </where>
         ORDER BY commentDate DESC
     </select>
+    <!--删除评论-->
     <delete id="delete" parameterType="int[]">
         DELETE FROM t_comment
         WHERE id IN
@@ -36,4 +37,11 @@
             </foreach>
         </if>
     </delete>
+    <!--根据blogId查询评论总数-->
+    <select id="selectCommentCount" parameterType="int" resultType="int">
+        SELECT COUNT(id)
+        FROM t_comment
+        WHERE blogId = #{blogId,jdbcType=INTEGER}
+          AND state = 1
+    </select>
 </mapper>
