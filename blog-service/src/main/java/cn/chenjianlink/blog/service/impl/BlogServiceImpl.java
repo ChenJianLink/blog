@@ -76,6 +76,10 @@ public class BlogServiceImpl implements BlogService {
     @CacheEvict(value = "blogCache", allEntries = true)
     public BlogResult editBlog(Blog blog) throws Exception {
         blog.setReleaseDate(new Date());
+        //若关键字为空串，则设置为空
+        if (blog.getKeyWord() == null && blog.getKeyWord().isEmpty()) {
+            blog.setKeyWord(null);
+        }
         blogMapper.update(blog);
         //更新索引
         blogSearch.updateBlogIndex(blog);
