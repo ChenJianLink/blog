@@ -15,14 +15,18 @@
     }
 
     function submitData() {
+        var userName = $("#userName").val();
         var content = $("#content").val();
         var imageCode = $("#imageCode").val();
-        if (content == null || content == '') {
+        if (userName == null || userName == '') {
+            alert("请输入您的名称！");
+        } else if (content == null || content == '') {
             alert("请输入评论内容！");
         } else if (imageCode == null || imageCode == '') {
             alert("请填写验证码！");
         } else {
             $.post("${pageContext.request.contextPath}/comment/save.do", {
+                'userName': userName,
                 'content': content,
                 'imageCode': imageCode,
                 'blog.id': '${blog.id}'
@@ -105,9 +109,13 @@
         发表评论
     </div>
     <div class="publish_comment">
-        <div>
-            <textarea style="width: 100%;resize: none;" rows="3" id="content" name="content"
-                      placeholder="来说两句吧..."></textarea>
+        <div style="padding-top: 10px;padding-left: 10px;">
+            您的名称:<input type="text" id="userName" name="userName" size="20" placeholder="请填写您的昵称...">
+        </div>
+        <div style="padding-top: 10px;padding-left: 10px;">
+            您的评论:<textarea style="width: 100%;resize: none;" rows="3" id="content"
+                           name="content"
+                           placeholder="来说两句吧..."></textarea>
         </div>
         <div class="verCode">
             验证码：<input type="text" value="${imageCode }" name="imageCode" id="imageCode" size="10"
@@ -135,21 +143,21 @@
     <div class="commentDatas">
         <c:choose>
             <c:when test="${commentList.size()==0}">
-                暂无评论
+                还没有评论,快来抢沙发
             </c:when>
             <c:otherwise>
                 <c:forEach var="comment" items="${commentList }" varStatus="status">
                     <c:choose>
                         <c:when test="${status.index<10 }">
                             <div class="comment">
-                                <span><font>${status.index+1 }楼&nbsp;&nbsp;&nbsp;&nbsp;${comment.userIp }：</font>${comment.content }&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[&nbsp;<fmt:formatDate
+                                <span><font>${status.index+1 }楼&nbsp;&nbsp;&nbsp;&nbsp;${comment.userName }：</font>${comment.content }&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[&nbsp;<fmt:formatDate
                                         value="${comment.commentDate }" type="date" pattern="yyyy-MM-dd HH:mm"/>&nbsp;]</span>
                             </div>
                         </c:when>
                         <c:otherwise>
                             <div class="otherComment">
                                 <div class="comment">
-                                    <span><font>${status.index+1 }楼&nbsp;&nbsp;&nbsp;&nbsp;${comment.userIp }：</font>${comment.content }&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[&nbsp;<fmt:formatDate
+                                    <span><font>${status.index+1 }楼&nbsp;&nbsp;&nbsp;&nbsp;${comment.userName }：</font>${comment.content }&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[&nbsp;<fmt:formatDate
                                             value="${comment.commentDate }" type="date" pattern="yyyy-MM-dd HH:mm"/>&nbsp;]</span>
                                 </div>
                             </div>

@@ -2,8 +2,10 @@ package cn.chenjianlink.blog.controller;
 
 import cn.chenjianlink.blog.method.ControllerMethod;
 import cn.chenjianlink.blog.pojo.Blog;
+import cn.chenjianlink.blog.pojo.Comment;
 import cn.chenjianlink.blog.pojo.PageResult;
 import cn.chenjianlink.blog.service.BlogService;
+import cn.chenjianlink.blog.service.CommentService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -13,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.util.List;
 
 /**
  * 日志相关展示Controller
@@ -24,6 +27,8 @@ public class BlogController {
     private ControllerMethod controllerMethod;
     @Resource
     private BlogService blogService;
+    @Resource
+    private CommentService commentService;
 
     //搜索日志
     @RequestMapping("/blog/query")
@@ -54,8 +59,12 @@ public class BlogController {
     @RequestMapping("/blog/articles/{blogId}")
     public String showBlogInfo(Model model, @PathVariable(value = "blogId", required = true) Integer blogId, HttpServletRequest request) throws Exception {
         Blog blog = blogService.findBlogById(blogId);
+        //查询上一篇日志
         Blog preBlog = blogService.findPreBlog(blog);
+        //查询下一篇日志
         Blog nextBlog = blogService.findNextBlog(blog);
+        //查询所有评论
+        List<Comment> commentList = commentService.findCommentListByBlogId(blogId);
         /**
          * 将访客标识写入session，设置session的过期时间为20分钟，在过期时间内再次访问该日志不会增加阅读量
          * 能防止刷新导致阅读量暴增
@@ -69,8 +78,13 @@ public class BlogController {
             blog.setClickHit(blog.getClickHit() + 1);
             blogService.updateClickAndReply(blog);
         }
-        String[] keyWords = blog.getKeyWord().split(" ");
+        //判断关键字是否为空
+        String[] keyWords = null;
+        if (blog.getKeyWord() != null && !blog.getKeyWord().isEmpty()) {
+            keyWords = blog.getKeyWord().trim().split(",");
+        }
         controllerMethod.showMainTemp(model);
+        model.addAttribute("commentList", commentList);
         model.addAttribute("pre", preBlog);
         model.addAttribute("next", nextBlog);
         model.addAttribute("blog", blog);

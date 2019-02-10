@@ -16,8 +16,8 @@ public interface CommentMapper {
     int selectCommentCount(int blogId) throws Exception;
 
     //修改评论状态为审核通过
-    int updateStateAsAdopt(int[] ids) throws Exception;
+    void updateStateAsAdopt(int[] ids) throws Exception;
 
     //修改评论状态为审核不通过
-    int updateStateAsFail(int[] ids) throws Exception;
+    void updateStateAsFail(int[] ids) throws Exception;
 }
