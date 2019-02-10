@@ -56,7 +56,7 @@ public class BloggerManageController {
                 blogger.setImageName(newPictureName);
             }
             BlogResult result = bloggerService.editBloggerInfo(blogger);
-            if (result.getsuccess() == 1) {
+            if (result.getSuccess() == 1) {
                 responseResult.append("<script language='javascript'>alert('修改成功！');</script>");
             } else {
                 responseResult.append("<script language='javascript'>alert('修改失败！');</script>");

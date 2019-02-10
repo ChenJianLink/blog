@@ -13,6 +13,9 @@ public class BlogResult implements Serializable {
     //分类中是否存在子类
     private String exist;
 
+    //评论提交异常信息
+    private String errorInfo;
+
     public BlogResult() {
 
     }
@@ -20,6 +23,12 @@ public class BlogResult implements Serializable {
     public BlogResult(Integer success, String exist) {
         this.success = success;
         this.exist = exist;
+    }
+
+    public BlogResult(Integer success, String exist, String errorInfo) {
+        this.success = success;
+        this.exist = exist;
+        this.errorInfo = errorInfo;
     }
 
     public BlogResult(String exist) {
@@ -39,12 +48,8 @@ public class BlogResult implements Serializable {
         return new BlogResult(exist);
     }
 
-    public Integer getsuccess() {
-        return success;
-    }
-
-    public void setsuccess(Integer success) {
-        this.success = success;
+    public static BlogResult showError(String errorInfo) {
+        return new BlogResult(0, null, errorInfo);
     }
 
     public String getExist() {
@@ -55,5 +60,19 @@ public class BlogResult implements Serializable {
         this.exist = exist;
     }
 
+    public Integer getSuccess() {
+        return success;
+    }
 
+    public void setSuccess(Integer success) {
+        this.success = success;
+    }
+
+    public String getErrorInfo() {
+        return errorInfo;
+    }
+
+    public void setErrorInfo(String errorInfo) {
+        this.errorInfo = errorInfo;
+    }
 }

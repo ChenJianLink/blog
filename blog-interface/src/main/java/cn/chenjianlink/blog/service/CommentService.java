@@ -19,4 +19,7 @@ public interface CommentService {
 
     //显示评论
     List<Comment> findCommentListByBlogId(Integer blogId) throws Exception;
+
+    //增加新评论
+    BlogResult addComment(Comment comment) throws Exception;
 }
