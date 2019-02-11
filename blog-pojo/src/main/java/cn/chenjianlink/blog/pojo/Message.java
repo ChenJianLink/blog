@@ -1,11 +1,12 @@
 package cn.chenjianlink.blog.pojo;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
  * 留言对象
  */
-public class Message {
+public class Message implements Serializable {
     private Integer id;
     //留言者ip
     private String userIp;
