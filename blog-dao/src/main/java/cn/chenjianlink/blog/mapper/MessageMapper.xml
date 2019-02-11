@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="cn.chenjianlink.blog.mapper.CommentMapper">
+<mapper namespace="cn.chenjianlink.blog.mapper.MessageMapper">
     <resultMap id="MessageResult" type="cn.chenjianlink.blog.pojo.Message">
         <result property="id" column="id"/>
         <result property="userIp" column="userIp"/>
@@ -12,7 +12,7 @@
         <result property="state" column="state"/>
     </resultMap>
     <!--留言列表显示-->
-    <select id="selectList" parameterType="int" resultMap="MessageResult">
+    <select id="selectList" parameterType="Map" resultMap="MessageResult">
         SELECT *
         FROM t_message
         <where>

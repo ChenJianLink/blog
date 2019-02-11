@@ -1,13 +1,13 @@
 package cn.chenjianlink.blog.mapper;
 
-import cn.chenjianlink.blog.pojo.Comment;
+import cn.chenjianlink.blog.pojo.Message;
 
 import java.util.List;
 import java.util.Map;
 
 public interface MessageMapper {
     //查询所有留言
-    List<Comment> selectList(int state) throws Exception;
+    List<Message> selectList(Map<String, Integer> messageMap) throws Exception;
 
     //删除留言
     int delete(int[] ids) throws Exception;
@@ -19,5 +19,5 @@ public interface MessageMapper {
     void updateStateAsFail(int[] ids) throws Exception;
 
     //插入新的留言（未审核）
-    int insert(Comment comment) throws Exception;
+    int insert(Message message) throws Exception;
 }
