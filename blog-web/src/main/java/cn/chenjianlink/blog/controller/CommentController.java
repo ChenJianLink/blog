@@ -5,6 +5,7 @@ import cn.chenjianlink.blog.pojo.Comment;
 import cn.chenjianlink.blog.service.CommentService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -21,7 +22,7 @@ public class CommentController {
     private CommentService commentService;
 
     //发表评论
-    @RequestMapping
+    @RequestMapping(value = "/comment/save", method = RequestMethod.POST)
     @ResponseBody
     public BlogResult comment(Comment comment, @RequestParam(value = "imageCode", required = true) String imageCode, HttpServletRequest request) {
         try {

@@ -15,8 +15,8 @@
     }
 
     function submitData() {
-        var userName = $("#userName").val();
-        var content = $("#content").val();
+        var userName = $("#userName").val().replace(/(^\s*)|(\s*$)/g, "");
+        var content = $("#content").val().replace(/(^\s*)|(\s*$)/g, "");
         var imageCode = $("#imageCode").val();
         if (userName == null || userName == '') {
             alert("请输入您的名称！");
