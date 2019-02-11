@@ -82,6 +82,24 @@ CREATE TABLE `t_comment` (
   DEFAULT CHARSET = utf8;
 
 
+/*Table structure for table `t_message` */
+
+DROP TABLE IF EXISTS `t_message`;
+
+CREATE TABLE `t_message` (
+  `id`               int(11) NOT NULL AUTO_INCREMENT,
+  `userIp`           varchar(50)      DEFAULT NULL,
+  `userName`         varchar(50)      DEFAULT NULL,
+  `content`          varchar(1000)    DEFAULT NULL,
+  `leaveMessageDate` datetime         DEFAULT NULL,
+  `state`            int(11)          DEFAULT NULL, /*0:待审核，1：审核通过，2：审核不通过*/
+  PRIMARY KEY (`id`)
+)
+  ENGINE = InnoDB
+  AUTO_INCREMENT = 341
+  DEFAULT CHARSET = utf8;
+
+
 /*Table structure for table `t_link` */
 
 DROP TABLE IF EXISTS `t_link`;
