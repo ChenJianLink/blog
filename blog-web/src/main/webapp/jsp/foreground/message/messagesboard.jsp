@@ -78,7 +78,7 @@
     <div class="commentDatas">
         <c:choose>
             <c:when test="${messageList.size()==0}">
-                暂无留言
+                还没有留言,快来吐槽
             </c:when>
             <c:otherwise>
                 <c:forEach var="message" items="${messageList }" varStatus="status">

@@ -170,6 +170,8 @@
                data-options="plain:true,iconCls:'icon-writeblog'" style="width: 150px">写日志</a>
             <a href="javascript:openTab('评论审核','commentReview.html','icon-review')" class="easyui-linkbutton"
                data-options="plain:true,iconCls:'icon-review'" style="width: 150px">评论审核</a>
+            <a href="javascript:openTab('留言审核','messageReview.html','icon-review')" class="easyui-linkbutton"
+               data-options="plain:true,iconCls:'icon-review'" style="width: 150px">留言审核</a>
         </div>
         <div title="日志管理" data-options="iconCls:'icon-bkgl'" style="padding:10px;">
             <a href="javascript:openTab('写日志','writeBlog.html','icon-writeblog')" class="easyui-linkbutton"
@@ -186,6 +188,12 @@
                data-options="plain:true,iconCls:'icon-review'" style="width: 150px">评论审核</a>
             <a href="javascript:openTab('评论信息管理','commentManage.html','icon-plgl')" class="easyui-linkbutton"
                data-options="plain:true,iconCls:'icon-plgl'" style="width: 150px;">评论信息管理</a>
+        </div>
+        <div title="留言管理" data-options="iconCls:'icon-plgl'" style="padding:10px">
+            <a href="javascript:openTab('留言审核','messageReview.html','icon-review')" class="easyui-linkbutton"
+               data-options="plain:true,iconCls:'icon-review'" style="width: 150px">留言审核</a>
+            <a href="javascript:openTab('留言管理','messageManage.html','icon-plgl')" class="easyui-linkbutton"
+               data-options="plain:true,iconCls:'icon-plgl'" style="width: 150px;">留言管理</a>
         </div>
         <div title="个人信息管理" data-options="iconCls:'icon-grxx'" style="padding:10px">
             <a href="javascript:openTab('修改个人信息','modifyInfo.html','icon-grxxxg')" class="easyui-linkbutton"
