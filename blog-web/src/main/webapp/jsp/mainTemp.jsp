@@ -39,10 +39,10 @@
         <jsp:include page="/jsp/foreground/common/head.jsp"/>
         <jsp:include page="/jsp/foreground/common/menu.jsp"/>
         <div class="row">
-            <div class="col-md-9">
+            <div class="col-sm-9">
                 <jsp:include page="${mainPage }"></jsp:include>
             </div>
-            <div class="col-md-3">
+            <div class="col-sm-3">
 
                 <div class="data_list">
                     <div class="data_list_title">
@@ -110,10 +110,14 @@
 </div>
 
 <div class="slideshow">
-    <div class="slideshow-image" style="background-image: url('${pageContext.request.contextPath}/static/images/background/background.jpg')"></div>
-    <div class="slideshow-image" style="background-image: url('${pageContext.request.contextPath}/static/images/background/background2.jpg')"></div>
-    <div class="slideshow-image" style="background-image: url('${pageContext.request.contextPath}/static/images/background/background3.jpg')"></div>
-    <div class="slideshow-image" style="background-image: url('${pageContext.request.contextPath}/static/images/background/background4.jpg')"></div>
+    <div class="slideshow-image"
+         style="background-image: url('${pageContext.request.contextPath}/static/images/background/background.jpg')"></div>
+    <div class="slideshow-image"
+         style="background-image: url('${pageContext.request.contextPath}/static/images/background/background2.jpg')"></div>
+    <div class="slideshow-image"
+         style="background-image: url('${pageContext.request.contextPath}/static/images/background/background3.jpg')"></div>
+    <div class="slideshow-image"
+         style="background-image: url('${pageContext.request.contextPath}/static/images/background/background4.jpg')"></div>
 </div>
 
 </body>
