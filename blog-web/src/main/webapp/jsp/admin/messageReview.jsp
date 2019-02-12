@@ -75,7 +75,7 @@
         <th field="cb" checkbox="true" align="center"></th>
         <th field="id" width="20" align="center">编号</th>
         <th field="userIp" width="100" align="center">用户IP</th>
-        <th field="userName" width="50" align="center">留言者名称</th>
+        <th field="userName" width="100" align="center">留言者名称</th>
         <th field="content" width="220" align="center">留言内容</th>
         <th field="leaveMessageDate" width="80" align="center" formatter="BLOG.formatDateTime">留言日期</th>
     </tr>
