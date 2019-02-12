@@ -1,13 +1,11 @@
 package cn.chenjianlink.blog.interceptor;
 
-import cn.chenjianlink.blog.common.utils.AddressUtils;
 import cn.chenjianlink.blog.pojo.Ip;
 import org.springframework.web.servlet.HandlerInterceptor;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import java.util.Date;
 
 /**
  * 恶意刷新拦截器
@@ -70,17 +68,6 @@ public class RefreshInterceptor implements HandlerInterceptor {
                             //小于2秒，并且2秒间隔之内请求了12次
                             //将ip放到session中用来禁止该ip访问
                             ipo.setIp(ip);
-                            //将ip存到数据库里用来后台查看，如发现多次攻击将永远禁止访问
-                            //获取ip所在区域
-                            Ip jdip = new Ip();
-                            AddressUtils addutil = new AddressUtils();
-                            //获取地址
-                            String local = addutil.getAddresses("ip=" + ip, "utf-8");
-                            //写入ip类
-                            jdip.setCreatTime(new Date());
-                            jdip.setLocation(local);
-                            jdip.setIp(ip);
-                            //userService.insertIp(jdip);
                             request.getRequestDispatcher("/jsp/foreground/error/errorforbid.jsp").forward(request, response);
                             return false;
                         } else {
