@@ -39,6 +39,10 @@
                         <li><a href="${pageContext.request.contextPath}/message/leavemessages.html"><font
                                 color="black" size="3"><strong>游客留言</strong></font></a></li>
                     </ul>
+                    <ul class="nav navbar-nav">
+                        <li><a href="${pageContext.request.contextPath}/show/visiterShow.html"><font
+                                color="black" size="3"><strong>访客记录</strong></font></a></li>
+                    </ul>
                     <form action="${pageContext.request.contextPath}/blog/query.html" class="navbar-form navbar-right"
                           role="search" method="post" onsubmit="return checkData()">
                         <div class="form-group">
