@@ -12,10 +12,17 @@
         <img src="${pageContext.request.contextPath}/static/images/visiter.png"/>
         访客记录
     </div>
+    <div style="padding-top: 10px;text-align: center">地球仪</div>
     <div style="padding-top: 10px;text-align: center">
         <script type="text/javascript"
                 src="//ra.revolvermaps.com/0/0/1.js?i=0hng51tsgj2&amp;s=350&amp;m=7&amp;v=false&amp;r=false&amp;b=000000&amp;n=false&amp;c=ff0000"
                 async="async"></script>
+    </div>
+    <div style="padding-top: 10px;text-align: center">世界地图</div>
+    <div style="padding-top: 10px;text-align: center">
+        <a href="https://www.revolvermaps.com/livestats/0xe1xtqrsrz/"><img
+                src="//ra.revolvermaps.com/h/m/a/7/ff0000/256/0/0xe1xtqrsrz.png" width="512" height="256" alt="Map"
+                style="border:0;"></a>
     </div>
 </div>
 
