@@ -16,6 +16,6 @@
                            http://www.springframework.org/schema/util
                            http://www.springframework.org/schema/util/spring-util-4.2.xsd">
 
-    <!--配置包扫描器-->
-    <context:component-scan base-package="cn.chenjianlink.blog.service"/>
+    <!--配置博客搜索器-->
+    <bean id="blogSearch" class="cn.chenjianlink.blog.common.lucene.BlogSearch"/>
 </beans>
