@@ -13,10 +13,6 @@ public class Ip {
     private String ip;
     //请求次数
     private Integer recount;
-    //恶意刷新ip创建时间
-    private Date creatTime;
-    //访问地址
-    private String location;
 
     public Long getTime() {
         return time;
@@ -40,22 +36,6 @@ public class Ip {
 
     public void setRecount(Integer recount) {
         this.recount = recount;
-    }
-
-    public Date getCreatTime() {
-        return creatTime;
-    }
-
-    public void setCreatTime(Date creatTime) {
-        this.creatTime = creatTime;
-    }
-
-    public String getLocation() {
-        return location;
-    }
-
-    public void setLocation(String location) {
-        this.location = location;
     }
 
 
