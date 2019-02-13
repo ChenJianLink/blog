@@ -63,7 +63,12 @@
                         resetValue();
                         $("#dlg").dialog("close");
                     } else {
-                        $.messager.alert("系统提示", "密码修改失败！");
+                        if (result.errorInfo != null) {
+                            $.messager.alert("系统提示", result.errorInfo);
+                            resetValue();
+                        } else {
+                            $.messager.alert("系统提示", "密码修改失败！");
+                        }
                         return;
                     }
                 }
@@ -205,7 +210,7 @@
 
 </div>
 
-<div id="dlg" class="easyui-dialog" style="width:400px;height:200px;padding: 10px 20px"
+<div id="dlg" class="easyui-dialog" style="width:400px;height:225px;padding: 10px 20px"
      closed="true" buttons="#dlg-buttons">
 
     <form id="fm" method="post">
@@ -214,6 +219,11 @@
                 <td>用户名：</td>
                 <td><input type="text" id="userName" name="userName" readonly="readonly"
                            value="${currentUser.userName }" style="width: 200px"/></td>
+            </tr>
+            <tr>
+                <td>旧密码：</td>
+                <td><input type="password" id="oldPassword" name="oldPassword" class="easyui-validatebox"
+                           required="true" style="width: 200px"/></td>
             </tr>
             <tr>
                 <td>新密码：</td>
