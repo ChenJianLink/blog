@@ -17,7 +17,7 @@ public class Message implements Serializable {
     //留言时间
     private Date leaveMessageDate;
     //留言状态
-    private Integer state;
+    private Integer state;/*0:待审核，1：审核通过，2：审核不通过*/
 
     public Integer getId() {
         return id;

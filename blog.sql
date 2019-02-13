@@ -124,7 +124,7 @@ CREATE TABLE `t_comment` (
   `blogId`      int(11)          DEFAULT NULL,
   `content`     varchar(1000)    DEFAULT NULL,
   `commentDate` datetime         DEFAULT NULL,
-  `state`       int(11)          DEFAULT NULL,
+  `state`       int(11)          DEFAULT NULL, /*0:待审核，1：审核通过，2：审核不通过*/
   PRIMARY KEY (`id`)
 )
   ENGINE = InnoDB
@@ -184,7 +184,7 @@ CREATE TABLE `t_message` (
   `userName`         varchar(50)      DEFAULT NULL,
   `content`          varchar(1000)    DEFAULT NULL,
   `leaveMessageDate` datetime         DEFAULT NULL,
-  `state`            int(11)          DEFAULT NULL,
+  `state`            int(11)          DEFAULT NULL, /*0:待审核，1：审核通过，2：审核不通过*/
   PRIMARY KEY (`id`)
 )
   ENGINE = InnoDB
