@@ -76,7 +76,7 @@ public class BlogController {
             session.setAttribute(blogId.toString(), blogId.toString() + ip);
             session.setMaxInactiveInterval(20 * 60);
             blog.setClickHit(blog.getClickHit() + 1);
-            blogService.updateClickAndReply(blog);
+            blogService.updateClick(blog);
         }
         //判断关键字是否为空
         String[] keyWords = null;

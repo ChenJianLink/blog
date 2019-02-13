@@ -33,8 +33,8 @@ public interface BlogService {
     //根据条件查询日志
     PageResult searchBlogByQuery(Integer page, String query) throws Exception;
 
-    //更新日志阅读量以及评论量
-    void updateClickAndReply(Blog blog) throws Exception;
+    //更新日志阅读量
+    void updateClick(Blog blog) throws Exception;
 
     //获得上一篇博客
     Blog findPreBlog(Blog blog) throws Exception;
