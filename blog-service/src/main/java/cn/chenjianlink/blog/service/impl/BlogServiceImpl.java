@@ -12,6 +12,8 @@ import com.github.pagehelper.PageInfo;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
@@ -32,7 +34,8 @@ public class BlogServiceImpl implements BlogService {
     private BlogMapper blogMapper;
     @Value("${ROWS}")
     private Integer ROWS;
-    @Resource
+    @Autowired
+    @Qualifier(value = "blogSearch")
     private BlogSearch blogSearch;
 
     //后台日志管理列表展示(分页查询)

@@ -17,5 +17,5 @@
                            http://www.springframework.org/schema/util/spring-util-4.2.xsd">
 
     <!--配置博客搜索器-->
-    <bean id="blogSearch" class="cn.chenjianlink.blog.common.lucene.BlogSearch"/>
+    <bean id="blogSearch" class="cn.chenjianlink.blog.common.lucene.BlogSearchImpl"/>
 </beans>
