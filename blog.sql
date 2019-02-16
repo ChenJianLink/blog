@@ -61,6 +61,7 @@ CREATE TABLE `t_blogger` (
   `id`        int(11) NOT NULL AUTO_INCREMENT,
   `userName`  varchar(50)      DEFAULT NULL,
   `password`  varchar(100)     DEFAULT NULL,
+  `salt`      varchar(100)     DEFAULT NULL,
   `profile`   text,
   `nickName`  varchar(50)      DEFAULT NULL,
   `sign`      varchar(100)     DEFAULT NULL,
