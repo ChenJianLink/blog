@@ -1,4 +1,4 @@
-package cn.chenjianlink.blog.controller.admin;
+package cn.chenjianlink.blog.controller;
 
 import cn.chenjianlink.blog.method.ControllerMethod;
 import org.springframework.stereotype.Controller;
