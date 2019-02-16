@@ -15,4 +15,7 @@ public interface ControllerMethod {
 
     //获取请求的url,与分页信息相关
     String getUrl(HttpServletRequest request);
+
+    //散列加密
+    String encrypt(String password, String salt) throws Exception;
 }

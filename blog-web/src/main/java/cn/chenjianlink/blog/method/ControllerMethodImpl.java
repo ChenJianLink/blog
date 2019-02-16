@@ -8,6 +8,8 @@ import cn.chenjianlink.blog.service.BlogService;
 import cn.chenjianlink.blog.service.BlogTypeService;
 import cn.chenjianlink.blog.service.BloggerService;
 import cn.chenjianlink.blog.service.LinkService;
+import org.apache.shiro.crypto.hash.SimpleHash;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.ui.Model;
 
 import javax.annotation.Resource;
@@ -26,6 +28,10 @@ public class ControllerMethodImpl implements ControllerMethod {
     private BlogTypeService blogTypeService;
     @Resource
     private BlogService blogService;
+    @Value("${ALGORITHMNAME}")
+    private String ALGORITHMNAME;
+    @Value("${ITERATIONS}")
+    private Integer ITERATIONS;
 
     //显示主页的友情链接，Master信息，日志分类的代码
     public void showMainTemp(Model model) throws Exception {
@@ -61,5 +67,12 @@ public class ControllerMethodImpl implements ControllerMethod {
         }
         //url拼接
         return contextPath + servletPath + "?" + queryString;
+    }
+
+    //加密
+    @Override
+    public String encrypt(String password, String salt) throws Exception {
+        String newPassword = new SimpleHash(ALGORITHMNAME, password, salt, ITERATIONS).toHex();
+        return newPassword;
     }
 }

@@ -19,14 +19,14 @@
     <bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
         <!--配置securityManager-->
         <property name="securityManager" ref="securityManager"/>
-        <property name="loginUrl" value=""/>
+        <property name="loginUrl" value="/jsp/admin/login.jsp"/>
         <!--配置没有权限访问时的跳转页面-->
-        <property name="unauthorizedUrl" value=""/>
+        <property name="unauthorizedUrl" value="/index.html"/>
         <property name="filterChainDefinitions">
             <value>
                 /admin/admin-login.html=anon
-                /static/**=anon
-                /admin/**=authc
+                <!--/static/**=anon-->
+                <!--/admin/**=authc-->
             </value>
         </property>
     </bean>
@@ -34,5 +34,13 @@
     <bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
         <property name="realm" ref="blogRealm"/>
     </bean>
-    <bean id="blogRealm" class="cn.chenjianlink.blog.shiro.BlogRealm"/>
+    <!--配置自定义realm-->
+    <bean id="blogRealm" class="cn.chenjianlink.blog.shiro.BlogRealm">
+        <property name="credentialsMatcher" ref="credentialsMatcher"/>
+    </bean>
+    <!--配置凭证匹配器-->
+    <bean id="credentialsMatcher" class="org.apache.shiro.authc.credential.HashedCredentialsMatcher">
+        <property name="hashAlgorithmName" value="md5"/>
+        <property name="hashIterations" value="4"/>
+    </bean>
 </beans>

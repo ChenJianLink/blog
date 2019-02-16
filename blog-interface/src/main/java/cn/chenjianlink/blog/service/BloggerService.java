@@ -12,4 +12,10 @@ public interface BloggerService {
 
     //修改Master信息
     BlogResult editBloggerInfo(Blogger blogger) throws Exception;
+
+    //修改密码
+    BlogResult updatePassword(Blogger blogger) throws Exception;
+
+    //查找密码
+    Blogger findPassword() throws Exception;
 }

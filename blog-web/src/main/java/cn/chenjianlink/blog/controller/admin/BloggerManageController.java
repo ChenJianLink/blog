@@ -2,8 +2,10 @@ package cn.chenjianlink.blog.controller.admin;
 
 import cn.chenjianlink.blog.common.utils.BlogResult;
 import cn.chenjianlink.blog.common.utils.ResponseUtil;
+import cn.chenjianlink.blog.method.ControllerMethod;
 import cn.chenjianlink.blog.pojo.Blogger;
 import cn.chenjianlink.blog.service.BloggerService;
+import org.apache.shiro.crypto.SecureRandomNumberGenerator;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -24,6 +26,9 @@ import java.util.UUID;
 public class BloggerManageController {
     @Resource
     private BloggerService bloggerService;
+    @Resource
+    private ControllerMethod controllerMethod;
+
 
     //修改用户信息页面对用户信息进行回显
     @RequestMapping(value = "/admin/blogger/find", method = RequestMethod.POST)
@@ -66,6 +71,31 @@ public class BloggerManageController {
         } catch (Exception e) {
             responseResult.append("<script language='javascript'>alert('修改失败！');</script>");
             ResponseUtil.write(response, responseResult);
+        }
+
+    }
+
+    //修改密码
+    @RequestMapping(value = "/admin/blogger/modifyPassword", method = RequestMethod.POST)
+    @ResponseBody
+    public BlogResult modifyPassword(@RequestParam(value = "oldPassword", required = true) String oldPassword, @RequestParam(value = "newPassword", required = true) String password) {
+        try {
+            Blogger oldBlogger = bloggerService.findPassword();
+            String certificate = oldBlogger.getPassword();
+            String encryptPassword = controllerMethod.encrypt(oldPassword, oldBlogger.getSalt());
+            //对原密码进行对比判断
+            if (!certificate.equals(encryptPassword)) {
+                return BlogResult.showError("原密码不正确");
+            }
+            //加密新密码,设置新颜值
+            String salt = new SecureRandomNumberGenerator().nextBytes().toHex();
+            String newPassword = controllerMethod.encrypt(password, salt);
+            oldBlogger.setPassword(newPassword);
+            oldBlogger.setSalt(salt);
+            BlogResult result = bloggerService.updatePassword(oldBlogger);
+            return result;
+        } catch (Exception e) {
+            return new BlogResult(0, null);
         }
 
     }

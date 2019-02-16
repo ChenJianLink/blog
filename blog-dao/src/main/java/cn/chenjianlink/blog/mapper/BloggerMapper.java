@@ -11,4 +11,7 @@ public interface BloggerMapper {
 
     //Master信息修改
     int update(Blogger blogger) throws Exception;
+
+    //查找密码和颜值
+    Blogger selectPassword() throws Exception;
 }

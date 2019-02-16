@@ -39,9 +39,21 @@ public class BloggerServiceImpl implements BloggerService {
     @Override
     @CacheEvict(value = "bloggerCache", allEntries = true)
     public BlogResult editBloggerInfo(Blogger blogger) throws Exception {
-        //清除密码
-        blogger.setPassword(null);
         bloggerMapper.update(blogger);
         return BlogResult.ok();
+    }
+
+    //修改密码
+    @Override
+    @CacheEvict(value = "bloggerCache", allEntries = true)
+    public BlogResult updatePassword(Blogger blogger) throws Exception {
+        bloggerMapper.update(blogger);
+        return BlogResult.ok();
+    }
+
+    @Override
+    public Blogger findPassword() throws Exception {
+        Blogger blogger = bloggerMapper.selectPassword();
+        return blogger;
     }
 }
