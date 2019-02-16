@@ -9,6 +9,8 @@ public class Blogger implements Serializable {
     private Integer id;
     private String userName;
     private String password;
+    //颜值
+    private String salt;
     //Master个人简介
     private String profile;
     //昵称
@@ -40,6 +42,14 @@ public class Blogger implements Serializable {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getSalt() {
+        return salt;
+    }
+
+    public void setSalt(String salt) {
+        this.salt = salt;
     }
 
     public String getProfile() {
