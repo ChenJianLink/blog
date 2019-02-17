@@ -5,6 +5,7 @@ import cn.chenjianlink.blog.common.utils.ResponseUtil;
 import cn.chenjianlink.blog.method.ControllerMethod;
 import cn.chenjianlink.blog.pojo.Blogger;
 import cn.chenjianlink.blog.service.BloggerService;
+import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.crypto.SecureRandomNumberGenerator;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -98,5 +99,12 @@ public class BloggerManageController {
             return new BlogResult(0, null);
         }
 
+    }
+
+    //退出
+    @RequestMapping("/admin/blogger/logout")
+    public String logout() {
+        SecurityUtils.getSubject().logout();
+        return "redirect:admin-login.html";
     }
 }

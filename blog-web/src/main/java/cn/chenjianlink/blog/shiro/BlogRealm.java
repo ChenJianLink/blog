@@ -1,13 +1,13 @@
 package cn.chenjianlink.blog.shiro;
 
+import cn.chenjianlink.blog.pojo.Blogger;
 import cn.chenjianlink.blog.service.BloggerService;
-import org.apache.shiro.authc.AuthenticationException;
-import org.apache.shiro.authc.AuthenticationInfo;
-import org.apache.shiro.authc.AuthenticationToken;
-import org.apache.shiro.authc.SimpleAuthenticationInfo;
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
+import org.apache.shiro.util.ByteSource;
 
 import javax.annotation.Resource;
 
@@ -33,7 +33,14 @@ public class BlogRealm extends AuthorizingRealm {
     //认证
     @Override
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken token) throws AuthenticationException {
-
-        return new SimpleAuthenticationInfo();
+        String username = (String) token.getPrincipal();
+        Blogger blogger = bloggerService.findPassword();
+        if (!blogger.getUserName().equals(username)) {
+            throw new UnknownAccountException();//没找到帐号
+        }
+        SecurityUtils.getSubject().getSession().setAttribute("currentUser", blogger);
+        SimpleAuthenticationInfo authenticationInfo = new SimpleAuthenticationInfo(blogger.getUserName(), blogger.getPassword(), ByteSource.Util.bytes(blogger.getSalt()), getName());
+        return authenticationInfo;
     }
+
 }

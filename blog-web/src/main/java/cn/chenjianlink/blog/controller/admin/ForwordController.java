@@ -29,4 +29,10 @@ public class ForwordController {
         }
         return "/admin/" + page;
     }
+
+    //后台首页展示
+    @RequestMapping("/admin/blogger/admin-index")
+    public String adminIndex() {
+        return "admin/main";
+    }
 }

@@ -13,5 +13,5 @@ public interface BloggerMapper {
     int update(Blogger blogger) throws Exception;
 
     //查找密码和颜值
-    Blogger selectPassword() throws Exception;
+    Blogger selectPassword();
 }

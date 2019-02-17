@@ -17,5 +17,5 @@ public interface BloggerService {
     BlogResult updatePassword(Blogger blogger) throws Exception;
 
     //查找密码
-    Blogger findPassword() throws Exception;
+    Blogger findPassword();
 }

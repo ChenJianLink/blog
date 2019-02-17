@@ -206,7 +206,7 @@
         </P>
         <DIV style="height: 50px; line-height: 50px; margin-top: 30px; border-top-color: rgb(231, 231, 231); border-top-width: 1px; border-top-style: solid;">
             <P style="margin: 0px 35px 20px 45px;">
-                <SPAN style="float: left;"><a href="${pageContext.request.contextPath}/index.html">局外人之个人空间</a></SPAN>
+                <SPAN style="float: left;"><a href="${pageContext.request.contextPath}/index.html">局外人秘境</a></SPAN>
                 <span><font color="red" id="error">${errorInfo }</font></span>
                 <SPAN style="float: right;">
 	              <input type="submit"

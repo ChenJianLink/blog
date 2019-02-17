@@ -29,7 +29,6 @@ public class BloggerServiceImpl implements BloggerService {
 
     //后台Master信息回显
     @Override
-    @Cacheable(value = "bloggerCache")
     public Blogger findBloggerAll() throws Exception {
         Blogger blogger = bloggerMapper.selectAll();
         return blogger;
@@ -51,8 +50,9 @@ public class BloggerServiceImpl implements BloggerService {
         return BlogResult.ok();
     }
 
+    //查找用户名密码
     @Override
-    public Blogger findPassword() throws Exception {
+    public Blogger findPassword() {
         Blogger blogger = bloggerMapper.selectPassword();
         return blogger;
     }

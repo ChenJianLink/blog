@@ -14,6 +14,7 @@
             timeToLiveSeconds="20"
             diskPersistent="false"
             diskExpiryThreadIntervalSeconds="120"/>
+
     <!--日志缓存-->
     <cache name="blogCache"
            maxElementsInMemory="100000"
@@ -24,6 +25,7 @@
            timeToLiveSeconds="1800"
            diskExpiryThreadIntervalSeconds="300"
            memoryStoreEvictionPolicy="LRU"/>
+
     <!--master缓存-->
     <cache name="bloggerCache"
            maxElementsInMemory="10000"
@@ -34,6 +36,7 @@
            timeToLiveSeconds="3600"
            diskExpiryThreadIntervalSeconds="600"
            memoryStoreEvictionPolicy="LRU"/>
+
     <!--日志类别缓存-->
     <cache name="blogTypeCache"
            maxElementsInMemory="10000"
@@ -44,6 +47,7 @@
            timeToLiveSeconds="1800"
            diskExpiryThreadIntervalSeconds="300"
            memoryStoreEvictionPolicy="LRU"/>
+
     <!--友情链接缓存-->
     <cache name="linkCache"
            maxElementsInMemory="10000"
@@ -54,6 +58,7 @@
            timeToLiveSeconds="1800"
            diskExpiryThreadIntervalSeconds="300"
            memoryStoreEvictionPolicy="LRU"/>
+
     <!--评论缓存-->
     <cache name="commentCache"
            maxElementsInMemory="100000"
@@ -64,6 +69,7 @@
            timeToLiveSeconds="1800"
            diskExpiryThreadIntervalSeconds="300"
            memoryStoreEvictionPolicy="LRU"/>
+
     <!--留言缓存-->
     <cache name="messageCache"
            maxElementsInMemory="100000"
@@ -74,4 +80,5 @@
            timeToLiveSeconds="1800"
            diskExpiryThreadIntervalSeconds="300"
            memoryStoreEvictionPolicy="LRU"/>
+
 </ehcache>

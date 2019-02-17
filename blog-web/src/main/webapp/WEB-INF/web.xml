@@ -9,6 +9,17 @@
     <welcome-file-list>
         <welcome-file>/jsp/index.jsp</welcome-file>
     </welcome-file-list>
+
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>SSL</web-resource-name>
+            <url-pattern>/*</url-pattern>
+        </web-resource-collection>
+        <user-data-constraint>
+            <transport-guarantee>CONFIDENTIAL</transport-guarantee>
+        </user-data-constraint>
+    </security-constraint>
+
     <!-- 加载spring容器 -->
     <context-param>
         <param-name>contextConfigLocation</param-name>

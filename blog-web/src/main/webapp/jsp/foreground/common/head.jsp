@@ -4,9 +4,9 @@
     <div class="col-md-4" style="height:60px">
         <img alt="局外人之个人空间" src="${pageContext.request.contextPath}/static/images/logo.png">
     </div>
-    <div class="col-md-8">
-        <iframe style="float: right;padding-top: 10px;height: 70px" width="420" scrolling="no" height="60"
-                frameborder="0"
-                allowtransparency="true" src="http://i.tianqi.com/index.php?c=code&id=12&icon=1&num=5"></iframe>
+    <div class="col-md-4" style="width: 30%"></div>
+    <div class="col-md-4" style="padding-top: 20px">
+        <iframe scrolling="no" src="https://tianqiapi.com/api.php?style=tg&skin=pitaya" frameborder="0" width="470"
+                height="60" allowtransparency="true"></iframe>
     </div>
 </div>

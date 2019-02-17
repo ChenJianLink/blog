@@ -11,7 +11,7 @@
     </select>
     <!--查询所有信息-->
     <select id="selectAll" resultType="cn.chenjianlink.blog.pojo.Blogger">
-        SELECT id, userName, profile, nickName, sign, imageName
+        SELECT *
         FROM t_blogger
         WHERE id = 1
     </select>
@@ -42,7 +42,7 @@
     </update>
     <!--查询密码和颜值-->
     <select id="selectPassword" resultType="cn.chenjianlink.blog.pojo.Blogger">
-        SELECT password, salt
+        SELECT userName, password, salt
         FROM t_blogger
         WHERE id = 1
     </select>
