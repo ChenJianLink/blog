@@ -18,7 +18,7 @@
         }
     }
 </script>
-<body style="overflow: auto;" onload="javascript:countDown(5);">
+<body style="overflow: auto;" onload="javascript:countDown(6);">
 <EMBED src="${pageContext.request.contextPath}/static/music/op.mp3" width=0 height=0 type="audio/mpeg" autostart="true"
        hidden="true">
 <div class="scene">
