@@ -2,7 +2,7 @@
          pageEncoding="UTF-8" %>
 <div class="row">
     <div class="col-md-4" style="height:60px">
-        <img alt="局外人之个人空间" src="${pageContext.request.contextPath}/static/images/logo.png">
+        <img alt="局外人之秘境" src="${pageContext.request.contextPath}/static/images/logo.png">
     </div>
     <div class="col-md-4" style="width: 30%"></div>
     <div class="col-md-4" style="padding-top: 20px">
