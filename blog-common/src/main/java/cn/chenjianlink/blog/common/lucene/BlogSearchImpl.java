@@ -140,11 +140,7 @@ public class BlogSearchImpl implements BlogSearch {
                         blog.setContent(content.substring(0, 150));
                     }
                 } else {
-                    if (hContent.length() <= 150) {
-                        blog.setContent(hContent);
-                    } else {
-                        blog.setContent(hContent.substring(0, 150));
-                    }
+                    blog.setContent(hContent);
                 }
             }
             blogList.add(blog);
