@@ -51,7 +51,7 @@
         <img src="${pageContext.request.contextPath}/static/images/blog_show_icon.png"/>
         日志信息
     </div>
-    <div>
+    <div style="padding-left:6%;padding-right:6%">
         <div class="blog_title"><h3><strong>${blog.title }</strong></h3></div>
         <div style="padding-left: 330px;padding-bottom: 20px;padding-top: 10px">
             <div class="bshare-custom"><a title="分享到QQ空间" class="bshare-qzone"></a><a title="分享到新浪微博"
@@ -61,8 +61,8 @@
                                                                     class="bshare-more bshare-more-icon more-style-addthis"></a><span
                     class="BSHARE_COUNT bshare-share-count">0</span></div>
             <script type="text/javascript" charset="utf-8"
-                    src="http://static.bshare.cn/b/buttonLite.js#style=-1&amp;uuid=&amp;pophcol=1&amp;lang=zh"></script>
-            <script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/bshareC0.js"></script>
+                    src="//static.bshare.cn/b/buttonLite.js#style=-1&amp;uuid=&amp;pophcol=1&amp;lang=zh"></script>
+            <script type="text/javascript" charset="utf-8" src="//static.bshare.cn/b/bshareC0.js"></script>
         </div>
         <div class="blog_info">
             发布时间：『 <fmt:formatDate value="${blog.releaseDate }" type="date" pattern="yyyy-MM-dd HH:mm"/>』&nbsp;&nbsp;日志类别：${blog.blogType.typeName}&nbsp;&nbsp;阅读(${blog.clickHit})
