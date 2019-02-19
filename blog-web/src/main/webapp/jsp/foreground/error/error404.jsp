@@ -50,7 +50,8 @@
 </div>
 
 <div class="w3footeragile">
-    <p> &copy; 2018 局外人之秘境</p>
+
+    <p>Copyright &copy; 2019 chenjianlink All Rights Reserved.</p>
 </div>
 
 </body>

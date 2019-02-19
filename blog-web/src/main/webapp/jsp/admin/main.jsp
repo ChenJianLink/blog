@@ -206,8 +206,10 @@
         </div>
     </div>
 </div>
-<div region="south" style="height: 25px;padding: 5px" align="center">
-
+<div region="south" style="padding: 5px;height: 32px" align="center">
+    <div style="width:450px;margin:0 auto;">
+          <p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px;color:#939393;">Copyright &copy; 2019 chenjianlink All Rights Reserved.</p>
+    </div>
 </div>
 
 <div id="dlg" class="easyui-dialog" style="width:400px;height:225px;padding: 10px 20px"

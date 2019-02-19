@@ -95,6 +95,14 @@
             </div>
 
         </div>
+        <div style="width:300px;margin:0 auto;" align="center">
+
+        </div>
+        <div align="center"><p style="color:#939393;">Copyright &copy; 2019 chenjianlink All Rights Reserved.</p>
+            <a href="https://www.revolvermaps.com/livestats/0xe1xtqrsrz/" target="_blank" style="display:none;"><img
+                    src="//ra.revolvermaps.com/h/m/a/7/ff0000/256/0/0xe1xtqrsrz.png" width="512" height="256" alt="Map"
+                    style="border:0;"></a>
+        </div>
     </div>
 
 </div>
