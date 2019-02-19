@@ -54,15 +54,39 @@
     <div style="padding-left:6%;padding-right:6%">
         <div class="blog_title"><h3><strong>${blog.title }</strong></h3></div>
         <div style="padding-left: 330px;padding-bottom: 20px;padding-top: 10px">
-            <div class="bshare-custom"><a title="分享到QQ空间" class="bshare-qzone"></a><a title="分享到新浪微博"
-                                                                                      class="bshare-sinaminiblog"></a><a
-                    title="分享到人人网" class="bshare-renren"></a><a title="分享到腾讯微博" class="bshare-qqmb"></a><a
-                    title="分享到网易微博" class="bshare-neteasemb"></a><a title="更多平台"
-                                                                    class="bshare-more bshare-more-icon more-style-addthis"></a><span
-                    class="BSHARE_COUNT bshare-share-count">0</span></div>
-            <script type="text/javascript" charset="utf-8"
-                    src="//static.bshare.cn/b/buttonLite.js#style=-1&amp;uuid=&amp;pophcol=1&amp;lang=zh"></script>
-            <script type="text/javascript" charset="utf-8" src="//static.bshare.cn/b/bshareC0.js"></script>
+            <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#"
+                                                                                              class="bds_weixin"
+                                                                                              data-cmd="weixin"
+                                                                                              title="分享到微信"></a><a
+                    href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_tsina"
+                                                                                       data-cmd="tsina"
+                                                                                       title="分享到新浪微博"></a><a href="#"
+                                                                                                              class="bds_sqq"
+                                                                                                              data-cmd="sqq"
+                                                                                                              title="分享到QQ好友"></a><a
+                    href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a></div>
+            <script>window._bd_share_config = {
+                "common": {
+                    "bdSnsKey": {},
+                    "bdText": "",
+                    "bdMini": "2",
+                    "bdMiniList": false,
+                    "bdPic": "",
+                    "bdStyle": "1",
+                    "bdSize": "24"
+                },
+                "share": {},
+                "image": {
+                    "viewList": ["weixin", "qzone", "tsina", "sqq", "tieba"],
+                    "viewText": "分享到：",
+                    "viewSize": "24"
+                },
+                "selectShare": {
+                    "bdContainerClass": null,
+                    "bdSelectMiniList": ["weixin", "qzone", "tsina", "sqq", "tieba"]
+                }
+            };
+            with (document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'https://www.chenjianlink.cn/static/api/js/share.js?v=89860593.js?cdnversion=' + ~(-new Date() / 36e5)];</script>
         </div>
         <div class="blog_info">
             发布时间：『 <fmt:formatDate value="${blog.releaseDate }" type="date" pattern="yyyy-MM-dd HH:mm"/>』&nbsp;&nbsp;日志类别：${blog.blogType.typeName}&nbsp;&nbsp;阅读(${blog.clickHit})
