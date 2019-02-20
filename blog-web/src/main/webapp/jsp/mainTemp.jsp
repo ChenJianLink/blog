@@ -100,7 +100,7 @@
         </div>
         <div align="center"><p style="color:#939393;margin-bottom:0px;">Copyright &copy; 2019 chenjianlink All Rights Reserved.</p>
             <a href="https://www.revolvermaps.com/livestats/0hyct6rs8lt/" target="_blank"><img
-                    src="//ra.revolvermaps.com/w/3/s/a/10/0/2/ffffff/010020/aa0000/09dj5tsbsy8.png" alt="Stats"
+                    src="//ra.revolvermaps.com/w/3/s/a/10/0/2/ffffff/010020/aa0000/0hyct6rs8lt.png" alt="Stats"
                     style="border:0;"></a>
         </div>
     </div>

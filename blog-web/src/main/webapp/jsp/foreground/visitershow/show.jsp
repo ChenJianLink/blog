@@ -15,7 +15,7 @@
     <div style="padding-top: 10px;text-align: center">地球仪</div>
     <div style="padding-top: 10px;text-align: center">
         <script type="text/javascript"
-                src="//ra.revolvermaps.com/0/0/1.js?i=047rxuhdhqy&amp;s=350&amp;m=7&amp;v=false&amp;r=false&amp;b=000000&amp;n=false&amp;c=ff0000"
+                src="//ra.revolvermaps.com/0/0/1.js?i=0hyct6rs8lt&amp;s=350&amp;m=7&amp;v=true&amp;r=false&amp;b=000000&amp;n=false&amp;c=ff0000"
                 async="async"></script>
     </div>
     <div style="padding-top: 10px;text-align: center">世界地图:</div>
