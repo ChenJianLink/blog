@@ -18,7 +18,7 @@
 <script type="text/javascript" charset="UTF-8" src="${pageContext.request.contextPath}/static/ueditor/lang/zh-cn/zh-cn.js"></script>
 <script type="text/javascript">
 	
-	function submitData(){
+	function submitData(state){
 		var title=$("#title").val();
 		var blogTypeId=$("#blogTypeId").combobox("getValue");
 		var content=UE.getEditor('editor').getContent();
@@ -31,13 +31,23 @@
 		}else if(content==null || content==''){
 			alert("请输入内容！");
 		}else{
-			$.post("${pageContext.request.contextPath}/admin/blog/save.do",{'title':title,'blogType.id':blogTypeId,'content':content,'searchContent':UE.getEditor('editor').getContentTxt(),'summary':UE.getEditor('editor').getContentTxt().substr(0,150),'keyWord':keyWord},function(result){
-				if(result.success){
-					alert("日志发布成功！");
-					resetValue();
-				}else{
-					alert("日志发布失败！");
+			$.post("${pageContext.request.contextPath}/admin/blog/save.do",{'title':title,'blogType.id':blogTypeId,'content':content,'searchContent':UE.getEditor('editor').getContentTxt(),'summary':UE.getEditor('editor').getContentTxt().substr(0,150),'keyWord':keyWord,'state':state},function(result){
+				if (state == 2){
+                    if(result.success){
+                        alert("日志发布成功！");
+                        resetValue();
+                    }else{
+                        alert("日志发布失败！");
+                    }
+				}else {
+                    if(result.success){
+                        alert("草稿保存成功！");
+                        resetValue();
+                    }else{
+                        alert("草稿保存失败！");
+                    }
 				}
+
 			},"json");
 		}
 	}
@@ -83,8 +93,9 @@
    		<tr>
    			<td></td>
    			<td>
-   				<a href="javascript:submitData()" class="easyui-linkbutton" data-options="iconCls:'icon-submit'">发布日志</a>
-   			</td>
+   				<a href="javascript:submitData(1)" class="easyui-linkbutton" data-options="iconCls:'icon-submit'">保存草稿</a>&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="javascript:submitData(2)" class="easyui-linkbutton" data-options="iconCls:'icon-submit'">发布日志</a>
+            </td>
    		</tr>
    	</table>
  </div>

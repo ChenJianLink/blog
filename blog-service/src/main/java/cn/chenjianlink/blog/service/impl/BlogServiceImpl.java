@@ -60,7 +60,7 @@ public class BlogServiceImpl implements BlogService {
 
     //删除日志
     @Override
-    @CacheEvict(value = "blogCache", allEntries = true)
+    @CacheEvict(value = {"blogCache", "blogTypeCache"}, allEntries = true)
     public BlogResult deleteBlog(Integer[] ids) throws Exception {
         int[] id = new int[ids.length];
         for (int i = 0; i < ids.length; i++) {
@@ -76,7 +76,7 @@ public class BlogServiceImpl implements BlogService {
 
     //更新日志
     @Override
-    @CacheEvict(value = "blogCache", allEntries = true)
+    @CacheEvict(value = {"blogCache", "blogTypeCache"}, allEntries = true)
     public BlogResult editBlog(Blog blog) throws Exception {
         blog.setReleaseDate(new Date());
         //若关键字为空串，则设置为空
@@ -84,14 +84,18 @@ public class BlogServiceImpl implements BlogService {
             blog.setKeyWord(null);
         }
         blogMapper.update(blog);
-        //更新索引
-        blogSearch.updateBlogIndex(blog);
+        if (blog.getState() == 2) {
+            //更新索引
+            blogSearch.updateBlogIndex(blog);
+        } else {
+            blogSearch.deleteBlogIndex(blog.getId());
+        }
         return BlogResult.ok();
     }
 
     //添加新日志
     @Override
-    @CacheEvict(value = "blogCache", allEntries = true)
+    @CacheEvict(value = {"blogCache", "blogTypeCache"}, allEntries = true)
     public BlogResult addBlog(Blog blog) throws Exception {
         //补全属性
         blog.setReleaseDate(new Date());
@@ -99,8 +103,10 @@ public class BlogServiceImpl implements BlogService {
         Integer id = Integer.valueOf(String.valueOf(new Date().getTime()).substring(0, 10));
         blog.setId(id);
         blogMapper.insert(blog);
-        //添加索引
-        blogSearch.addBlogIndex(blog);
+        if (blog.getState() == 2) {
+            //添加索引
+            blogSearch.addBlogIndex(blog);
+        }
         return BlogResult.ok();
     }
 

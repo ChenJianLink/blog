@@ -23,6 +23,14 @@
             return val.typeName;
         }
 
+        function formatBlogState(val, row) {
+            if (val == 2) {
+                return "已发表";
+            } else {
+                return "草稿";
+            }
+        }
+
         function formatTitle(val, row) {
             return "<a target='_blank' href='${pageContext.request.contextPath}/blog/articles/" + row.id + ".html'>" + val + "</a>"
         }
@@ -81,6 +89,7 @@
         <th field="id" width="20" align="center">编号</th>
         <th field="title" width="200" align="center" formatter="formatTitle">标题</th>
         <th field="releaseDate" width="50" align="center" formatter="BLOG.formatDateTime">发布日期</th>
+        <th field="state" width="50" align="center" formatter="formatBlogState">日志状态</th>
         <th field="blogType" width="50" align="center" formatter="formatBlogType">日志类别</th>
     </tr>
     </thead>

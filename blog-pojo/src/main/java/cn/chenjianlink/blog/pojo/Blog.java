@@ -29,6 +29,8 @@ public class Blog implements Serializable {
     private String content;
     //关键字
     private String keyWord;
+    //日志状态
+    private Integer state;
     //日志类别
     private BlogType blogType;
     //日志中的图片
@@ -138,5 +140,13 @@ public class Blog implements Serializable {
 
     public void setSearchContent(String searchContent) {
         this.searchContent = searchContent;
+    }
+
+    public Integer getState() {
+        return state;
+    }
+
+    public void setState(Integer state) {
+        this.state = state;
     }
 }

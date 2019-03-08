@@ -52,13 +52,9 @@ public class BlogManageController {
     //更新日志内容
     @RequestMapping(value = "/admin/blog/edit", method = RequestMethod.POST)
     @ResponseBody
-    public BlogResult editBlogInfo(Blog blog) {
-        try {
-            BlogResult result = blogService.editBlog(blog);
-            return result;
-        } catch (Exception e) {
-            return new BlogResult(0, null);
-        }
+    public BlogResult editBlogInfo(Blog blog) throws Exception {
+        BlogResult result = blogService.editBlog(blog);
+        return result;
     }
 
     //增加新日志

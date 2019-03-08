@@ -11,6 +11,7 @@
         <result property="clickHit" column="clickHit"/>
         <result property="content" column="content"/>
         <result property="keyWord" column="keyWord"/>
+        <result property="state" column="state"/>
         <association property="blogType" column="typeId"
                      select="cn.chenjianlink.blog.mapper.BlogTypeMapper.selectByPrimaryKey"></association>
         <association property="replyHit" column="id"
@@ -18,7 +19,7 @@
     </resultMap>
     <!--查询所有日志的部分信息(可能根据标题查找)-->
     <select id="selectList" parameterType="java.lang.String" resultMap="BlogResult">
-        SELECT id, title, releaseDate, typeId
+        SELECT id, title, releaseDate, typeId, state
         FROM t_blog
         <where>
             <if test="_parameter != null and _parameter != ''">
@@ -29,7 +30,15 @@
     </select>
     <!--根据id查询日志信息-->
     <select id="selectByPrimaryKey" parameterType="int" resultMap="BlogResult">
-        SELECT *
+        SELECT id,
+               title,
+               summary,
+               releaseDate,
+               clickHit,
+               content,
+               typeId,
+               keyWord,
+               state
         FROM t_blog
         WHERE id = #{id,jdbcType=INTEGER}
     </select>
@@ -62,16 +71,19 @@
             <if test="blogType.id != null">
                 typeId = #{blogType.id,jdbcType=INTEGER},
             </if>
-                keyWord = #{keyWord,jdbcType=VARCHAR},
+            keyWord = #{keyWord,jdbcType=VARCHAR},
             <if test="releaseDate != null and releaseDate != ''">
-                releaseDate = #{releaseDate,jdbcType=TIMESTAMP}
+                releaseDate = #{releaseDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="state != null">
+                state = #{state,jdbcType=INTEGER}
             </if>
         </set>
         WHERE id = #{id,jdbcType=INTEGER}
     </update>
     <!--添加新日志-->
     <insert id="insert" parameterType="cn.chenjianlink.blog.pojo.Blog">
-        INSERT INTO t_blog (id, title, summary, releaseDate, clickHit, content, typeId, keyWord)
+        INSERT INTO t_blog (id, title, summary, releaseDate, clickHit, content, typeId, keyWord, state)
         VALUES (#{id,jdbcType=INTEGER},
                 #{title,jdbcType=VARCHAR},
                 #{summary,jdbcType=VARCHAR},
@@ -79,18 +91,20 @@
                 0,
                 #{content},
                 #{blogType.id,jdbcType=INTEGER},
-                #{keyWord,jdbcType=VARCHAR})
+                #{keyWord,jdbcType=VARCHAR},
+                #{state,jdbcType=INTEGER})
     </insert>
     <!--按发布日期查询日志总数-->
     <select id="selectCountList" resultMap="BlogResult">
         SELECT DATE_FORMAT(releaseDate, '%Y-%m ') AS releaseDateStr, COUNT(*) AS blogCount
         FROM t_blog
+        WHERE state = 2
         GROUP BY DATE_FORMAT(releaseDate, '%Y-%m ')
-        ORDER BY DATE_FORMAT(releaseDate, '%Y-%m ') DESC;
+        ORDER BY DATE_FORMAT(releaseDate, '%Y-%m ') DESC
     </select>
     <!--根据日志日期，日志类别查询日志列表,按日志发布日期排序-->
     <select id="selectListAll" parameterType="Map" resultMap="BlogResult">
-        SELECT *
+        SELECT id, title, summary, releaseDate, clickHit, content, typeId, keyWord
         FROM t_blog
         <where>
             <if test="typeId != null">
@@ -99,6 +113,7 @@
             <if test="releaseDateStr != null and releaseDateStr != ''">
                 AND DATE_FORMAT(releaseDate,'%Y-%m ') = #{releaseDateStr}
             </if>
+            AND state = 2
         </where>
         ORDER BY releaseDate DESC
     </select>
@@ -113,6 +128,7 @@
             <if test="releaseDateStr != null and releaseDateStr != ''">
                 AND DATE_FORMAT(releaseDate,'%Y-%m ') = #{releaseDateStr}
             </if>
+            AND state = 2
         </where>
     </select>
     <!--查询上一篇日志-->
@@ -120,6 +136,7 @@
         SELECT id, title
         FROM t_blog
         WHERE releaseDate <![CDATA[ > ]]> #{date,jdbcType=TIMESTAMP}
+          AND state = 2
         LIMIT 1;
     </select>
     <!--查询下一篇日志-->
@@ -127,6 +144,7 @@
         SELECT id, title
         FROM t_blog
         WHERE releaseDate <![CDATA[ < ]]> #{date,jdbcType=TIMESTAMP}
+          AND state = 2
         ORDER BY releaseDate DESC
         LIMIT 1;
     </select>

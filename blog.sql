@@ -23,14 +23,15 @@ DROP TABLE IF EXISTS `t_blog`;
 /*!40101 SET @saved_cs_client = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `t_blog` (
-  `id`          int(11) NOT NULL,
-  `title`       varchar(200) DEFAULT NULL,
-  `summary`     varchar(400) DEFAULT NULL,
-  `releaseDate` datetime     DEFAULT NULL,
-  `clickHit`    int(11)      DEFAULT NULL,
+  `id`          int(11)      NOT NULL,
+  `title`       varchar(200) NOT NULL,
+  `summary`     varchar(400) NOT NULL,
+  `releaseDate` datetime     NOT NULL,
+  `clickHit`    int(11)      NOT NULL,
   `content`     text,
-  `typeId`      int(11)      DEFAULT NULL,
+  `typeId`      int(11)      NOT NULL,
   `keyWord`     varchar(200) DEFAULT NULL,
+  `state`       int(11)      NOT NULL, /*1:草稿，2：发表*/
   PRIMARY KEY (`id`),
   KEY `typeId` (`typeId`),
   CONSTRAINT `t_blog_ibfk_1` FOREIGN KEY (`typeId`) REFERENCES `t_blogtype` (`id`)
@@ -58,17 +59,18 @@ DROP TABLE IF EXISTS `t_blogger`;
 /*!40101 SET @saved_cs_client = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `t_blogger` (
-  `id`        int(11) NOT NULL AUTO_INCREMENT,
-  `userName`  varchar(50)      DEFAULT NULL,
-  `password`  varchar(100)     DEFAULT NULL,
-  `salt`      varchar(100)     DEFAULT NULL,
+  `id`        int(11)      NOT NULL AUTO_INCREMENT,
+  `userName`  varchar(50)  NOT NULL,
+  `password`  varchar(100) NOT NULL,
+  `salt`      varchar(100) NOT NULL,
   `profile`   text,
-  `nickName`  varchar(50)      DEFAULT NULL,
-  `sign`      varchar(100)     DEFAULT NULL,
-  `imageName` varchar(100)     DEFAULT NULL,
+  `nickName`  varchar(50)  NOT NULL,
+  `sign`      varchar(100) NOT NULL,
+  `imageName` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
 )
   ENGINE = InnoDB
+  AUTO_INCREMENT = 2
   DEFAULT CHARSET = utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -91,12 +93,13 @@ DROP TABLE IF EXISTS `t_blogtype`;
 /*!40101 SET @saved_cs_client = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `t_blogtype` (
-  `id`       int(11) NOT NULL AUTO_INCREMENT,
-  `typeName` varchar(30)      DEFAULT NULL,
-  `orderNo`  int(11)          DEFAULT NULL,
+  `id`       int(11)     NOT NULL AUTO_INCREMENT,
+  `typeName` varchar(30) NOT NULL,
+  `orderNo`  int(11)     NOT NULL,
   PRIMARY KEY (`id`)
 )
   ENGINE = InnoDB
+  AUTO_INCREMENT = 2
   DEFAULT CHARSET = utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -119,13 +122,13 @@ DROP TABLE IF EXISTS `t_comment`;
 /*!40101 SET @saved_cs_client = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `t_comment` (
-  `id`          int(11) NOT NULL AUTO_INCREMENT,
-  `userIp`      varchar(50)      DEFAULT NULL,
-  `userName`    varchar(50)      DEFAULT NULL,
-  `blogId`      int(11)          DEFAULT NULL,
-  `content`     varchar(1000)    DEFAULT NULL,
-  `commentDate` datetime         DEFAULT NULL,
-  `state`       int(11)          DEFAULT NULL, /*0:待审核，1：审核通过，2：审核不通过*/
+  `id`          int(11)       NOT NULL AUTO_INCREMENT,
+  `userIp`      varchar(50)   NOT NULL,
+  `userName`    varchar(50)   NOT NULL,
+  `blogId`      int(11)       NOT NULL,
+  `content`     varchar(1000) NOT NULL,
+  `commentDate` datetime      NOT NULL,
+  `state`       int(11)       NOT NULL,
   PRIMARY KEY (`id`)
 )
   ENGINE = InnoDB
@@ -151,13 +154,14 @@ DROP TABLE IF EXISTS `t_link`;
 /*!40101 SET @saved_cs_client = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `t_link` (
-  `id`       int(11) NOT NULL AUTO_INCREMENT,
-  `linkName` varchar(100)     DEFAULT NULL,
-  `linkUrl`  varchar(200)     DEFAULT NULL,
-  `orderNo`  int(11)          DEFAULT NULL,
+  `id`       int(11)      NOT NULL AUTO_INCREMENT,
+  `linkName` varchar(100) NOT NULL,
+  `linkUrl`  varchar(200) NOT NULL,
+  `orderNo`  int(11)      NOT NULL,
   PRIMARY KEY (`id`)
 )
   ENGINE = InnoDB
+  AUTO_INCREMENT = 2
   DEFAULT CHARSET = utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -180,12 +184,12 @@ DROP TABLE IF EXISTS `t_message`;
 /*!40101 SET @saved_cs_client = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `t_message` (
-  `id`               int(11) NOT NULL AUTO_INCREMENT,
-  `userIp`           varchar(50)      DEFAULT NULL,
-  `userName`         varchar(50)      DEFAULT NULL,
-  `content`          varchar(1000)    DEFAULT NULL,
-  `leaveMessageDate` datetime         DEFAULT NULL,
-  `state`            int(11)          DEFAULT NULL, /*0:待审核，1：审核通过，2：审核不通过*/
+  `id`               int(11)       NOT NULL AUTO_INCREMENT,
+  `userIp`           varchar(50)   NOT NULL,
+  `userName`         varchar(50)   NOT NULL,
+  `content`          varchar(1000) NOT NULL,
+  `leaveMessageDate` datetime      NOT NULL,
+  `state`            int(11)       NOT NULL,
   PRIMARY KEY (`id`)
 )
   ENGINE = InnoDB
@@ -212,4 +216,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION = @OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES = @OLD_SQL_NOTES */;
 
--- Dump completed on 2019-02-13 22:39:19
+-- Dump completed on 2019-03-08 19:09:04
