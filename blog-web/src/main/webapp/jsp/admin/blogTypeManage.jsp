@@ -107,6 +107,7 @@
         <th field="cb" checkbox="true" align="center"></th>
         <th field="id" width="20" align="center">编号</th>
         <th field="typeName" width="100" align="center">日志类型名称</th>
+        <th field="blogCount" width="100" align="center">日志数量</th>
         <th field="orderNo" width="100" align="center">排序序号</th>
     </tr>
     </thead>

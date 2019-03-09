@@ -13,15 +13,17 @@
     <select id="selectAll" resultMap="BlogTypeResult">
         SELECT blogtype.id, blogtype.typeName, count(blog.id) AS blogCount
         FROM t_blogtype blogtype
-                 LEFT JOIN t_blog blog ON blog.typeId = blogtype.id
+                 LEFT JOIN t_blog blog ON blog.typeId = blogtype.id AND blog.state = 2
         GROUP BY blogtype.typeName, blogtype.id
         ORDER BY blogtype.orderNo
     </select>
     <!--查询所有blogtype-->
     <select id="selectList" resultMap="BlogTypeResult">
-        SELECT *
-        FROM t_blogtype
-        ORDER BY orderNo
+        SELECT blogtype.id, blogtype.typeName, blogtype.orderNo, count(blog.id) AS blogCount
+        FROM t_blogtype blogtype
+                 LEFT JOIN t_blog blog ON blog.typeId = blogtype.id
+        GROUP BY blogtype.typeName, blogtype.id, blogtype.orderNo
+        ORDER BY blogtype.orderNo
     </select>
     <!--插入新的blogtype-->
     <insert id="insert" parameterType="cn.chenjianlink.blog.pojo.BlogType">
@@ -43,7 +45,7 @@
     </update>
     <!--根据id查询blogtype-->
     <select id="selectByPrimaryKey" parameterType="int" resultMap="BlogTypeResult">
-        SELECT *
+        SELECT id, typeName, orderNo
         FROM t_blogtype
         WHERE id = #{id,jdbcType = INTEGER}
     </select>
