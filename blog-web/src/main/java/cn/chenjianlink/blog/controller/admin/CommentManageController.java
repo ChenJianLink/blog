@@ -36,25 +36,17 @@ public class CommentManageController {
     //删除评论
     @RequestMapping(value = "/admin/comment/delete", method = RequestMethod.POST)
     @ResponseBody
-    public BlogResult deleteCommentById(@RequestParam(value = "ids", required = true) Integer[] ids) {
-        try {
-            BlogResult result = commentService.deleteCommentById(ids);
-            return result;
-        } catch (Exception e) {
-            return new BlogResult(0, null);
-        }
+    public BlogResult deleteCommentById(@RequestParam(value = "ids", required = true) Integer[] ids) throws Exception {
+        BlogResult result = commentService.deleteCommentById(ids);
+        return result;
     }
 
     //审核评论
     @RequestMapping(value = "/admin/comment/review", method = RequestMethod.POST)
     @ResponseBody
-    public BlogResult reviewComment(@RequestParam(value = "ids", required = true) String ids, @RequestParam(value = "state", required = true) Integer state) {
-        try {
-            String[] id = ids.split(",");
-            BlogResult result = commentService.updateCommentState(id, state);
-            return result;
-        } catch (Exception e) {
-            return new BlogResult(0, null);
-        }
+    public BlogResult reviewComment(@RequestParam(value = "ids", required = true) String ids, @RequestParam(value = "state", required = true) Integer state) throws Exception {
+        String[] id = ids.split(",");
+        BlogResult result = commentService.updateCommentState(id, state);
+        return result;
     }
 }

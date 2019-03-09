@@ -30,25 +30,17 @@ public class MessageManageController {
     //删除留言
     @RequestMapping(value = "/admin/message/delete", method = RequestMethod.POST)
     @ResponseBody
-    public BlogResult deleteMessageById(@RequestParam(value = "ids", required = true) Integer[] ids) {
-        try {
-            BlogResult result = messageService.deleteMessageById(ids);
-            return result;
-        } catch (Exception e) {
-            return new BlogResult(0, null);
-        }
+    public BlogResult deleteMessageById(@RequestParam(value = "ids", required = true) Integer[] ids) throws Exception {
+        BlogResult result = messageService.deleteMessageById(ids);
+        return result;
     }
 
     //审核留言
     @RequestMapping(value = "/admin/message/review", method = RequestMethod.POST)
     @ResponseBody
-    public BlogResult reviewComment(@RequestParam(value = "ids", required = true) String ids, @RequestParam(value = "state", required = true) Integer state) {
-        try {
-            String[] id = ids.split(",");
-            BlogResult result = messageService.updateMessageState(id, state);
-            return result;
-        } catch (Exception e) {
-            return new BlogResult(0, null);
-        }
+    public BlogResult reviewComment(@RequestParam(value = "ids", required = true) String ids, @RequestParam(value = "state", required = true) Integer state) throws Exception {
+        String[] id = ids.split(",");
+        BlogResult result = messageService.updateMessageState(id, state);
+        return result;
     }
 }

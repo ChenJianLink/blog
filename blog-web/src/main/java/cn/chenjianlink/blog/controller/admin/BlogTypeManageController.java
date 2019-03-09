@@ -32,36 +32,24 @@ public class BlogTypeManageController {
     //添加日志类别
     @RequestMapping(value = "/admin/blogType/save", method = RequestMethod.POST)
     @ResponseBody
-    public BlogResult addBlogType(BlogType blogType) {
-        try {
-            BlogResult result = blogTypeService.addBlogType(blogType);
-            return result;
-        } catch (Exception e) {
-            return new BlogResult(0, null);
-        }
+    public BlogResult addBlogType(BlogType blogType) throws Exception {
+        BlogResult result = blogTypeService.addBlogType(blogType);
+        return result;
     }
 
     //修改日志类别
     @RequestMapping(value = "/admin/blogType/edit", method = RequestMethod.POST)
     @ResponseBody
-    public BlogResult editBlodType(@RequestParam(value = "id", required = true) Integer id, BlogType blogType) {
-        try {
-            BlogResult result = blogTypeService.editBlogType(id, blogType);
-            return result;
-        } catch (Exception e) {
-            return new BlogResult(0, null);
-        }
+    public BlogResult editBlodType(@RequestParam(value = "id", required = true) Integer id, BlogType blogType) throws Exception {
+        BlogResult result = blogTypeService.editBlogType(id, blogType);
+        return result;
     }
 
     //删除日志类别
     @RequestMapping(value = "/admin/blogType/delete", method = RequestMethod.POST)
     @ResponseBody
-    public BlogResult deleteBlogType(@RequestParam(value = "ids", required = true) Integer[] ids) {
-        try {
-            BlogResult result = blogTypeService.deleteBlogType(ids);
-            return result;
-        } catch (Exception e) {
-            return new BlogResult(0, null);
-        }
+    public BlogResult deleteBlogType(@RequestParam(value = "ids", required = true) Integer[] ids) throws Exception {
+        BlogResult result = blogTypeService.deleteBlogType(ids);
+        return result;
     }
 }

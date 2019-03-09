@@ -1,5 +1,6 @@
 package cn.chenjianlink.blog.controller;
 
+import cn.chenjianlink.blog.Exception.BlogException;
 import cn.chenjianlink.blog.method.ControllerMethod;
 import cn.chenjianlink.blog.pojo.Blog;
 import cn.chenjianlink.blog.pojo.Comment;
@@ -60,9 +61,9 @@ public class BlogController {
     public String showBlogInfo(Model model, @PathVariable(value = "blogId", required = true) Integer blogId, HttpServletRequest request) throws Exception {
         Blog blog = blogService.findBlogById(blogId);
         if (blog == null) {
-            throw new RuntimeException("日志不存在");
+            throw new BlogException("日志不存在");
         } else if (blog.getState() != 2) {//判断日志的状态
-            throw new RuntimeException("不支持的日志查询");
+            throw new BlogException("不支持的日志查询");
         }
         //查询上一篇日志
         Blog preBlog = blogService.findPreBlog(blog);

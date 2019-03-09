@@ -79,26 +79,21 @@ public class BloggerManageController {
     //修改密码
     @RequestMapping(value = "/admin/blogger/modifyPassword", method = RequestMethod.POST)
     @ResponseBody
-    public BlogResult modifyPassword(@RequestParam(value = "oldPassword", required = true) String oldPassword, @RequestParam(value = "newPassword", required = true) String password) {
-        try {
-            Blogger oldBlogger = bloggerService.findPassword();
-            String certificate = oldBlogger.getPassword();
-            String encryptPassword = controllerMethod.encrypt(oldPassword, oldBlogger.getSalt());
-            //对原密码进行对比判断
-            if (!certificate.equals(encryptPassword)) {
-                return BlogResult.showError("原密码不正确");
-            }
-            //加密新密码,设置新颜值
-            String salt = new SecureRandomNumberGenerator().nextBytes().toHex();
-            String newPassword = controllerMethod.encrypt(password, salt);
-            oldBlogger.setPassword(newPassword);
-            oldBlogger.setSalt(salt);
-            BlogResult result = bloggerService.updatePassword(oldBlogger);
-            return result;
-        } catch (Exception e) {
-            return new BlogResult(0, null);
+    public BlogResult modifyPassword(@RequestParam(value = "oldPassword", required = true) String oldPassword, @RequestParam(value = "newPassword", required = true) String password) throws Exception {
+        Blogger oldBlogger = bloggerService.findPassword();
+        String certificate = oldBlogger.getPassword();
+        String encryptPassword = controllerMethod.encrypt(oldPassword, oldBlogger.getSalt());
+        //对原密码进行对比判断
+        if (!certificate.equals(encryptPassword)) {
+            return BlogResult.showError("原密码不正确");
         }
-
+        //加密新密码,设置新颜值
+        String salt = new SecureRandomNumberGenerator().nextBytes().toHex();
+        String newPassword = controllerMethod.encrypt(password, salt);
+        oldBlogger.setPassword(newPassword);
+        oldBlogger.setSalt(salt);
+        BlogResult result = bloggerService.updatePassword(oldBlogger);
+        return result;
     }
 
     //退出
