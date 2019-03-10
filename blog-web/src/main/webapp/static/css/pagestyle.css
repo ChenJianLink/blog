@@ -3,9 +3,6 @@ nav[role="navigation"] {
 }
 
 .cd-pagination {
-    width: 90%;
-    max-width: 768px;
-    margin: auto 2em;
     text-align: center;
 }
 
