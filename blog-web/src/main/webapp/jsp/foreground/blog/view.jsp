@@ -53,7 +53,7 @@
     </div>
     <div style="padding-left:6%;padding-right:6%">
         <div class="blog_title"><h3><strong>${blog.title }</strong></h3></div>
-        <div style="padding-left: 330px;padding-bottom: 20px;padding-top: 10px">
+        <div style="padding: 10px 33% 20px 35%;">
             <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#"
                                                                                               class="bds_weixin"
                                                                                               data-cmd="weixin"
