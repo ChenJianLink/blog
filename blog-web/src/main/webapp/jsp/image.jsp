@@ -41,6 +41,7 @@
         g.setColor(new Color(20 + random.nextInt(110), 20 + random.nextInt(110), 20 + random.nextInt(110)));
         g.drawString(rand, 13 * i + 6, 16);
     }
+    session.setMaxInactiveInterval(1800);
     // 将验证码存入SESSION
     session.setAttribute("sRand", sRand);
     g.dispose();

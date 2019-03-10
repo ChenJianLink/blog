@@ -20,6 +20,9 @@
         </user-data-constraint>
     </security-constraint>
 
+    <session-config>
+        <session-timeout>240</session-timeout>
+    </session-config>
     <!-- 加载spring容器 -->
     <context-param>
         <param-name>contextConfigLocation</param-name>

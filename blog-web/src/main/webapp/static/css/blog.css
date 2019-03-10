@@ -197,17 +197,14 @@
 
 .father {
     position: absolute;
-    left: 6.4%;
-    -webkit-transform: translate3d(-50%, -50%, 0);
-    transform: translate3d(-50%, -50%, 0);
     z-index: 99;
     font-weight: 300;
     padding: 1em 2em;
     line-height: 1.5;
+    width: 100%;
 }
 
 .child {
-    position: absolute;
     padding-top: 10px;
 }
 
