@@ -32,7 +32,11 @@
         }
 
         function formatTitle(val, row) {
-            return "<a target='_blank' href='${pageContext.request.contextPath}/blog/articles/" + row.id + ".html'>" + val + "</a>"
+            if (row.state == 2) {
+                return "<a target='_blank' href='${pageContext.request.contextPath}/blog/articles/" + row.id + ".html'>" + val + "</a>";
+            } else {
+                return val;
+            }
         }
 
         function searchBlog() {
