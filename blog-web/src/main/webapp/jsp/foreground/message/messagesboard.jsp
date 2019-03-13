@@ -2,6 +2,12 @@
         src="${pageContext.request.contextPath}/static/ueditor/third-party/SyntaxHighlighter/shCore.js"></script>
 <link rel="stylesheet"
       href="${pageContext.request.contextPath}/static/ueditor/third-party/SyntaxHighlighter/shCoreDefault.css">
+<link rel="stylesheet"
+      href="${pageContext.request.contextPath}/static/bootstrap3/css/bootstrap.css">
+<link rel="stylesheet"
+      href="${pageContext.request.contextPath}/static/css/emoji.css">
+<link rel="stylesheet"
+      href="${pageContext.request.contextPath}/static/css/jquery.emoji.css">
 <script type="text/javascript">
     SyntaxHighlighter.all();
 </script>
@@ -16,7 +22,7 @@
 
     function submitData() {
         var userName = $("#userName").val().replace(/(^\s*)|(\s*$)/g, "");
-        var content = $("#content").val().replace(/(^\s*)|(\s*$)/g, "");
+        var content = $("#editor").html();
         var imageCode = $("#imageCode").val();
         if (userName == null || userName == '') {
             alert("请输入您的名称！");
@@ -52,8 +58,9 @@
             您的名称:<input type="text" id="userName" name="userName" size="20" placeholder="请填写您的昵称...">
         </div>
         <div style="padding-top: 10px;padding-left: 10px;">
-            您的留言:<textarea style="width: 100%;resize: none;" rows="3" id="content" name="content"
-                           placeholder="来说两句吧..."></textarea>
+            您的留言:
+            <div id="editor" name="editor" contenteditable="true" data-placeholder="来吐槽两句吧"></div>
+            <button id="btn" class="btn btn-sm btn-default">:)</button>
         </div>
         <div class="verCode">
             验证码：<input type="text" value="${imageCode }" name="imageCode" id="imageCode" size="10"
@@ -92,3 +99,17 @@
         </c:choose>
     </div>
 </div>
+<script src="${pageContext.request.contextPath}/static/js/jquery.min.js"></script>
+<script src="${pageContext.request.contextPath}/static/js/jquery.emoji.min.js"></script>
+<script src="${pageContext.request.contextPath}/static/js/emoji.list.js"></script>
+<script>
+    $("editor").ready(function () {
+        $("#editor").emoji({
+            button: "#btn",
+            showTab: false,
+            animation: 'slide',
+            basePath: '${pageContext.request.contextPath}/static/images/emoji',
+            icons: emojiLists   // 注：详见 js/emoji.list.js
+        });
+    });
+</script>

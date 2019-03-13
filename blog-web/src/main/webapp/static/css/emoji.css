@@ -1,0 +1,36 @@
+#editor {
+    height: 91px;
+    background-color: #fff;
+    border: 1px solid #00fffe;
+    border-radius: 4px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+    color: #555;
+    display: block;
+    font-size: 14px;
+    line-height: 1.42857;
+    padding: 6px 12px;
+    transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+    width: 100%;
+    overflow: auto;
+}
+
+#editor:focus {
+    border-color: #66afe9;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(102, 175, 233, 0.6);
+    outline: 0 none;
+}
+
+#editor:empty:before {
+    content: attr(data-placeholder);
+    color: #bbb;
+}
+
+#editor:focus:before {
+    content: none;
+}
+
+#btn {
+    margin-top: 10px;
+}
+
+
