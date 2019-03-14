@@ -3,8 +3,6 @@
 <link rel="stylesheet"
       href="${pageContext.request.contextPath}/static/ueditor/third-party/SyntaxHighlighter/shCoreDefault.css">
 <link rel="stylesheet"
-      href="${pageContext.request.contextPath}/static/bootstrap3/css/bootstrap.css">
-<link rel="stylesheet"
       href="${pageContext.request.contextPath}/static/css/emoji.css">
 <link rel="stylesheet"
       href="${pageContext.request.contextPath}/static/css/jquery.emoji.css">
@@ -38,7 +36,7 @@
                 'blog.id': '${blog.id}'
             }, function (result) {
                 if (result.success) {
-                    window.location.reload();
+                    resetValue();
                     alert("评论已提交成功，审核通过后显示！");
                 } else {
                     alert(result.errorInfo);
@@ -46,6 +44,13 @@
                 }
             }, "json");
         }
+    }
+
+    // 重置数据
+    function resetValue() {
+        $("#userName").val("");
+        $("#imageCode").val("");
+        $("#editor").html("");
     }
 
     function showOtherComment() {
@@ -203,13 +208,13 @@
 <script src="${pageContext.request.contextPath}/static/js/jquery.emoji.min.js"></script>
 <script src="${pageContext.request.contextPath}/static/js/emoji.list.js"></script>
 <script>
-    $("editor").ready(function () {
+    window.onload = function () {
         $("#editor").emoji({
             button: "#btn",
             showTab: false,
             animation: 'slide',
             basePath: '${pageContext.request.contextPath}/static/images/emoji',
             icons: emojiLists   // 注：详见 js/emoji.list.js
-        });
-    });
+        })
+    }
 </script>

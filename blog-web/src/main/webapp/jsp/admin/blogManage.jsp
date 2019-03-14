@@ -90,7 +90,7 @@
     <thead>
     <tr>
         <th field="cb" checkbox="true" align="center"></th>
-        <th field="id" width="20" align="center">编号</th>
+        <th field="id" width="30" align="center">编号</th>
         <th field="title" width="200" align="center" formatter="formatTitle">标题</th>
         <th field="releaseDate" width="50" align="center" formatter="BLOG.formatDateTime">发布日期</th>
         <th field="state" width="50" align="center" formatter="formatBlogState">日志状态</th>

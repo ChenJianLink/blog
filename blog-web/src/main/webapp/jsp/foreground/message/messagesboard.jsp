@@ -3,8 +3,6 @@
 <link rel="stylesheet"
       href="${pageContext.request.contextPath}/static/ueditor/third-party/SyntaxHighlighter/shCoreDefault.css">
 <link rel="stylesheet"
-      href="${pageContext.request.contextPath}/static/bootstrap3/css/bootstrap.css">
-<link rel="stylesheet"
       href="${pageContext.request.contextPath}/static/css/emoji.css">
 <link rel="stylesheet"
       href="${pageContext.request.contextPath}/static/css/jquery.emoji.css">
@@ -37,7 +35,7 @@
                 'imageCode': imageCode
             }, function (result) {
                 if (result.success) {
-                    window.location.reload();
+                    resetValue();
                     alert("留言成功,审核后显示");
                 } else {
                     alert(result.errorInfo);
@@ -47,6 +45,12 @@
         }
     }
 
+    // 重置数据
+    function resetValue() {
+        $("#userName").val("");
+        $("#imageCode").val("");
+        $("#editor").html("");
+    }
 </script>
 <div class="data_list">
     <div class="data_list_title">
