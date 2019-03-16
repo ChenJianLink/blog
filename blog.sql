@@ -28,7 +28,7 @@ CREATE TABLE `t_blog` (
   `summary`     varchar(400) NOT NULL,
   `releaseDate` datetime     NOT NULL,
   `clickHit`    int(11)      NOT NULL,
-  `content`     text,
+  `content`     mediumtext,
   `typeId`      int(11)      NOT NULL,
   `keyWord`     varchar(200) DEFAULT NULL,
   `state`       int(11)      NOT NULL, /*1:草稿，2：发表*/
