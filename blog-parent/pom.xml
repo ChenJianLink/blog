@@ -24,7 +24,7 @@
         <jsp-api.version>2.3.1</jsp-api.version>
         <commons-lang3.version>3.4</commons-lang3.version>
         <commons-codec.version>1.10</commons-codec.version>
-        <commons-beanutils.version>1.8.0</commons-beanutils.version>
+        <commons-beanutils.version>1.9.4</commons-beanutils.version>
         <commons-collections.version>3.2.1</commons-collections.version>
         <commons-net.version>3.3</commons-net.version>
         <commons-io.version>2.5</commons-io.version>
