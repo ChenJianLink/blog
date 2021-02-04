@@ -5,8 +5,6 @@
 &nbsp; 这是一款简单的个人日志系统  
 &nbsp; 同时有一个后台管理系统  
 &nbsp; 该项目是基于SSM框架和Jsp开发的  
-&nbsp; 日志系统访问地址：https://www.chenjianlink.cn  
-&nbsp; (欢迎点击、评论或留言吐槽)
 
 > 运行环境
 
