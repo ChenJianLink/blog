@@ -35,7 +35,7 @@
         <junit.version>4.12</junit.version>
         <pagehelper.version>4.1.4</pagehelper.version>
         <mybatis.paginator.version>1.2.15</mybatis.paginator.version>
-        <jsoup.version>1.11.3</jsoup.version>
+        <jsoup.version>1.14.2</jsoup.version>
         <lucene.version>7.5.0</lucene.version>
         <ikAnalyzer.version>6.6.0</ikAnalyzer.version>
     </properties>
